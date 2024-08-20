@@ -1,0 +1,22 @@
+export default {
+	arrowParens: "always",
+	bracketSameLine: false,
+	bracketSpacing: true,
+	embeddedLanguageFormatting: "auto",
+	endOfLine: "lf",
+	htmlWhitespaceSensitivity: "css",
+	insertPragma: false,
+	jsxSingleQuote: true,
+	printWidth: 120,
+	proseWrap: "preserve",
+	quoteProps: "as-needed",
+	requirePragma: false,
+	semi: true,
+	singleAttributePerLine: true,
+	singleQuote: false,
+	tabWidth: 4,
+	trailingComma: "es5",
+	useTabs: true,
+
+	plugins: ["prettier-plugin-tailwindcss"],
+};

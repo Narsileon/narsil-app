@@ -1,0 +1,19 @@
+{
+	"extends": "./vendor/narsil/ui/tsconfig.json",
+	"compilerOptions": {
+		"paths": {
+			"@/*": ["./resources/js/*"],
+			"@narsil-forms/*": ["./vendor/narsil/forms/resources/js/*"],
+			"@narsil-localization/*": ["./vendor/narsil/localization/resources/js/*"],
+			"@narsil-table/*": ["./vendor/narsil/table/resources/js/*"],
+			"@narsil-ui/*": ["./vendor/narsil/ui/resources/js/*"]
+		}
+	},
+	"include": [
+		"resources/js/**/*.ts",
+		"resources/js/**/*.tsx",
+		"vendor/narsil/**/resources/js/**/*.ts",
+		"vendor/narsil/**/resources/js/**/*.tsx"
+	],
+	"exclude": ["node_modules"]
+}
