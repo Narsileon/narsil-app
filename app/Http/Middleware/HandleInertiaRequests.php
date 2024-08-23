@@ -4,6 +4,8 @@ namespace App\Http\Middleware;
 
 #region USE
 
+use App\Constants\AppSettings;
+use Narsil\Settings\Models\Setting;
 use Narsil\UI\Http\Middleware\HandleInertiaRequests as BaseHandleInertiaRequests;
 
 #endregion
@@ -18,8 +20,8 @@ final class HandleInertiaRequests extends BaseHandleInertiaRequests
     protected function getApp(): array
     {
         return [
-            'name' => 'Narsil App',
-            'favicon' => null,
+            'name' => Setting::get(AppSettings::NAME, 'Narsil'),
+            'favicon' => Setting::get(AppSettings::FAVICON),
             'version' => '1.0.0',
         ];
     }

@@ -35,6 +35,7 @@ export default defineConfig({
 	resolve: {
 		alias: {
 			"@": path.join(__dirname, "/resources/js"),
+			"@narsil-auth": path.join(__dirname, "/vendor/narsil/auth/resources/js"),
 			"@narsil-forms": path.join(__dirname, "/vendor/narsil/forms/resources/js"),
 			"@narsil-localization": path.join(__dirname, "/vendor/narsil/localization/resources/js"),
 			"@narsil-table": path.join(__dirname, "/vendor/narsil/table/resources/js"),

@@ -3,6 +3,7 @@
 	"compilerOptions": {
 		"paths": {
 			"@/*": ["./resources/js/*"],
+			"@narsil-auth/*": ["./vendor/narsil/auth/resources/js/*"],
 			"@narsil-forms/*": ["./vendor/narsil/forms/resources/js/*"],
 			"@narsil-localization/*": ["./vendor/narsil/localization/resources/js/*"],
 			"@narsil-table/*": ["./vendor/narsil/table/resources/js/*"],
