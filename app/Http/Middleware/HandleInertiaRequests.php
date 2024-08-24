@@ -22,6 +22,7 @@ final class HandleInertiaRequests extends BaseHandleInertiaRequests
         return [
             'name' => Setting::get(AppSettings::NAME, 'Narsil'),
             'favicon' => Setting::get(AppSettings::FAVICON),
+            'logo' => Setting::get(AppSettings::LOGO),
             'version' => '1.0.0',
         ];
     }

@@ -1,4 +1,3 @@
-import { usePage } from "@inertiajs/react";
 import Image from "@narsil-ui/Components/Image/Image";
 import ScrollArea from "@narsil-ui/Components/ScrollArea/ScrollArea";
 import Section from "@narsil-ui/Components/Section/Section";
@@ -9,22 +8,16 @@ interface Props {
 }
 
 const SessionLayout = ({ children }: Props) => {
-	const page = usePage<GlobalProps & { background: ImageModel }>();
-
-	const background = page.props.background;
-
 	return (
 		<WebLayout>
-			<div className='flex h-full w-full'>
-				<Section className='hidden h-full overflow-hidden lg:block lg:w-6/12 xl:w-8/12'>
-					{background ? (
-						<Image
-							className='h-full w-full object-contain object-center'
-							src={background}
-						/>
-					) : null}
+			<div className='flex h-fit w-full'>
+				<Section className='hidden h-fit overflow-hidden lg:block lg:w-6/12 xl:w-8/12'>
+					<Image
+						className='h-full w-full border-none object-contain object-center'
+						src='https://placehold.co/600x600?text=Hello+World'
+					/>
 				</Section>
-				<ScrollArea className='h-full w-full lg:w-6/12 xl:w-4/12'>{children}</ScrollArea>
+				<ScrollArea className='h-fit w-full lg:w-6/12 xl:w-4/12'>{children}</ScrollArea>
 			</div>
 		</WebLayout>
 	);

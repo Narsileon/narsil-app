@@ -5,11 +5,12 @@ import { navigationMenuTriggerStyle } from "@narsil-ui/Components/NavigationMenu
 import { upperFirst } from "lodash";
 import { useState } from "react";
 import { useTranslationsStore } from "@narsil-localization/Stores/translationStore";
-import AppLanguage from "@narsil-ui/Components/App/AppLanguage";
+import AppLanguage from "@narsil-localization/Components/App/AppLanguage";
 import Button from "@narsil-ui/Components/Button/Button";
 import Collapsible from "@narsil-ui/Components/Collapsible/Collapsible";
 import CollapsibleContent from "@narsil-ui/Components/Collapsible/CollapsibleContent";
 import CollapsibleTrigger from "@narsil-ui/Components/Collapsible/CollapsibleTrigger";
+import Layout from "@narsil-ui/Components/Layout/Layout";
 import NavigationMenu from "@narsil-ui/Components/NavigationMenu/NavigationMenu";
 import NavigationMenuItem from "@narsil-ui/Components/NavigationMenu/NavigationMenuItem";
 import NavigationMenuLink from "@narsil-ui/Components/NavigationMenu/NavigationMenuLink";
@@ -19,7 +20,7 @@ import ScrollArea from "@narsil-ui/Components/ScrollArea/ScrollArea";
 import Svg from "@narsil-ui/Components/Svg/Svg";
 import ThemeController from "@narsil-ui/Components/Themes/ThemeController";
 import TooltipWrapper from "@narsil-ui/Components/Tooltip/TooltipWrapper";
-import Layout from "@narsil-ui/Components/Layout/Layout";
+import useScreenStore from "@narsil-ui/Stores/screenStore";
 
 interface Props {
 	children?: React.ReactNode;
@@ -92,48 +93,6 @@ const BackendLayout = ({ children }: Props) => {
 			</FlexWrapper>
 		</header>
 	);
-
-	const renderMenuNodes = (nodes: MenuHasNodeType[]) => {
-		return nodes.map((node, index) => {
-			const subNodes = backendMenu?.filter((x) => x.parent_id === node.id);
-
-			return subNodes.length > 0 ? (
-				<NavigationMenuItem key={index}>
-					<Collapsible>
-						{node.menu_node.url ? (
-							<div className='flex items-center justify-between'>
-								<CollapsibleTrigger>
-									<Link href={node.menu_node.url}>{upperFirst(node.menu_node.label)}</Link>
-								</CollapsibleTrigger>
-							</div>
-						) : (
-							<CollapsibleTrigger>
-								<Svg src={`/storage/icons/${node.menu_node.icon}`} />
-								{upperFirst(node.menu_node.label)}
-								<span className='sr-only'>Toggle</span>
-							</CollapsibleTrigger>
-						)}
-
-						<CollapsibleContent>
-							<NavigationMenuList>{renderMenuNodes(subNodes)}</NavigationMenuList>
-						</CollapsibleContent>
-					</Collapsible>
-				</NavigationMenuItem>
-			) : (
-				<NavigationMenuItem key={index}>
-					<NavigationMenuLink
-						className={cn(navigationMenuTriggerStyle())}
-						asChild={true}
-					>
-						<Link href={node.menu_node.url}>
-							<Svg src={`/storage/icons/${node.menu_node.icon}`} />
-							{upperFirst(node.menu_node.label)}
-						</Link>
-					</NavigationMenuLink>
-				</NavigationMenuItem>
-			);
-		});
-	};
 
 	return (
 		<Layout>

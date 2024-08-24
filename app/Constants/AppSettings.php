@@ -13,6 +13,10 @@ abstract class AppSettings
     /**
      * @var string
      */
+    final public const LOGO = 'logo';
+    /**
+     * @var string
+     */
     final public const NAME = 'name';
 
     #endregion
