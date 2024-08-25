@@ -18,6 +18,10 @@ abstract class AppSettings
      * @var string
      */
     final public const NAME = 'name';
+    /**
+     * @var string
+     */
+    final public const VERSION = 'version';
 
     #endregion
 }
