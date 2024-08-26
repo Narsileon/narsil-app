@@ -9,7 +9,12 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Narsil\Auth\Constants\AuthSettings;
 use Narsil\Auth\Models\User;
+use Narsil\Menus\Enums\MenuEnum;
+use Narsil\Menus\Models\Menu;
+use Narsil\Menus\Services\BreadcrumbService;
 use Narsil\Settings\Models\Setting;
+use Narsil\Tree\Http\Resources\FlatNodeResource;
+use Narsil\Tree\Http\Resources\NestedNodeResource;
 use Narsil\UI\Http\Middleware\HandleInertiaRequests as BaseHandleInertiaRequests;
 
 #endregion
@@ -33,6 +38,24 @@ final class HandleInertiaRequests extends BaseHandleInertiaRequests
     }
 
     /**
+     * @return array
+     */
+    protected function getShared(Request $request): array
+    {
+        $auth = $this->getAuth();
+        $menus = $this->getMenus();
+
+        return array_merge(parent::getShared($request), compact(
+            'auth',
+            'menus',
+        ));
+    }
+
+    #endregion
+
+    #region PRIVATE METHODS
+
+    /**
      * @return array|null
      */
     protected function getAuth(): array | null
@@ -52,15 +75,35 @@ final class HandleInertiaRequests extends BaseHandleInertiaRequests
     }
 
     /**
-     * @return array
+     * @return array|null
      */
-    protected function getShared(Request $request): array
+    protected function getMenus(): array
     {
-        $auth = $this->getAuth();
+        $breadcrumb = BreadcrumbService::getBreadcrumb();
 
-        return array_merge(parent::getShared($request), compact(
-            'auth',
-        ));
+        $backendMenu = Menu::type(MenuEnum::BACKEND->value)->first();
+        $footerMenu = Menu::type(MenuEnum::FOOTER->value)->first();
+        $headerMenu = Menu::type(MenuEnum::HEADER->value)->first();
+
+        if ($backendMenu)
+        {
+            $backendMenu = FlatNodeResource::collection($backendMenu->{Menu::RELATIONSHIP_NODES});
+        }
+        if ($footerMenu)
+        {
+            $footerMenu = NestedNodeResource::collection($footerMenu->{Menu::RELATIONSHIP_VISIBLE_NODES});
+        }
+        if ($headerMenu)
+        {
+            $headerMenu = NestedNodeResource::collection($headerMenu->{Menu::RELATIONSHIP_VISIBLE_NODES});
+        }
+
+        return compact(
+            'backendMenu',
+            'breadcrumb',
+            'footerMenu',
+            'headerMenu',
+        );
     }
 
     #endregion
