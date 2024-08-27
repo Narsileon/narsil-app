@@ -1,17 +1,28 @@
+import { cn } from "@narsil-ui/Components";
 import { GlobalProps } from "@/Types";
 import { Link, usePage } from "@inertiajs/react";
-import { Menu, X } from "lucide-react";
+import { Menu, PieChart, Star, X } from "lucide-react";
+import { navigationMenuTriggerStyle } from "@narsil-ui/Components/NavigationMenu/NavigationMenuTrigger";
 import { useTranslationsStore } from "@narsil-localization/Stores/translationStore";
 import AppLanguage from "@narsil-localization/Components/App/AppLanguage";
 import Avatar from "@narsil-ui/Components/Avatar/Avatar";
 import AvatarFallback from "@narsil-ui/Components/Avatar/AvatarFallback";
 import Button from "@narsil-ui/Components/Button/Button";
+import Collapsible from "@narsil-ui/Components/Collapsible/Collapsible";
+import CollapsibleContent from "@narsil-ui/Components/Collapsible/CollapsibleContent";
+import CollapsibleTrigger from "@narsil-ui/Components/Collapsible/CollapsibleTrigger";
 import DropdownMenu from "@narsil-ui/Components/DropdownMenu/DropdownMenu";
 import DropdownMenuTrigger from "@narsil-ui/Components/DropdownMenu/DropdownMenuTrigger";
 import Layout from "@narsil-ui/Components/Layout/Layout";
+import NavigationMenu from "@narsil-ui/Components/NavigationMenu/NavigationMenu";
+import NavigationMenuAsideRenderer from "@narsil-menus/Components/NavigationMenu/NavigationMenuAsideRenderer";
+import NavigationMenuItem from "@narsil-ui/Components/NavigationMenu/NavigationMenuItem";
+import NavigationMenuLink from "@narsil-ui/Components/NavigationMenu/NavigationMenuLink";
+import NavigationMenuList from "@narsil-ui/Components/NavigationMenu/NavigationMenuList";
 import React from "react";
 import ScrollArea from "@narsil-ui/Components/ScrollArea/ScrollArea";
 import Sheet from "@narsil-ui/Components/Sheet/Sheet";
+import SheetClose from "@narsil-ui/Components/Sheet/SheetClose";
 import SheetContent from "@narsil-ui/Components/Sheet/SheetContent";
 import SheetPortal from "@narsil-ui/Components/Sheet/SheetPortal";
 import SheetTrigger from "@narsil-ui/Components/Sheet/SheetTrigger";
@@ -35,11 +46,13 @@ const BackendLayout = ({ children }: Props) => {
 
 	const [portalOpen, setPortalOpen] = React.useState<boolean>(false);
 
+	console.log(shared);
 	return (
 		<Layout className='h-screen max-h-screen'>
 			<Sheet
-				open={portalOpen}
+				open={!isMobile || portalOpen}
 				onOpenChange={setPortalOpen}
+				modal={false}
 			>
 				<header className='flex items-center justify-between bg-primary px-4 py-2 text-primary-foreground'>
 					<div className='flex items-center gap-x-4'>
@@ -85,13 +98,47 @@ const BackendLayout = ({ children }: Props) => {
 				>
 					<SheetPortal container={portal.current}>
 						<SheetContent
-							className='absolute inset-0 w-full'
+							className='absolute inset-0 w-full p-1 sm:w-14 hover:sm:w-fit'
+							asChild={true}
 							side='left'
-						></SheetContent>
+						>
+							<aside>
+								<ScrollArea>
+									<NavigationMenu orientation='vertical'>
+										<NavigationMenuList>
+											{!isMobile ? (
+												<Collapsible>
+													<CollapsibleTrigger>
+														<Star className='h-5 w-5' />
+														{trans("Favorites")}
+													</CollapsibleTrigger>
+
+													<CollapsibleContent></CollapsibleContent>
+												</Collapsible>
+											) : null}
+											{<NavigationMenuAsideRenderer nodes={shared.menus.backend.data} />}
+											<SheetClose>
+												<NavigationMenuItem
+													className={cn(navigationMenuTriggerStyle())}
+													asChild={true}
+												>
+													<NavigationMenuLink
+														active={route().current() === "backend.dashboard"}
+														asChild={true}
+													>
+														<Link href={route("backend.dashboard")}>
+															<PieChart className='h-5 w-5' />
+															{trans("Dashboard")}
+														</Link>
+													</NavigationMenuLink>
+												</NavigationMenuItem>
+											</SheetClose>
+										</NavigationMenuList>
+									</NavigationMenu>
+								</ScrollArea>
+							</aside>
+						</SheetContent>
 					</SheetPortal>
-					<aside className='hidden h-full min-w-fit items-start overflow-y-auto border-r bg-background p-1 sm:block'>
-						<ScrollArea className='gap-y-1'></ScrollArea>
-					</aside>
 
 					<ScrollArea className='h-full grow'>
 						<div className='w-full'>{children}</div>

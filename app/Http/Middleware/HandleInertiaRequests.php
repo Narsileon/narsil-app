@@ -81,28 +81,28 @@ final class HandleInertiaRequests extends BaseHandleInertiaRequests
     {
         $breadcrumb = BreadcrumbService::getBreadcrumb();
 
-        $backendMenu = Menu::type(MenuEnum::BACKEND->value)->first();
-        $footerMenu = Menu::type(MenuEnum::FOOTER->value)->first();
-        $headerMenu = Menu::type(MenuEnum::HEADER->value)->first();
+        $backend = Menu::type(MenuEnum::BACKEND->value)->first();
+        $footer = Menu::type(MenuEnum::FOOTER->value)->first();
+        $header = Menu::type(MenuEnum::HEADER->value)->first();
 
-        if ($backendMenu)
+        if ($backend)
         {
-            $backendMenu = FlatNodeResource::collection($backendMenu->{Menu::RELATIONSHIP_NODES});
+            $backend = FlatNodeResource::collection($backend->{Menu::RELATIONSHIP_NODES});
         }
-        if ($footerMenu)
+        if ($footer)
         {
-            $footerMenu = NestedNodeResource::collection($footerMenu->{Menu::RELATIONSHIP_VISIBLE_NODES});
+            $footer = NestedNodeResource::collection($footer->{Menu::RELATIONSHIP_VISIBLE_NODES});
         }
-        if ($headerMenu)
+        if ($header)
         {
-            $headerMenu = NestedNodeResource::collection($headerMenu->{Menu::RELATIONSHIP_VISIBLE_NODES});
+            $header = NestedNodeResource::collection($header->{Menu::RELATIONSHIP_VISIBLE_NODES});
         }
 
         return compact(
-            'backendMenu',
+            'backend',
             'breadcrumb',
-            'footerMenu',
-            'headerMenu',
+            'footer',
+            'header',
         );
     }
 

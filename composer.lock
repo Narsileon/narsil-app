@@ -2167,12 +2167,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Narsileon/narsil-auth.git",
-                "reference": "3343049f491b1f98027abec44366013e2d0584b0"
+                "reference": "eab62aa485f47c4f24d5f3efa7b058e807ba820a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Narsileon/narsil-auth/zipball/3343049f491b1f98027abec44366013e2d0584b0",
-                "reference": "3343049f491b1f98027abec44366013e2d0584b0",
+                "url": "https://api.github.com/repos/Narsileon/narsil-auth/zipball/eab62aa485f47c4f24d5f3efa7b058e807ba820a",
+                "reference": "eab62aa485f47c4f24d5f3efa7b058e807ba820a",
                 "shasum": ""
             },
             "require": {
@@ -2226,7 +2226,7 @@
                 "source": "https://github.com/Narsileon/narsil-auth/tree/main",
                 "issues": "https://github.com/Narsileon/narsil-auth/issues"
             },
-            "time": "2024-08-26T11:35:45+00:00"
+            "time": "2024-08-27T04:17:27+00:00"
         },
         {
             "name": "narsil/calendar",
@@ -2485,12 +2485,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Narsileon/narsil-localization.git",
-                "reference": "c7c4e3258baadefcf75f2a83eec3e4968c46872d"
+                "reference": "fb0134c1ae07b0f5a6495dac3e91d016016fede5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Narsileon/narsil-localization/zipball/c7c4e3258baadefcf75f2a83eec3e4968c46872d",
-                "reference": "c7c4e3258baadefcf75f2a83eec3e4968c46872d",
+                "url": "https://api.github.com/repos/Narsileon/narsil-localization/zipball/fb0134c1ae07b0f5a6495dac3e91d016016fede5",
+                "reference": "fb0134c1ae07b0f5a6495dac3e91d016016fede5",
                 "shasum": ""
             },
             "require": {
@@ -2540,7 +2540,7 @@
                 "source": "https://github.com/Narsileon/narsil-localization/tree/main",
                 "issues": "https://github.com/Narsileon/narsil-localization/issues"
             },
-            "time": "2024-08-26T04:19:26+00:00"
+            "time": "2024-08-27T04:07:55+00:00"
         },
         {
             "name": "narsil/mails",
@@ -2613,12 +2613,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Narsileon/narsil-menus.git",
-                "reference": "778c1cea4117d8f93b5df80dc3985277bd36220a"
+                "reference": "b9a02cc9a1462037db1221312be4848e415e5491"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Narsileon/narsil-menus/zipball/778c1cea4117d8f93b5df80dc3985277bd36220a",
-                "reference": "778c1cea4117d8f93b5df80dc3985277bd36220a",
+                "url": "https://api.github.com/repos/Narsileon/narsil-menus/zipball/b9a02cc9a1462037db1221312be4848e415e5491",
+                "reference": "b9a02cc9a1462037db1221312be4848e415e5491",
                 "shasum": ""
             },
             "require": {
@@ -2668,7 +2668,7 @@
                 "source": "https://github.com/Narsileon/narsil-menus/tree/main",
                 "issues": "https://github.com/Narsileon/narsil-menus/issues"
             },
-            "time": "2024-08-26T04:58:38+00:00"
+            "time": "2024-08-27T05:07:22+00:00"
         },
         {
             "name": "narsil/policies",
@@ -2980,12 +2980,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Narsileon/narsil-ui.git",
-                "reference": "959ae926bc5dbfced1c9943bc7dc11411b8ae97b"
+                "reference": "0fee6a971ef0553ad1a196ed98d886f600de6e69"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Narsileon/narsil-ui/zipball/959ae926bc5dbfced1c9943bc7dc11411b8ae97b",
-                "reference": "959ae926bc5dbfced1c9943bc7dc11411b8ae97b",
+                "url": "https://api.github.com/repos/Narsileon/narsil-ui/zipball/0fee6a971ef0553ad1a196ed98d886f600de6e69",
+                "reference": "0fee6a971ef0553ad1a196ed98d886f600de6e69",
                 "shasum": ""
             },
             "require": {
@@ -3033,7 +3033,7 @@
                 "source": "https://github.com/Narsileon/narsil-ui/tree/main",
                 "issues": "https://github.com/Narsileon/narsil-ui/issues"
             },
-            "time": "2024-08-26T07:30:46+00:00"
+            "time": "2024-08-27T04:59:57+00:00"
         },
         {
             "name": "nesbot/carbon",
@@ -7659,16 +7659,16 @@
         },
         {
             "name": "phpunit/php-file-iterator",
-            "version": "5.0.1",
+            "version": "5.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-file-iterator.git",
-                "reference": "6ed896bf50bbbfe4d504a33ed5886278c78e4a26"
+                "reference": "118cfaaa8bc5aef3287bf315b6060b1174754af6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-file-iterator/zipball/6ed896bf50bbbfe4d504a33ed5886278c78e4a26",
-                "reference": "6ed896bf50bbbfe4d504a33ed5886278c78e4a26",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-file-iterator/zipball/118cfaaa8bc5aef3287bf315b6060b1174754af6",
+                "reference": "118cfaaa8bc5aef3287bf315b6060b1174754af6",
                 "shasum": ""
             },
             "require": {
@@ -7708,7 +7708,7 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/php-file-iterator/issues",
                 "security": "https://github.com/sebastianbergmann/php-file-iterator/security/policy",
-                "source": "https://github.com/sebastianbergmann/php-file-iterator/tree/5.0.1"
+                "source": "https://github.com/sebastianbergmann/php-file-iterator/tree/5.1.0"
             },
             "funding": [
                 {
@@ -7716,7 +7716,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-07-03T05:06:37+00:00"
+            "time": "2024-08-27T05:02:59+00:00"
         },
         {
             "name": "phpunit/php-invoker",

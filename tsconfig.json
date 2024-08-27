@@ -6,7 +6,9 @@
 			"@narsil-auth/*": ["./vendor/narsil/auth/resources/js/*"],
 			"@narsil-forms/*": ["./vendor/narsil/forms/resources/js/*"],
 			"@narsil-localization/*": ["./vendor/narsil/localization/resources/js/*"],
+			"@narsil-menus/*": ["./vendor/narsil/menus/resources/js/*"],
 			"@narsil-table/*": ["./vendor/narsil/table/resources/js/*"],
+			"@narsil-tree/*": ["./vendor/narsil/tree/resources/js/*"],
 			"@narsil-ui/*": ["./vendor/narsil/ui/resources/js/*"]
 		}
 	},
