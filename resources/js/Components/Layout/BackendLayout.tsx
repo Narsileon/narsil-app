@@ -1,25 +1,23 @@
-import { cn } from "@narsil-ui/Components";
-import { Home, Star } from "lucide-react";
-import { Link, router, usePage } from "@inertiajs/react";
-import { navigationMenuTriggerStyle } from "@narsil-ui/Components/NavigationMenu/NavigationMenuTrigger";
-import { upperFirst } from "lodash";
-import { useState } from "react";
+import { GlobalProps } from "@/Types";
+import { Link, usePage } from "@inertiajs/react";
+import { Menu, X } from "lucide-react";
 import { useTranslationsStore } from "@narsil-localization/Stores/translationStore";
 import AppLanguage from "@narsil-localization/Components/App/AppLanguage";
+import Avatar from "@narsil-ui/Components/Avatar/Avatar";
+import AvatarFallback from "@narsil-ui/Components/Avatar/AvatarFallback";
 import Button from "@narsil-ui/Components/Button/Button";
-import Collapsible from "@narsil-ui/Components/Collapsible/Collapsible";
-import CollapsibleContent from "@narsil-ui/Components/Collapsible/CollapsibleContent";
-import CollapsibleTrigger from "@narsil-ui/Components/Collapsible/CollapsibleTrigger";
+import DropdownMenu from "@narsil-ui/Components/DropdownMenu/DropdownMenu";
+import DropdownMenuTrigger from "@narsil-ui/Components/DropdownMenu/DropdownMenuTrigger";
 import Layout from "@narsil-ui/Components/Layout/Layout";
-import NavigationMenu from "@narsil-ui/Components/NavigationMenu/NavigationMenu";
-import NavigationMenuItem from "@narsil-ui/Components/NavigationMenu/NavigationMenuItem";
-import NavigationMenuLink from "@narsil-ui/Components/NavigationMenu/NavigationMenuLink";
-import NavigationMenuList from "@narsil-ui/Components/NavigationMenu/NavigationMenuList";
 import React from "react";
 import ScrollArea from "@narsil-ui/Components/ScrollArea/ScrollArea";
-import Svg from "@narsil-ui/Components/Svg/Svg";
+import Sheet from "@narsil-ui/Components/Sheet/Sheet";
+import SheetContent from "@narsil-ui/Components/Sheet/SheetContent";
+import SheetPortal from "@narsil-ui/Components/Sheet/SheetPortal";
+import SheetTrigger from "@narsil-ui/Components/Sheet/SheetTrigger";
 import ThemeController from "@narsil-ui/Components/Themes/ThemeController";
 import TooltipWrapper from "@narsil-ui/Components/Tooltip/TooltipWrapper";
+import UserMenuDropdownContent from "@narsil-auth/Components/UserMenu/UserMenuDropdownContent";
 import useScreenStore from "@narsil-ui/Stores/screenStore";
 
 interface Props {
@@ -33,150 +31,73 @@ const BackendLayout = ({ children }: Props) => {
 
 	const shared = usePage<GlobalProps>().props.shared;
 
-	const localization = shared.localization;
+	const portal = React.useRef(null);
 
-	const backendMenu = shared.menus.backendMenu;
-	const headerMenu = shared.menus.headerMenu;
-	const favorites = shared.menus.favorites;
-
-	const [pinned, setPinned] = useState(false);
-	const [visible, setVisible] = useState(false);
-
-	const Header = (
-		<header className='p-default border-b py-2'>
-			<FlexWrapper>
-				<FlexWrapper
-					className='sm:space-x-0'
-					width='w-fit'
-				>
-					<Button
-						className='sm:hidden'
-						icon={visible ? "fas fa-x" : "fas fa-bars"}
-						onClick={() => {
-							setVisible(!visible);
-						}}
-					/>
-
-					<FlexWrapper
-						justify='start'
-						width='w-fit'
-					>
-						<AppLogo />
-
-						<TooltipWrapper tooltip={trans("tooltips.back_to_your_homepage")}>
-							<Button
-								onClick={() => router.get(route("start"))}
-								size='icon'
-								variant='ghost'
-							>
-								<Home />
-							</Button>
-						</TooltipWrapper>
-					</FlexWrapper>
-				</FlexWrapper>
-
-				<HorizontalMenu menu={headerMenu} />
-
-				<FlexWrapper
-					className='space-x-4'
-					justify='end'
-					width='w-fit'
-				>
-					<AppNotifications />
-					<AppLanguage
-						languages={localization.languages}
-						locale={localization.locale}
-					/>
-					<ThemeController />
-					<UserMenu />
-				</FlexWrapper>
-			</FlexWrapper>
-		</header>
-	);
+	const [portalOpen, setPortalOpen] = React.useState<boolean>(false);
 
 	return (
-		<Layout>
-			{Header}
-
-			<div
-				className={cn("relative w-full grow overflow-auto", {
-					flex: pinned,
-				})}
+		<Layout className='h-screen max-h-screen'>
+			<Sheet
+				open={portalOpen}
+				onOpenChange={setPortalOpen}
 			>
-				<AsideMenu
-					className={cn({ relative: pinned })}
-					maxWidth={isMobile ? undefined : "500px"}
-					minWidth={isMobile ? undefined : "52px"}
-					onMouseEnter={isMobile || visible ? undefined : () => setVisible(true)}
-					onMouseLeave={isMobile || pinned ? undefined : () => setVisible(false)}
-					pinned={pinned}
-					setPinned={setPinned}
-					visible={visible}
+				<header className='flex items-center justify-between bg-primary px-4 py-2 text-primary-foreground'>
+					<div className='flex items-center gap-x-4'>
+						{isMobile ? (
+							<SheetTrigger>
+								{portalOpen ? <X className='h-6 w-6' /> : <Menu className='h-6 w-6' />}
+							</SheetTrigger>
+						) : null}
+						<div className='flex items-center place-self-start self-center'>
+							<Link
+								className='flex items-center gap-2 text-2xl font-bold'
+								href={route("home")}
+							>
+								NARSIL
+							</Link>
+						</div>
+					</div>
+
+					<div className='right-4 flex items-center justify-end'>
+						<AppLanguage languages={shared.localization.languages} />
+						<ThemeController />
+						<DropdownMenu>
+							<TooltipWrapper tooltip={trans("common.menu")}>
+								<DropdownMenuTrigger
+									className='ml-2'
+									asChild={true}
+								>
+									<Button size='icon'>
+										<Avatar>
+											<AvatarFallback className='text-primary'>JR</AvatarFallback>
+										</Avatar>
+									</Button>
+								</DropdownMenuTrigger>
+							</TooltipWrapper>
+							<UserMenuDropdownContent authenticated={true} />
+						</DropdownMenu>
+					</div>
+				</header>
+
+				<div
+					ref={portal}
+					className='relative flex w-full grow flex-row overflow-hidden'
 				>
-					<NavigationMenu orientation='vertical'>
-						<NavigationMenuList>
-							<ScrollArea>
-								<NavigationMenuItem>
-									<Collapsible>
-										<CollapsibleTrigger>
-											<Star className='h-5 w-5' />
-											{trans("common.favorites")}
-										</CollapsibleTrigger>
+					<SheetPortal container={portal.current}>
+						<SheetContent
+							className='absolute inset-0 w-full'
+							side='left'
+						></SheetContent>
+					</SheetPortal>
+					<aside className='hidden h-full min-w-fit items-start overflow-y-auto border-r bg-background p-1 sm:block'>
+						<ScrollArea className='gap-y-1'></ScrollArea>
+					</aside>
 
-										<CollapsibleContent>
-											{backendMenu
-												.filter((x) => favorites.includes(x.menu_node.id))
-												.map((node, index) => {
-													return (
-														<NavigationMenuItem key={index}>
-															<Link href={node.menu_node.url}>
-																<NavigationMenuLink
-																	className={navigationMenuTriggerStyle()}
-																>
-																	{upperFirst(node.menu_node.label)}
-																</NavigationMenuLink>
-															</Link>
-														</NavigationMenuItem>
-													);
-												})}
-										</CollapsibleContent>
-									</Collapsible>
-								</NavigationMenuItem>
-								<NavigationMenuItem>
-									<NavigationMenuLink
-										className={cn(navigationMenuTriggerStyle())}
-										asChild={true}
-									>
-										<Link href={route("backend.index")}>
-											<Svg src={`/storage/icons/lucide/pie-chart.svg`} />
-											{trans("common.backend")}
-										</Link>
-									</NavigationMenuLink>
-								</NavigationMenuItem>
-
-								{renderMenuNodes(backendMenu?.filter((x) => x.parent_id === null))}
-							</ScrollArea>
-						</NavigationMenuList>
-					</NavigationMenu>
-				</AsideMenu>
-
-				<ScrollArea
-					className='h-full'
-					style={
-						!isMobile && !pinned
-							? {
-									paddingLeft: "52px",
-								}
-							: undefined
-					}
-				>
-					{children}
-				</ScrollArea>
-			</div>
-
-			<footer className='p-default border-t py-2'>
-				<AppFooter />
-			</footer>
+					<ScrollArea className='h-full grow'>
+						<div className='w-full'>{children}</div>
+					</ScrollArea>
+				</div>
+			</Sheet>
 		</Layout>
 	);
 };
