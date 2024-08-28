@@ -46,7 +46,6 @@ const BackendLayout = ({ children }: Props) => {
 
 	const [portalOpen, setPortalOpen] = React.useState<boolean>(false);
 
-	console.log(shared);
 	return (
 		<Layout className='h-screen max-h-screen'>
 			<Sheet
