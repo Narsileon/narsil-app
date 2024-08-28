@@ -5,6 +5,7 @@ namespace Database\Seeders;
 #region USE
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Artisan;
 
 #endregion
 
