@@ -116,7 +116,6 @@ const BackendLayout = ({ children }: Props) => {
 													<CollapsibleContent></CollapsibleContent>
 												</Collapsible>
 											) : null}
-											{<NavigationMenuAsideRenderer nodes={shared.menus.backend.data} />}
 											<SheetClose>
 												<NavigationMenuItem
 													className={cn(navigationMenuTriggerStyle())}
@@ -133,6 +132,7 @@ const BackendLayout = ({ children }: Props) => {
 													</NavigationMenuLink>
 												</NavigationMenuItem>
 											</SheetClose>
+											{<NavigationMenuAsideRenderer nodes={shared.menus.backend.data} />}
 										</NavigationMenuList>
 									</NavigationMenu>
 								</ScrollArea>

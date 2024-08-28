@@ -2167,12 +2167,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Narsileon/narsil-auth.git",
-                "reference": "eab62aa485f47c4f24d5f3efa7b058e807ba820a"
+                "reference": "b0c0e7bc83323cee205c7cbe987e53f629ebe710"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Narsileon/narsil-auth/zipball/eab62aa485f47c4f24d5f3efa7b058e807ba820a",
-                "reference": "eab62aa485f47c4f24d5f3efa7b058e807ba820a",
+                "url": "https://api.github.com/repos/Narsileon/narsil-auth/zipball/b0c0e7bc83323cee205c7cbe987e53f629ebe710",
+                "reference": "b0c0e7bc83323cee205c7cbe987e53f629ebe710",
                 "shasum": ""
             },
             "require": {
@@ -2226,7 +2226,7 @@
                 "source": "https://github.com/Narsileon/narsil-auth/tree/main",
                 "issues": "https://github.com/Narsileon/narsil-auth/issues"
             },
-            "time": "2024-08-27T04:17:27+00:00"
+            "time": "2024-08-28T16:45:18+00:00"
         },
         {
             "name": "narsil/calendar",
@@ -2359,12 +2359,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Narsileon/narsil-forms.git",
-                "reference": "a1d4a70868893bbe89216c9f74c20bee7c36458f"
+                "reference": "98df1f7e5efbac611dd1a1182fe0b5975241dd73"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Narsileon/narsil-forms/zipball/a1d4a70868893bbe89216c9f74c20bee7c36458f",
-                "reference": "a1d4a70868893bbe89216c9f74c20bee7c36458f",
+                "url": "https://api.github.com/repos/Narsileon/narsil-forms/zipball/98df1f7e5efbac611dd1a1182fe0b5975241dd73",
+                "reference": "98df1f7e5efbac611dd1a1182fe0b5975241dd73",
                 "shasum": ""
             },
             "require": {
@@ -2413,7 +2413,7 @@
                 "source": "https://github.com/Narsileon/narsil-forms/tree/main",
                 "issues": "https://github.com/Narsileon/narsil-forms/issues"
             },
-            "time": "2024-08-25T17:04:45+00:00"
+            "time": "2024-08-28T16:43:49+00:00"
         },
         {
             "name": "narsil/legals",
