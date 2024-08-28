@@ -58,6 +58,7 @@ const BackendLayout = ({ children }: Props) => {
 						{isMobile ? (
 							<SheetTrigger>
 								{portalOpen ? <X className='h-6 w-6' /> : <Menu className='h-6 w-6' />}
+								<span className='sr-only'>{trans(portalOpen ? "Close" : "Menu")}</span>
 							</SheetTrigger>
 						) : null}
 						<div className='flex items-center place-self-start self-center'>

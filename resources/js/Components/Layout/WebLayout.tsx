@@ -118,6 +118,7 @@ const WebLayout = ({ children }: Props) => {
 										variant='ghost'
 									>
 										{portalOpen ? <X /> : <Menu />}
+										<span className='sr-only'>{trans(portalOpen ? "Close" : "Menu")}</span>
 									</Button>
 								</UserMenuTrigger>
 								<UserMenuDropdownContent
