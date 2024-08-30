@@ -12,6 +12,8 @@ use Narsil\Auth\Models\User;
 use Narsil\Menus\Enums\MenuEnum;
 use Narsil\Menus\Models\Menu;
 use Narsil\Menus\Services\BreadcrumbService;
+use Narsil\Policies\Interfaces\IHasPermissions;
+use Narsil\Policies\Models\Permission;
 use Narsil\Settings\Models\Setting;
 use Narsil\Tree\Http\Resources\FlatNodeResource;
 use Narsil\Tree\Http\Resources\NestedNodeResource;
@@ -71,6 +73,8 @@ final class HandleInertiaRequests extends BaseHandleInertiaRequests
             User::FULL_NAME => $user->{User::FULL_NAME},
             User::ID => $user->{User::ID},
             User::USERNAME => $user->{User::USERNAME},
+
+            IHasPermissions::RELATIONSHIP_PERMISSIONS => $user->getPermissions()->pluck(Permission::NAME)->toArray(),
         ];
     }
 

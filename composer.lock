@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ece4a178d1e6a3d07c52ae2c04b5d9b3",
+    "content-hash": "ad3eb8808db2ea4467a297444acf38a2",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -2854,17 +2854,17 @@
             "time": "2024-08-28T16:21:14+00:00"
         },
         {
-            "name": "narsil/table",
+            "name": "narsil/tables",
             "version": "dev-main",
             "source": {
                 "type": "git",
-                "url": "https://github.com/Narsileon/narsil-table.git",
-                "reference": "23461574fbb7d2fbde83881592a8d6c37a35f2ce"
+                "url": "https://github.com/Narsileon/narsil-tables.git",
+                "reference": "5855a34b0aecc024aeee8e91f2faa5403f70804c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Narsileon/narsil-table/zipball/23461574fbb7d2fbde83881592a8d6c37a35f2ce",
-                "reference": "23461574fbb7d2fbde83881592a8d6c37a35f2ce",
+                "url": "https://api.github.com/repos/Narsileon/narsil-tables/zipball/5855a34b0aecc024aeee8e91f2faa5403f70804c",
+                "reference": "5855a34b0aecc024aeee8e91f2faa5403f70804c",
                 "shasum": ""
             },
             "require": {
@@ -2882,13 +2882,13 @@
             "extra": {
                 "laravel": {
                     "providers": [
-                        "Narsil\\Table\\NarsilTableServiceProvider"
+                        "Narsil\\Tables\\NarsilTablesServiceProvider"
                     ]
                 }
             },
             "autoload": {
                 "psr-4": {
-                    "Narsil\\Table\\": "src/"
+                    "Narsil\\Tables\\": "src/"
                 }
             },
             "license": [
@@ -2899,20 +2899,21 @@
                     "name": "Jonathan Rigaux"
                 }
             ],
-            "description": "Narsil table",
+            "description": "Narsil tables",
             "keywords": [
                 "inertia",
                 "laravel",
                 "narsil",
                 "php",
                 "react",
-                "table"
+                "table",
+                "tables"
             ],
             "support": {
-                "source": "https://github.com/Narsileon/narsil-table/tree/main",
-                "issues": "https://github.com/Narsileon/narsil-table/issues"
+                "source": "https://github.com/Narsileon/narsil-tables/tree/main",
+                "issues": "https://github.com/Narsileon/narsil-tables/issues"
             },
-            "time": "2024-08-28T14:28:03+00:00"
+            "time": "2024-08-29T11:12:35+00:00"
         },
         {
             "name": "narsil/tree",
@@ -2980,12 +2981,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Narsileon/narsil-ui.git",
-                "reference": "56695d8b729581ca64ff00958e204a9063deef9f"
+                "reference": "417440e69cf4733116c222f0fffb0f64d445f5b4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Narsileon/narsil-ui/zipball/56695d8b729581ca64ff00958e204a9063deef9f",
-                "reference": "56695d8b729581ca64ff00958e204a9063deef9f",
+                "url": "https://api.github.com/repos/Narsileon/narsil-ui/zipball/417440e69cf4733116c222f0fffb0f64d445f5b4",
+                "reference": "417440e69cf4733116c222f0fffb0f64d445f5b4",
                 "shasum": ""
             },
             "require": {
@@ -3033,7 +3034,7 @@
                 "source": "https://github.com/Narsileon/narsil-ui/tree/main",
                 "issues": "https://github.com/Narsileon/narsil-ui/issues"
             },
-            "time": "2024-08-28T17:12:08+00:00"
+            "time": "2024-08-30T05:20:55+00:00"
         },
         {
             "name": "nesbot/carbon",
@@ -9061,7 +9062,7 @@
         "narsil/policies": 20,
         "narsil/settings": 20,
         "narsil/storage": 20,
-        "narsil/table": 20,
+        "narsil/tables": 20,
         "narsil/tree": 20,
         "narsil/ui": 20
     },

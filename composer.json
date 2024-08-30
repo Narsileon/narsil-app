@@ -63,7 +63,7 @@
 		},
 		{
 			"type": "vcs",
-			"url": "git@github.com:Narsileon/narsil-table.git"
+			"url": "git@github.com:Narsileon/narsil-tables.git"
 		},
 		{
 			"type": "vcs",
@@ -89,7 +89,7 @@
 		"narsil/policies": "dev-main",
 		"narsil/settings": "dev-main",
 		"narsil/storage": "dev-main",
-		"narsil/table": "dev-main",
+		"narsil/tables": "dev-main",
 		"narsil/tree": "dev-main",
 		"narsil/ui": "dev-main",
 		"tightenco/ziggy": "^2.1"

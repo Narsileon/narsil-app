@@ -5,10 +5,16 @@ namespace Database\Seeders;
 #region USE
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Artisan;
 
 #endregion
 
-final class DatabaseSeeder extends Seeder
+/**
+ * @version 1.0.0
+ *
+ * @author Jonathan Rigaux
+ */
+final class PermissionSeeder extends Seeder
 {
     #region PUBLIC METHODS
 
@@ -17,11 +23,7 @@ final class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        $this->call([
-            PermissionSeeder::class,
-            RoleSeeder::class,
-            UserSeeder::class,
-        ]);
+        Artisan::call('narsil:sync-permissions');
     }
 
     #endregion

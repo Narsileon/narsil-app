@@ -25,6 +25,9 @@ import UserMenuDropdownContent from "@narsil-auth/Components/UserMenu/UserMenuDr
 import UserMenuSheetContent from "@narsil-auth/Components/UserMenu/UserMenuSheetContent";
 import UserMenuTrigger from "@narsil-auth/Components/UserMenu/UserMenuTrigger";
 import useScreenStore from "@narsil-ui/Stores/screenStore";
+import SheetHeader from "@narsil-ui/Components/Sheet/SheetHeader";
+import SheetTitle from "@narsil-ui/Components/Sheet/SheetTitle";
+import SheetDescription from "@narsil-ui/Components/Sheet/SheetDescription";
 
 interface Props {
 	children?: React.ReactNode;
@@ -149,6 +152,10 @@ const WebLayout = ({ children }: Props) => {
 					className={cn("relative w-full grow p-0", { "overflow-hidden": portalOpen })}
 				>
 					<SheetPortal container={portal.current}>
+						<SheetHeader>
+							<SheetTitle className='sr-only'>{trans("Menu")}</SheetTitle>
+							<SheetDescription className='sr-only'>{trans("Menu")}</SheetDescription>
+						</SheetHeader>
 						<UserMenuSheetContent
 							authenticated={shared.auth ? true : false}
 							registerable={shared.app.registerable}

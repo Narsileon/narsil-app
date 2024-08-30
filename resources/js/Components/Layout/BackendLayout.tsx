@@ -30,6 +30,9 @@ import ThemeController from "@narsil-ui/Components/Themes/ThemeController";
 import TooltipWrapper from "@narsil-ui/Components/Tooltip/TooltipWrapper";
 import UserMenuDropdownContent from "@narsil-auth/Components/UserMenu/UserMenuDropdownContent";
 import useScreenStore from "@narsil-ui/Stores/screenStore";
+import SheetTitle from "@narsil-ui/Components/Sheet/SheetTitle";
+import SheetHeader from "@narsil-ui/Components/Sheet/SheetHeader";
+import SheetDescription from "@narsil-ui/Components/Sheet/SheetDescription";
 
 interface Props {
 	children?: React.ReactNode;
@@ -99,9 +102,13 @@ const BackendLayout = ({ children }: Props) => {
 					<SheetPortal container={portal.current}>
 						<SheetContent
 							className='absolute inset-0 w-full p-1 sm:w-14 hover:sm:w-fit'
-							asChild={true}
 							side='left'
 						>
+							<SheetHeader>
+								<SheetTitle className='sr-only'>{trans("Menu")}</SheetTitle>
+								<SheetDescription className='sr-only'>{trans("Menu")}</SheetDescription>
+							</SheetHeader>
+
 							<aside>
 								<ScrollArea>
 									<NavigationMenu orientation='vertical'>
@@ -116,7 +123,7 @@ const BackendLayout = ({ children }: Props) => {
 													<CollapsibleContent></CollapsibleContent>
 												</Collapsible>
 											) : null}
-											<SheetClose>
+											<SheetClose asChild={true}>
 												<NavigationMenuItem
 													className={cn(navigationMenuTriggerStyle())}
 													asChild={true}

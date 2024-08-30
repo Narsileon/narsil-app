@@ -4,6 +4,7 @@ namespace App\Providers;
 
 #region USE
 
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\ServiceProvider;
 
 #endregion
@@ -23,6 +24,6 @@ final class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        Model::preventLazyLoading();
     }
 }
