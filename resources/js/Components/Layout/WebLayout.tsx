@@ -51,6 +51,12 @@ const WebLayout = ({ children }: Props) => {
 	const [showHeader, setShowHeader] = React.useState(true);
 
 	React.useEffect(() => {
+		if (!isMobile) {
+			setPortalOpen(false);
+		}
+	}, [isMobile]);
+
+	React.useEffect(() => {
 		const delta = scrolling.y - previousScrolling.y;
 
 		if (delta < -10) {
@@ -125,15 +131,17 @@ const WebLayout = ({ children }: Props) => {
 									authenticated={shared.auth ? true : false}
 									registerable={shared.app.registerable}
 								>
-									<DropdownMenuItem
-										active={route().current() === "backend.dashboards"}
-										asChild={true}
-									>
-										<Link href={route("backend.dashboard")}>
-											<ChartPie className='h-5 w-5' />
-											{trans("Dashboard")}
-										</Link>
-									</DropdownMenuItem>
+									{shared.auth ? (
+										<DropdownMenuItem
+											active={route().current() === "backend.dashboards"}
+											asChild={true}
+										>
+											<Link href={route("backend.dashboard")}>
+												<ChartPie className='h-5 w-5' />
+												{trans("Dashboard")}
+											</Link>
+										</DropdownMenuItem>
+									) : null}
 								</UserMenuDropdownContent>
 							</DropdownMenu>
 						</Container>
@@ -158,17 +166,19 @@ const WebLayout = ({ children }: Props) => {
 							registerable={shared.app.registerable}
 							onInteractOutside={(event) => event.preventDefault()}
 						>
-							<SheetClose asChild={true}>
-								<NavigationMenuItem
-									className={navigationMenuTriggerStyle()}
-									asChild={true}
-								>
-									<Link href={route("backend.dashboard")}>
-										<ChartPie className='h-5 w-5' />
-										{trans("Dashboard")}
-									</Link>
-								</NavigationMenuItem>
-							</SheetClose>
+							{shared.auth ? (
+								<SheetClose asChild={true}>
+									<NavigationMenuItem
+										className={navigationMenuTriggerStyle()}
+										asChild={true}
+									>
+										<Link href={route("backend.dashboard")}>
+											<ChartPie className='h-5 w-5' />
+											{trans("Dashboard")}
+										</Link>
+									</NavigationMenuItem>
+								</SheetClose>
+							) : null}
 						</UserMenuSheetContent>
 					</SheetPortal>
 					{children}

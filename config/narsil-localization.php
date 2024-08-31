@@ -15,6 +15,7 @@ return [
      */
     'translations' => [
         'auth::auth',
+        'auth::validation',
         'forms::validation',
     ],
 ];
