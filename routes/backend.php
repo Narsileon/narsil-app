@@ -1,11 +1,11 @@
-    <?php
+<?php
 
-    #region USE
+#region USE
 
-    use App\Http\Controllers\Backend\DashboardController;
-    use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Backend\DashboardController;
+use Illuminate\Support\Facades\Route;
 
-    #endregion
+#endregion
 
-    Route::get('/', DashboardController::class)
-        ->name('dashboard');
+Route::get('/', DashboardController::class)
+    ->name('dashboard');

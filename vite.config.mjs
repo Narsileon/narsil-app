@@ -18,7 +18,7 @@ export default defineConfig({
 			"@narsil-forms": path.join(__dirname, "/vendor/narsil/forms/resources/js"),
 			"@narsil-localization": path.join(__dirname, "/vendor/narsil/localization/resources/js"),
 			"@narsil-menus": path.join(__dirname, "/vendor/narsil/menus/resources/js"),
-			"@narsil-table": path.join(__dirname, "/vendor/narsil/table/resources/js"),
+			"@narsil-tables": path.join(__dirname, "/vendor/narsil/tables/resources/js"),
 			"@narsil-ui": path.join(__dirname, "/vendor/narsil/ui/resources/js"),
 			vendor: path.join(__dirname, "/vendor"),
 		},

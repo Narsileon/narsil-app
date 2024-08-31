@@ -68,7 +68,7 @@ final class UserSeeder extends Seeder
             BaseUser::PASSWORD => '123456789',
         ]);
 
-        $user->syncRoles('super_admin');
+        $user->syncRoles('super-admin');
     }
 
     #endregion
