@@ -16,6 +16,8 @@ return [
     'translations' => [
         'auth::auth',
         'auth::validation',
+        'contacts::validation',
         'forms::validation',
+        'tables::messages',
     ],
 ];
