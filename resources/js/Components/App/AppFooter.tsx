@@ -37,7 +37,7 @@ const AppFooter = React.forwardRef<HTMLDivElement, AppFooterProps>(({ ...props }
 						<Globe />
 					</AppLanguage>
 					<NavigationMenu className='place-self-start lg:place-self-end'>
-						<NavigationMenuList className='flex flex-wrap gap-4'>
+						<NavigationMenuList className='flex flex-wrap space-x-4'>
 							<NavigationMenuItem>
 								<Button
 									asChild={true}

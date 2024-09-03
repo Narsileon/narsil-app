@@ -2,7 +2,6 @@
 
 #region USE
 
-use Illuminate\Auth\Events\Login;
 use Narsil\Auth\Models\LoginLog;
 use Narsil\Legals\Models\Imprint;
 use Narsil\Legals\Models\PrivacyNotice;
@@ -17,6 +16,19 @@ use Narsil\Storage\Models\Image;
 #endregion
 
 return [
+    /*
+    |--------------------------------------------------------------------------
+    | Provider
+    |--------------------------------------------------------------------------
+    |
+    | Provider settings.
+    |
+    */
+
+    'provider' => [
+        'routes' => true,
+    ],
+
     /*
     |--------------------------------------------------------------------------
     | DataTableCollections

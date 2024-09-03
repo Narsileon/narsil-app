@@ -85,7 +85,7 @@ const BackendLayout = ({ children }: Props) => {
 								>
 									<Button size='icon'>
 										<Avatar>
-											<AvatarFallback className='text-primary'>JR</AvatarFallback>
+											<AvatarFallback className='bg-white text-primary'>JR</AvatarFallback>
 										</Avatar>
 									</Button>
 								</DropdownMenuTrigger>

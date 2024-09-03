@@ -1232,16 +1232,16 @@
         },
         {
             "name": "laravel/fortify",
-            "version": "v1.24.0",
+            "version": "v1.24.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/fortify.git",
-                "reference": "fbe67f018c1fe26d00913de56a6d60589b4be9b2"
+                "reference": "8158ba0960bb5f4aae509d01d74a95e16e30de20"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/fortify/zipball/fbe67f018c1fe26d00913de56a6d60589b4be9b2",
-                "reference": "fbe67f018c1fe26d00913de56a6d60589b4be9b2",
+                "url": "https://api.github.com/repos/laravel/fortify/zipball/8158ba0960bb5f4aae509d01d74a95e16e30de20",
+                "reference": "8158ba0960bb5f4aae509d01d74a95e16e30de20",
                 "shasum": ""
             },
             "require": {
@@ -1293,20 +1293,20 @@
                 "issues": "https://github.com/laravel/fortify/issues",
                 "source": "https://github.com/laravel/fortify"
             },
-            "time": "2024-08-20T14:43:56+00:00"
+            "time": "2024-09-03T10:02:14+00:00"
         },
         {
             "name": "laravel/framework",
-            "version": "v11.21.0",
+            "version": "v11.22.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "9d9d36708d56665b12185493f684abce38ad2d30"
+                "reference": "868c75beacc47d0f361b919bbc155c0b619bf3d5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/9d9d36708d56665b12185493f684abce38ad2d30",
-                "reference": "9d9d36708d56665b12185493f684abce38ad2d30",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/868c75beacc47d0f361b919bbc155c0b619bf3d5",
+                "reference": "868c75beacc47d0f361b919bbc155c0b619bf3d5",
                 "shasum": ""
             },
             "require": {
@@ -1499,7 +1499,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2024-08-20T15:00:52+00:00"
+            "time": "2024-09-03T15:27:15+00:00"
         },
         {
             "name": "laravel/prompts",
@@ -2359,12 +2359,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Narsileon/narsil-forms.git",
-                "reference": "8ee211cf4443fbd0cc1452fbdcb56d2cadbc2f33"
+                "reference": "6e30826afc0b61b479650d64121373d771eceba1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Narsileon/narsil-forms/zipball/8ee211cf4443fbd0cc1452fbdcb56d2cadbc2f33",
-                "reference": "8ee211cf4443fbd0cc1452fbdcb56d2cadbc2f33",
+                "url": "https://api.github.com/repos/Narsileon/narsil-forms/zipball/6e30826afc0b61b479650d64121373d771eceba1",
+                "reference": "6e30826afc0b61b479650d64121373d771eceba1",
                 "shasum": ""
             },
             "require": {
@@ -2414,7 +2414,7 @@
                 "source": "https://github.com/Narsileon/narsil-forms/tree/main",
                 "issues": "https://github.com/Narsileon/narsil-forms/issues"
             },
-            "time": "2024-08-31T15:55:36+00:00"
+            "time": "2024-09-01T16:07:31+00:00"
         },
         {
             "name": "narsil/legals",
@@ -2487,12 +2487,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Narsileon/narsil-localization.git",
-                "reference": "53cfe45bb1d868db85784e5f474e6261f5c5575e"
+                "reference": "bcef1024617be55b930bebbe3e53fedc56357245"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Narsileon/narsil-localization/zipball/53cfe45bb1d868db85784e5f474e6261f5c5575e",
-                "reference": "53cfe45bb1d868db85784e5f474e6261f5c5575e",
+                "url": "https://api.github.com/repos/Narsileon/narsil-localization/zipball/bcef1024617be55b930bebbe3e53fedc56357245",
+                "reference": "bcef1024617be55b930bebbe3e53fedc56357245",
                 "shasum": ""
             },
             "require": {
@@ -2542,7 +2542,7 @@
                 "source": "https://github.com/Narsileon/narsil-localization/tree/main",
                 "issues": "https://github.com/Narsileon/narsil-localization/issues"
             },
-            "time": "2024-08-31T10:23:21+00:00"
+            "time": "2024-09-01T15:01:30+00:00"
         },
         {
             "name": "narsil/mails",
@@ -2678,12 +2678,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Narsileon/narsil-policies.git",
-                "reference": "366af11eefa1bbdce5b4c69974e3f68b3f9170ec"
+                "reference": "d5c30b74540ce1f61bd4f0d603eeb89c4c835c3f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Narsileon/narsil-policies/zipball/366af11eefa1bbdce5b4c69974e3f68b3f9170ec",
-                "reference": "366af11eefa1bbdce5b4c69974e3f68b3f9170ec",
+                "url": "https://api.github.com/repos/Narsileon/narsil-policies/zipball/d5c30b74540ce1f61bd4f0d603eeb89c4c835c3f",
+                "reference": "d5c30b74540ce1f61bd4f0d603eeb89c4c835c3f",
                 "shasum": ""
             },
             "require": {
@@ -2731,7 +2731,7 @@
                 "source": "https://github.com/Narsileon/narsil-policies/tree/main",
                 "issues": "https://github.com/Narsileon/narsil-policies/issues"
             },
-            "time": "2024-08-31T21:12:57+00:00"
+            "time": "2024-09-01T11:41:43+00:00"
         },
         {
             "name": "narsil/settings",
@@ -2739,22 +2739,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Narsileon/narsil-settings.git",
-                "reference": "caa948d15bd3adc7bce5cd26fe5c8f086b1daef2"
+                "reference": "3b6ea6a6eee2af06c15e11399dc3c9bee618108b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Narsileon/narsil-settings/zipball/caa948d15bd3adc7bce5cd26fe5c8f086b1daef2",
-                "reference": "caa948d15bd3adc7bce5cd26fe5c8f086b1daef2",
+                "url": "https://api.github.com/repos/Narsileon/narsil-settings/zipball/3b6ea6a6eee2af06c15e11399dc3c9bee618108b",
+                "reference": "3b6ea6a6eee2af06c15e11399dc3c9bee618108b",
                 "shasum": ""
             },
             "require": {
-                "inertiajs/inertia-laravel": "^1.0",
-                "laravel/fortify": "^1.21",
                 "laravel/framework": "^11.3",
-                "mobiledetect/mobiledetectlib": "^4.8",
-                "narsil/forms": "dev-main",
-                "narsil/localization": "dev-main",
-                "narsil/menus": "dev-main",
                 "narsil/policies": "dev-main",
                 "php": "^8.2"
             },
@@ -2796,7 +2790,7 @@
                 "source": "https://github.com/Narsileon/narsil-settings/tree/main",
                 "issues": "https://github.com/Narsileon/narsil-settings/issues"
             },
-            "time": "2024-08-20T03:58:48+00:00"
+            "time": "2024-09-01T07:36:48+00:00"
         },
         {
             "name": "narsil/storage",
@@ -2804,16 +2798,17 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Narsileon/narsil-storage.git",
-                "reference": "7fe6607e03cc57470cd6ffe5fe48ca19bc27e306"
+                "reference": "67e8634a716019a30d8788190017841b0ed77b1b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Narsileon/narsil-storage/zipball/7fe6607e03cc57470cd6ffe5fe48ca19bc27e306",
-                "reference": "7fe6607e03cc57470cd6ffe5fe48ca19bc27e306",
+                "url": "https://api.github.com/repos/Narsileon/narsil-storage/zipball/67e8634a716019a30d8788190017841b0ed77b1b",
+                "reference": "67e8634a716019a30d8788190017841b0ed77b1b",
                 "shasum": ""
             },
             "require": {
                 "laravel/framework": "^11.3",
+                "narsil/forms": "dev-main",
                 "php": "^8.2"
             },
             "require-dev": {
@@ -2854,7 +2849,7 @@
                 "source": "https://github.com/Narsileon/narsil-storage/tree/main",
                 "issues": "https://github.com/Narsileon/narsil-storage/issues"
             },
-            "time": "2024-08-28T16:21:14+00:00"
+            "time": "2024-09-01T13:28:49+00:00"
         },
         {
             "name": "narsil/tables",
@@ -2862,12 +2857,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Narsileon/narsil-tables.git",
-                "reference": "673af689d5d53c5dfa266cf72a422831b79d4e63"
+                "reference": "3f896befc2fd5b4d2763bd09897ef8397d32809e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Narsileon/narsil-tables/zipball/673af689d5d53c5dfa266cf72a422831b79d4e63",
-                "reference": "673af689d5d53c5dfa266cf72a422831b79d4e63",
+                "url": "https://api.github.com/repos/Narsileon/narsil-tables/zipball/3f896befc2fd5b4d2763bd09897ef8397d32809e",
+                "reference": "3f896befc2fd5b4d2763bd09897ef8397d32809e",
                 "shasum": ""
             },
             "require": {
@@ -2916,7 +2911,7 @@
                 "source": "https://github.com/Narsileon/narsil-tables/tree/main",
                 "issues": "https://github.com/Narsileon/narsil-tables/issues"
             },
-            "time": "2024-08-31T21:13:23+00:00"
+            "time": "2024-09-03T10:15:55+00:00"
         },
         {
             "name": "narsil/tree",
@@ -2984,12 +2979,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Narsileon/narsil-ui.git",
-                "reference": "5aeb57af7410a987d8902a89e7485a0704a20a42"
+                "reference": "0753a67bf5c58578ceb055d3fc20ac15d8299c4c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Narsileon/narsil-ui/zipball/5aeb57af7410a987d8902a89e7485a0704a20a42",
-                "reference": "5aeb57af7410a987d8902a89e7485a0704a20a42",
+                "url": "https://api.github.com/repos/Narsileon/narsil-ui/zipball/0753a67bf5c58578ceb055d3fc20ac15d8299c4c",
+                "reference": "0753a67bf5c58578ceb055d3fc20ac15d8299c4c",
                 "shasum": ""
             },
             "require": {
@@ -3037,7 +3032,7 @@
                 "source": "https://github.com/Narsileon/narsil-ui/tree/main",
                 "issues": "https://github.com/Narsileon/narsil-ui/issues"
             },
-            "time": "2024-08-31T20:04:19+00:00"
+            "time": "2024-09-03T17:07:27+00:00"
         },
         {
             "name": "nesbot/carbon",
@@ -7040,16 +7035,16 @@
         },
         {
             "name": "laravel/pint",
-            "version": "v1.17.2",
+            "version": "v1.17.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/pint.git",
-                "reference": "e8a88130a25e3f9d4d5785e6a1afca98268ab110"
+                "reference": "9d77be916e145864f10788bb94531d03e1f7b482"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/pint/zipball/e8a88130a25e3f9d4d5785e6a1afca98268ab110",
-                "reference": "e8a88130a25e3f9d4d5785e6a1afca98268ab110",
+                "url": "https://api.github.com/repos/laravel/pint/zipball/9d77be916e145864f10788bb94531d03e1f7b482",
+                "reference": "9d77be916e145864f10788bb94531d03e1f7b482",
                 "shasum": ""
             },
             "require": {
@@ -7060,13 +7055,13 @@
                 "php": "^8.1.0"
             },
             "require-dev": {
-                "friendsofphp/php-cs-fixer": "^3.61.1",
-                "illuminate/view": "^10.48.18",
+                "friendsofphp/php-cs-fixer": "^3.64.0",
+                "illuminate/view": "^10.48.20",
                 "larastan/larastan": "^2.9.8",
                 "laravel-zero/framework": "^10.4.0",
                 "mockery/mockery": "^1.6.12",
                 "nunomaduro/termwind": "^1.15.1",
-                "pestphp/pest": "^2.35.0"
+                "pestphp/pest": "^2.35.1"
             },
             "bin": [
                 "builds/pint"
@@ -7102,20 +7097,20 @@
                 "issues": "https://github.com/laravel/pint/issues",
                 "source": "https://github.com/laravel/pint"
             },
-            "time": "2024-08-06T15:11:54+00:00"
+            "time": "2024-09-03T15:00:28+00:00"
         },
         {
             "name": "laravel/sail",
-            "version": "v1.31.1",
+            "version": "v1.31.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/sail.git",
-                "reference": "3d06dd18cee8059baa7b388af00ba47f6d96bd85"
+                "reference": "b4af38e1ab16fe7aa729eddf5b810229f42d2ad3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/sail/zipball/3d06dd18cee8059baa7b388af00ba47f6d96bd85",
-                "reference": "3d06dd18cee8059baa7b388af00ba47f6d96bd85",
+                "url": "https://api.github.com/repos/laravel/sail/zipball/b4af38e1ab16fe7aa729eddf5b810229f42d2ad3",
+                "reference": "b4af38e1ab16fe7aa729eddf5b810229f42d2ad3",
                 "shasum": ""
             },
             "require": {
@@ -7165,7 +7160,7 @@
                 "issues": "https://github.com/laravel/sail/issues",
                 "source": "https://github.com/laravel/sail"
             },
-            "time": "2024-08-02T07:45:47+00:00"
+            "time": "2024-09-03T13:44:23+00:00"
         },
         {
             "name": "mockery/mockery",
@@ -7908,16 +7903,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "11.3.1",
+            "version": "11.3.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "fe179875ef0c14e90b75617002767eae0a742641"
+                "reference": "8a4de85cc4a78c59dd31cc4ef454b0029f8440dc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/fe179875ef0c14e90b75617002767eae0a742641",
-                "reference": "fe179875ef0c14e90b75617002767eae0a742641",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/8a4de85cc4a78c59dd31cc4ef454b0029f8440dc",
+                "reference": "8a4de85cc4a78c59dd31cc4ef454b0029f8440dc",
                 "shasum": ""
             },
             "require": {
@@ -7931,8 +7926,8 @@
                 "phar-io/manifest": "^2.0.4",
                 "phar-io/version": "^3.2.1",
                 "php": ">=8.2",
-                "phpunit/php-code-coverage": "^11.0.5",
-                "phpunit/php-file-iterator": "^5.0.1",
+                "phpunit/php-code-coverage": "^11.0.6",
+                "phpunit/php-file-iterator": "^5.1.0",
                 "phpunit/php-invoker": "^5.0.1",
                 "phpunit/php-text-template": "^4.0.1",
                 "phpunit/php-timer": "^7.0.1",
@@ -7988,7 +7983,7 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
                 "security": "https://github.com/sebastianbergmann/phpunit/security/policy",
-                "source": "https://github.com/sebastianbergmann/phpunit/tree/11.3.1"
+                "source": "https://github.com/sebastianbergmann/phpunit/tree/11.3.2"
             },
             "funding": [
                 {
@@ -8004,7 +7999,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-08-13T06:14:23+00:00"
+            "time": "2024-09-03T12:00:26+00:00"
         },
         {
             "name": "sebastian/cli-parser",
