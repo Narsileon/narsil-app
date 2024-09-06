@@ -3,8 +3,14 @@
 #region USE
 
 use Narsil\Auth\Models\LoginLog;
+use Narsil\Legals\Http\Resources\ImprintDataTableCollection;
+use Narsil\Legals\Http\Resources\ImprintShowTableResource;
+use Narsil\Legals\Http\Resources\PrivacyNoticeDataTableCollection;
+use Narsil\Legals\Http\Resources\PrivacyNoticeShowTableResource;
 use Narsil\Legals\Models\Imprint;
 use Narsil\Legals\Models\PrivacyNotice;
+use Narsil\Localization\Http\Resources\TranslationDataTableCollection;
+use Narsil\Localization\Http\Resources\TranslationShowTableResource;
 use Narsil\Localization\Models\Language;
 use Narsil\Localization\Models\Translation;
 use Narsil\Menus\Models\Menu;
@@ -38,7 +44,11 @@ return [
     |
     */
 
-    'collections' => [],
+    'collections' => [
+        Imprint::class => ImprintDataTableCollection::class,
+        PrivacyNotice::class => PrivacyNoticeDataTableCollection::class,
+        Translation::class => TranslationDataTableCollection::class,
+    ],
 
     /*
     |--------------------------------------------------------------------------
@@ -49,7 +59,11 @@ return [
     |
     */
 
-    'resources' => [],
+    'resources' => [
+        Imprint::class => ImprintShowTableResource::class,
+        PrivacyNotice::class => PrivacyNoticeShowTableResource::class,
+        Translation::class => TranslationShowTableResource::class,
+    ],
 
     /*
     |--------------------------------------------------------------------------
