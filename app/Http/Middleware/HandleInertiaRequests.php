@@ -12,7 +12,6 @@ use Narsil\Auth\Models\User;
 use Narsil\Menus\Enums\MenuEnum;
 use Narsil\Menus\Models\Menu;
 use Narsil\Menus\Services\BreadcrumbService;
-use Narsil\Pages\Models\Page;
 use Narsil\Pages\Models\PageContent;
 use Narsil\Policies\Interfaces\IHasPermissions;
 use Narsil\Policies\Models\Permission;
