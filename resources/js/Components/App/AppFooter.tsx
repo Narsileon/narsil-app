@@ -28,9 +28,9 @@ const AppFooter = React.forwardRef<HTMLDivElement, AppFooterProps>(({ ...props }
 				<Container className='grid grid-cols-1 lg:grid-cols-2'>
 					<AppLanguage
 						className='place-self-start self-center bg-transparent hover:bg-transparent'
-						languages={shared.localization.languages}
-						format='long'
 						chevron={true}
+						languages={shared.localization.languages}
+						short={false}
 						size='default'
 						variant='link'
 					>

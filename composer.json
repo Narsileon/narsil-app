@@ -51,6 +51,10 @@
 		},
 		{
 			"type": "vcs",
+			"url": "git@github.com:Narsileon/narsil-pages.git"
+		},
+		{
+			"type": "vcs",
 			"url": "git@github.com:Narsileon/narsil-policies.git"
 		},
 		{
@@ -86,6 +90,7 @@
 		"narsil/localization": "dev-main",
 		"narsil/mails": "dev-main",
 		"narsil/menus": "dev-main",
+		"narsil/pages": "dev-main",
 		"narsil/policies": "dev-main",
 		"narsil/settings": "dev-main",
 		"narsil/storage": "dev-main",

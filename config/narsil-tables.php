@@ -13,6 +13,8 @@ use Narsil\Localization\Http\Resources\TranslationDataTableCollection;
 use Narsil\Localization\Http\Resources\TranslationShowTableResource;
 use Narsil\Localization\Models\Language;
 use Narsil\Localization\Models\Translation;
+use Narsil\Menus\Http\Resources\MenuNodeDataTableCollection;
+use Narsil\Menus\Http\Resources\MenuNodeShowTableResource;
 use Narsil\Menus\Models\Menu;
 use Narsil\Menus\Models\MenuNode;
 use Narsil\Policies\Models\Role;
@@ -46,6 +48,7 @@ return [
 
     'collections' => [
         Imprint::class => ImprintDataTableCollection::class,
+        MenuNode::class => MenuNodeDataTableCollection::class,
         PrivacyNotice::class => PrivacyNoticeDataTableCollection::class,
         Translation::class => TranslationDataTableCollection::class,
     ],
@@ -61,6 +64,7 @@ return [
 
     'resources' => [
         Imprint::class => ImprintShowTableResource::class,
+        MenuNode::class => MenuNodeShowTableResource::class,
         PrivacyNotice::class => PrivacyNoticeShowTableResource::class,
         Translation::class => TranslationShowTableResource::class,
     ],

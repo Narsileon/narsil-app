@@ -1,3 +1,4 @@
+import { useTranslationsStore } from "@narsil-localization/Stores/translationStore";
 import Image from "@narsil-ui/Components/Image/Image";
 import ScrollArea from "@narsil-ui/Components/ScrollArea/ScrollArea";
 import Section from "@narsil-ui/Components/Section/Section";
@@ -8,6 +9,8 @@ interface Props {
 }
 
 const SessionLayout = ({ children }: Props) => {
+	const { trans } = useTranslationsStore();
+
 	return (
 		<WebLayout>
 			<div className='flex h-fit w-full'>
@@ -15,6 +18,7 @@ const SessionLayout = ({ children }: Props) => {
 					<Image
 						className='h-full w-full border-none object-contain object-center'
 						src='https://placehold.co/600x600?text=Hello+World'
+						alt={trans("validation.attributes.background")}
 					/>
 				</Section>
 				<ScrollArea className='h-fit w-full lg:w-6/12 xl:w-4/12'>{children}</ScrollArea>

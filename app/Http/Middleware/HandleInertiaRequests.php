@@ -12,6 +12,8 @@ use Narsil\Auth\Models\User;
 use Narsil\Menus\Enums\MenuEnum;
 use Narsil\Menus\Models\Menu;
 use Narsil\Menus\Services\BreadcrumbService;
+use Narsil\Pages\Models\Page;
+use Narsil\Pages\Models\PageContent;
 use Narsil\Policies\Interfaces\IHasPermissions;
 use Narsil\Policies\Models\Permission;
 use Narsil\Settings\Models\Setting;
@@ -30,13 +32,25 @@ final class HandleInertiaRequests extends BaseHandleInertiaRequests
      */
     protected function getApp(): array
     {
-        return [
-            AppSettings::FAVICON => Setting::get(AppSettings::FAVICON),
-            AppSettings::LOGO => Setting::get(AppSettings::LOGO),
-            AppSettings::NAME => Setting::get(AppSettings::NAME, 'Narsil'),
-            AppSettings::VERSION => Setting::get(AppSettings::VERSION, '1.0.0'),
-            AuthSettings::REGISTERABLE => Setting::get(AuthSettings::REGISTERABLE, true),
+        $favicon = Setting::get(AppSettings::FAVICON);
+        $logo = Setting::get(AppSettings::LOGO);
+        $name = Setting::get(AppSettings::NAME, 'Narsil');
+        $version = Setting::get(AppSettings::VERSION, '1.0.0');
+        $registerable = Setting::get(AuthSettings::REGISTERABLE, true);
+
+        $page = [
+            PageContent::DESCRIPTION => null,
+            PageContent::TITLE => null,
         ];
+
+        return compact(
+            'favicon',
+            'logo',
+            'name',
+            'page',
+            'version',
+            'registerable',
+        );
     }
 
     /**
