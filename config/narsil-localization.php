@@ -30,6 +30,7 @@ return [
         'auth::validation',
         'contacts::validation',
         'forms::validation',
+        'localization::locales',
         'menus::validation',
         'tables::messages',
     ],
