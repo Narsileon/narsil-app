@@ -7,6 +7,7 @@ use Narsil\Legals\Http\Menus\LegalsMenu;
 use Narsil\Localization\Http\Menus\LocalizationMenu;
 use Narsil\Menus\Http\Menus\MenusMenu;
 use Narsil\Policies\Http\Menus\PoliciesMenu;
+use Narsil\Tables\Http\Menus\TableMenu;
 
 #endregion
 
@@ -26,5 +27,6 @@ return [
         LocalizationMenu::class,
         MenusMenu::class,
         PoliciesMenu::class,
+        TableMenu::class,
     ],
 ];

@@ -20,6 +20,7 @@ use Narsil\Menus\Models\MenuNode;
 use Narsil\Policies\Models\Role;
 use Narsil\Storage\Models\Icon;
 use Narsil\Storage\Models\Image;
+use Narsil\Tables\Models\ModelComment;
 
 #endregion
 
@@ -86,6 +87,7 @@ return [
         LoginLog::TABLE => LoginLog::class,
         Menu::TABLE => Menu::class,
         MenuNode::TABLE => MenuNode::class,
+        ModelComment::TABLE => ModelComment::class,
         PrivacyNotice::TABLE => PrivacyNotice::class,
         Role::TABLE => Role::class,
         Translation::TABLE => Translation::class,
