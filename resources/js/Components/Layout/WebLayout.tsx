@@ -136,10 +136,13 @@ const WebLayout = ({ children }: Props) => {
 											active={route().current() === "backend.dashboards"}
 											asChild={true}
 										>
-											<Link href={route("backend.dashboard")}>
+											<a
+												href={route("backend.dashboard")}
+												target='_blank'
+											>
 												<ChartPie className='h-5 w-5' />
 												{trans("Dashboard")}
-											</Link>
+											</a>
 										</DropdownMenuItem>
 									) : null}
 								</UserMenuDropdownContent>
@@ -172,10 +175,13 @@ const WebLayout = ({ children }: Props) => {
 										className={navigationMenuTriggerStyle()}
 										asChild={true}
 									>
-										<Link href={route("backend.dashboard")}>
+										<a
+											href={route("backend.dashboard")}
+											target='_blank'
+										>
 											<ChartPie className='h-5 w-5' />
 											{trans("Dashboard")}
-										</Link>
+										</a>
 									</NavigationMenuItem>
 								</SheetClose>
 							) : null}

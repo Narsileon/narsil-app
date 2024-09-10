@@ -1,7 +1,7 @@
 import { cn } from "@narsil-ui/Components";
 import { GlobalProps } from "@/Types";
+import { Home, Menu, PieChart, Star, X } from "lucide-react";
 import { Link, usePage } from "@inertiajs/react";
-import { Menu, PieChart, Star, X } from "lucide-react";
 import { navigationMenuTriggerStyle } from "@narsil-ui/Components/NavigationMenu/NavigationMenuTrigger";
 import { useTranslationsStore } from "@narsil-localization/Stores/translationStore";
 import AppLanguage from "@narsil-localization/Components/App/AppLanguage";
@@ -12,6 +12,7 @@ import Collapsible from "@narsil-ui/Components/Collapsible/Collapsible";
 import CollapsibleContent from "@narsil-ui/Components/Collapsible/CollapsibleContent";
 import CollapsibleTrigger from "@narsil-ui/Components/Collapsible/CollapsibleTrigger";
 import DropdownMenu from "@narsil-ui/Components/DropdownMenu/DropdownMenu";
+import DropdownMenuItem from "@narsil-ui/Components/DropdownMenu/DropdownMenuItem";
 import DropdownMenuTrigger from "@narsil-ui/Components/DropdownMenu/DropdownMenuTrigger";
 import Layout from "@narsil-ui/Components/Layout/Layout";
 import NavigationMenu from "@narsil-ui/Components/NavigationMenu/NavigationMenu";
@@ -24,15 +25,15 @@ import ScrollArea from "@narsil-ui/Components/ScrollArea/ScrollArea";
 import Sheet from "@narsil-ui/Components/Sheet/Sheet";
 import SheetClose from "@narsil-ui/Components/Sheet/SheetClose";
 import SheetContent from "@narsil-ui/Components/Sheet/SheetContent";
+import SheetDescription from "@narsil-ui/Components/Sheet/SheetDescription";
+import SheetHeader from "@narsil-ui/Components/Sheet/SheetHeader";
 import SheetPortal from "@narsil-ui/Components/Sheet/SheetPortal";
+import SheetTitle from "@narsil-ui/Components/Sheet/SheetTitle";
 import SheetTrigger from "@narsil-ui/Components/Sheet/SheetTrigger";
 import ThemeController from "@narsil-ui/Components/Themes/ThemeController";
 import TooltipWrapper from "@narsil-ui/Components/Tooltip/TooltipWrapper";
 import UserMenuDropdownContent from "@narsil-auth/Components/UserMenu/UserMenuDropdownContent";
 import useScreenStore from "@narsil-ui/Stores/screenStore";
-import SheetTitle from "@narsil-ui/Components/Sheet/SheetTitle";
-import SheetHeader from "@narsil-ui/Components/Sheet/SheetHeader";
-import SheetDescription from "@narsil-ui/Components/Sheet/SheetDescription";
 
 interface Props {
 	children?: React.ReactNode;
@@ -67,7 +68,7 @@ const BackendLayout = ({ children }: Props) => {
 						<div className='flex items-center place-self-start self-center'>
 							<Link
 								className='flex items-center gap-2 text-2xl font-bold'
-								href={route("home")}
+								href={route("backend.dashboard")}
 							>
 								NARSIL
 							</Link>
@@ -93,7 +94,17 @@ const BackendLayout = ({ children }: Props) => {
 									</Button>
 								</DropdownMenuTrigger>
 							</TooltipWrapper>
-							<UserMenuDropdownContent authenticated={true} />
+							<UserMenuDropdownContent authenticated={true}>
+								<DropdownMenuItem asChild={true}>
+									<a
+										href={route("home")}
+										target='_blank'
+									>
+										<Home className='h-5 w-5' />
+										{trans("Website")}
+									</a>
+								</DropdownMenuItem>
+							</UserMenuDropdownContent>
 						</DropdownMenu>
 					</div>
 				</header>
