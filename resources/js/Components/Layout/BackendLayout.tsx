@@ -85,7 +85,10 @@ const BackendLayout = ({ children }: Props) => {
 								>
 									<Button size='icon'>
 										<Avatar>
-											<AvatarFallback className='bg-white text-primary'>JR</AvatarFallback>
+											<AvatarFallback className='bg-white text-primary'>
+												{shared.auth.first_name?.charAt(0)}
+												{shared.auth.last_name?.charAt(0)}
+											</AvatarFallback>
 										</Avatar>
 									</Button>
 								</DropdownMenuTrigger>

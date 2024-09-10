@@ -2167,12 +2167,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Narsileon/narsil-auth.git",
-                "reference": "d4e518e3d161f7b1f4491999e4f717665b2a6c2c"
+                "reference": "a47cd720300879c7667a2bcd6f35d30a7c96e7a7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Narsileon/narsil-auth/zipball/d4e518e3d161f7b1f4491999e4f717665b2a6c2c",
-                "reference": "d4e518e3d161f7b1f4491999e4f717665b2a6c2c",
+                "url": "https://api.github.com/repos/Narsileon/narsil-auth/zipball/a47cd720300879c7667a2bcd6f35d30a7c96e7a7",
+                "reference": "a47cd720300879c7667a2bcd6f35d30a7c96e7a7",
                 "shasum": ""
             },
             "require": {
@@ -2226,7 +2226,7 @@
                 "source": "https://github.com/Narsileon/narsil-auth/tree/main",
                 "issues": "https://github.com/Narsileon/narsil-auth/issues"
             },
-            "time": "2024-09-07T19:19:14+00:00"
+            "time": "2024-09-10T05:34:14+00:00"
         },
         {
             "name": "narsil/calendar",
@@ -2234,12 +2234,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Narsileon/narsil-calendar.git",
-                "reference": "baddee6d62d5b3359595d05d9d182c9e230137f0"
+                "reference": "c3c5fb2528cf99a1a7420039c16ce403e5ca4891"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Narsileon/narsil-calendar/zipball/baddee6d62d5b3359595d05d9d182c9e230137f0",
-                "reference": "baddee6d62d5b3359595d05d9d182c9e230137f0",
+                "url": "https://api.github.com/repos/Narsileon/narsil-calendar/zipball/c3c5fb2528cf99a1a7420039c16ce403e5ca4891",
+                "reference": "c3c5fb2528cf99a1a7420039c16ce403e5ca4891",
                 "shasum": ""
             },
             "require": {
@@ -2286,7 +2286,7 @@
                 "source": "https://github.com/Narsileon/narsil-calendar/tree/main",
                 "issues": "https://github.com/Narsileon/narsil-calendar/issues"
             },
-            "time": "2024-08-18T11:56:11+00:00"
+            "time": "2024-09-09T08:20:00+00:00"
         },
         {
             "name": "narsil/contacts",
@@ -2294,12 +2294,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Narsileon/narsil-contacts.git",
-                "reference": "7855d074ffef63bfbdf73bee410608ebcfefc83e"
+                "reference": "5518894bc85f6f6cfe388dc0df912e1b0e26c2ef"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Narsileon/narsil-contacts/zipball/7855d074ffef63bfbdf73bee410608ebcfefc83e",
-                "reference": "7855d074ffef63bfbdf73bee410608ebcfefc83e",
+                "url": "https://api.github.com/repos/Narsileon/narsil-contacts/zipball/5518894bc85f6f6cfe388dc0df912e1b0e26c2ef",
+                "reference": "5518894bc85f6f6cfe388dc0df912e1b0e26c2ef",
                 "shasum": ""
             },
             "require": {
@@ -2351,7 +2351,7 @@
                 "source": "https://github.com/Narsileon/narsil-contacts/tree/main",
                 "issues": "https://github.com/Narsileon/narsil-contacts/issues"
             },
-            "time": "2024-08-31T19:10:46+00:00"
+            "time": "2024-09-09T09:23:48+00:00"
         },
         {
             "name": "narsil/forms",
@@ -2359,12 +2359,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Narsileon/narsil-forms.git",
-                "reference": "54dfdafa722f2f56597a59677533c72803b9510c"
+                "reference": "6a5a9f70d2ba0a282490da78aaa89df8b848c732"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Narsileon/narsil-forms/zipball/54dfdafa722f2f56597a59677533c72803b9510c",
-                "reference": "54dfdafa722f2f56597a59677533c72803b9510c",
+                "url": "https://api.github.com/repos/Narsileon/narsil-forms/zipball/6a5a9f70d2ba0a282490da78aaa89df8b848c732",
+                "reference": "6a5a9f70d2ba0a282490da78aaa89df8b848c732",
                 "shasum": ""
             },
             "require": {
@@ -2414,7 +2414,7 @@
                 "source": "https://github.com/Narsileon/narsil-forms/tree/main",
                 "issues": "https://github.com/Narsileon/narsil-forms/issues"
             },
-            "time": "2024-09-08T13:03:43+00:00"
+            "time": "2024-09-10T06:19:12+00:00"
         },
         {
             "name": "narsil/legals",
@@ -2422,12 +2422,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Narsileon/narsil-legals.git",
-                "reference": "20b4081f33b13030ef6e70b0570d92694fe3dd99"
+                "reference": "53e82f383cd653be5834bb8bda3a924b15e773ca"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Narsileon/narsil-legals/zipball/20b4081f33b13030ef6e70b0570d92694fe3dd99",
-                "reference": "20b4081f33b13030ef6e70b0570d92694fe3dd99",
+                "url": "https://api.github.com/repos/Narsileon/narsil-legals/zipball/53e82f383cd653be5834bb8bda3a924b15e773ca",
+                "reference": "53e82f383cd653be5834bb8bda3a924b15e773ca",
                 "shasum": ""
             },
             "require": {
@@ -2479,7 +2479,7 @@
                 "source": "https://github.com/Narsileon/narsil-legals/tree/main",
                 "issues": "https://github.com/Narsileon/narsil-legals/issues"
             },
-            "time": "2024-09-07T14:46:11+00:00"
+            "time": "2024-09-10T05:06:41+00:00"
         },
         {
             "name": "narsil/localization",
@@ -2487,12 +2487,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Narsileon/narsil-localization.git",
-                "reference": "9ff4cda8f2f653bb03a972ecc086c3bddb8b078f"
+                "reference": "b707c42ef8603fa79bf46cccbd3e6091c339c479"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Narsileon/narsil-localization/zipball/9ff4cda8f2f653bb03a972ecc086c3bddb8b078f",
-                "reference": "9ff4cda8f2f653bb03a972ecc086c3bddb8b078f",
+                "url": "https://api.github.com/repos/Narsileon/narsil-localization/zipball/b707c42ef8603fa79bf46cccbd3e6091c339c479",
+                "reference": "b707c42ef8603fa79bf46cccbd3e6091c339c479",
                 "shasum": ""
             },
             "require": {
@@ -2542,7 +2542,7 @@
                 "source": "https://github.com/Narsileon/narsil-localization/tree/main",
                 "issues": "https://github.com/Narsileon/narsil-localization/issues"
             },
-            "time": "2024-09-08T11:17:47+00:00"
+            "time": "2024-09-09T08:24:53+00:00"
         },
         {
             "name": "narsil/mails",
@@ -2550,12 +2550,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Narsileon/narsil-mails.git",
-                "reference": "286459c320f8df3ccbd6eefbe8c9846519738240"
+                "reference": "15ba9af275c7d0423a6eb8013665c47884a8aa43"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Narsileon/narsil-mails/zipball/286459c320f8df3ccbd6eefbe8c9846519738240",
-                "reference": "286459c320f8df3ccbd6eefbe8c9846519738240",
+                "url": "https://api.github.com/repos/Narsileon/narsil-mails/zipball/15ba9af275c7d0423a6eb8013665c47884a8aa43",
+                "reference": "15ba9af275c7d0423a6eb8013665c47884a8aa43",
                 "shasum": ""
             },
             "require": {
@@ -2607,7 +2607,7 @@
                 "source": "https://github.com/Narsileon/narsil-mails/tree/main",
                 "issues": "https://github.com/Narsileon/narsil-mails/issues"
             },
-            "time": "2024-09-06T04:43:25+00:00"
+            "time": "2024-09-09T08:25:40+00:00"
         },
         {
             "name": "narsil/menus",
@@ -2615,12 +2615,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Narsileon/narsil-menus.git",
-                "reference": "502fdee60c1a1112cb739338f156fa4e6ffa77ea"
+                "reference": "08c48ff391aaa23b9f1e4a78e3ba168cdc1f70bd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Narsileon/narsil-menus/zipball/502fdee60c1a1112cb739338f156fa4e6ffa77ea",
-                "reference": "502fdee60c1a1112cb739338f156fa4e6ffa77ea",
+                "url": "https://api.github.com/repos/Narsileon/narsil-menus/zipball/08c48ff391aaa23b9f1e4a78e3ba168cdc1f70bd",
+                "reference": "08c48ff391aaa23b9f1e4a78e3ba168cdc1f70bd",
                 "shasum": ""
             },
             "require": {
@@ -2670,7 +2670,7 @@
                 "source": "https://github.com/Narsileon/narsil-menus/tree/main",
                 "issues": "https://github.com/Narsileon/narsil-menus/issues"
             },
-            "time": "2024-09-07T14:00:38+00:00"
+            "time": "2024-09-09T08:26:49+00:00"
         },
         {
             "name": "narsil/pages",
@@ -2678,12 +2678,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:Narsileon/narsil-pages.git",
-                "reference": "6a95eb5bca8106faea19a921655dec410ab0db92"
+                "reference": "8422001ce25949d20955b42c41d87f65abb4e048"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Narsileon/narsil-pages/zipball/6a95eb5bca8106faea19a921655dec410ab0db92",
-                "reference": "6a95eb5bca8106faea19a921655dec410ab0db92",
+                "url": "https://api.github.com/repos/Narsileon/narsil-pages/zipball/8422001ce25949d20955b42c41d87f65abb4e048",
+                "reference": "8422001ce25949d20955b42c41d87f65abb4e048",
                 "shasum": ""
             },
             "require": {
@@ -2730,7 +2730,7 @@
                 "source": "https://github.com/Narsileon/narsil-pages/tree/main",
                 "issues": "https://github.com/Narsileon/narsil-pages/issues"
             },
-            "time": "2024-09-07T14:00:01+00:00"
+            "time": "2024-09-09T08:27:27+00:00"
         },
         {
             "name": "narsil/policies",
@@ -2738,12 +2738,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Narsileon/narsil-policies.git",
-                "reference": "d5c30b74540ce1f61bd4f0d603eeb89c4c835c3f"
+                "reference": "6e1da213f793daa51ad835a8e4328aafb01d9b4f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Narsileon/narsil-policies/zipball/d5c30b74540ce1f61bd4f0d603eeb89c4c835c3f",
-                "reference": "d5c30b74540ce1f61bd4f0d603eeb89c4c835c3f",
+                "url": "https://api.github.com/repos/Narsileon/narsil-policies/zipball/6e1da213f793daa51ad835a8e4328aafb01d9b4f",
+                "reference": "6e1da213f793daa51ad835a8e4328aafb01d9b4f",
                 "shasum": ""
             },
             "require": {
@@ -2791,7 +2791,7 @@
                 "source": "https://github.com/Narsileon/narsil-policies/tree/main",
                 "issues": "https://github.com/Narsileon/narsil-policies/issues"
             },
-            "time": "2024-09-01T11:41:43+00:00"
+            "time": "2024-09-09T08:28:19+00:00"
         },
         {
             "name": "narsil/settings",
@@ -2799,12 +2799,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Narsileon/narsil-settings.git",
-                "reference": "3b6ea6a6eee2af06c15e11399dc3c9bee618108b"
+                "reference": "12de9139e9b8a0d578eabac46a80786a3a7dd5ff"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Narsileon/narsil-settings/zipball/3b6ea6a6eee2af06c15e11399dc3c9bee618108b",
-                "reference": "3b6ea6a6eee2af06c15e11399dc3c9bee618108b",
+                "url": "https://api.github.com/repos/Narsileon/narsil-settings/zipball/12de9139e9b8a0d578eabac46a80786a3a7dd5ff",
+                "reference": "12de9139e9b8a0d578eabac46a80786a3a7dd5ff",
                 "shasum": ""
             },
             "require": {
@@ -2850,7 +2850,7 @@
                 "source": "https://github.com/Narsileon/narsil-settings/tree/main",
                 "issues": "https://github.com/Narsileon/narsil-settings/issues"
             },
-            "time": "2024-09-01T07:36:48+00:00"
+            "time": "2024-09-09T08:29:17+00:00"
         },
         {
             "name": "narsil/storage",
@@ -2858,12 +2858,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Narsileon/narsil-storage.git",
-                "reference": "16af73467f18061459cb20d22e6412905db96804"
+                "reference": "f66c345e8eb173c22980a514a384c5038aa09751"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Narsileon/narsil-storage/zipball/16af73467f18061459cb20d22e6412905db96804",
-                "reference": "16af73467f18061459cb20d22e6412905db96804",
+                "url": "https://api.github.com/repos/Narsileon/narsil-storage/zipball/f66c345e8eb173c22980a514a384c5038aa09751",
+                "reference": "f66c345e8eb173c22980a514a384c5038aa09751",
                 "shasum": ""
             },
             "require": {
@@ -2909,7 +2909,7 @@
                 "source": "https://github.com/Narsileon/narsil-storage/tree/main",
                 "issues": "https://github.com/Narsileon/narsil-storage/issues"
             },
-            "time": "2024-09-07T15:03:42+00:00"
+            "time": "2024-09-09T08:30:40+00:00"
         },
         {
             "name": "narsil/tables",
@@ -2917,12 +2917,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Narsileon/narsil-tables.git",
-                "reference": "0638cf79e085380764d8661381a0f92b592b8697"
+                "reference": "b86f0fb96a34b0a20c9ffdd260771c81e5d1405e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Narsileon/narsil-tables/zipball/0638cf79e085380764d8661381a0f92b592b8697",
-                "reference": "0638cf79e085380764d8661381a0f92b592b8697",
+                "url": "https://api.github.com/repos/Narsileon/narsil-tables/zipball/b86f0fb96a34b0a20c9ffdd260771c81e5d1405e",
+                "reference": "b86f0fb96a34b0a20c9ffdd260771c81e5d1405e",
                 "shasum": ""
             },
             "require": {
@@ -2972,7 +2972,7 @@
                 "source": "https://github.com/Narsileon/narsil-tables/tree/main",
                 "issues": "https://github.com/Narsileon/narsil-tables/issues"
             },
-            "time": "2024-09-08T14:08:16+00:00"
+            "time": "2024-09-10T07:49:50+00:00"
         },
         {
             "name": "narsil/tree",
@@ -2980,12 +2980,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Narsileon/narsil-tree.git",
-                "reference": "77355c46b624c7ae0a9afc6e24376bea1fccca33"
+                "reference": "3480ccabbd6129e598ba2df6ca77f65294d0f67a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Narsileon/narsil-tree/zipball/77355c46b624c7ae0a9afc6e24376bea1fccca33",
-                "reference": "77355c46b624c7ae0a9afc6e24376bea1fccca33",
+                "url": "https://api.github.com/repos/Narsileon/narsil-tree/zipball/3480ccabbd6129e598ba2df6ca77f65294d0f67a",
+                "reference": "3480ccabbd6129e598ba2df6ca77f65294d0f67a",
                 "shasum": ""
             },
             "require": {
@@ -3032,7 +3032,7 @@
                 "source": "https://github.com/Narsileon/narsil-tree/tree/main",
                 "issues": "https://github.com/Narsileon/narsil-tree/issues"
             },
-            "time": "2024-08-26T11:38:21+00:00"
+            "time": "2024-09-09T08:34:21+00:00"
         },
         {
             "name": "narsil/ui",
@@ -3040,12 +3040,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Narsileon/narsil-ui.git",
-                "reference": "1040f718dd2d3faa81d7861e6d14893f9c60afc8"
+                "reference": "ad413f0a0ff9f6d2775109fa889fa4865c7babfe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Narsileon/narsil-ui/zipball/1040f718dd2d3faa81d7861e6d14893f9c60afc8",
-                "reference": "1040f718dd2d3faa81d7861e6d14893f9c60afc8",
+                "url": "https://api.github.com/repos/Narsileon/narsil-ui/zipball/ad413f0a0ff9f6d2775109fa889fa4865c7babfe",
+                "reference": "ad413f0a0ff9f6d2775109fa889fa4865c7babfe",
                 "shasum": ""
             },
             "require": {
@@ -3093,7 +3093,7 @@
                 "source": "https://github.com/Narsileon/narsil-ui/tree/main",
                 "issues": "https://github.com/Narsileon/narsil-ui/issues"
             },
-            "time": "2024-09-08T13:40:44+00:00"
+            "time": "2024-09-10T07:37:13+00:00"
         },
         {
             "name": "nesbot/carbon",
@@ -5219,20 +5219,20 @@
         },
         {
             "name": "symfony/polyfill-ctype",
-            "version": "v1.30.0",
+            "version": "v1.31.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-ctype.git",
-                "reference": "0424dff1c58f028c451efff2045f5d92410bd540"
+                "reference": "a3cc8b044a6ea513310cbd48ef7333b384945638"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-ctype/zipball/0424dff1c58f028c451efff2045f5d92410bd540",
-                "reference": "0424dff1c58f028c451efff2045f5d92410bd540",
+                "url": "https://api.github.com/repos/symfony/polyfill-ctype/zipball/a3cc8b044a6ea513310cbd48ef7333b384945638",
+                "reference": "a3cc8b044a6ea513310cbd48ef7333b384945638",
                 "shasum": ""
             },
             "require": {
-                "php": ">=7.1"
+                "php": ">=7.2"
             },
             "provide": {
                 "ext-ctype": "*"
@@ -5278,7 +5278,7 @@
                 "portable"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-ctype/tree/v1.30.0"
+                "source": "https://github.com/symfony/polyfill-ctype/tree/v1.31.0"
             },
             "funding": [
                 {
@@ -5294,24 +5294,24 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-05-31T15:07:36+00:00"
+            "time": "2024-09-09T11:45:10+00:00"
         },
         {
             "name": "symfony/polyfill-intl-grapheme",
-            "version": "v1.30.0",
+            "version": "v1.31.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-intl-grapheme.git",
-                "reference": "64647a7c30b2283f5d49b874d84a18fc22054b7a"
+                "reference": "b9123926e3b7bc2f98c02ad54f6a4b02b91a8abe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-intl-grapheme/zipball/64647a7c30b2283f5d49b874d84a18fc22054b7a",
-                "reference": "64647a7c30b2283f5d49b874d84a18fc22054b7a",
+                "url": "https://api.github.com/repos/symfony/polyfill-intl-grapheme/zipball/b9123926e3b7bc2f98c02ad54f6a4b02b91a8abe",
+                "reference": "b9123926e3b7bc2f98c02ad54f6a4b02b91a8abe",
                 "shasum": ""
             },
             "require": {
-                "php": ">=7.1"
+                "php": ">=7.2"
             },
             "suggest": {
                 "ext-intl": "For best performance"
@@ -5356,7 +5356,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-intl-grapheme/tree/v1.30.0"
+                "source": "https://github.com/symfony/polyfill-intl-grapheme/tree/v1.31.0"
             },
             "funding": [
                 {
@@ -5372,26 +5372,25 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-05-31T15:07:36+00:00"
+            "time": "2024-09-09T11:45:10+00:00"
         },
         {
             "name": "symfony/polyfill-intl-idn",
-            "version": "v1.30.0",
+            "version": "v1.31.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-intl-idn.git",
-                "reference": "a6e83bdeb3c84391d1dfe16f42e40727ce524a5c"
+                "reference": "c36586dcf89a12315939e00ec9b4474adcb1d773"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-intl-idn/zipball/a6e83bdeb3c84391d1dfe16f42e40727ce524a5c",
-                "reference": "a6e83bdeb3c84391d1dfe16f42e40727ce524a5c",
+                "url": "https://api.github.com/repos/symfony/polyfill-intl-idn/zipball/c36586dcf89a12315939e00ec9b4474adcb1d773",
+                "reference": "c36586dcf89a12315939e00ec9b4474adcb1d773",
                 "shasum": ""
             },
             "require": {
-                "php": ">=7.1",
-                "symfony/polyfill-intl-normalizer": "^1.10",
-                "symfony/polyfill-php72": "^1.10"
+                "php": ">=7.2",
+                "symfony/polyfill-intl-normalizer": "^1.10"
             },
             "suggest": {
                 "ext-intl": "For best performance"
@@ -5440,7 +5439,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-intl-idn/tree/v1.30.0"
+                "source": "https://github.com/symfony/polyfill-intl-idn/tree/v1.31.0"
             },
             "funding": [
                 {
@@ -5456,24 +5455,24 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-05-31T15:07:36+00:00"
+            "time": "2024-09-09T11:45:10+00:00"
         },
         {
             "name": "symfony/polyfill-intl-normalizer",
-            "version": "v1.30.0",
+            "version": "v1.31.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-intl-normalizer.git",
-                "reference": "a95281b0be0d9ab48050ebd988b967875cdb9fdb"
+                "reference": "3833d7255cc303546435cb650316bff708a1c75c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-intl-normalizer/zipball/a95281b0be0d9ab48050ebd988b967875cdb9fdb",
-                "reference": "a95281b0be0d9ab48050ebd988b967875cdb9fdb",
+                "url": "https://api.github.com/repos/symfony/polyfill-intl-normalizer/zipball/3833d7255cc303546435cb650316bff708a1c75c",
+                "reference": "3833d7255cc303546435cb650316bff708a1c75c",
                 "shasum": ""
             },
             "require": {
-                "php": ">=7.1"
+                "php": ">=7.2"
             },
             "suggest": {
                 "ext-intl": "For best performance"
@@ -5521,7 +5520,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-intl-normalizer/tree/v1.30.0"
+                "source": "https://github.com/symfony/polyfill-intl-normalizer/tree/v1.31.0"
             },
             "funding": [
                 {
@@ -5537,24 +5536,24 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-05-31T15:07:36+00:00"
+            "time": "2024-09-09T11:45:10+00:00"
         },
         {
             "name": "symfony/polyfill-mbstring",
-            "version": "v1.30.0",
+            "version": "v1.31.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-mbstring.git",
-                "reference": "fd22ab50000ef01661e2a31d850ebaa297f8e03c"
+                "reference": "85181ba99b2345b0ef10ce42ecac37612d9fd341"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/fd22ab50000ef01661e2a31d850ebaa297f8e03c",
-                "reference": "fd22ab50000ef01661e2a31d850ebaa297f8e03c",
+                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/85181ba99b2345b0ef10ce42ecac37612d9fd341",
+                "reference": "85181ba99b2345b0ef10ce42ecac37612d9fd341",
                 "shasum": ""
             },
             "require": {
-                "php": ">=7.1"
+                "php": ">=7.2"
             },
             "provide": {
                 "ext-mbstring": "*"
@@ -5601,7 +5600,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-mbstring/tree/v1.30.0"
+                "source": "https://github.com/symfony/polyfill-mbstring/tree/v1.31.0"
             },
             "funding": [
                 {
@@ -5617,97 +5616,24 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-06-19T12:30:46+00:00"
-        },
-        {
-            "name": "symfony/polyfill-php72",
-            "version": "v1.30.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/polyfill-php72.git",
-                "reference": "10112722600777e02d2745716b70c5db4ca70442"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-php72/zipball/10112722600777e02d2745716b70c5db4ca70442",
-                "reference": "10112722600777e02d2745716b70c5db4ca70442",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=7.1"
-            },
-            "type": "library",
-            "extra": {
-                "thanks": {
-                    "name": "symfony/polyfill",
-                    "url": "https://github.com/symfony/polyfill"
-                }
-            },
-            "autoload": {
-                "files": [
-                    "bootstrap.php"
-                ],
-                "psr-4": {
-                    "Symfony\\Polyfill\\Php72\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Nicolas Grekas",
-                    "email": "p@tchwork.com"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "https://symfony.com/contributors"
-                }
-            ],
-            "description": "Symfony polyfill backporting some PHP 7.2+ features to lower PHP versions",
-            "homepage": "https://symfony.com",
-            "keywords": [
-                "compatibility",
-                "polyfill",
-                "portable",
-                "shim"
-            ],
-            "support": {
-                "source": "https://github.com/symfony/polyfill-php72/tree/v1.30.0"
-            },
-            "funding": [
-                {
-                    "url": "https://symfony.com/sponsor",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/fabpot",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
-                    "type": "tidelift"
-                }
-            ],
-            "time": "2024-06-19T12:30:46+00:00"
+            "time": "2024-09-09T11:45:10+00:00"
         },
         {
             "name": "symfony/polyfill-php80",
-            "version": "v1.30.0",
+            "version": "v1.31.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-php80.git",
-                "reference": "77fa7995ac1b21ab60769b7323d600a991a90433"
+                "reference": "60328e362d4c2c802a54fcbf04f9d3fb892b4cf8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-php80/zipball/77fa7995ac1b21ab60769b7323d600a991a90433",
-                "reference": "77fa7995ac1b21ab60769b7323d600a991a90433",
+                "url": "https://api.github.com/repos/symfony/polyfill-php80/zipball/60328e362d4c2c802a54fcbf04f9d3fb892b4cf8",
+                "reference": "60328e362d4c2c802a54fcbf04f9d3fb892b4cf8",
                 "shasum": ""
             },
             "require": {
-                "php": ">=7.1"
+                "php": ">=7.2"
             },
             "type": "library",
             "extra": {
@@ -5754,7 +5680,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-php80/tree/v1.30.0"
+                "source": "https://github.com/symfony/polyfill-php80/tree/v1.31.0"
             },
             "funding": [
                 {
@@ -5770,24 +5696,24 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-05-31T15:07:36+00:00"
+            "time": "2024-09-09T11:45:10+00:00"
         },
         {
             "name": "symfony/polyfill-php83",
-            "version": "v1.30.0",
+            "version": "v1.31.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-php83.git",
-                "reference": "dbdcdf1a4dcc2743591f1079d0c35ab1e2dcbbc9"
+                "reference": "2fb86d65e2d424369ad2905e83b236a8805ba491"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-php83/zipball/dbdcdf1a4dcc2743591f1079d0c35ab1e2dcbbc9",
-                "reference": "dbdcdf1a4dcc2743591f1079d0c35ab1e2dcbbc9",
+                "url": "https://api.github.com/repos/symfony/polyfill-php83/zipball/2fb86d65e2d424369ad2905e83b236a8805ba491",
+                "reference": "2fb86d65e2d424369ad2905e83b236a8805ba491",
                 "shasum": ""
             },
             "require": {
-                "php": ">=7.1"
+                "php": ">=7.2"
             },
             "type": "library",
             "extra": {
@@ -5830,7 +5756,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-php83/tree/v1.30.0"
+                "source": "https://github.com/symfony/polyfill-php83/tree/v1.31.0"
             },
             "funding": [
                 {
@@ -5846,24 +5772,24 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-06-19T12:35:24+00:00"
+            "time": "2024-09-09T11:45:10+00:00"
         },
         {
             "name": "symfony/polyfill-uuid",
-            "version": "v1.30.0",
+            "version": "v1.31.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-uuid.git",
-                "reference": "2ba1f33797470debcda07fe9dce20a0003df18e9"
+                "reference": "21533be36c24be3f4b1669c4725c7d1d2bab4ae2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-uuid/zipball/2ba1f33797470debcda07fe9dce20a0003df18e9",
-                "reference": "2ba1f33797470debcda07fe9dce20a0003df18e9",
+                "url": "https://api.github.com/repos/symfony/polyfill-uuid/zipball/21533be36c24be3f4b1669c4725c7d1d2bab4ae2",
+                "reference": "21533be36c24be3f4b1669c4725c7d1d2bab4ae2",
                 "shasum": ""
             },
             "require": {
-                "php": ">=7.1"
+                "php": ">=7.2"
             },
             "provide": {
                 "ext-uuid": "*"
@@ -5909,7 +5835,7 @@
                 "uuid"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-uuid/tree/v1.30.0"
+                "source": "https://github.com/symfony/polyfill-uuid/tree/v1.31.0"
             },
             "funding": [
                 {
@@ -5925,7 +5851,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-05-31T15:07:36+00:00"
+            "time": "2024-09-09T11:45:10+00:00"
         },
         {
             "name": "symfony/process",
@@ -7964,16 +7890,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "11.3.3",
+            "version": "11.3.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "8ed08766d9a2ed979a2f5fdbb95a0671523419c1"
+                "reference": "d2ef57db1410b102b250e0cdce6675a60c2a993d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/8ed08766d9a2ed979a2f5fdbb95a0671523419c1",
-                "reference": "8ed08766d9a2ed979a2f5fdbb95a0671523419c1",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/d2ef57db1410b102b250e0cdce6675a60c2a993d",
+                "reference": "d2ef57db1410b102b250e0cdce6675a60c2a993d",
                 "shasum": ""
             },
             "require": {
@@ -8044,7 +7970,7 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
                 "security": "https://github.com/sebastianbergmann/phpunit/security/policy",
-                "source": "https://github.com/sebastianbergmann/phpunit/tree/11.3.3"
+                "source": "https://github.com/sebastianbergmann/phpunit/tree/11.3.4"
             },
             "funding": [
                 {
@@ -8060,7 +7986,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-09-04T13:34:52+00:00"
+            "time": "2024-09-09T06:08:34+00:00"
         },
         {
             "name": "sebastian/cli-parser",

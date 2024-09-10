@@ -83,8 +83,10 @@ final class HandleInertiaRequests extends BaseHandleInertiaRequests
         }
 
         return [
+            User::FIRST_NAME => $user->{User::FIRST_NAME},
             User::FULL_NAME => $user->{User::FULL_NAME},
             User::ID => $user->{User::ID},
+            User::LAST_NAME => $user->{User::LAST_NAME},
             User::USERNAME => $user->{User::USERNAME},
 
             IHasPermissions::RELATIONSHIP_PERMISSIONS => $user->getPermissions()->pluck(Permission::NAME)->toArray(),

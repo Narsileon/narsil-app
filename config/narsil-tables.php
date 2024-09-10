@@ -20,6 +20,8 @@ use Narsil\Menus\Models\MenuNode;
 use Narsil\Policies\Models\Role;
 use Narsil\Storage\Models\Icon;
 use Narsil\Storage\Models\Image;
+use Narsil\Tables\Http\Resources\ModelCommentDataTableCollection;
+use Narsil\Tables\Http\Resources\ModelCommentShowTableResource;
 use Narsil\Tables\Models\ModelComment;
 
 #endregion
@@ -50,6 +52,7 @@ return [
     'collections' => [
         Imprint::class => ImprintDataTableCollection::class,
         MenuNode::class => MenuNodeDataTableCollection::class,
+        ModelComment::class => ModelCommentDataTableCollection::class,
         PrivacyNotice::class => PrivacyNoticeDataTableCollection::class,
         Translation::class => TranslationDataTableCollection::class,
     ],
@@ -66,6 +69,7 @@ return [
     'resources' => [
         Imprint::class => ImprintShowTableResource::class,
         MenuNode::class => MenuNodeShowTableResource::class,
+        ModelComment::class => ModelCommentShowTableResource::class,
         PrivacyNotice::class => PrivacyNoticeShowTableResource::class,
         Translation::class => TranslationShowTableResource::class,
     ],
