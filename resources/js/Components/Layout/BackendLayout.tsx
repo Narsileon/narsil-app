@@ -77,7 +77,7 @@ const BackendLayout = ({ children }: Props) => {
 
 					<div className='right-4 flex items-center justify-end'>
 						<AppLanguage languages={shared.localization.languages} />
-						<ThemeController />
+						<ThemeController className='hover:bg-primary hover:text-primary-foreground' />
 						<DropdownMenu>
 							<TooltipWrapper tooltip={trans("common.menu")}>
 								<DropdownMenuTrigger
