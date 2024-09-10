@@ -151,7 +151,7 @@ const BackendLayout = ({ children }: Props) => {
 					</SheetPortal>
 
 					<ScrollArea className='h-full grow sm:pl-14'>
-						<div className='w-full'>{children}</div>
+						<div className='min-h-full w-full'>{children}</div>
 					</ScrollArea>
 				</div>
 			</Sheet>
