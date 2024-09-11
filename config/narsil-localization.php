@@ -29,7 +29,6 @@ return [
         'auth::auth',
         'auth::validation',
         'contacts::validation',
-        'forms::editor',
         'forms::validation',
         'localization::errors',
         'localization::locales',

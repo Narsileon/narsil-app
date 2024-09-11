@@ -8,6 +8,7 @@
 			"@narsil-localization/*": ["./vendor/narsil/localization/resources/js/*"],
 			"@narsil-menus/*": ["./vendor/narsil/menus/resources/js/*"],
 			"@narsil-tables/*": ["./vendor/narsil/tables/resources/js/*"],
+			"@narsil-tiptap/*": ["./vendor/narsil/tiptap/resources/js/*"],
 			"@narsil-tree/*": ["./vendor/narsil/tree/resources/js/*"],
 			"@narsil-ui/*": ["./vendor/narsil/ui/resources/js/*"]
 		}

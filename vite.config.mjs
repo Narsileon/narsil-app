@@ -19,6 +19,7 @@ export default defineConfig({
 			"@narsil-localization": path.join(__dirname, "/vendor/narsil/localization/resources/js"),
 			"@narsil-menus": path.join(__dirname, "/vendor/narsil/menus/resources/js"),
 			"@narsil-tables": path.join(__dirname, "/vendor/narsil/tables/resources/js"),
+			"@narsil-tiptap": path.join(__dirname, "/vendor/narsil/tiptap/resources/js"),
 			"@narsil-ui": path.join(__dirname, "/vendor/narsil/ui/resources/js"),
 			vendor: path.join(__dirname, "/vendor"),
 		},
