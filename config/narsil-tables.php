@@ -3,6 +3,8 @@
 #region USE
 
 use Narsil\Auth\Models\LoginLog;
+use Narsil\Contacts\Models\Address;
+use Narsil\Contacts\Models\PhoneNumber;
 use Narsil\Legals\Http\Resources\ImprintDataTableCollection;
 use Narsil\Legals\Http\Resources\ImprintShowTableResource;
 use Narsil\Legals\Http\Resources\PrivacyNoticeDataTableCollection;
@@ -84,6 +86,7 @@ return [
     */
 
     'table_to_model' => [
+        Address::TABLE => Address::class,
         Icon::TABLE => Icon::class,
         Image::TABLE => Image::class,
         Imprint::TABLE => Imprint::class,
@@ -92,6 +95,7 @@ return [
         Menu::TABLE => Menu::class,
         MenuNode::TABLE => MenuNode::class,
         ModelComment::TABLE => ModelComment::class,
+        PhoneNumber::TABLE => PhoneNumber::class,
         PrivacyNotice::TABLE => PrivacyNotice::class,
         Role::TABLE => Role::class,
         Translation::TABLE => Translation::class,

@@ -97,7 +97,7 @@ const WebLayout = ({ children }: Props) => {
 								<Globe />
 							</AppLanguage>
 							<ThemeController
-								className='place-self-end self-center hover:bg-primary hover:text-primary-foreground'
+								className='place-self-end self-center hover:bg-primary-highlight hover:text-primary-highlight-foreground'
 								enableRadius={false}
 							/>
 						</Container>

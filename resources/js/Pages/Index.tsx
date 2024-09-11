@@ -6,12 +6,14 @@ interface Props {}
 const Index = ({}: Props) => {
 	const { trans } = useTranslationsStore();
 
+	const homeLabel = trans("Home");
+
 	return (
 		<>
 			<AppHead
-				description={trans("Home")}
-				keywords={trans("Home")}
-				title={trans("Home")}
+				description={homeLabel}
+				keywords={homeLabel}
+				title={homeLabel}
 			/>
 		</>
 	);
