@@ -83,18 +83,13 @@ const BackendLayout = ({ children }: Props) => {
 						<ThemeController className='hover:bg-primary-highlight hover:text-primary-highlight-foreground' />
 						<DropdownMenu>
 							<TooltipWrapper tooltip={trans("common.menu")}>
-								<DropdownMenuTrigger
-									className='ml-2'
-									asChild={true}
-								>
-									<Button size='icon'>
-										<Avatar>
-											<AvatarFallback className='bg-white text-primary'>
-												{shared.auth.first_name?.charAt(0)}
-												{shared.auth.last_name?.charAt(0)}
-											</AvatarFallback>
-										</Avatar>
-									</Button>
+								<DropdownMenuTrigger className='ml-2'>
+									<Avatar>
+										<AvatarFallback className='bg-white text-primary'>
+											{shared.auth.first_name?.charAt(0)}
+											{shared.auth.last_name?.charAt(0)}
+										</AvatarFallback>
+									</Avatar>
 								</DropdownMenuTrigger>
 							</TooltipWrapper>
 							<UserMenuDropdownContent authenticated={true}>
