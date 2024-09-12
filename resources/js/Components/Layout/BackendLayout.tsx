@@ -1,6 +1,6 @@
 import { cn } from "@narsil-ui/Components";
 import { GlobalProps } from "@/Types";
-import { Home, Menu, PieChart, Star, X } from "lucide-react";
+import { Home, Menu, PieChart, Star, User, X } from "lucide-react";
 import { Link, usePage } from "@inertiajs/react";
 import { navigationMenuTriggerStyle } from "@narsil-ui/Components/NavigationMenu/NavigationMenuTrigger";
 import { useTranslationsStore } from "@narsil-localization/Stores/translationStore";
@@ -101,6 +101,15 @@ const BackendLayout = ({ children }: Props) => {
 									>
 										<Home className='h-5 w-5' />
 										{trans("Website")}
+									</a>
+								</DropdownMenuItem>
+								<DropdownMenuItem asChild={true}>
+									<a
+										href={route("profile")}
+										target='_blank'
+									>
+										<User className='h-5 w-5' />
+										{trans("Profile")}
 									</a>
 								</DropdownMenuItem>
 							</UserMenuDropdownContent>
