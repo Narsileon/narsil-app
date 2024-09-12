@@ -77,6 +77,7 @@ const BackendLayout = ({ children }: Props) => {
 
 					<div className='right-4 flex items-center justify-end'>
 						<AppLanguage
+							className='bg-primary hover:bg-primary-highlight hover:text-primary-highlight-foreground'
 							languages={shared.localization.languages}
 							size='icon'
 						/>

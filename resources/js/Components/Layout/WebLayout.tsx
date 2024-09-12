@@ -1,4 +1,4 @@
-import { ChartPie, Globe, Menu, X } from "lucide-react";
+import { ChartPie, Globe, Menu, User, X } from "lucide-react";
 import { cn } from "@narsil-ui/Components";
 import { GlobalProps } from "@/Types";
 import { Link, usePage } from "@inertiajs/react";
@@ -132,18 +132,26 @@ const WebLayout = ({ children }: Props) => {
 									registerable={shared.app.registerable}
 								>
 									{shared.auth ? (
-										<DropdownMenuItem
-											active={route().current() === "backend.dashboards"}
-											asChild={true}
-										>
-											<a
-												href={route("backend.dashboard")}
-												target='_blank'
+										<>
+											<DropdownMenuItem asChild={true}>
+												<a
+													href={route("backend.dashboard")}
+													target='_blank'
+												>
+													<ChartPie className='h-5 w-5' />
+													{trans("Dashboard")}
+												</a>
+											</DropdownMenuItem>
+											<DropdownMenuItem
+												active={route().current() === "profile"}
+												asChild={true}
 											>
-												<ChartPie className='h-5 w-5' />
-												{trans("Dashboard")}
-											</a>
-										</DropdownMenuItem>
+												<Link href={route("profile")}>
+													<User className='h-5 w-5' />
+													{trans("Profile")}
+												</Link>
+											</DropdownMenuItem>
+										</>
 									) : null}
 								</UserMenuDropdownContent>
 							</DropdownMenu>
@@ -182,6 +190,15 @@ const WebLayout = ({ children }: Props) => {
 											<ChartPie className='h-5 w-5' />
 											{trans("Dashboard")}
 										</a>
+									</NavigationMenuItem>
+									<NavigationMenuItem
+										className={navigationMenuTriggerStyle()}
+										asChild={true}
+									>
+										<Link href={route("profile")}>
+											<User className='h-5 w-5' />
+											{trans("Profile")}
+										</Link>
 									</NavigationMenuItem>
 								</SheetClose>
 							) : null}

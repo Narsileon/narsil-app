@@ -55,7 +55,7 @@ return Application::configure(basePath: dirname(__DIR__))
                 503,
             ];
 
-            if (app()->environment(['local']) && in_array($status, $errors))
+            if (!app()->environment(['local']) && in_array($status, $errors))
             {
                 return Inertia::render('Error/Index', compact('status'))
                     ->toResponse($request)

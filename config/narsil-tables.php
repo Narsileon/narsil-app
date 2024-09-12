@@ -5,25 +5,25 @@
 use Narsil\Auth\Models\LoginLog;
 use Narsil\Contacts\Models\Address;
 use Narsil\Contacts\Models\PhoneNumber;
-use Narsil\Legals\Http\Resources\ImprintDataTableCollection;
-use Narsil\Legals\Http\Resources\ImprintShowTableResource;
-use Narsil\Legals\Http\Resources\PrivacyNoticeDataTableCollection;
-use Narsil\Legals\Http\Resources\PrivacyNoticeShowTableResource;
+use Narsil\Legals\Http\Resources\Imprints\ImprintDataTableCollection;
+use Narsil\Legals\Http\Resources\Imprints\ImprintShowTableResource;
+use Narsil\Legals\Http\Resources\PrivacyNotices\PrivacyNoticeDataTableCollection;
+use Narsil\Legals\Http\Resources\PrivacyNotices\PrivacyNoticeShowTableResource;
 use Narsil\Legals\Models\Imprint;
 use Narsil\Legals\Models\PrivacyNotice;
-use Narsil\Localization\Http\Resources\TranslationDataTableCollection;
-use Narsil\Localization\Http\Resources\TranslationShowTableResource;
+use Narsil\Localization\Http\Resources\Translations\TranslationDataTableCollection;
+use Narsil\Localization\Http\Resources\Translations\TranslationShowTableResource;
 use Narsil\Localization\Models\Language;
 use Narsil\Localization\Models\Translation;
-use Narsil\Menus\Http\Resources\MenuNodeDataTableCollection;
-use Narsil\Menus\Http\Resources\MenuNodeShowTableResource;
+use Narsil\Menus\Http\Resources\MenuNodes\MenuNodeDataTableCollection;
+use Narsil\Menus\Http\Resources\MenuNodes\MenuNodeShowTableResource;
 use Narsil\Menus\Models\Menu;
 use Narsil\Menus\Models\MenuNode;
 use Narsil\Policies\Models\Role;
 use Narsil\Storage\Models\Icon;
 use Narsil\Storage\Models\Image;
-use Narsil\Tables\Http\Resources\ModelCommentDataTableCollection;
-use Narsil\Tables\Http\Resources\ModelCommentShowTableResource;
+use Narsil\Tables\Http\Resources\ModelComments\ModelCommentDataTableCollection;
+use Narsil\Tables\Http\Resources\ModelComments\ModelCommentShowTableResource;
 use Narsil\Tables\Models\ModelComment;
 
 #endregion

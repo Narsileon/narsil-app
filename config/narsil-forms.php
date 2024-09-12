@@ -2,16 +2,16 @@
 
 #region USE
 
-use Narsil\Legals\Http\Forms\ImprintForm;
-use Narsil\Legals\Http\Forms\PrivacyNoticeForm;
+use Narsil\Legals\Http\Resources\Imprints\ImprintFormResource;
+use Narsil\Legals\Http\Resources\PrivacyNotices\PrivacyNoticeFormResource;
 use Narsil\Legals\Models\Imprint;
 use Narsil\Legals\Models\PrivacyNotice;
-use Narsil\Localization\Http\Forms\LanguageForm;
-use Narsil\Localization\Http\Forms\TranslationForm;
+use Narsil\Localization\Http\Resources\Languages\LanguageFormResource;
+use Narsil\Localization\Http\Resources\Translations\TranslationFormResource;
 use Narsil\Localization\Models\Language;
 use Narsil\Localization\Models\Translation;
-use Narsil\Menus\Http\Forms\MenuForm;
-use Narsil\Menus\Http\Forms\MenuNodeForm;
+use Narsil\Menus\Http\Resources\MenuNodes\MenuNodeFormResource;
+use Narsil\Menus\Http\Resources\Menus\MenuFormResource;
 use Narsil\Menus\Models\Menu;
 use Narsil\Menus\Models\MenuNode;
 
@@ -28,11 +28,11 @@ return [
     */
 
     'forms' => [
-        Imprint::class => ImprintForm::class,
-        Language::class => LanguageForm::class,
-        Menu::class => MenuForm::class,
-        MenuNode::class => MenuNodeForm::class,
-        PrivacyNotice::class => PrivacyNoticeForm::class,
-        Translation::class => TranslationForm::class,
+        Imprint::class => ImprintFormResource::class,
+        Language::class => LanguageFormResource::class,
+        Menu::class => MenuFormResource::class,
+        MenuNode::class => MenuNodeFormResource::class,
+        PrivacyNotice::class => PrivacyNoticeFormResource::class,
+        Translation::class => TranslationFormResource::class,
     ],
 ];
