@@ -1,11 +1,11 @@
 import { ChartPie, Globe, Menu, User, X } from "lucide-react";
 import { cn } from "@narsil-ui/Components";
-import { GlobalProps } from "@/Types";
 import { Link, usePage } from "@inertiajs/react";
 import { navigationMenuTriggerStyle } from "@narsil-ui/Components/NavigationMenu/NavigationMenuTrigger";
 import { useTranslationsStore } from "@narsil-localization/Stores/translationStore";
 import { useWindowScroll } from "react-use";
 import * as React from "react";
+import AppBreadcrumb from "@narsil-ui/Components/App/AppBreadcrumb";
 import AppFooter from "@/Components/App/AppFooter";
 import AppLanguage from "@narsil-localization/Components/App/AppLanguage";
 import Button from "@narsil-ui/Components/Button/Button";
@@ -21,16 +21,19 @@ import SheetHeader from "@narsil-ui/Components/Sheet/SheetHeader";
 import SheetPortal from "@narsil-ui/Components/Sheet/SheetPortal";
 import SheetTitle from "@narsil-ui/Components/Sheet/SheetTitle";
 import ThemeController from "@narsil-ui/Components/Themes/ThemeController";
+import type { BreadcrumbType } from "@narsil-ui/Components/App/AppBreadcrumb";
+import type { GlobalProps } from "@/Types";
 import UserMenuDropdownContent from "@narsil-auth/Components/UserMenu/UserMenuDropdownContent";
 import UserMenuSheetContent from "@narsil-auth/Components/UserMenu/UserMenuSheetContent";
 import UserMenuTrigger from "@narsil-auth/Components/UserMenu/UserMenuTrigger";
 import useScreenStore from "@narsil-ui/Stores/screenStore";
 
 interface Props {
+	breadcrumb?: BreadcrumbType[];
 	children?: React.ReactNode;
 }
 
-const WebLayout = ({ children }: Props) => {
+const WebLayout = ({ breadcrumb, children }: Props) => {
 	const { trans } = useTranslationsStore();
 
 	const { isMobile } = useScreenStore();
@@ -102,7 +105,6 @@ const WebLayout = ({ children }: Props) => {
 							/>
 						</Container>
 					</div>
-
 					<div className='bg-background text-foreground shadow'>
 						<Container className='grid grid-cols-2 justify-between py-4'>
 							<div className='flex items-center place-self-start self-center'>
@@ -157,10 +159,11 @@ const WebLayout = ({ children }: Props) => {
 							</DropdownMenu>
 						</Container>
 					</div>
-
-					{/* <Container>
-                        <AppBreadcrumb />
-                    </Container> */}
+					{breadcrumb ? (
+						<Container>
+							<AppBreadcrumb breadcrumb={breadcrumb} />
+						</Container>
+					) : null}
 				</header>
 
 				<Container

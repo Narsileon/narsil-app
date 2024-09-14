@@ -18,7 +18,10 @@ createInertiaApp(
 					return props.shared.ziggy.url.includes("backend") ? (
 						<BackendLayout children={page} />
 					) : (
-						<WebLayout children={page} />
+						<WebLayout
+							breadcrumb={page.props.breadcrumb}
+							children={page}
+						/>
 					);
 			}
 		},
