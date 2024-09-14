@@ -87,7 +87,7 @@ const WebLayout = ({ breadcrumb, children }: Props) => {
 						transform: `translate(0%, -${!isMobile && showHeader ? 0 : scrolling.y}px)`,
 					}}
 				>
-					<div className='bg-primary text-primary-foreground'>
+					<div className='bg-primary-highlight text-primary-highlight-foreground dark:bg-primary dark:text-primary-highlight'>
 						<Container className='grid grid-cols-2 justify-between'>
 							<AppLanguage
 								className='place-self-start self-center bg-transparent hover:bg-transparent'

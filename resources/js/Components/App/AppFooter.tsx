@@ -24,7 +24,7 @@ const AppFooter = React.forwardRef<HTMLDivElement, AppFooterProps>(({ ...props }
 			ref={ref}
 			{...props}
 		>
-			<div className='bg-primary-highlight text-primary-highlight-foreground'>
+			<div className='bg-primary text-primary-foreground dark:bg-primary-highlight dark:text-primary-highlight-foreground'>
 				<Container className='grid grid-cols-1 lg:grid-cols-2'>
 					<AppLanguage
 						className='place-self-start self-center bg-transparent hover:bg-transparent'
@@ -70,8 +70,7 @@ const AppFooter = React.forwardRef<HTMLDivElement, AppFooterProps>(({ ...props }
 					</NavigationMenu>
 				</Container>
 			</div>
-
-			<div className='bg-primary text-primary-foreground'>
+			<div className='bg-primary-highlight text-primary-highlight-foreground dark:bg-primary dark:text-primary-foreground'>
 				<Container className='grid grid-cols-2 py-4'>
 					<AppCopyright
 						className='place-self-start self-center'

@@ -76,18 +76,18 @@ const BackendLayout = ({ children }: Props) => {
 						</div>
 					</div>
 
-					<div className='right-4 flex items-center justify-end'>
+					<div className='right-4 flex items-center justify-end gap-x-2'>
 						<AppLanguage
-							className='bg-primary hover:bg-primary-highlight hover:text-primary-highlight-foreground'
 							languages={shared.localization.languages}
 							size='icon'
+							variant='primary'
 						/>
-						<ThemeController className='hover:bg-primary-highlight hover:text-primary-highlight-foreground' />
+						<ThemeController variant='primary' />
 						<DropdownMenu>
 							<TooltipWrapper tooltip={trans("common.menu")}>
-								<DropdownMenuTrigger className='ml-2'>
+								<DropdownMenuTrigger>
 									<Avatar>
-										<AvatarFallback className='bg-white text-primary'>
+										<AvatarFallback>
 											{shared.auth.first_name?.charAt(0)}
 											{shared.auth.last_name?.charAt(0)}
 										</AvatarFallback>
