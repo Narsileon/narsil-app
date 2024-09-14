@@ -40,7 +40,9 @@ const WebLayout = ({ breadcrumb, children }: Props) => {
 
 	const shared = usePage<GlobalProps>().props.shared;
 
-	const portal = React.useRef<HTMLDivElement>(null);
+	const headerRef = React.useRef<HTMLDivElement>(null);
+	const metaRef = React.useRef<HTMLDivElement>(null);
+	const portalRef = React.useRef<HTMLDivElement>(null);
 
 	const [portalOpen, setPortalOpen] = React.useState(false);
 
@@ -65,7 +67,7 @@ const WebLayout = ({ breadcrumb, children }: Props) => {
 		if (delta < -10) {
 			setPreviousScrolling(scrolling);
 			setShowHeader(true);
-		} else if (delta > 10 && scrolling.y > (portal.current?.offsetTop ?? 0)) {
+		} else if (delta > 10 && scrolling.y > (portalRef.current?.offsetTop ?? 0)) {
 			setPreviousScrolling(scrolling);
 			setShowHeader(false);
 		}
@@ -81,30 +83,38 @@ const WebLayout = ({ breadcrumb, children }: Props) => {
 				open={portalOpen}
 				onOpenChange={setPortalOpen}
 			>
+				<div
+					ref={metaRef}
+					className='bg-primary-highlight text-primary-highlight-foreground dark:bg-primary dark:text-primary-highlight-foreground'
+				>
+					<Container className='grid grid-cols-2 justify-between'>
+						<AppLanguage
+							className='place-self-start self-center bg-transparent hover:bg-transparent'
+							chevron={true}
+							languages={shared.localization.languages}
+							short={false}
+							size='default'
+							variant='link'
+						>
+							<Globe />
+						</AppLanguage>
+						<ThemeController
+							className='place-self-end self-center hover:bg-primary-highlight hover:text-primary-highlight-foreground'
+							enableRadius={false}
+						/>
+					</Container>
+				</div>
 				<header
-					className={cn("sticky top-0 z-10 w-full transition-transform will-change-transform")}
+					ref={headerRef}
+					className={cn(
+						"z-10 w-full transition-transform will-change-transform",
+						isMobile || scrolling.y > 0 ? "sticky top-0" : "duration-0"
+					)}
 					style={{
-						transform: `translate(0%, -${!isMobile && showHeader ? 0 : scrolling.y}px)`,
+						transform:
+							scrolling.y > 0 ? `translate(0%, -${isMobile || showHeader ? 0 : scrolling.y}px)` : "none",
 					}}
 				>
-					<div className='bg-primary-highlight text-primary-highlight-foreground dark:bg-primary dark:text-primary-highlight-foreground'>
-						<Container className='grid grid-cols-2 justify-between'>
-							<AppLanguage
-								className='place-self-start self-center bg-transparent hover:bg-transparent'
-								chevron={true}
-								languages={shared.localization.languages}
-								short={false}
-								size='default'
-								variant='link'
-							>
-								<Globe />
-							</AppLanguage>
-							<ThemeController
-								className='place-self-end self-center hover:bg-primary-highlight hover:text-primary-highlight-foreground'
-								enableRadius={false}
-							/>
-						</Container>
-					</div>
 					<div className='bg-background text-foreground shadow'>
 						<Container className='grid grid-cols-2 justify-between py-4'>
 							<div className='flex items-center place-self-start self-center'>
@@ -162,7 +172,7 @@ const WebLayout = ({ breadcrumb, children }: Props) => {
 				</header>
 
 				<div
-					ref={portal}
+					ref={portalRef}
 					className={cn("relative", { "overflow-hidden": portalOpen })}
 				>
 					{breadcrumb ? (
@@ -173,7 +183,7 @@ const WebLayout = ({ breadcrumb, children }: Props) => {
 						</div>
 					) : null}
 					<Container className='p-0'>
-						<SheetPortal container={portal.current}>
+						<SheetPortal container={portalRef.current}>
 							<SheetHeader>
 								<SheetTitle className='sr-only'>{trans("Menu")}</SheetTitle>
 								<SheetDescription className='sr-only'>{trans("Menu")}</SheetDescription>
