@@ -161,56 +161,62 @@ const WebLayout = ({ breadcrumb, children }: Props) => {
 					</div>
 				</header>
 
-				{breadcrumb ? (
-					<div className='border-b'>
-						<Container>
-							<AppBreadcrumb breadcrumb={breadcrumb} />
-						</Container>
-					</div>
-				) : null}
-				<Container
+				<div
 					ref={portal}
-					className={cn("relative w-full grow p-0", { "overflow-hidden": portalOpen })}
+					className={cn("relative", { "overflow-hidden": portalOpen })}
 				>
-					<SheetPortal container={portal.current}>
-						<SheetHeader>
-							<SheetTitle className='sr-only'>{trans("Menu")}</SheetTitle>
-							<SheetDescription className='sr-only'>{trans("Menu")}</SheetDescription>
-						</SheetHeader>
-						<UserMenuSheetContent
-							authenticated={shared.auth ? true : false}
-							registerable={shared.app.registerable}
-							onInteractOutside={(event) => event.preventDefault()}
-						>
-							{shared.auth ? (
-								<SheetClose asChild={true}>
-									<NavigationMenuItem
-										className={navigationMenuTriggerStyle()}
-										asChild={true}
-									>
-										<a
-											href={route("backend.dashboard")}
-											target='_blank'
-										>
-											<ChartPie className='h-5 w-5' />
-											{trans("Dashboard")}
-										</a>
-									</NavigationMenuItem>
-									<NavigationMenuItem
-										className={navigationMenuTriggerStyle()}
-										asChild={true}
-									>
-										<Link href={route("profile")}>
-											<User className='h-5 w-5' />
-											{trans("Profile")}
-										</Link>
-									</NavigationMenuItem>
-								</SheetClose>
-							) : null}
-						</UserMenuSheetContent>
-					</SheetPortal>
-					{children}
-				</Container>
+					{breadcrumb ? (
+						<div className='border-b'>
+							<Container>
+								<AppBreadcrumb breadcrumb={breadcrumb} />
+							</Container>
+						</div>
+					) : null}
+					<Container className='p-0'>
+						<SheetPortal container={portal.current}>
+							<SheetHeader>
+								<SheetTitle className='sr-only'>{trans("Menu")}</SheetTitle>
+								<SheetDescription className='sr-only'>{trans("Menu")}</SheetDescription>
+							</SheetHeader>
+							<UserMenuSheetContent
+								authenticated={shared.auth ? true : false}
+								registerable={shared.app.registerable}
+								onInteractOutside={(event) => event.preventDefault()}
+							>
+								{shared.auth ? (
+									<>
+										<SheetClose asChild={true}>
+											<NavigationMenuItem
+												className={navigationMenuTriggerStyle()}
+												asChild={true}
+											>
+												<a
+													href={route("backend.dashboard")}
+													target='_blank'
+												>
+													<ChartPie className='h-5 w-5' />
+													{trans("Dashboard")}
+												</a>
+											</NavigationMenuItem>
+										</SheetClose>
+										<SheetClose asChild={true}>
+											<NavigationMenuItem
+												className={navigationMenuTriggerStyle()}
+												asChild={true}
+											>
+												<Link href={route("profile")}>
+													<User className='h-5 w-5' />
+													{trans("Profile")}
+												</Link>
+											</NavigationMenuItem>
+										</SheetClose>
+									</>
+								) : null}
+							</UserMenuSheetContent>
+						</SheetPortal>
+						{children}
+					</Container>
+				</div>
 
 				<AppFooter className='absolute bottom-0 w-full translate-y-full' />
 			</Sheet>
