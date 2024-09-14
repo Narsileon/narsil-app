@@ -159,13 +159,15 @@ const WebLayout = ({ breadcrumb, children }: Props) => {
 							</DropdownMenu>
 						</Container>
 					</div>
-					{breadcrumb ? (
+				</header>
+
+				{breadcrumb ? (
+					<div className='border-b'>
 						<Container>
 							<AppBreadcrumb breadcrumb={breadcrumb} />
 						</Container>
-					) : null}
-				</header>
-
+					</div>
+				) : null}
 				<Container
 					ref={portal}
 					className={cn("relative w-full grow p-0", { "overflow-hidden": portalOpen })}
