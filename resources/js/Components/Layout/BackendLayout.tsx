@@ -14,6 +14,7 @@ import CollapsibleTrigger from "@narsil-ui/Components/Collapsible/CollapsibleTri
 import DropdownMenu from "@narsil-ui/Components/DropdownMenu/DropdownMenu";
 import DropdownMenuItem from "@narsil-ui/Components/DropdownMenu/DropdownMenuItem";
 import DropdownMenuTrigger from "@narsil-ui/Components/DropdownMenu/DropdownMenuTrigger";
+import FavoriteButton from "@narsil-auth/Components/Favorite/FavoriteButton";
 import Layout from "@narsil-ui/Components/Layout/Layout";
 import NavigationMenu from "@narsil-ui/Components/NavigationMenu/NavigationMenu";
 import NavigationMenuAsideRenderer from "@narsil-menus/Components/NavigationMenu/NavigationMenuAsideRenderer";
@@ -131,26 +132,26 @@ const BackendLayout = ({ children }: Props) => {
 								<SheetDescription className='sr-only'>{trans("Menu")}</SheetDescription>
 							</SheetHeader>
 
-							<aside>
-								<ScrollArea>
+							<ScrollArea className='h-full'>
+								<aside className='pr-3'>
 									<NavigationMenu orientation='vertical'>
 										<NavigationMenuList>
 											{!isMobile ? (
-												<Collapsible>
-													<CollapsibleTrigger>
-														<Star className='h-5 w-5' />
-														{trans("Favorites")}
+												<Collapsible className='w-full'>
+													<CollapsibleTrigger className='w-full'>
+														<div className='flex grow items-center gap-x-3.5'>
+															<Star className='h-5 w-5' />
+															{trans("Favorites")}
+														</div>
 													</CollapsibleTrigger>
 
 													<CollapsibleContent></CollapsibleContent>
 												</Collapsible>
 											) : null}
 											<SheetClose asChild={true}>
-												<NavigationMenuItem
-													className={cn(navigationMenuTriggerStyle())}
-													asChild={true}
-												>
+												<NavigationMenuItem className='group flex w-full items-center'>
 													<NavigationMenuLink
+														className={navigationMenuTriggerStyle()}
 														active={route().current() === "backend.dashboard"}
 														asChild={true}
 													>
@@ -159,13 +160,14 @@ const BackendLayout = ({ children }: Props) => {
 															{trans("Dashboard")}
 														</Link>
 													</NavigationMenuLink>
+													<FavoriteButton />
 												</NavigationMenuItem>
 											</SheetClose>
 											{<NavigationMenuAsideRenderer nodes={shared.menus.backend.data} />}
 										</NavigationMenuList>
 									</NavigationMenu>
-								</ScrollArea>
-							</aside>
+								</aside>
+							</ScrollArea>
 						</SheetContent>
 					</SheetPortal>
 
