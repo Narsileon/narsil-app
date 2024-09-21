@@ -11,6 +11,7 @@ use Narsil\Auth\Constants\AuthSettings;
 use Narsil\Auth\Models\User;
 use Narsil\Menus\Enums\MenuEnum;
 use Narsil\Menus\Models\Menu;
+use Narsil\Menus\Models\MenuHasNode;
 use Narsil\Menus\Services\BreadcrumbService;
 use Narsil\Pages\Models\PageContent;
 use Narsil\Policies\Interfaces\IHasPermissions;
@@ -89,7 +90,7 @@ final class HandleInertiaRequests extends BaseHandleInertiaRequests
             User::LAST_NAME => $user->{User::LAST_NAME},
             User::USERNAME => $user->{User::USERNAME},
 
-            IHasPermissions::RELATIONSHIP_PERMISSIONS => $user->getPermissions()->pluck(Permission::NAME)->toArray(),
+            IHasPermissions::RELATIONSHIP_PERMISSIONS => $user->getPermissions()->pluck(Permission::SLUG)->toArray(),
         ];
     }
 
@@ -98,6 +99,8 @@ final class HandleInertiaRequests extends BaseHandleInertiaRequests
      */
     protected function getMenus(): array
     {
+        $model = MenuHasNode::class;
+
         $breadcrumb = BreadcrumbService::getBreadcrumb();
 
         $backend = Menu::type(MenuEnum::BACKEND->value)->first();
@@ -122,6 +125,7 @@ final class HandleInertiaRequests extends BaseHandleInertiaRequests
             'breadcrumb',
             'footer',
             'header',
+            'model',
         );
     }
 

@@ -34,6 +34,7 @@ return [
         'localization::errors',
         'localization::locales',
         'menus::validation',
+        'policies::validation',
         'tables::messages',
         'ui::colors',
     ],

@@ -38,13 +38,13 @@ final class RoleSeeder extends Seeder
     private function createAdmin(): void
     {
         $role = Role::firstOrCreate([
-            Role::NAME => 'admin',
+            Role::SLUG => 'admin',
         ], [
             Role::LABEL => 'admin',
             Role::LEVEL => 99,
         ]);
 
-        $role->syncPermissions(Permission::all()->pluck(Permission::NAME)->toArray());
+        $role->syncPermissions(Permission::all()->pluck(Permission::SLUG)->toArray());
     }
 
     /**
@@ -53,14 +53,14 @@ final class RoleSeeder extends Seeder
     private function createSuperAdmin(): void
     {
         $role = Role::firstOrCreate([
-            Role::NAME => 'super-admin',
+            Role::SLUG => 'super-admin',
 
         ], [
             Role::LABEL => 'super-admin',
             Role::LEVEL => 999,
         ]);
 
-        $role->syncPermissions(Permission::all()->pluck(Permission::NAME)->toArray());
+        $role->syncPermissions(Permission::all()->pluck(Permission::SLUG)->toArray());
     }
 
     #endregion

@@ -2,7 +2,10 @@
 
 #region USE
 
+use Narsil\Auth\Http\Resources\User\UserDataTableCollection;
+use Narsil\Auth\Http\Resources\User\UserShowTableResource;
 use Narsil\Auth\Models\LoginLog;
+use Narsil\Auth\Models\User;
 use Narsil\Contacts\Models\Address;
 use Narsil\Contacts\Models\PhoneNumber;
 use Narsil\Legals\Http\Resources\Imprints\ImprintDataTableCollection;
@@ -19,6 +22,7 @@ use Narsil\Menus\Http\Resources\MenuNodes\MenuNodeDataTableCollection;
 use Narsil\Menus\Http\Resources\MenuNodes\MenuNodeShowTableResource;
 use Narsil\Menus\Models\Menu;
 use Narsil\Menus\Models\MenuNode;
+use Narsil\Policies\Models\Permission;
 use Narsil\Policies\Models\Role;
 use Narsil\Storage\Models\Icon;
 use Narsil\Storage\Models\Image;
@@ -57,6 +61,7 @@ return [
         ModelComment::class => ModelCommentDataTableCollection::class,
         PrivacyNotice::class => PrivacyNoticeDataTableCollection::class,
         Translation::class => TranslationDataTableCollection::class,
+        User::class => UserDataTableCollection::class,
     ],
 
     /*
@@ -74,6 +79,7 @@ return [
         ModelComment::class => ModelCommentShowTableResource::class,
         PrivacyNotice::class => PrivacyNoticeShowTableResource::class,
         Translation::class => TranslationShowTableResource::class,
+        User::class => UserShowTableResource::class,
     ],
 
     /*
@@ -95,9 +101,11 @@ return [
         Menu::TABLE => Menu::class,
         MenuNode::TABLE => MenuNode::class,
         ModelComment::TABLE => ModelComment::class,
+        Permission::TABLE => Permission::class,
         PhoneNumber::TABLE => PhoneNumber::class,
         PrivacyNotice::TABLE => PrivacyNotice::class,
         Role::TABLE => Role::class,
         Translation::TABLE => Translation::class,
+        User::TABLE => User::class,
     ],
 ];

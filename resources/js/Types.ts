@@ -11,6 +11,7 @@ export type GlobalProps = {
 			backend: Collection<NodeModel<MenuNodeModel>>;
 			frontend: Collection<NodeModel<MenuNodeModel>>;
 			header: Collection<NodeModel<MenuNodeModel>>;
+			model: string;
 		};
 	};
 };
