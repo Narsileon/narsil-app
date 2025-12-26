@@ -9,12 +9,12 @@ use Narsil\Database\Seeders\Blocks\AccordionBlockSeeder;
 use Narsil\Database\Seeders\Blocks\HeadlineBlockSeeder;
 use Narsil\Database\Seeders\Blocks\HeroHeaderBlockSeeder;
 use Narsil\Database\Seeders\Fields\TitleFieldSeeder;
-use Narsil\Models\Elements\Block;
-use Narsil\Models\Elements\Field;
-use Narsil\Models\Elements\FieldBlock;
-use Narsil\Models\Elements\Template;
-use Narsil\Models\Elements\TemplateSection;
-use Narsil\Models\Elements\TemplateSectionElement;
+use Narsil\Models\Structures\Block;
+use Narsil\Models\Structures\Field;
+use Narsil\Models\Structures\FieldBlock;
+use Narsil\Models\Structures\Template;
+use Narsil\Models\Structures\TemplateSection;
+use Narsil\Models\Structures\TemplateSectionElement;
 use Narsil\Services\MigrationService;
 
 #endregion

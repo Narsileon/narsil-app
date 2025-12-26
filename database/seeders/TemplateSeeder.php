@@ -7,7 +7,7 @@ namespace Database\Seeders;
 use Database\Seeders\Templates\EventSeeder;
 use Database\Seeders\Templates\PageSeeder;
 use Illuminate\Database\Seeder;
-use Narsil\Models\Elements\Template;
+use Narsil\Models\Structures\Template;
 use Narsil\Models\Entities\Entity;
 
 #endregion

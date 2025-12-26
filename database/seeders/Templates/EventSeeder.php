@@ -5,10 +5,10 @@ namespace Database\Seeders\Templates;
 #region USE
 
 use Narsil\Database\Seeders\Fields\TitleFieldSeeder;
-use Narsil\Models\Elements\Field;
-use Narsil\Models\Elements\Template;
-use Narsil\Models\Elements\TemplateSection;
-use Narsil\Models\Elements\TemplateSectionElement;
+use Narsil\Models\Structures\Field;
+use Narsil\Models\Structures\Template;
+use Narsil\Models\Structures\TemplateSection;
+use Narsil\Models\Structures\TemplateSectionElement;
 use Narsil\Services\MigrationService;
 
 #endregion
