@@ -18,10 +18,6 @@ use Narsil\Services\PageService;
 
 #endregion
 
-/**
- * @version 1.0.0
- * @author Jonathan Rigaux
- */
 class PageController extends Controller
 {
     #region PUBLIC METHODS
@@ -90,7 +86,7 @@ class PageController extends Controller
 
     /**
      * @param SitePage $sitePage
-     * 
+     *
      * @return SitePageResource
      */
     private function getSession(SitePage $sitePage): array
