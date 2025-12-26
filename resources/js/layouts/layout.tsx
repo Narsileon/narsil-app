@@ -79,15 +79,10 @@ function Layout({ children }: LayoutProps) {
           </div>
           <div className="flex flex-row justify-between gap-6 sm:flex-col-reverse md:gap-8 lg:gap-10">
             <div className="flex gap-6">
-              {footer.social_links?.map((socialLink, index) => {
+              {footer.social_media?.map(({ icon, url }, index) => {
                 return (
-                  <Button
-                    asChild={true}
-                    icon={socialLink.icon as IconName}
-                    variant="ghost"
-                    key={index}
-                  >
-                    <a href={socialLink.url} />
+                  <Button asChild={true} icon={icon as IconName} variant="ghost" key={index}>
+                    <a href={url} />
                   </Button>
                 );
               })}

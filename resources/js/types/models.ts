@@ -6,10 +6,10 @@ export type Footer = {
   legal_links?: FooterLegalLink[];
   logo: string;
   phone: string;
-  social_links?: FooterSocialLink[];
+  social_media?: FooterSocialMedium[];
 };
 
-export type FooterSocialLink = {
+export type FooterSocialMedium = {
   icon: string;
   label: string;
   url: string;
