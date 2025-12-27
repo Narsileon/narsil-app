@@ -13,7 +13,7 @@ function Layout({ children }: LayoutProps) {
   return (
     <div className="flex min-h-svh flex-col">
       <Header />
-      <main className="grow bg-gray-950 text-gray-50">{children}</main>
+      <main className="grow bg-secondary text-secondary-foreground">{children}</main>
       <Footer footer={footer} page={page} session={session} />
     </div>
   );

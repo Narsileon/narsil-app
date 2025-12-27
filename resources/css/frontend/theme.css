@@ -25,15 +25,15 @@
   --border: var(--color-slate-300);
   --card-foreground: var(--color-zinc-950);
   --card: var(--color-zinc-50);
-  --foreground: var(--color-slate-50);
+  --foreground: var(--color-slate-950);
   --input: var(--color-zinc-300);
   --muted-foreground: var(--color-zinc-500);
   --muted: var(--color-zinc-200);
-  --popover-foreground: var(--color-zinc-950);
-  --popover: var(--color-zinc-50);
+  --popover-foreground: var(--color-slate-50);
+  --popover: var(--color-slate-950);
   --primary-foreground: var(--color-slate-50);
   --primary: var(--color-pink-600);
   --ring: var(--color-zinc-400);
-  --secondary-foreground: var(--color-slate-950);
-  --secondary: var(--color-zinc-300);
+  --secondary-foreground: var(--color-slate-50);
+  --secondary: var(--color-slate-950);
 }
