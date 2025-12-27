@@ -1,4 +1,4 @@
-import { Button } from "@/blocks";
+import { Button, Icon } from "@/blocks";
 import {
   DropdownMenuContent,
   DropdownMenuRoot,
@@ -94,7 +94,10 @@ function Layout({ children }: LayoutProps) {
             </div>
             <DropdownMenuRoot>
               <DropdownMenuTrigger asChild={true}>
-                <Button variant="ghost">{`${upperFirst(siteUrl?.display_language)} (${upperCase(siteUrl?.language)})`}</Button>
+                <Button variant="ghost">
+                  <Icon name="globe" />
+                  {`${upperFirst(siteUrl?.display_language)} (${upperCase(siteUrl?.language)})`}
+                </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent>
                 {page?.urls?.map((url, index) => {
