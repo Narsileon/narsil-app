@@ -72,20 +72,34 @@ function Footer({ className, footer, page, session, ...props }: FooterProps) {
           </div>
         </div>
         <div className="flex flex-row justify-between gap-6 sm:flex-col-reverse md:gap-8 lg:gap-10">
-          <div className="flex gap-6">
+          <div className="flex justify-end gap-6">
             {footer.social_media?.map(({ icon, url }, index) => {
               return (
-                <Button asChild={true} icon={icon as IconName} variant="ghost" key={index}>
+                <Button
+                  asChild={true}
+                  icon={icon as IconName}
+                  variant="ghost"
+                  size="icon"
+                  key={index}
+                >
                   <a href={url} />
                 </Button>
               );
             })}
           </div>
           <DropdownMenuRoot>
-            <DropdownMenuTrigger asChild={true}>
+            <DropdownMenuTrigger className="group" asChild={true}>
               <Button variant="ghost">
                 <Icon name="globe" />
-                {`${upperFirst(siteUrl?.display_language)} (${upperCase(siteUrl?.language)})`}
+                <span className="font-bold">{upperFirst(siteUrl?.display_language)}</span>
+                <span className="-ml-1">{`(${upperCase(siteUrl?.language)})`}</span>
+                <Icon
+                  className={cn(
+                    "-ml-1 size-4 text-slate-700 duration-300",
+                    "group-data-[state=open]:rotate-180",
+                  )}
+                  name="chevron-down"
+                />
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent>
