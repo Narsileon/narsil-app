@@ -3,7 +3,7 @@ export type Footer = {
   address_line_2: string;
   company: string;
   email: string;
-  legal_links?: FooterLegalLink[];
+  links?: FooterLink[];
   logo: string;
   phone: string;
   social_media?: FooterSocialMedium[];
@@ -16,10 +16,9 @@ export type FooterSocialMedium = {
   position: number;
 };
 
-export type FooterLegalLink = {
+export type FooterLink = {
   label: string;
   url: string;
-  position: number;
 };
 
 export type SitePage = {

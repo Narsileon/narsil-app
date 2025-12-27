@@ -8,6 +8,11 @@ import { IconName } from "@/components/icon";
 import { GlobalProps } from "@/types";
 import { Link } from "@narsil-cms/blocks";
 import { DropdownMenuItem } from "@narsil-cms/components/dropdown-menu";
+import {
+  NavigationMenuItem,
+  NavigationMenuList,
+  NavigationMenuRoot,
+} from "@narsil-cms/components/navigation-menu";
 import { upperCase, upperFirst } from "lodash-es";
 import { useMemo } from "react";
 
@@ -31,9 +36,9 @@ function Layout({ children }: LayoutProps) {
   return (
     <div className="flex min-h-svh flex-col">
       <header className="sticky top-0 right-0 left-0 z-10 flex w-full items-center justify-between bg-background py-2 pr-2 pl-4 text-slate-950 md:px-4 md:py-4 lg:px-14 xl:px-20">
-        <a className="text-lg font-bold" href="/">
+        <Link className="text-lg font-bold" href="/">
           NARSIL
-        </a>
+        </Link>
         <nav className="flex gap-8 font-bold">
           <a className="text-gray-800 hover:text-gray-950" href="/narsil/dashboard" target="_blank">
             admin
@@ -103,8 +108,23 @@ function Layout({ children }: LayoutProps) {
             </DropdownMenuRoot>
           </div>
         </div>
-        <div className="flex flex-col flex-wrap content-center gap-2 border-t border-slate-200 pt-4 md:flex-row md:justify-between lg:gap-x-8">
-          <div className="text-sm text-slate-700">{`©${new Date().getFullYear()} ${footer.company}. All rights reserved.`}</div>
+        <div className="flex flex-col flex-wrap content-center gap-2 border-t border-slate-200 pt-4 text-sm text-slate-700 md:flex-row md:justify-between lg:gap-x-8">
+          <div>{`©${new Date().getFullYear()} ${footer.company}. All rights reserved.`}</div>
+          <NavigationMenuRoot className="flex-none grow-0 justify-center md:justify-start">
+            <NavigationMenuList className="gap-4 text-sm lg:gap-8">
+              {footer.links?.map(({ label, url }, index) => {
+                return (
+                  <NavigationMenuItem
+                    className="leading-6 transition-colors duration-150 hover:text-slate-800 md:leading-normal"
+                    asChild={true}
+                    key={index}
+                  >
+                    <Link href={url}>{label}</Link>
+                  </NavigationMenuItem>
+                );
+              })}
+            </NavigationMenuList>
+          </NavigationMenuRoot>
         </div>
       </footer>
     </div>
