@@ -1,7 +1,6 @@
+import { Container, Heading } from "@/blocks";
 import type { SitePageBlock } from "@/types";
-import BlockRenderer from "./block-renderer";
-import Container from "./container";
-import Heading from "./heading";
+import BlockRenderer from "../block-renderer";
 
 type HeroHeaderProps = {
   excerpt: string;
