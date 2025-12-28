@@ -68,7 +68,7 @@ final class SitePageData extends Data
             id: $sitePage->{SitePage::ID},
             slug: $sitePage->{SitePage::SLUG},
             title: $sitePage->{SitePage::TITLE},
-            content: static::resolveContent($sitePage),
+            content: static::resolveEntity($sitePage),
             meta_description: $sitePage->{SitePage::META_DESCRIPTION},
             open_graph_description: $sitePage->{SitePage::OPEN_GRAPH_DESCRIPTION},
             open_graph_image: $sitePage->{SitePage::OPEN_GRAPH_IMAGE},
@@ -88,21 +88,21 @@ final class SitePageData extends Data
     #region PROTECTED METHODS
 
     /**
-     * Resolve page content entity.
+     * Resolve site page entity.
      */
-    protected static function resolveContent(SitePage $sitePage): mixed
+    protected static function resolveEntity(SitePage $sitePage): mixed
     {
-        $content = null;
+        $entity = null;
 
-        if ($identifier = Arr::first($sitePage->{SitePage::CONTENT}))
+        if ($identifier = Arr::first($sitePage->{SitePage::ENTITY}))
         {
-            $content = Arr::get(
+            $entity = Arr::get(
                 $sitePage->{SitePage::ATTRIBUTE_ENTITIES},
                 $identifier
             );
         }
 
-        return $content;
+        return $entity;
     }
 
     #endregion

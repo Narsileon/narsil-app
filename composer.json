@@ -21,7 +21,9 @@
     }
   ],
   "require": {
-    "narsil/cms": "dev-main"
+    "narsil/cms": "dev-main",
+    "spatie/laravel-data": "^4.18",
+    "spatie/laravel-typescript-transformer": "^2.5"
   },
   "require-dev": {
     "fakerphp/faker": "^1.0",

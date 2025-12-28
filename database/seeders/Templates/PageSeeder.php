@@ -106,7 +106,7 @@ final class PageSeeder
 
         $templateSection->fields()->attach($contentField->{Block::ID}, [
             TemplateSection::HANDLE => $contentField->{Block::HANDLE},
-            TemplateSection::NAME => json_encode(['en' => $contentField->{Block::NAME}]),
+            TemplateSection::NAME => ['en' => $contentField->{Block::NAME}],
             TemplateSection::POSITION => 0,
         ]);
 
@@ -131,7 +131,7 @@ final class PageSeeder
 
         $templateSection->fields()->attach($titleField->{Field::ID}, [
             TemplateSectionElement::HANDLE => $titleField->{Field::HANDLE},
-            TemplateSectionElement::NAME => json_encode(['en' => $titleField->{Field::NAME}]),
+            TemplateSectionElement::NAME => ['en' => $titleField->{Field::NAME}],
             TemplateSectionElement::POSITION => 0,
         ]);
 

@@ -65,7 +65,7 @@ final class EventSeeder
 
         $templateSection->fields()->attach($titleField->{Field::ID}, [
             TemplateSectionElement::HANDLE => $titleField->{Field::HANDLE},
-            TemplateSectionElement::NAME => json_encode(['en' => $titleField->{Field::NAME}]),
+            TemplateSectionElement::NAME => ['en' => $titleField->{Field::NAME}],
             TemplateSectionElement::POSITION => 0,
         ]);
 
