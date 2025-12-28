@@ -11,7 +11,7 @@ use Spatie\TypeScriptTransformer\Attributes\TypeScript;
 
 #endregion
 
-#[TypeScript()]
+#[TypeScript]
 final class SiteUrlData extends Data
 {
     #region CONSTRUCTOR

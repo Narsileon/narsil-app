@@ -12,7 +12,7 @@ use Spatie\TypeScriptTransformer\Attributes\TypeScript;
 
 #endregion
 
-#[TypeScript()]
+#[TypeScript]
 final class FooterLinkData extends Data
 {
     #region CONSTRUCTOR

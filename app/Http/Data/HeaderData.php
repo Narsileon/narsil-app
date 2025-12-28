@@ -10,7 +10,7 @@ use Spatie\TypeScriptTransformer\Attributes\TypeScript;
 
 #endregion
 
-#[TypeScript()]
+#[TypeScript]
 final class HeaderData extends Data
 {
     #region CONSTRUCTOR
