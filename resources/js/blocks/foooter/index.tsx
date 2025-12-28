@@ -5,7 +5,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/dropdown-menu";
 import { IconName } from "@/components/icon";
-import { GlobalProps } from "@/types";
+import type { GlobalProps } from "@/types";
 import { Link } from "@narsil-cms/blocks";
 import { DropdownMenuItem } from "@narsil-cms/components/dropdown-menu";
 import {
@@ -82,7 +82,7 @@ function Footer({ className, footer, page, session, ...props }: FooterProps) {
                   size="icon"
                   key={index}
                 >
-                  <a href={url} />
+                  <a href={url} target="_blank" />
                 </Button>
               );
             })}

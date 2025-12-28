@@ -1,10 +1,16 @@
+import type { GlobalProps } from "@/types";
 import { Link } from "@narsil-cms/blocks";
+import {
+  NavigationMenuItem,
+  NavigationMenuList,
+  NavigationMenuRoot,
+} from "@narsil-cms/components/navigation-menu";
 import { cn } from "@narsil-cms/lib/utils";
 import { type ComponentProps } from "react";
 
-type HeaderProps = ComponentProps<"header">;
+type HeaderProps = ComponentProps<"header"> & Pick<GlobalProps, "navigation_menu">;
 
-function Header({ className, ...props }: HeaderProps) {
+function Header({ className, navigation_menu, ...props }: HeaderProps) {
   return (
     <header
       className={cn(
@@ -16,11 +22,21 @@ function Header({ className, ...props }: HeaderProps) {
       <Link className="text-lg font-bold" href="/">
         NARSIL
       </Link>
-      <nav className="flex gap-8 font-bold">
-        <a className="text-gray-800 hover:text-gray-950" href="/narsil/dashboard" target="_blank">
-          admin
-        </a>
-      </nav>
+      <NavigationMenuRoot className="flex-none grow-0 justify-center md:justify-start">
+        <NavigationMenuList className="gap-4 font-bold lg:gap-8">
+          {navigation_menu[0].children.map(({ title, url }, index) => {
+            return (
+              <NavigationMenuItem
+                className="leading-6 transition-colors duration-150 hover:text-slate-800 md:leading-normal"
+                asChild={true}
+                key={index}
+              >
+                <Link href={url}>{title}</Link>
+              </NavigationMenuItem>
+            );
+          })}
+        </NavigationMenuList>
+      </NavigationMenuRoot>
     </header>
   );
 }
