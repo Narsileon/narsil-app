@@ -92,3 +92,9 @@ Run the seeders:
 ```bash
 ddev artisan db:seed
 ```
+
+Generate types:
+
+```bash
+ddev artisan typescript:transform
+```
