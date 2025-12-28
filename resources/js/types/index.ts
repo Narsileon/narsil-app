@@ -1,10 +1,8 @@
-import type { Footer, SitePage } from "./models";
-
-export * from "./models";
-
 export type GlobalProps = {
-  footer: Footer;
-  page: SitePage;
+  footer: App.Http.Data.FooterData;
+  header: App.Http.Data.HeaderData;
+  navigation_menu: App.Http.Data.NavigationMenuItemData[];
+  page: App.Http.Data.SitePageData;
   session: {
     locale: string;
   };

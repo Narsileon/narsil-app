@@ -5,16 +5,18 @@ namespace App\Http\Controllers;
 #region
 
 use App\Http\Controllers\Controller;
+use App\Http\Data\FooterData;
+use App\Http\Data\HeaderData;
+use App\Http\Data\NavigationMenuItemData;
+use App\Http\Data\SitePageData;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use Inertia\Inertia;
 use Inertia\Response;
-use Narsil\Contracts\Resources\FooterResource;
-use Narsil\Contracts\Resources\HeaderResource;
-use Narsil\Contracts\Resources\SitePageResource;
 use Narsil\Models\Sites\Site;
 use Narsil\Models\Sites\SitePage;
 use Narsil\Services\PageService;
+use Narsil\Support\Tree;
 
 #endregion
 
@@ -33,12 +35,14 @@ class PageController extends Controller
 
         $header = $this->getHeader($sitePage);
         $footer = $this->getFooter($sitePage);
+        $navigationMenu = $this->getNavigationMenu($sitePage);
         $page = $this->getPage($sitePage);
         $session = $this->getSession($sitePage);
 
         return Inertia::render('frontend/index', [
             'footer' => $footer,
             'header' => $header,
+            'navigation_menu' => $navigationMenu,
             'page' => $page,
             'session' => $session,
         ]);
@@ -51,43 +55,53 @@ class PageController extends Controller
     /**
      * @param SitePage $sitePage
      *
-     * @return HeaderResource
+     * @return HeaderData
      */
-    private function getHeader(SitePage $sitePage): HeaderResource
+    private function getHeader(SitePage $sitePage): HeaderData
     {
-        return app(HeaderResource::class, [
-            'resource' => $sitePage->{SitePage::RELATION_SITE}->{Site::RELATION_HEADER},
-        ]);
+        return HeaderData::from($sitePage->{SitePage::RELATION_SITE}->{Site::RELATION_HEADER});
     }
 
     /**
      * @param SitePage $sitePage
      *
-     * @return FooterResource
+     * @return FooterData
      */
-    private function getFooter(SitePage $sitePage): FooterResource
+    private function getFooter(SitePage $sitePage): FooterData
     {
-        return app(FooterResource::class, [
-            'resource' => $sitePage->{SitePage::RELATION_SITE}->{Site::RELATION_FOOTER},
-        ]);
+        return FooterData::from($sitePage->{SitePage::RELATION_SITE}->{Site::RELATION_FOOTER});
     }
 
     /**
      * @param SitePage $sitePage
      *
-     * @return SitePageResource
+     * @return array
      */
-    private function getPage(SitePage $sitePage): SitePageResource
+    private function getNavigationMenu(SitePage $sitePage): array
     {
-        return app(SitePageResource::class, [
-            'resource' => $sitePage,
-        ]);
+        $tree = new Tree($sitePage->{SitePage::RELATION_SITE}->{Site::RELATION_PAGES}->where(SitePage::SHOW_IN_MENU, '=', true))
+            ->getNestedTree();
+
+        return $tree->map(function ($page)
+        {
+            return NavigationMenuItemData::from($page);
+        })->toArray();
     }
 
     /**
      * @param SitePage $sitePage
      *
-     * @return SitePageResource
+     * @return SitePageData
+     */
+    private function getPage(SitePage $sitePage): SitePageData
+    {
+        return SitePageData::from($sitePage);
+    }
+
+    /**
+     * @param SitePage $sitePage
+     *
+     * @return array
      */
     private function getSession(SitePage $sitePage): array
     {
