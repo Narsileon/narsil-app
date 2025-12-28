@@ -14,7 +14,7 @@ function Header({ className, navigation_menu, ...props }: HeaderProps) {
   return (
     <header
       className={cn(
-        "sticky top-0 right-0 left-0 z-10 flex w-full items-center justify-between bg-background py-2 pr-2 pl-4 text-foreground md:px-4 md:py-4 lg:px-14 xl:px-20",
+        "sticky top-0 right-0 left-0 z-10 flex w-full items-center justify-between bg-background px-4 py-2 text-foreground md:px-4 md:py-4 lg:px-14 xl:px-20",
         className,
       )}
       {...props}
