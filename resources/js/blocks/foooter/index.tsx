@@ -1,18 +1,18 @@
 import { Button, Icon } from "@/blocks";
 import {
   DropdownMenuContent,
+  DropdownMenuItem,
   DropdownMenuRoot,
   DropdownMenuTrigger,
 } from "@/components/dropdown-menu";
 import { IconName } from "@/components/icon";
-import type { GlobalProps } from "@/types";
-import { Link } from "@narsil-cms/blocks";
-import { DropdownMenuItem } from "@narsil-cms/components/dropdown-menu";
 import {
   NavigationMenuItem,
   NavigationMenuList,
   NavigationMenuRoot,
-} from "@narsil-cms/components/navigation-menu";
+} from "@/components/navigation-menu";
+import type { GlobalProps } from "@/types";
+import { Link } from "@inertiajs/react";
 import { cn } from "@narsil-cms/lib/utils";
 import { upperCase, upperFirst } from "lodash-es";
 import { type ComponentProps, useMemo } from "react";
@@ -121,7 +121,7 @@ function Footer({ className, footer, page, session, ...props }: FooterProps) {
             {footer.links?.map(({ label, url }, index) => {
               return (
                 <NavigationMenuItem
-                  className="leading-6 transition-colors duration-150 hover:text-slate-800 md:leading-normal"
+                  className="leading-6 transition-colors duration-150 md:leading-normal"
                   asChild={true}
                   key={index}
                 >

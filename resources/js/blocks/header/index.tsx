@@ -1,10 +1,10 @@
-import type { GlobalProps } from "@/types";
-import { Link } from "@narsil-cms/blocks";
 import {
   NavigationMenuItem,
   NavigationMenuList,
   NavigationMenuRoot,
-} from "@narsil-cms/components/navigation-menu";
+} from "@/components/navigation-menu";
+import type { GlobalProps } from "@/types";
+import { Link } from "@narsil-cms/blocks";
 import { cn } from "@narsil-cms/lib/utils";
 import { type ComponentProps } from "react";
 
@@ -27,7 +27,7 @@ function Header({ className, navigation_menu, ...props }: HeaderProps) {
           {navigation_menu[0].children.map(({ title, url }, index) => {
             return (
               <NavigationMenuItem
-                className="leading-6 transition-colors duration-150 hover:text-slate-800 md:leading-normal"
+                className="leading-6 transition-colors duration-150 md:leading-normal"
                 asChild={true}
                 key={index}
               >
