@@ -8,7 +8,7 @@ function NavigationMenuItem({ className, ...props }: NavigationMenuItemProps) {
   return (
     <NavigationMenu.Item
       data-slot="navigation-menu-item"
-      className={cn("relative hover:text-primary", className)}
+      className={cn("relative transition-colors duration-300 hover:text-primary", className)}
       {...props}
     />
   );
