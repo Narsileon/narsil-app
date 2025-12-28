@@ -1,7 +1,7 @@
 import { Button, Container, Heading } from "@/blocks";
 import BlockRenderer from "@/blocks/block-renderer";
 import { GlobalProps } from "@/types";
-import { Head, Link } from "@inertiajs/react";
+import { Head } from "@inertiajs/react";
 
 function Page({ page }: GlobalProps) {
   return (
@@ -31,8 +31,10 @@ function Page({ page }: GlobalProps) {
             <Heading level="h1" variant="h4">
               No content?
             </Heading>
-            <Button>
-              <Link href="/narsil/dashboard">Visit Admin Panel</Link>
+            <Button asChild={true}>
+              <a href="/narsil/dashboard" target="_blank">
+                Visit Admin Panel
+              </a>
             </Button>
           </div>
         )}

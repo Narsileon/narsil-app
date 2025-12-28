@@ -7,13 +7,11 @@ import { type ComponentProps } from "react";
 
 type ButtonProps = ComponentProps<typeof ButtonRoot> & {
   icon?: IconName;
-  iconProps?: ComponentProps<typeof Icon>;
   label?: string;
-  linkProps?: ComponentProps<typeof Link>;
   url?: string;
 };
 
-function Button({ children, icon, label, url, ...props }: ButtonProps) {
+function Button({ asChild = false, children, icon, label, url, ...props }: ButtonProps) {
   const iconName = icon;
 
   return url ? (
@@ -24,7 +22,7 @@ function Button({ children, icon, label, url, ...props }: ButtonProps) {
       </Link>
     </ButtonRoot>
   ) : (
-    <ButtonRoot asChild={false} {...props}>
+    <ButtonRoot asChild={asChild} {...props}>
       {iconName ? <Icon name={iconName} /> : null}
       <Slot.Slottable>{label ?? children}</Slot.Slottable>
     </ButtonRoot>
