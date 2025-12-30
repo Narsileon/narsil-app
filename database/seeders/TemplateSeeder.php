@@ -4,8 +4,8 @@ namespace Database\Seeders;
 
 #region USE
 
+use Database\Seeders\Templates\ContentSeeder;
 use Database\Seeders\Templates\EventSeeder;
-use Database\Seeders\Templates\PageSeeder;
 use Illuminate\Database\Seeder;
 use Narsil\Models\Structures\Template;
 use Narsil\Models\Entities\Entity;
@@ -23,11 +23,11 @@ final class TemplateSeeder extends Seeder
     {
         $eventTemplate = new EventSeeder()
             ->run();
-        $pageTemplate = new PageSeeder()
+        $contentTemplate = new ContentSeeder()
             ->run();
 
         $this->createEvents($eventTemplate);
-        $this->createPage($pageTemplate);
+        $this->createContent($contentTemplate);
     }
 
     #endregion
@@ -66,19 +66,19 @@ final class TemplateSeeder extends Seeder
      *
      * @return Entity
      */
-    private function createPage(Template $template): Entity
+    private function createContent(Template $template): Entity
     {
         Entity::setTemplate($template);
 
-        $page = new Entity([
+        $content = new Entity([
             Entity::ID => 1,
             Entity::SLUG => fake()->slug(1),
             'title' => fake()->words(3, true),
         ]);
 
-        $page->save();
+        $content->save();
 
-        return $page;
+        return $content;
     }
 
     #endregion

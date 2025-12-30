@@ -19,7 +19,7 @@ use Narsil\Services\MigrationService;
 
 #endregion
 
-final class PageSeeder
+final class ContentSeeder
 {
     #region PUBLIC METHODS
 
@@ -29,16 +29,16 @@ final class PageSeeder
     public function run(): Template
     {
         $template = Template::query()
-            ->where(Template::HANDLE, 'pages')
+            ->where(Template::HANDLE, 'contents')
             ->first();
 
         if (!$template)
         {
             $template = Template::firstOrCreate([
-                Template::HANDLE => 'pages',
+                Template::HANDLE => 'contents',
             ], [
-                Template::PLURAL => 'pages',
-                Template::SINGULAR => 'page',
+                Template::PLURAL => 'contents',
+                Template::SINGULAR => 'content',
             ]);
 
             $this->createMainSection($template);
