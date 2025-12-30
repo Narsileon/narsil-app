@@ -9,6 +9,7 @@ use Database\Seeders\Templates\EventSeeder;
 use Illuminate\Database\Seeder;
 use Narsil\Models\Structures\Template;
 use Narsil\Models\Entities\Entity;
+use Narsil\Models\Entities\EntityData;
 
 #endregion
 
@@ -37,48 +38,46 @@ final class TemplateSeeder extends Seeder
     /**
      * @param Template $template
      *
-     * @return array<Entity>
+     * @return void
      */
-    private function createEvents(Template $template): array
+    private function createEvents(Template $template): void
     {
-        Entity::setTemplate($template);
-
-        $events = [];
+        EntityData::setTemplate($template);
 
         foreach (range(1, 10) as $index)
         {
-            $event = new Entity([
-                Entity::ID => $index,
+            $entity = Entity::create([
                 Entity::SLUG => fake()->slug(1),
-                'title' => fake()->words(3, true),
+                Entity::TEMPLATE_ID => $template->{Template::ID},
             ]);
 
-            $event->save();
-
-            $events[] = $event;
+            EntityData::create([
+                EntityData::ENTITY_UUID => $entity->{Entity::UUID},
+                'title' => fake()->words(3, true),
+            ]);
         }
-
-        return $events;
     }
 
     /**
      * @param Template $template
      *
-     * @return Entity
+     * @return ;
      */
     private function createContent(Template $template): Entity
     {
-        Entity::setTemplate($template);
+        EntityData::setTemplate($template);
 
-        $content = new Entity([
-            Entity::ID => 1,
+        $entity = Entity::create([
             Entity::SLUG => fake()->slug(1),
+            Entity::TEMPLATE_ID => $template->{Template::ID},
+        ]);
+
+        EntityData::create([
+            EntityData::ENTITY_UUID => $entity->{Entity::UUID},
             'title' => fake()->words(3, true),
         ]);
 
-        $content->save();
-
-        return $content;
+        return $entity;
     }
 
     #endregion
