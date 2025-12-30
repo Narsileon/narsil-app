@@ -13,8 +13,8 @@ use Narsil\Models\Structures\Block;
 use Narsil\Models\Structures\Field;
 use Narsil\Models\Structures\FieldBlock;
 use Narsil\Models\Structures\Template;
-use Narsil\Models\Structures\TemplateSection;
-use Narsil\Models\Structures\TemplateSectionElement;
+use Narsil\Models\Structures\TemplateTab;
+use Narsil\Models\Structures\TemplateTabElement;
 use Narsil\Services\MigrationService;
 
 #endregion
@@ -41,8 +41,8 @@ final class ContentSeeder
                 Template::SINGULAR => 'content',
             ]);
 
-            $this->createMainSection($template);
-            $this->createContentSection($template);
+            $this->createMainTab($template);
+            $this->createContentTab($template);
 
             MigrationService::syncTable($template);
         }
@@ -91,50 +91,50 @@ final class ContentSeeder
     /**
      * @param Template $template
      *
-     * @return TemplateSection
+     * @return TemplateTab
      */
-    private function createContentSection(Template $template): TemplateSection
+    private function createContentTab(Template $template): TemplateTab
     {
         $contentField = $this->createContentField();
 
-        $templateSection = TemplateSection::firstOrCreate([
-            TemplateSection::HANDLE => 'content',
-            TemplateSection::TEMPLATE_ID => $template->{Template::ID},
+        $templateTab = TemplateTab::firstOrCreate([
+            TemplateTab::HANDLE => 'content',
+            TemplateTab::TEMPLATE_ID => $template->{Template::ID},
         ], [
-            TemplateSection::NAME => 'Content',
+            TemplateTab::NAME => 'Content',
         ]);
 
-        $templateSection->fields()->attach($contentField->{Block::ID}, [
-            TemplateSection::HANDLE => $contentField->{Block::HANDLE},
-            TemplateSection::NAME => ['en' => $contentField->{Block::NAME}],
-            TemplateSection::POSITION => 0,
+        $templateTab->fields()->attach($contentField->{Block::ID}, [
+            TemplateTab::HANDLE => $contentField->{Block::HANDLE},
+            TemplateTab::NAME => ['en' => $contentField->{Block::NAME}],
+            TemplateTab::POSITION => 0,
         ]);
 
-        return $templateSection;
+        return $templateTab;
     }
 
     /**
      * @param Template $template
      *
-     * @return TemplateSection
+     * @return TemplateTab
      */
-    private function createMainSection(Template $template): TemplateSection
+    private function createMainTab(Template $template): TemplateTab
     {
         $titleField = new TitleFieldSeeder()->run();
 
-        $templateSection = TemplateSection::firstOrCreate([
-            TemplateSection::HANDLE => 'main',
-            TemplateSection::TEMPLATE_ID => $template->{Template::ID},
+        $templateTab = TemplateTab::firstOrCreate([
+            TemplateTab::HANDLE => 'main',
+            TemplateTab::TEMPLATE_ID => $template->{Template::ID},
         ], [
-            TemplateSection::NAME => 'Main',
+            TemplateTab::NAME => 'Main',
         ]);
 
-        $templateSection->fields()->attach($titleField->{Field::ID}, [
-            TemplateSectionElement::HANDLE => $titleField->{Field::HANDLE},
-            TemplateSectionElement::NAME => ['en' => $titleField->{Field::NAME}],
-            TemplateSectionElement::POSITION => 0,
+        $templateTab->fields()->attach($titleField->{Field::ID}, [
+            TemplateTabElement::HANDLE => $titleField->{Field::HANDLE},
+            TemplateTabElement::NAME => ['en' => $titleField->{Field::NAME}],
+            TemplateTabElement::POSITION => 0,
         ]);
 
-        return $templateSection;
+        return $templateTab;
     }
 }

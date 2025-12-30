@@ -7,8 +7,8 @@ namespace Database\Seeders\Templates;
 use Narsil\Database\Seeders\Fields\TitleFieldSeeder;
 use Narsil\Models\Structures\Field;
 use Narsil\Models\Structures\Template;
-use Narsil\Models\Structures\TemplateSection;
-use Narsil\Models\Structures\TemplateSectionElement;
+use Narsil\Models\Structures\TemplateTab;
+use Narsil\Models\Structures\TemplateTabElement;
 use Narsil\Services\MigrationService;
 
 #endregion
@@ -35,7 +35,7 @@ final class EventSeeder
                 Template::SINGULAR => 'event',
             ]);
 
-            $this->createMainSection($template);
+            $this->createMainTab($template);
 
             MigrationService::syncTable($template);
         }
@@ -50,26 +50,26 @@ final class EventSeeder
     /**
      * @param Template $template
      *
-     * @return TemplateSection
+     * @return TemplateTab
      */
-    private function createMainSection(Template $template): TemplateSection
+    private function createMainTab(Template $template): TemplateTab
     {
         $titleField = new TitleFieldSeeder()->run();
 
-        $templateSection = TemplateSection::firstOrCreate([
-            TemplateSection::HANDLE => 'main',
-            TemplateSection::TEMPLATE_ID => $template->{Template::ID},
+        $templateTab = TemplateTab::firstOrCreate([
+            TemplateTab::HANDLE => 'main',
+            TemplateTab::TEMPLATE_ID => $template->{Template::ID},
         ], [
-            TemplateSection::NAME => 'Main',
+            TemplateTab::NAME => 'Main',
         ]);
 
-        $templateSection->fields()->attach($titleField->{Field::ID}, [
-            TemplateSectionElement::HANDLE => $titleField->{Field::HANDLE},
-            TemplateSectionElement::NAME => ['en' => $titleField->{Field::NAME}],
-            TemplateSectionElement::POSITION => 0,
+        $templateTab->fields()->attach($titleField->{Field::ID}, [
+            TemplateTabElement::HANDLE => $titleField->{Field::HANDLE},
+            TemplateTabElement::NAME => ['en' => $titleField->{Field::NAME}],
+            TemplateTabElement::POSITION => 0,
         ]);
 
-        return $templateSection;
+        return $templateTab;
     }
 
     #endregion
