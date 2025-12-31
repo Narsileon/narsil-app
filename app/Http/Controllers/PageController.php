@@ -27,7 +27,7 @@ class PageController extends Controller
     /**
      * @param Request $request
      *
-     * @return mixed
+     * @return Response
      */
     public function __invoke(Request $request): Response
     {

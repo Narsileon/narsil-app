@@ -16,7 +16,9 @@ class SeederController extends Controller
     #region PUBLIC METHODS
 
     /**
-     * @return Request $request
+     * @param Request $request
+     *
+     * @return RedirectResponse
      */
     public function __invoke(Request $request): RedirectResponse
     {
