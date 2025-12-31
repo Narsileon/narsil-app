@@ -15,7 +15,6 @@ use Narsil\Models\Structures\FieldBlock;
 use Narsil\Models\Structures\Template;
 use Narsil\Models\Structures\TemplateTab;
 use Narsil\Models\Structures\TemplateTabElement;
-use Narsil\Services\MigrationService;
 
 #endregion
 
@@ -43,8 +42,6 @@ final class ContentSeeder
 
             $this->createMainTab($template);
             $this->createContentTab($template);
-
-            MigrationService::syncTable($template);
         }
 
         return $template;

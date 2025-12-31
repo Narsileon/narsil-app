@@ -9,7 +9,7 @@ use Database\Seeders\Templates\EventSeeder;
 use Illuminate\Database\Seeder;
 use Narsil\Models\Structures\Template;
 use Narsil\Models\Entities\Entity;
-use Narsil\Models\Entities\EntityData;
+use Narsil\Services\Models\EntityService;
 
 #endregion
 
@@ -42,8 +42,6 @@ final class TemplateSeeder extends Seeder
      */
     private function createEvents(Template $template): void
     {
-        EntityData::setTemplate($template);
-
         foreach (range(1, 10) as $index)
         {
             $entity = Entity::create([
@@ -51,8 +49,7 @@ final class TemplateSeeder extends Seeder
                 Entity::TEMPLATE_ID => $template->{Template::ID},
             ]);
 
-            EntityData::create([
-                EntityData::ENTITY_UUID => $entity->{Entity::UUID},
+            EntityService::syncFields($entity, $template, [
                 'title' => fake()->words(3, true),
             ]);
         }
@@ -65,15 +62,12 @@ final class TemplateSeeder extends Seeder
      */
     private function createContent(Template $template): Entity
     {
-        EntityData::setTemplate($template);
-
         $entity = Entity::create([
             Entity::SLUG => fake()->slug(1),
             Entity::TEMPLATE_ID => $template->{Template::ID},
         ]);
 
-        EntityData::create([
-            EntityData::ENTITY_UUID => $entity->{Entity::UUID},
+        EntityService::syncFields($entity, $template, [
             'title' => fake()->words(3, true),
         ]);
 

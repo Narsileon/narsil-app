@@ -9,7 +9,6 @@ use Narsil\Models\Structures\Field;
 use Narsil\Models\Structures\Template;
 use Narsil\Models\Structures\TemplateTab;
 use Narsil\Models\Structures\TemplateTabElement;
-use Narsil\Services\MigrationService;
 
 #endregion
 
@@ -36,8 +35,6 @@ final class EventSeeder
             ]);
 
             $this->createMainTab($template);
-
-            MigrationService::syncTable($template);
         }
 
         return $template;
