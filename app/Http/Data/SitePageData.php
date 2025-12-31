@@ -4,8 +4,8 @@ namespace App\Http\Data;
 
 #region USE
 
-use Illuminate\Support\Arr;
 use Narsil\Contracts\Resources\EntityResource;
+use Narsil\Models\Entities\Entity;
 use Narsil\Models\Sites\SitePage;
 use Spatie\LaravelData\Data;
 use Spatie\TypeScriptTransformer\Attributes\TypeScript;
@@ -88,19 +88,13 @@ final class SitePageData extends Data
     #region PROTECTED METHODS
 
     /**
-     * Resolve site page entity.
+     * @param SitePage $sitePage
+     *
+     * @return Entity|null
      */
-    protected static function resolveEntity(SitePage $sitePage): mixed
+    protected static function resolveEntity(SitePage $sitePage): ?Entity
     {
-        $entity = null;
-
-        if ($identifier = Arr::first($sitePage->{SitePage::ENTITY}))
-        {
-            $entity = Arr::get(
-                $sitePage->{SitePage::ATTRIBUTE_ENTITIES},
-                $identifier
-            );
-        }
+        $entity = $sitePage->{SitePage::RELATION_ENTITIES}?->first();
 
         return $entity;
     }
