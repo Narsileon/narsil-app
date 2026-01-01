@@ -1,7 +1,5 @@
-import { Link } from "@inertiajs/react";
 import { Heading } from "@narsil-cms/blocks";
 import { SectionContent, SectionHeader, SectionRoot } from "@narsil-cms/components/section";
-import { route } from "ziggy-js";
 
 function Dashboard() {
   return (
@@ -15,17 +13,6 @@ function Dashboard() {
         <p>
           This page is an example of how you can override a default CMS view with your own
           implementation.
-        </p>
-        <p>
-          Need sample data? You can{" "}
-          <Link
-            className="text-primary cursor-pointer font-bold hover:underline"
-            href={route("narsil.seed")}
-            method="post"
-          >
-            seed the database
-          </Link>{" "}
-          with one click.
         </p>
       </SectionContent>
     </SectionRoot>

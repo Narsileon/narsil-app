@@ -3,7 +3,6 @@
 #region USE
 
 use App\Http\Controllers\PageController;
-use App\Http\Controllers\SeederController;
 use App\Http\Middlewares\InertiaMiddleware;
 use Illuminate\Support\Facades\Route;
 
@@ -25,6 +24,3 @@ Route::middleware([
         ->get('/{path?}', PageController::class)
         ->where('path', '.*');
 });
-
-Route::post('/narsil/seed', SeederController::class)
-    ->name('narsil.seed');
