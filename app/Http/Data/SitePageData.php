@@ -4,9 +4,15 @@ namespace App\Http\Data;
 
 #region USE
 
-use Narsil\Contracts\Resources\EntityResource;
+use Illuminate\Support\Arr;
+use Illuminate\Support\Collection;
+use Narsil\Contracts\Fields\BuilderField;
+use Narsil\Interfaces\IStructureHasElement;
 use Narsil\Models\Entities\Entity;
+use Narsil\Models\Entities\EntityNode;
 use Narsil\Models\Sites\SitePage;
+use Narsil\Models\Structures\Block;
+use Narsil\Models\Structures\Field;
 use Spatie\LaravelData\Data;
 use Spatie\TypeScriptTransformer\Attributes\TypeScript;
 
@@ -19,7 +25,7 @@ final class SitePageData extends Data
 
     /**
      * @param string $change_freq
-     * @param EntityResource|null $content
+     * @param array $data
      * @param int $id
      * @param string|null $meta_description
      * @param string|null $open_graph_description
@@ -38,7 +44,7 @@ final class SitePageData extends Data
         public int $id,
         public string $slug,
         public string $title,
-        public mixed $content,
+        public array $data,
         public ?string $meta_description,
         public ?string $open_graph_description,
         public ?string $open_graph_image,
@@ -55,6 +61,17 @@ final class SitePageData extends Data
 
     #endregion
 
+    #region PROPERTIES
+
+    /**
+     * The nodes of the entity grouped by parent uuid.
+     *
+     * @var Collection<string,EntityNode>
+     */
+    private static Collection $nodes;
+
+    #endregion
+
     #region PUBLIC METHODS
 
     /**
@@ -64,11 +81,13 @@ final class SitePageData extends Data
      */
     public static function fromModel(SitePage $sitePage): self
     {
+        $data = static::resolveData($sitePage);
+
         return new static(
             id: $sitePage->{SitePage::ID},
             slug: $sitePage->{SitePage::SLUG},
             title: $sitePage->{SitePage::TITLE},
-            content: static::resolveEntity($sitePage),
+            data: $data,
             meta_description: $sitePage->{SitePage::META_DESCRIPTION},
             open_graph_description: $sitePage->{SitePage::OPEN_GRAPH_DESCRIPTION},
             open_graph_image: $sitePage->{SitePage::OPEN_GRAPH_IMAGE},
@@ -85,18 +104,97 @@ final class SitePageData extends Data
 
     #endregion
 
-    #region PROTECTED METHODS
+    #region PRIVATE METHODS
 
     /**
      * @param SitePage $sitePage
      *
-     * @return Entity|null
+     * @return array
      */
-    protected static function resolveEntity(SitePage $sitePage): ?Entity
+    private static function resolveData(SitePage $sitePage): array
     {
         $entity = $sitePage->{SitePage::RELATION_ENTITIES}?->first();
 
-        return $entity;
+        if (!$entity)
+        {
+            return [];
+        }
+
+        $nodes = $entity->{Entity::RELATION_NODES};
+
+        $nodes->loadMissing([
+            EntityNode::RELATION_BLOCK,
+            EntityNode::RELATION_ELEMENT,
+        ]);
+
+        static::$nodes = $nodes->groupBy(EntityNode::PARENT_UUID);
+
+        return static::processNodes();
+    }
+
+    /**
+     * @param array $data
+     * @param string|null $parentUuid
+     * @param string|null $path
+     *
+     * @return array
+     */
+    private static function processNodes(array &$data = [], ?string $parentUuid = null, ?string $path = null): array
+    {
+        $nodes = static::$nodes->get($parentUuid, []);
+
+        foreach ($nodes as $node)
+        {
+            $element = $node->{EntityNode::RELATION_ELEMENT};
+
+            $handle = $element->{IStructureHasElement::HANDLE};
+
+            if ($element->{IStructureHasElement::ELEMENT_TYPE} === Field::TABLE)
+            {
+                $field = $element->{IStructureHasElement::RELATION_ELEMENT};
+
+                $key = $path ? "$path.$handle" : $handle;
+
+                if ($field->{Field::TYPE} === BuilderField::class)
+                {
+                    $blockNodes = static::$nodes->get($node->{EntityNode::UUID}, []);
+
+                    foreach ($blockNodes as $index => $blockNode)
+                    {
+                        Arr::set($data, "$key.$index", [
+                            Block::HANDLE => $blockNode->{EntityNode::RELATION_BLOCK}->{Block::HANDLE},
+                            EntityNode::BLOCK_ID => $blockNode->{EntityNode::BLOCK_ID},
+                            EntityNode::UUID => $blockNode->{EntityNode::UUID},
+                        ]);
+
+                        $nextPath = "$key.$index." . EntityNode::RELATION_CHILDREN;
+
+                        static::processNodes($data, $blockNode->{EntityNode::UUID}, $nextPath);
+                    }
+                }
+                else
+                {
+                    Arr::set($data, $key, $node->{EntityNode::VALUE});
+                }
+            }
+            else
+            {
+                $block = $element->{IStructureHasElement::RELATION_ELEMENT};
+
+                if ($block->{Block::VIRTUAL})
+                {
+                    $nextPath = $path;
+                }
+                else
+                {
+                    $nextPath = $path ? "$path.$handle" : $handle;
+                }
+
+                static::processNodes($data, $node->{EntityNode::UUID}, $nextPath);
+            }
+        }
+
+        return $data;
     }
 
     #endregion

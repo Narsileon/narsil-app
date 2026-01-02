@@ -2,6 +2,7 @@ import { Button, Container, Heading } from "@/blocks";
 import BlockRenderer from "@/blocks/block-renderer";
 import { GlobalProps } from "@/types";
 import { Head } from "@inertiajs/react";
+import { Fragment } from "react/jsx-runtime";
 
 function Page({ page }: GlobalProps) {
   return (
@@ -22,9 +23,18 @@ function Page({ page }: GlobalProps) {
         ) : null}
       </Head>
       <Container>
-        {page.content ? (
-          page.content.blocks.map((block, index) => {
-            return <BlockRenderer block={block} key={index} />;
+        {page.data ? (
+          Object.entries(page.data).map(([handle, element]) => {
+            if (Array.isArray(element)) {
+              return (
+                <Fragment key={handle}>
+                  {element.map((block, index) => {
+                    return <BlockRenderer block={block} key={index} />;
+                  })}
+                </Fragment>
+              );
+            }
+            return <BlockRenderer block={element} key={handle} />;
           })
         ) : (
           <div className="flex flex-col gap-8">

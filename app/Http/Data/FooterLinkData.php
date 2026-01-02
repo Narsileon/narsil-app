@@ -50,12 +50,12 @@ final class FooterLinkData extends Data
 
     #endregion
 
-    #region PROTECTED METHODS
+    #region PRIVATE METHODS
 
     /**
      * @return string
      */
-    protected static function getLabel(FooterLink $footerLink): string
+    private static function getLabel(FooterLink $footerLink): string
     {
         $label = $footerLink->{FooterLink::LABEL};
 

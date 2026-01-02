@@ -1,10 +1,12 @@
-import type { SitePageBlock } from "@/types";
 import Accordion from "./accordion";
 import Button from "./button";
 import HeroHeader from "./hero-header";
 
 type BlockRendererProps = {
-  block: SitePageBlock;
+  block: {
+    handle: string;
+    children: Record<string, unknown>;
+  };
   [key: string]: unknown;
 };
 
@@ -19,7 +21,7 @@ type BlockName = keyof typeof blocks;
 function BlockRenderer({ block, ...props }: BlockRendererProps) {
   const BlockComponent = blocks[block.handle as BlockName];
 
-  return BlockComponent ? <BlockComponent {...block} {...props} /> : null;
+  return BlockComponent ? <BlockComponent {...block.children} {...props} /> : null;
 }
 
 export default BlockRenderer;

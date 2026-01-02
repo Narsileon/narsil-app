@@ -29,7 +29,7 @@ declare namespace App.Http.Data {
     id: number;
     slug: string;
     title: string;
-    content: any;
+    data: Array<any>;
     meta_description: string | null;
     open_graph_description: string | null;
     open_graph_image: string | null;

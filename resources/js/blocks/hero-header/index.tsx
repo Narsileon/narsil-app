@@ -1,26 +1,33 @@
 import { Container, Heading } from "@/blocks";
-import type { SitePageBlock } from "@/types";
+import { set } from "lodash-es";
+import { ComponentProps } from "react";
 import BlockRenderer from "../block-renderer";
 
 type HeroHeaderProps = {
   excerpt: string;
-  headline: string;
-  hero_header_buttons: SitePageBlock[];
+  headline: {
+    headline: string;
+    headline_level: ComponentProps<typeof Heading>["level"];
+    headline_style: ComponentProps<typeof Heading>["variant"];
+  };
+  buttons: unknown[];
 };
 
-function HeroHeader({ excerpt, headline, hero_header_buttons }: HeroHeaderProps) {
+function HeroHeader({ excerpt, headline, buttons }: HeroHeaderProps) {
   return (
     <Container>
-      <Heading level="h1" variant="h1">
-        {headline}
+      <Heading level={headline.headline_level} variant={headline.headline_style}>
+        {headline.headline}
       </Heading>
       <div dangerouslySetInnerHTML={{ __html: excerpt }} />
-      {hero_header_buttons.map((button, index) => {
-        button = {
-          ...button,
-          className: "transition-transform duration-200 will-change-transform hover:scale-105",
-          size: "lg",
-        };
+      {buttons.map((button, index) => {
+        set(
+          button,
+          "children.className",
+          "transition-transform duration-200 will-change-transform hover:scale-105",
+        );
+
+        set(button, "children.size", "lg");
 
         return <BlockRenderer block={button} key={index} />;
       })}
