@@ -27,7 +27,7 @@ function Form({ form }: FormProps) {
           render={() => {
             return (
               <FormRoot
-                className="w-full grid-cols-12 items-center gap-4"
+                className="w-full grid-cols-12 items-center gap-x-8 gap-y-4"
                 options={{
                   preserveState: true,
                   onSuccess: () => {
