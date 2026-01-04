@@ -7,7 +7,9 @@ import Header from "./header";
 import Heading from "./heading";
 import HeroHeader from "./hero-header";
 import Icon from "./icon";
+import Label from "./label";
 import Separator from "./separator";
+import Tooltip from "./tooltip";
 
 export {
   Accordion,
@@ -19,5 +21,7 @@ export {
   Heading,
   HeroHeader,
   Icon,
+  Label,
   Separator,
+  Tooltip,
 };

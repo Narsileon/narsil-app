@@ -16,6 +16,7 @@ use Inertia\Response;
 use Narsil\Models\Sites\Site;
 use Narsil\Models\Sites\SitePage;
 use Narsil\Services\PageService;
+use Narsil\Support\TranslationsBag;
 use Narsil\Support\Tree;
 
 #endregion
@@ -39,12 +40,15 @@ class PageController extends Controller
         $page = $this->getPage($sitePage);
         $session = $this->getSession($sitePage);
 
+        $translations = app(TranslationsBag::class)->get();
+
         return Inertia::render('frontend/index', [
             'footer' => $footer,
             'header' => $header,
             'navigation_menu' => $navigationMenu,
             'page' => $page,
             'session' => $session,
+            'translations' => $translations,
         ]);
     }
 
