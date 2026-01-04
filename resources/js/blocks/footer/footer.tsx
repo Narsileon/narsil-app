@@ -1,4 +1,5 @@
-import { Button, Icon } from "@/blocks";
+import { Button } from "@/blocks/button";
+import { Icon } from "@/blocks/icon";
 import {
   DropdownMenuContent,
   DropdownMenuItem,

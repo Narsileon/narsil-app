@@ -1,4 +1,5 @@
-import { Label, Tooltip } from "@/blocks";
+import { Label } from "@/blocks/label";
+import { Tooltip } from "@/blocks/tooltip";
 import { useLocalization } from "@narsil-cms/components/localization";
 import { cn } from "@narsil-cms/lib/utils";
 import { type ComponentProps } from "react";

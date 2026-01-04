@@ -1,4 +1,5 @@
-import { Heading, Icon } from "@/blocks";
+import { Heading } from "@/blocks/heading";
+import { Icon } from "@/blocks/icon";
 import {
   AccordionContent,
   AccordionHeader,
@@ -6,14 +7,12 @@ import {
   AccordionRoot,
   AccordionTrigger,
 } from "@/components/accordion";
-import { SitePageBlock } from "@/types";
 
 type AccordionProps = {
-  accordion_builder: SitePageBlock &
-    {
-      accordion_item_content: string;
-      accordion_item_trigger: string;
-    }[];
+  accordion_builder: {
+    accordion_item_content: string;
+    accordion_item_trigger: string;
+  }[];
 };
 
 function Accordion({ accordion_builder }: AccordionProps) {

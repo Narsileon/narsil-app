@@ -1,4 +1,5 @@
-import { Button, Container } from "@/blocks";
+import { Button } from "@/blocks/button";
+import { Container } from "@/blocks/container";
 import { FormProvider, FormRenderer, FormRoot } from "@/components/form";
 import { FormType } from "@/types";
 import { useState } from "react";

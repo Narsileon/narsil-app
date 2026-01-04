@@ -1,7 +1,7 @@
-import Accordion from "./accordion";
-import Button from "./button";
-import Form from "./form";
-import HeroHeader from "./hero-header";
+import { Accordion } from "@/blocks/accordion";
+import { Button } from "@/blocks/button";
+import { Form } from "@/blocks/form";
+import { HeroHeader } from "@/blocks/hero-header";
 
 type BlockRendererProps = {
   block: {

@@ -2,9 +2,9 @@ import { InputContent, InputRoot } from "@/components/input";
 import { cn } from "@narsil-cms/lib/utils";
 import { type ComponentProps } from "react";
 
-type NumberProps = ComponentProps<typeof InputContent>;
+type InputNumberProps = ComponentProps<typeof InputContent>;
 
-function Number({ className, ...props }: NumberProps) {
+function InputNumber({ className, ...props }: InputNumberProps) {
   return (
     <InputRoot>
       <InputContent className={cn("", className)} {...props} type="number" />
@@ -12,4 +12,4 @@ function Number({ className, ...props }: NumberProps) {
   );
 }
 
-export default Number;
+export default InputNumber;

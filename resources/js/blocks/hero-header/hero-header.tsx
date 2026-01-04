@@ -1,7 +1,8 @@
-import { Container, Heading } from "@/blocks";
+import { BlockRenderer } from "@/blocks";
+import { Container } from "@/blocks/container";
+import { Heading } from "@/blocks/heading";
 import { set } from "lodash-es";
-import { ComponentProps } from "react";
-import BlockRenderer from "../block-renderer";
+import { type ComponentProps } from "react";
 
 type HeroHeaderProps = {
   excerpt: string;

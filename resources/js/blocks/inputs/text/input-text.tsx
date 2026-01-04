@@ -2,9 +2,9 @@ import { InputContent, InputRoot } from "@/components/input";
 import { cn } from "@narsil-cms/lib/utils";
 import { type ComponentProps } from "react";
 
-type TextProps = ComponentProps<typeof InputContent>;
+type InputTextProps = ComponentProps<typeof InputContent>;
 
-function Text({ className, ...props }: TextProps) {
+function InputText({ className, ...props }: InputTextProps) {
   return (
     <InputRoot>
       <InputContent className={cn("", className)} {...props} />
@@ -12,4 +12,4 @@ function Text({ className, ...props }: TextProps) {
   );
 }
 
-export default Text;
+export default InputText;

@@ -1,4 +1,4 @@
-import { Icon } from "@/blocks";
+import { Icon } from "@/blocks/icon";
 import { ButtonRoot } from "@/components/button";
 import { type IconName } from "@/components/icon";
 import { Link } from "@inertiajs/react";

@@ -1,5 +1,7 @@
-import { Button, Container, Heading } from "@/blocks";
-import BlockRenderer from "@/blocks/block-renderer";
+import { BlockRenderer } from "@/blocks";
+import { Button } from "@/blocks/button";
+import { Container } from "@/blocks/container";
+import { Heading } from "@/blocks/heading";
 import { GlobalProps } from "@/types";
 import { Head } from "@inertiajs/react";
 import { Fragment } from "react/jsx-runtime";

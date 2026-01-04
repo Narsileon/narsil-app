@@ -1,4 +1,5 @@
-import { Footer, Header } from "@/blocks";
+import { Footer } from "@/blocks/footer";
+import { Header } from "@/blocks/header";
 import { GlobalProps } from "@/types";
 
 type LayoutProps = {

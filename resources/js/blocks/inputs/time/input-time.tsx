@@ -2,9 +2,9 @@ import { InputContent, InputRoot } from "@/components/input";
 import { cn } from "@narsil-cms/lib/utils";
 import { type ComponentProps } from "react";
 
-type DateProps = ComponentProps<typeof InputContent>;
+type InputTimeProps = ComponentProps<typeof InputContent>;
 
-function Date({ className, ...props }: DateProps) {
+function InputTime({ className, ...props }: InputTimeProps) {
   return (
     <InputRoot>
       <InputContent className={cn("", className)} {...props} type="date" />
@@ -12,4 +12,4 @@ function Date({ className, ...props }: DateProps) {
   );
 }
 
-export default Date;
+export default InputTime;

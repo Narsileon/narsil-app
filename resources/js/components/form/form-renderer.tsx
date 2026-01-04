@@ -1,4 +1,5 @@
-import { InputDate, InputDatetime, InputNumber, InputText, InputTime } from "@/blocks";
+import { InputDate, InputDatetime, InputNumber, InputText, InputTime } from "@/blocks/inputs";
+
 import { cn } from "@narsil-cms/lib/utils";
 import type { Condition, Fieldset, FormTab, Input } from "@narsil-cms/types";
 import { ComponentProps, Fragment } from "react";

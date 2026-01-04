@@ -1,4 +1,4 @@
-import { Icon } from "@/blocks";
+import { Icon } from "@/blocks/icon";
 import { cn } from "@narsil-cms/lib/utils";
 import { DropdownMenu } from "radix-ui";
 import { type ComponentProps } from "react";
