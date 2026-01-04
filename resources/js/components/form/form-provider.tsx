@@ -1,5 +1,4 @@
 import { useForm } from "@inertiajs/react";
-import { getFieldDefaultValue } from "@narsil-cms/lib/field";
 import type { Fieldset, FormTab, Input } from "@narsil-cms/types";
 import { set } from "lodash-es";
 import { FormContext, type FormContextProps } from "./form-context";
@@ -23,11 +22,19 @@ function FormProvider({ action, elements = [], id, render }: FormProviderProps) 
           if ("elements" in childElement) {
             Object.assign(receivedValues, flattenValues([childElement]));
           } else if ("type" in childElement) {
-            set(receivedValues, hasElement.handle, getFieldDefaultValue(childElement));
+            set(
+              receivedValues,
+              hasElement.handle,
+              (childElement.settings as Record<string, unknown>)?.value ?? "",
+            );
           }
         });
       } else if ("type" in element) {
-        set(receivedValues, element.handle, getFieldDefaultValue(element as Input));
+        set(
+          receivedValues,
+          element.handle,
+          (element.settings as Record<string, unknown>)?.value ?? "",
+        );
       }
     });
 
