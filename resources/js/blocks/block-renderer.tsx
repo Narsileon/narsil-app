@@ -1,5 +1,6 @@
 import Accordion from "./accordion";
 import Button from "./button";
+import Form from "./form";
 import HeroHeader from "./hero-header";
 
 type BlockRendererProps = {
@@ -14,6 +15,7 @@ const blocks = {
   ["accordion"]: Accordion,
   ["button"]: Button,
   ["hero_header"]: HeroHeader,
+  ["form"]: Form,
 };
 
 type BlockName = keyof typeof blocks;
