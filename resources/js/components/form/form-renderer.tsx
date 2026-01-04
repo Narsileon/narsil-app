@@ -51,10 +51,6 @@ function FormRenderer({ className, conditions, width, ...props }: FormRendererPr
     );
   }
 
-  if (!("settings" in props)) {
-    return null;
-  }
-
   return (
     <FormField
       id={props.handle}
