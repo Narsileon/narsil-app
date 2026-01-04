@@ -20,7 +20,7 @@ function HeroHeader({ excerpt, headline, buttons }: HeroHeaderProps) {
         {headline.headline}
       </Heading>
       <div dangerouslySetInnerHTML={{ __html: excerpt }} />
-      {buttons.map((button, index) => {
+      {buttons?.map((button, index) => {
         set(
           button,
           "children.className",
