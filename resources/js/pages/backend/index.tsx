@@ -1,4 +1,4 @@
-import { Heading } from "@narsil-cms/blocks";
+import { Heading } from "@narsil-cms/blocks/heading";
 import { SectionContent, SectionHeader, SectionRoot } from "@narsil-cms/components/section";
 
 function Dashboard() {
