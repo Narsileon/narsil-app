@@ -6,6 +6,8 @@ namespace App\Http\Data;
 
 use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Config;
 use Narsil\Contracts\Fields\BuilderField;
 use Narsil\Contracts\Fields\FormField;
 use Narsil\Contracts\Fields\LinkField;
@@ -13,6 +15,7 @@ use Narsil\Interfaces\IStructureHasElement;
 use Narsil\Models\Entities\Entity;
 use Narsil\Models\Entities\EntityNode;
 use Narsil\Models\Sites\SitePage;
+use Narsil\Models\Sites\SitePageEntity;
 use Narsil\Models\Structures\Block;
 use Narsil\Models\Structures\Field;
 use Spatie\LaravelData\Data;
@@ -115,7 +118,10 @@ final class SitePageData extends Data
      */
     private static function resolveData(SitePage $sitePage): array
     {
-        $entity = $sitePage->{SitePage::RELATION_ENTITIES}?->first();
+        $entities = $sitePage->{SitePage::RELATION_ENTITIES}
+            ->keyBy(SitePageEntity::LANGUAGE);
+
+        $entity = $entities->get(App::getLocale(), $entities->get(Config::get('app.fallback_locale')))?->{SitePageEntity::RELATION_TARGET};
 
         if (!$entity)
         {
