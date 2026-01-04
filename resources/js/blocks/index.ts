@@ -7,6 +7,11 @@ import Header from "./header";
 import Heading from "./heading";
 import HeroHeader from "./hero-header";
 import Icon from "./icon";
+import InputDate from "./inputs/date";
+import InputDatetime from "./inputs/datetime";
+import InputNumber from "./inputs/number";
+import InputText from "./inputs/text";
+import InputTime from "./inputs/time";
 import Label from "./label";
 import Separator from "./separator";
 import Tooltip from "./tooltip";
@@ -21,6 +26,11 @@ export {
   Heading,
   HeroHeader,
   Icon,
+  InputDate,
+  InputDatetime,
+  InputNumber,
+  InputText,
+  InputTime,
   Label,
   Separator,
   Tooltip,
