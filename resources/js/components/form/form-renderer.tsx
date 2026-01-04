@@ -1,7 +1,7 @@
+import { InputDate, InputDatetime, InputNumber, InputText, InputTime } from "@/blocks";
 import { cn } from "@narsil-cms/lib/utils";
-import { getField } from "@narsil-cms/repositories/fields";
 import type { Condition, Fieldset, FormTab, Input } from "@narsil-cms/types";
-import { Fragment } from "react";
+import { ComponentProps, Fragment } from "react";
 import FormDescription from "./form-description";
 import FormField from "./form-field";
 import FormItem from "./form-item";
@@ -12,12 +12,10 @@ type FormRendererProps = (Fieldset | FormTab | Input) & {
   className?: string;
   conditions?: Condition[];
   required?: boolean;
-  translatable?: boolean;
   width?: number;
-  onChange?: (value: unknown) => void;
 };
 
-function FormRenderer({ className, conditions, width, onChange, ...props }: FormRendererProps) {
+function FormRenderer({ className, conditions, width, ...props }: FormRendererProps) {
   if ("elements" in props) {
     return (
       <>
@@ -57,53 +55,62 @@ function FormRenderer({ className, conditions, width, onChange, ...props }: Form
     return null;
   }
 
-  const { description, required, settings, type } = props as {
-    description?: string;
-    required?: boolean;
-    translatable?: boolean;
-    type: Input["type"];
-    settings: {
-      append?: string;
-      className?: string;
-      generate?: string;
-      type?: string;
-    };
-  };
-
   return (
     <FormField
       id={props.handle}
       conditions={conditions}
       input={props as Input}
       render={({ value, onFieldChange }) => {
-        function handleOnChange(value: unknown) {
-          onChange?.(value);
-          onFieldChange(value);
-        }
+        const inputProps = {
+          ...(props.settings ?? {}),
+          id: props.handle,
+          name: props.handle,
+          required: props.required,
+          value: value,
+        };
 
         return (
-          <FormItem
-            className={cn(
-              settings.type === "hidden" && "hidden",
-              props.class_name ?? "",
-              className,
-            )}
-            width={width}
-          >
+          <FormItem className={cn(props.class_name ?? "", className)} width={width}>
             <div className="flex items-center justify-between gap-3">
               <div className="flex items-center gap-1">
-                <FormLabel required={required}>{props.name}</FormLabel>
+                <FormLabel required={props.required}>{props.name}</FormLabel>
               </div>
             </div>
-            {getField(type, {
-              id: props.handle,
-              element: props as Input,
-              placeholder: props.placeholder as string,
-              required: required,
-              value: value,
-              setValue: handleOnChange,
-            })}
-            {props.description ? <FormDescription>{description}</FormDescription> : null}
+            {props.type === "Narsil\\Contracts\\Fields\\DateField" ? (
+              <InputDate
+                {...(inputProps as ComponentProps<typeof InputDate>)}
+                onChange={(event) => onFieldChange(event.target.value)}
+              />
+            ) : props.type === "Narsil\\Contracts\\Fields\\DateTimeField" ? (
+              <InputDatetime
+                {...(inputProps as ComponentProps<typeof InputDatetime>)}
+                onChange={(event) => onFieldChange(event.target.value)}
+              />
+            ) : props.type === "Narsil\\Contracts\\Fields\\EmailField" ? (
+              <InputText
+                {...(inputProps as ComponentProps<typeof InputText>)}
+                type="email"
+                onChange={(event) => onFieldChange(event.target.value)}
+              />
+            ) : props.type === "Narsil\\Contracts\\Fields\\NumberField" ? (
+              <InputNumber
+                {...(inputProps as ComponentProps<typeof InputNumber>)}
+                onChange={(event) => onFieldChange(event.target.value)}
+              />
+            ) : props.type === "Narsil\\Contracts\\Fields\\TimeField" ? (
+              <InputTime
+                {...(inputProps as ComponentProps<typeof InputTime>)}
+                onChange={(event) => onFieldChange(event.target.value)}
+              />
+            ) : (
+              <InputText
+                {...(inputProps as ComponentProps<typeof InputText>)}
+                onChange={(event) => onFieldChange(event.target.value)}
+              />
+            )}
+            {props.description ? (
+              <FormDescription>{props.description as string}</FormDescription>
+            ) : null}
             <FormMessage />
           </FormItem>
         );

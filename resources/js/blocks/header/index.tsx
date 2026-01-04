@@ -4,7 +4,7 @@ import {
   NavigationMenuRoot,
 } from "@/components/navigation-menu";
 import type { GlobalProps } from "@/types";
-import { Link } from "@narsil-cms/blocks";
+import { Link } from "@inertiajs/react";
 import { cn } from "@narsil-cms/lib/utils";
 import { type ComponentProps } from "react";
 

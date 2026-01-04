@@ -5,7 +5,7 @@ import {
   TooltipProvider,
   TooltipRoot,
   TooltipTrigger,
-} from "@narsil-cms/components/tooltip";
+} from "@/components/tooltip";
 import { type ComponentProps } from "react";
 
 type TooltipProps = ComponentProps<typeof TooltipRoot> & {

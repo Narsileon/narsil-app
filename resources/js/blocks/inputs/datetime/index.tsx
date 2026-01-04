@@ -7,12 +7,7 @@ type DatetimeProps = ComponentProps<typeof InputContent>;
 function DateTime({ className, ...props }: DatetimeProps) {
   return (
     <InputRoot>
-      <InputContent
-        className={cn("", className)}
-        {...props}
-        name={props.id}
-        type="datetime-local"
-      />
+      <InputContent className={cn("", className)} {...props} type="datetime-local" />
     </InputRoot>
   );
 }

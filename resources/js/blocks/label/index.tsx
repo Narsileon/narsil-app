@@ -1,4 +1,4 @@
-import { LabelRoot } from "@narsil-cms/components/label";
+import { LabelRoot } from "@/components/label";
 import { type ComponentProps } from "react";
 
 type LabelProps = ComponentProps<typeof LabelRoot>;

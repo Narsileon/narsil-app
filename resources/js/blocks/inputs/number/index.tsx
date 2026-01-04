@@ -7,7 +7,7 @@ type NumberProps = ComponentProps<typeof InputContent>;
 function Number({ className, ...props }: NumberProps) {
   return (
     <InputRoot>
-      <InputContent className={cn("", className)} {...props} name={props.id} type="number" />
+      <InputContent className={cn("", className)} {...props} type="number" />
     </InputRoot>
   );
 }

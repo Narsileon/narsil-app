@@ -7,7 +7,7 @@ type TextProps = ComponentProps<typeof InputContent>;
 function Text({ className, ...props }: TextProps) {
   return (
     <InputRoot>
-      <InputContent className={cn("", className)} {...props} name={props.id} type="text" />
+      <InputContent className={cn("", className)} {...props} />
     </InputRoot>
   );
 }

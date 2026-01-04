@@ -7,7 +7,7 @@ type DateProps = ComponentProps<typeof InputContent>;
 function Date({ className, ...props }: DateProps) {
   return (
     <InputRoot>
-      <InputContent className={cn("", className)} {...props} name={props.id} type="date" />
+      <InputContent className={cn("", className)} {...props} type="date" />
     </InputRoot>
   );
 }
