@@ -36,7 +36,8 @@ function FormRenderer({ className, conditions, width, ...props }: FormRendererPr
                   width={element.width}
                 />
               ) : (
-                <fieldset>
+                <fieldset className="col-span-full gap-x-8 gap-y-4 rounded border p-4">
+                  <legend>{element.name}</legend>
                   <FormRenderer
                     {...childElement}
                     handle={element.handle ?? childElement.handle}
