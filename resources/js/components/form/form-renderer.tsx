@@ -1,4 +1,11 @@
-import { InputDate, InputDatetime, InputNumber, InputText, InputTime } from "@/blocks/inputs";
+import {
+  InputDate,
+  InputDatetime,
+  InputNumber,
+  InputText,
+  InputTextarea,
+  InputTime,
+} from "@/blocks/inputs";
 
 import { cn } from "@narsil-cms/lib/utils";
 import type { Condition, Fieldset, FormTab, Input } from "@narsil-cms/types";
@@ -93,6 +100,11 @@ function FormRenderer({ className, conditions, width, ...props }: FormRendererPr
             ) : props.type === "Narsil\\Contracts\\Fields\\NumberField" ? (
               <InputNumber
                 {...(inputProps as ComponentProps<typeof InputNumber>)}
+                onChange={(event) => onFieldChange(event.target.value)}
+              />
+            ) : props.type === "Narsil\\Contracts\\Fields\\TextareaField" ? (
+              <InputTextarea
+                {...(inputProps as ComponentProps<typeof InputTextarea>)}
                 onChange={(event) => onFieldChange(event.target.value)}
               />
             ) : props.type === "Narsil\\Contracts\\Fields\\TimeField" ? (

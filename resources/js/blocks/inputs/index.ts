@@ -1,7 +1,8 @@
-import InputDate from "./date/input-date";
-import InputDatetime from "./datetime/input-datetime";
-import InputNumber from "./number/input-number";
-import InputText from "./text/input-text";
-import InputTime from "./time/input-time";
+import InputDate from "./input-date";
+import InputDatetime from "./input-datetime";
+import InputNumber from "./input-number";
+import InputText from "./input-text";
+import InputTextarea from "./input-textarea";
+import InputTime from "./input-time";
 
-export { InputDate, InputDatetime, InputNumber, InputText, InputTime };
+export { InputDate, InputDatetime, InputNumber, InputText, InputTextarea, InputTime };
