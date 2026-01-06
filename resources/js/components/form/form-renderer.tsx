@@ -30,18 +30,18 @@ function FormRenderer({ className, conditions, width, ...props }: FormRendererPr
                   {...childElement}
                   conditions={element.conditions}
                   handle={element.handle ?? childElement.handle}
-                  name={element.name ?? childElement.name}
+                  name={element.label ?? childElement.label}
                   required={element.required ?? childElement.required}
                   translatable={element.translatable ?? childElement.translatable}
                   width={element.width}
                 />
               ) : (
                 <fieldset className="col-span-full gap-x-8 gap-y-4 rounded border p-4">
-                  <legend>{element.name}</legend>
+                  <legend>{element.label}</legend>
                   <FormRenderer
                     {...childElement}
                     handle={element.handle ?? childElement.handle}
-                    name={element.name ?? childElement.name}
+                    name={element.label ?? childElement.label}
                     width={element.width}
                   />
                 </fieldset>
@@ -71,7 +71,7 @@ function FormRenderer({ className, conditions, width, ...props }: FormRendererPr
           <FormItem className={cn(props.class_name ?? "", className)} width={width}>
             <div className="flex items-center justify-between gap-3">
               <div className="flex items-center gap-1">
-                <FormLabel required={props.required}>{props.name}</FormLabel>
+                <FormLabel required={props.required}>{props.label}</FormLabel>
               </div>
             </div>
             {props.type === "Narsil\\Contracts\\Fields\\DateField" ? (
