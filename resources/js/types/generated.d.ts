@@ -1,4 +1,9 @@
 declare namespace App.Http.Data {
+  export type FieldsetData = {
+    handle: string;
+    label: string;
+    elements: Array<App.Http.Data.FormElementData>;
+  };
   export type FooterData = {
     address_line_1: string | null;
     address_line_2: string | null;
@@ -18,7 +23,40 @@ declare namespace App.Http.Data {
     label: string;
     url: string;
   };
+  export type FormData = {
+    id: number;
+    slug: string;
+    tabs: Array<App.Http.Data.FormTabData>;
+  };
+  export type FormElementData = {
+    description: string;
+    handle: string;
+    label: string;
+    position: number;
+    required: boolean;
+    width: number;
+    element: App.Http.Data.FieldsetData | App.Http.Data.InputData;
+  };
+  export type FormTabData = {
+    description: string;
+    handle: string;
+    label: string;
+    position: number;
+    elements: Array<App.Http.Data.FormElementData>;
+  };
   export type HeaderData = {};
+  export type InputData = {
+    description: string;
+    handle: string;
+    label: string;
+    settings: object;
+    type: string;
+    options: Array<App.Http.Data.InputOptionData>;
+  };
+  export type InputOptionData = {
+    label: string;
+    value: string;
+  };
   export type NavigationMenuItemData = {
     id: number;
     title: string;

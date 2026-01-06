@@ -51,7 +51,10 @@ final class NavigationMenuItemData extends Data
             url: $sitePage->{SitePage::RELATION_URLS}->first()->{SiteUrl::URL},
 
             children: $sitePage->{SitePage::RELATION_CHILDREN}
-                ->map(fn(SitePage $child) => static::fromModel($child))
+                ->map(function (SitePage $child)
+                {
+                    return static::fromModel($child);
+                })
                 ->all(),
         );
     }

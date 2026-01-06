@@ -13,6 +13,7 @@ use Narsil\Interfaces\IStructureHasElement;
 use Narsil\Models\Entities\Entity;
 use Narsil\Models\Entities\EntityNode;
 use Narsil\Models\Entities\EntityNodeRelation;
+use Narsil\Models\Forms\Form;
 use Narsil\Models\Sites\SitePage;
 use Narsil\Models\Sites\SitePageEntity;
 use Narsil\Models\Structures\Block;
@@ -100,8 +101,12 @@ final class SitePageData extends Data
             robots: $sitePage->{SitePage::ROBOTS},
             change_freq: $sitePage->{SitePage::CHANGE_FREQ},
             priority: $sitePage->{SitePage::PRIORITY},
+
             urls: $sitePage->{SitePage::RELATION_URLS}
-                ->map(fn($url) => SiteUrlData::from($url))
+                ->map(function ($url)
+                {
+                    return SiteUrlData::from($url);
+                })
                 ->all(),
         );
     }
@@ -184,7 +189,14 @@ final class SitePageData extends Data
                 {
                     if (count($node->{EntityNode::RELATION_ENTITIES}) > 0)
                     {
-                        Arr::set($data, $key, $node->{EntityNode::RELATION_ENTITIES}->first()?->{EntityNodeRelation::RELATION_TARGET});
+                        $target = $node->{EntityNode::RELATION_ENTITIES}->first()?->{EntityNodeRelation::RELATION_TARGET};
+
+                        if ($target::class === Form::class)
+                        {
+                            $target = FormData::fromModel($target);
+                        }
+
+                        Arr::set($data, $key, $target);
                     }
                     else
                     {

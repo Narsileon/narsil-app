@@ -61,10 +61,16 @@ final class FooterData extends Data
             phone: $footer->{Footer::PHONE},
 
             links: $footer->{Footer::RELATION_LINKS}
-                ->map(fn($link) => FooterLinkData::from($link))
+                ->map(function ($link)
+                {
+                    return FooterLinkData::from($link);
+                })
                 ->all(),
             social_media: $footer->{Footer::RELATION_SOCIAL_MEDIA}
-                ->map(fn($socialMedium) => FooterSocialMediumData::from($socialMedium))
+                ->map(function ($socialMedium)
+                {
+                    return FooterSocialMediumData::from($socialMedium);
+                })
                 ->all(),
         );
     }
