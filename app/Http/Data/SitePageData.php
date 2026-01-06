@@ -182,9 +182,9 @@ final class SitePageData extends Data
                 }
                 else
                 {
-                    if ($node->{EntityNode::RELATION_ENTITIES})
+                    if (count($node->{EntityNode::RELATION_ENTITIES}) > 0)
                     {
-                        Arr::set($data, $key, $node->{EntityNode::RELATION_ENTITIES}->first()->{EntityNodeRelation::RELATION_TARGET});
+                        Arr::set($data, $key, $node->{EntityNode::RELATION_ENTITIES}->first()?->{EntityNodeRelation::RELATION_TARGET});
                     }
                     else
                     {
