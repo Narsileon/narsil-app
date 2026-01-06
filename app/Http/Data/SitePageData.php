@@ -133,8 +133,6 @@ final class SitePageData extends Data
         $nodes->loadMissing([
             EntityNode::RELATION_BLOCK,
             EntityNode::RELATION_ELEMENT,
-            EntityNode::RELATION_FORMS,
-            EntityNode::RELATION_SITE_PAGES,
         ]);
 
         static::$nodes = $nodes->groupBy(EntityNode::PARENT_UUID);
@@ -181,14 +179,6 @@ final class SitePageData extends Data
 
                         static::processNodes($data, $blockNode->{EntityNode::UUID}, $nextPath);
                     }
-                }
-                else if ($field->{Field::TYPE} === FormField::class)
-                {
-                    Arr::set($data, $key, $node->{EntityNode::RELATION_FORMS});
-                }
-                else if ($field->{Field::TYPE} === LinkField::class)
-                {
-                    Arr::set($data, $key, $node->{EntityNode::RELATION_SITE_PAGES});
                 }
                 else
                 {
