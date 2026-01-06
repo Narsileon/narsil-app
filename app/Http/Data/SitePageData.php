@@ -9,11 +9,10 @@ use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Config;
 use Narsil\Contracts\Fields\BuilderField;
-use Narsil\Contracts\Fields\FormField;
-use Narsil\Contracts\Fields\LinkField;
 use Narsil\Interfaces\IStructureHasElement;
 use Narsil\Models\Entities\Entity;
 use Narsil\Models\Entities\EntityNode;
+use Narsil\Models\Entities\EntityNodeRelation;
 use Narsil\Models\Sites\SitePage;
 use Narsil\Models\Sites\SitePageEntity;
 use Narsil\Models\Structures\Block;
@@ -133,6 +132,7 @@ final class SitePageData extends Data
         $nodes->loadMissing([
             EntityNode::RELATION_BLOCK,
             EntityNode::RELATION_ELEMENT,
+            EntityNode::RELATION_ENTITIES,
         ]);
 
         static::$nodes = $nodes->groupBy(EntityNode::PARENT_UUID);
@@ -182,7 +182,14 @@ final class SitePageData extends Data
                 }
                 else
                 {
-                    Arr::set($data, $key, $node->{EntityNode::VALUE});
+                    if ($node->{EntityNode::RELATION_ENTITIES})
+                    {
+                        Arr::set($data, $key, $node->{EntityNode::RELATION_ENTITIES}->first()->{EntityNodeRelation::RELATION_TARGET});
+                    }
+                    else
+                    {
+                        Arr::set($data, $key, $node->{EntityNode::VALUE});
+                    }
                 }
             }
             else
