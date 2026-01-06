@@ -36,7 +36,7 @@ final class UserSeeder extends Seeder
     private function createSuperAdminRole(): Role
     {
         $role = Role::firstOrCreate([
-            Role::SLUG => 'super_admin',
+            Role::NAME => 'super_admin',
         ], [
             Role::LABEL => 'Super Admin',
         ]);
