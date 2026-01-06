@@ -1,5 +1,6 @@
 import { Button } from "@/blocks/button";
 import { Container } from "@/blocks/container";
+import { Heading } from "@/blocks/heading";
 import { FormProvider, FormRenderer, FormRoot } from "@/components/form";
 import { useState } from "react";
 
@@ -35,13 +36,37 @@ function Form({ form }: FormProps) {
                   },
                 }}
               >
+                <Heading className="col-span-full text-center" variant="h4">
+                  {form.tabs[index].label}
+                </Heading>
                 <FormRenderer {...form.tabs[index]} />
-                <Button
-                  className="col-span-full justify-self-end"
-                  label="Submit"
-                  form={form.slug}
-                  type="submit"
-                />
+                <div className="col-span-full flex flex-row-reverse items-center justify-between">
+                  {form.tabs.length > 1 && index < form.tabs.length - 1 ? (
+                    <Button
+                      label="Next"
+                      onClick={(event) => {
+                        event.preventDefault();
+                        setIndex(index + 1);
+                      }}
+                    />
+                  ) : (
+                    <Button
+                      className="col-span-full justify-self-end"
+                      label="Submit"
+                      form={form.slug}
+                      type="submit"
+                    />
+                  )}
+                  {index > 0 ? (
+                    <Button
+                      label="Previous"
+                      onClick={(event) => {
+                        event.preventDefault();
+                        setIndex(index - 1);
+                      }}
+                    />
+                  ) : null}
+                </div>
               </FormRoot>
             );
           }}

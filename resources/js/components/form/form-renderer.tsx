@@ -45,14 +45,16 @@ function FormRenderer({ className, conditions, width, ...props }: FormRendererPr
                   width={element.width}
                 />
               ) : (
-                <fieldset className="col-span-full gap-x-8 gap-y-4 rounded border p-4">
-                  <legend>{element.label}</legend>
-                  <FormRenderer
-                    {...childElement}
-                    handle={element.handle ?? childElement.handle}
-                    label={element.label ?? childElement.label}
-                    width={element.width}
-                  />
+                <fieldset className="col-span-full flex flex-col gap-x-8 gap-y-4 rounded-md border p-4">
+                  <legend className="px-2">{element.label}</legend>
+                  <div className="p-2">
+                    <FormRenderer
+                      {...childElement}
+                      handle={element.handle ?? childElement.handle}
+                      label={element.label ?? childElement.label}
+                      width={element.width}
+                    />
+                  </div>
                 </fieldset>
               )}
             </Fragment>
