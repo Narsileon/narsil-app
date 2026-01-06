@@ -1,12 +1,10 @@
 import { Button } from "@/blocks/button";
 import { Container } from "@/blocks/container";
 import { FormProvider, FormRenderer, FormRoot } from "@/components/form";
-import { FormType } from "@/types";
 import { useState } from "react";
-import { Fragment } from "react/jsx-runtime";
 
 type FormProps = {
-  form: FormType | FormType[];
+  form: App.Http.Data.FormData | App.Http.Data.FormData[];
 };
 
 function Form({ form }: FormProps) {
@@ -14,6 +12,7 @@ function Form({ form }: FormProps) {
     form = form[0];
   }
 
+  const [index, setIndex] = useState<number>(0);
   const [success, setSuccess] = useState<boolean>(false);
 
   return (
@@ -22,7 +21,7 @@ function Form({ form }: FormProps) {
         <p>Submitted successfully</p>
       ) : (
         <FormProvider
-          id={form.id}
+          id={form.slug}
           action={`/forms/${form.id}/submit`}
           elements={form.tabs}
           render={() => {
@@ -36,19 +35,13 @@ function Form({ form }: FormProps) {
                   },
                 }}
               >
-                {form.tabs.map((tab, index) => {
-                  return (
-                    <Fragment key={index}>
-                      <FormRenderer {...tab} />
-                      <Button
-                        className="col-span-full justify-self-end"
-                        label="Submit"
-                        form={form.id}
-                        type="submit"
-                      />
-                    </Fragment>
-                  );
-                })}
+                <FormRenderer {...form.tabs[index]} />
+                <Button
+                  className="col-span-full justify-self-end"
+                  label="Submit"
+                  form={form.slug}
+                  type="submit"
+                />
               </FormRoot>
             );
           }}

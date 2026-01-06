@@ -1,7 +1,6 @@
-import type { Input } from "@narsil-cms/types";
 import { createContext, useContext } from "react";
 
-export type FormFieldContextProps = Input & {
+export type FormFieldContextProps = App.Http.Data.InputData & {
   error: string | undefined;
 };
 

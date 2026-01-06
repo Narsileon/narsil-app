@@ -24,6 +24,7 @@ final class FormElementData extends Data
      * @param integer $position
      * @param boolean $required
      * @param integer $width
+     * @param FormElementConditionData[] $conditions
      * @param FieldsetData|InputData $element
      *
      * @return void
@@ -35,6 +36,7 @@ final class FormElementData extends Data
         public int $position,
         public bool $required,
         public int $width,
+        public array $conditions,
         public FieldsetData|InputData $element,
     )
     {
@@ -68,6 +70,12 @@ final class FormElementData extends Data
             required: $formElement->{IFormHasElement::REQUIRED},
             width: $formElement->{IFormHasElement::WIDTH},
 
+            conditions: $formElement->{IFormHasElement::RELATION_CONDITIONS}
+                ->map(function ($condition)
+                {
+                    return FormElementConditionData::from($condition);
+                })
+                ->all(),
             element: $elementData,
         );
     }

@@ -1,13 +1,12 @@
-import type { Condition, Input } from "@narsil-cms/types";
 import { cloneDeep, get, unset } from "lodash-es";
 import { useEffect, useState } from "react";
 import useForm from "./form-context";
 import { FormFieldContext } from "./form-field-context";
 
 type FormFieldProps = {
-  conditions?: Condition[];
+  conditions?: App.Http.Data.FormElementConditionData[];
   id: string;
-  input: Input;
+  input: App.Http.Data.InputData;
   render: (field: {
     handle: string;
     placeholder?: string;

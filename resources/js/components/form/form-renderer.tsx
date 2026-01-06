@@ -8,7 +8,6 @@ import {
 } from "@/blocks/inputs";
 
 import { cn } from "@narsil-cms/lib/utils";
-import type { Condition, Fieldset, FormTab, Input } from "@narsil-cms/types";
 import { ComponentProps, Fragment } from "react";
 import FormDescription from "./form-description";
 import FormField from "./form-field";
@@ -16,9 +15,13 @@ import FormItem from "./form-item";
 import FormLabel from "./form-label";
 import FormMessage from "./form-message";
 
-type FormRendererProps = (Fieldset | FormTab | Input) & {
+type FormRendererProps = (
+  | App.Http.Data.FieldsetData
+  | App.Http.Data.FormTabData
+  | App.Http.Data.InputData
+) & {
   className?: string;
-  conditions?: Condition[];
+  conditions?: App.Http.Data.FormElementConditionData[];
   required?: boolean;
   width?: number;
 };
@@ -37,9 +40,8 @@ function FormRenderer({ className, conditions, width, ...props }: FormRendererPr
                   {...childElement}
                   conditions={element.conditions}
                   handle={element.handle ?? childElement.handle}
-                  name={element.label ?? childElement.label}
-                  required={element.required ?? childElement.required}
-                  translatable={element.translatable ?? childElement.translatable}
+                  label={element.label ?? childElement.label}
+                  required={element.required}
                   width={element.width}
                 />
               ) : (
@@ -48,7 +50,7 @@ function FormRenderer({ className, conditions, width, ...props }: FormRendererPr
                   <FormRenderer
                     {...childElement}
                     handle={element.handle ?? childElement.handle}
-                    name={element.label ?? childElement.label}
+                    label={element.label ?? childElement.label}
                     width={element.width}
                   />
                 </fieldset>
@@ -64,7 +66,7 @@ function FormRenderer({ className, conditions, width, ...props }: FormRendererPr
     <FormField
       id={props.handle}
       conditions={conditions}
-      input={props as Input}
+      input={props as App.Http.Data.InputData}
       render={({ value, onFieldChange }) => {
         const inputProps = {
           ...(props.settings ?? {}),
@@ -75,7 +77,7 @@ function FormRenderer({ className, conditions, width, ...props }: FormRendererPr
         };
 
         return (
-          <FormItem className={cn(props.class_name ?? "", className)} width={width}>
+          <FormItem className={cn("", className)} width={width}>
             <div className="flex items-center justify-between gap-3">
               <div className="flex items-center gap-1">
                 <FormLabel required={props.required}>{props.label}</FormLabel>

@@ -28,6 +28,11 @@ declare namespace App.Http.Data {
     slug: string;
     tabs: Array<App.Http.Data.FormTabData>;
   };
+  export type FormElementConditionData = {
+    handle: string;
+    operator: string;
+    value: string;
+  };
   export type FormElementData = {
     description: string;
     handle: string;
@@ -35,6 +40,7 @@ declare namespace App.Http.Data {
     position: number;
     required: boolean;
     width: number;
+    conditions: Array<App.Http.Data.FormElementConditionData>;
     element: App.Http.Data.FieldsetData | App.Http.Data.InputData;
   };
   export type FormTabData = {

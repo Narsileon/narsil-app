@@ -1,17 +1,18 @@
 import { useForm } from "@inertiajs/react";
-import type { Fieldset, FormTab, Input } from "@narsil-cms/types";
 import { set } from "lodash-es";
 import { FormContext, type FormContextProps } from "./form-context";
 
 type FormProviderProps = {
   action: string;
-  elements?: (Fieldset | FormTab | Input)[];
+  elements?: (App.Http.Data.FieldsetData | App.Http.Data.FormTabData | App.Http.Data.InputData)[];
   id: string;
   render: (props: FormContextProps) => React.ReactNode;
 };
 
 function FormProvider({ action, elements = [], id, render }: FormProviderProps) {
-  function flattenValues(elements: (Fieldset | FormTab | Input)[]): Record<string, unknown> {
+  function flattenValues(
+    elements: (App.Http.Data.FieldsetData | App.Http.Data.FormTabData | App.Http.Data.InputData)[],
+  ): Record<string, unknown> {
     const receivedValues: Record<string, unknown> = {};
 
     elements.map((element) => {
