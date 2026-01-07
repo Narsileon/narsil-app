@@ -1,6 +1,6 @@
 import { createContext, useContext } from "react";
 
-export type FormFieldContextProps = App.Http.Data.InputData & {
+export type FormFieldContextProps = {
   error: string | undefined;
 };
 

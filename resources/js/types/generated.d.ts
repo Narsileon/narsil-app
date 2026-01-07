@@ -55,6 +55,7 @@ declare namespace App.Http.Data {
     description: string;
     handle: string;
     label: string;
+    placeholder: string;
     settings: object;
     type: string;
     options: Array<App.Http.Data.InputOptionData>;

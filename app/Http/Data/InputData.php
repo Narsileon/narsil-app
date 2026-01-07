@@ -19,6 +19,7 @@ final class InputData extends Data
      * @param string $description
      * @param string $handle
      * @param string $label
+     * @param string $placeholder
      * @param object $settings
      * @param string $type
      * @param InputOptionData[] $options
@@ -29,6 +30,7 @@ final class InputData extends Data
         public string $description,
         public string $handle,
         public string $label,
+        public string $placeholder,
         public object $settings,
         public string $type,
         public array $options,
@@ -52,9 +54,9 @@ final class InputData extends Data
             description: $input->{Input::DESCRIPTION},
             handle: $input->{Input::HANDLE},
             label: $input->{Input::LABEL},
+            placeholder: $input->{Input::PLACEHOLDER},
             settings: $input->{Input::SETTINGS},
             type: $input->{Input::TYPE},
-
             options: $input->{Input::RELATION_OPTIONS}
                 ->map(function ($option)
                 {

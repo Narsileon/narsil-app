@@ -1,7 +1,7 @@
 import { Button } from "@/blocks/button";
 import { Container } from "@/blocks/container";
 import { Heading } from "@/blocks/heading";
-import { FormProvider, FormRenderer, FormRoot } from "@/components/form";
+import { FormElement, FormProvider, FormRoot } from "@/components/form";
 import { useState } from "react";
 
 type FormProps = {
@@ -24,7 +24,7 @@ function Form({ form }: FormProps) {
         <FormProvider
           id={form.slug}
           action={`/forms/${form.id}/submit`}
-          elements={form.tabs}
+          tabs={form.tabs}
           render={() => {
             return (
               <FormRoot
@@ -39,7 +39,9 @@ function Form({ form }: FormProps) {
                 <Heading className="col-span-full text-center" variant="h4">
                   {form.tabs[index].label}
                 </Heading>
-                <FormRenderer {...form.tabs[index]} />
+                {form.tabs[index]?.elements?.map((element, index) => {
+                  return <FormElement {...element} key={index} />;
+                })}
                 <div className="col-span-full flex flex-row-reverse items-center justify-between">
                   {form.tabs.length > 1 && index < form.tabs.length - 1 ? (
                     <Button
@@ -60,6 +62,7 @@ function Form({ form }: FormProps) {
                   {index > 0 ? (
                     <Button
                       label="Previous"
+                      variant="ghost"
                       onClick={(event) => {
                         event.preventDefault();
                         setIndex(index - 1);

@@ -4,7 +4,7 @@ import { Container } from "@/blocks/container";
 import { Heading } from "@/blocks/heading";
 import { GlobalProps } from "@/types";
 import { Head } from "@inertiajs/react";
-import { Fragment } from "react/jsx-runtime";
+import { Fragment } from "react";
 
 function Page({ page }: GlobalProps) {
   return (
