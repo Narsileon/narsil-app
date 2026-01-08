@@ -5,6 +5,7 @@ namespace App\Http\Data;
 #region USE
 
 use Narsil\Models\Forms\Form;
+use Narsil\Support\TranslationsBag;
 use Spatie\LaravelData\Data;
 use Spatie\TypeScriptTransformer\Attributes\TypeScript;
 
@@ -28,7 +29,12 @@ final class FormData extends Data
         public array $tabs,
     )
     {
-        //
+        app(TranslationsBag::class)
+            ->add('ui.next')
+            ->add('ui.previous')
+            ->add('ui.required')
+            ->add('ui.submit')
+            ->add('ui.submited');
     }
 
     #endregion

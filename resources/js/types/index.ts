@@ -9,6 +9,7 @@ export type GlobalProps = {
   session: {
     locale: string;
   };
+  translations: Record<string, string>;
 };
 
 export type LayoutProps = {

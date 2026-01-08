@@ -9,7 +9,7 @@ function LabelRequired({ className }: LabelRequiredProps) {
   const { trans } = useLocalization();
 
   return (
-    <Tooltip tooltip={trans("accessibility.required")}>
+    <Tooltip tooltip={trans("ui.required")}>
       <span className={cn(className, "text-red-500")}>*</span>
     </Tooltip>
   );

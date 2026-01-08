@@ -3,6 +3,7 @@ import { Container } from "@/blocks/container";
 import { Heading } from "@/blocks/heading";
 import { FormElement, FormProvider, FormRoot } from "@/components/form";
 import { LayoutProps } from "@/types";
+import { useLocalization } from "@narsil-cms/components/localization";
 import { useState } from "react";
 
 type FormProps = {
@@ -15,6 +16,8 @@ function Form({ form, layout }: FormProps) {
     form = form[0];
   }
 
+  const { trans } = useLocalization();
+
   const [index, setIndex] = useState<number>(0);
   const [success, setSuccess] = useState<boolean>(false);
 
@@ -25,7 +28,7 @@ function Form({ form, layout }: FormProps) {
       variant={layout.size}
     >
       {success ? (
-        <p>Submitted successfully</p>
+        <p>{trans("ui.submited")}</p>
       ) : (
         <FormProvider
           id={form.slug}
@@ -51,7 +54,7 @@ function Form({ form, layout }: FormProps) {
                 <div className="col-span-full flex flex-row-reverse items-center justify-between">
                   {form.tabs.length > 1 && index < form.tabs.length - 1 ? (
                     <Button
-                      label="Next"
+                      label={trans("ui.next")}
                       onClick={(event) => {
                         event.preventDefault();
                         setIndex(index + 1);
@@ -60,14 +63,14 @@ function Form({ form, layout }: FormProps) {
                   ) : (
                     <Button
                       className="col-span-full justify-self-end"
-                      label="Submit"
+                      label={trans("ui.submit")}
                       form={form.slug}
                       type="submit"
                     />
                   )}
                   {index > 0 ? (
                     <Button
-                      label="Previous"
+                      label={trans("ui.previous")}
                       variant="ghost"
                       onClick={(event) => {
                         event.preventDefault();
