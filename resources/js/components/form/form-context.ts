@@ -9,7 +9,7 @@ export type FormContextProps = Partial<InertiaFormProps<Record<string, unknown>>
 export const FormContext = createContext<FormContextProps>({
   action: "#",
   id: "form",
-} as FormContextProps);
+});
 
 function useForm() {
   const context = useContext(FormContext);

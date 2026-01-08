@@ -34,11 +34,11 @@ class PageController extends Controller
     {
         $sitePage = PageService::resolvePage($request);
 
-        $header = $this->getHeader($sitePage);
-        $footer = $this->getFooter($sitePage);
-        $navigationMenu = $this->getNavigationMenu($sitePage);
-        $page = $this->getPage($sitePage);
-        $session = $this->getSession($sitePage);
+        $header = $this->header($sitePage);
+        $footer = $this->footer($sitePage);
+        $navigationMenu = $this->navigationMenu($sitePage);
+        $page = $this->page($sitePage);
+        $session = $this->session($sitePage);
 
         $translations = app(TranslationsBag::class)->get();
 
@@ -57,31 +57,37 @@ class PageController extends Controller
     #region PRIVATE METHODS
 
     /**
-     * @param SitePage $sitePage
+     * Get the footer data.
      *
-     * @return HeaderData
-     */
-    private function getHeader(SitePage $sitePage): HeaderData
-    {
-        return HeaderData::from($sitePage->{SitePage::RELATION_SITE}->{Site::RELATION_HEADER});
-    }
-
-    /**
      * @param SitePage $sitePage
      *
      * @return FooterData
      */
-    private function getFooter(SitePage $sitePage): FooterData
+    private function footer(SitePage $sitePage): FooterData
     {
         return FooterData::from($sitePage->{SitePage::RELATION_SITE}->{Site::RELATION_FOOTER});
     }
 
     /**
+     * Get the header data.
+     *
+     * @param SitePage $sitePage
+     *
+     * @return HeaderData
+     */
+    private function header(SitePage $sitePage): HeaderData
+    {
+        return HeaderData::from($sitePage->{SitePage::RELATION_SITE}->{Site::RELATION_HEADER});
+    }
+
+    /**
+     * Get the navigation menu data.
+     *
      * @param SitePage $sitePage
      *
      * @return array
      */
-    private function getNavigationMenu(SitePage $sitePage): array
+    private function navigationMenu(SitePage $sitePage): array
     {
         $tree = new Tree($sitePage->{SitePage::RELATION_SITE}->{Site::RELATION_PAGES}->where(SitePage::SHOW_IN_MENU, '=', true))
             ->getNestedTree();
@@ -93,21 +99,25 @@ class PageController extends Controller
     }
 
     /**
+     * Get the page data.
+     *
      * @param SitePage $sitePage
      *
      * @return SitePageData
      */
-    private function getPage(SitePage $sitePage): SitePageData
+    private function page(SitePage $sitePage): SitePageData
     {
         return SitePageData::from($sitePage);
     }
 
     /**
+     * Get the session data.
+     *
      * @param SitePage $sitePage
      *
      * @return array
      */
-    private function getSession(SitePage $sitePage): array
+    private function session(SitePage $sitePage): array
     {
         return [
             'locale' => App::getLocale(),

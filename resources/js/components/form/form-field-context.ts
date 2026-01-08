@@ -8,7 +8,7 @@ export type FormFieldContextProps = {
 export const FormFieldContext = createContext<FormFieldContextProps>({
   error: undefined,
   handle: "",
-} as FormFieldContextProps);
+});
 
 function useFormField() {
   const context = useContext(FormFieldContext);

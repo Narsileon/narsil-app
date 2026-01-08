@@ -1,5 +1,7 @@
 import { Footer } from "@/blocks/footer";
 import { Header } from "@/blocks/header";
+import { Main } from "@/blocks/main";
+import { GlobalProvider } from "@/providers/global";
 import { GlobalProps } from "@/types";
 
 type LayoutProps = {
@@ -12,11 +14,11 @@ function Layout({ children }: LayoutProps) {
   const { footer, navigation_menu, page, session } = children.props;
 
   return (
-    <div className="flex min-h-svh flex-col">
+    <GlobalProvider>
       <Header navigation_menu={navigation_menu} />
-      <main className="grow bg-secondary text-secondary-foreground">{children}</main>
+      <Main>{children}</Main>
       <Footer footer={footer} page={page} session={session} />
-    </div>
+    </GlobalProvider>
   );
 }
 

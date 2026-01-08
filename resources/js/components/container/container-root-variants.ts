@@ -2,9 +2,7 @@ import { cn } from "@narsil-cms/lib/utils";
 import { cva } from "class-variance-authority";
 
 const containerRootVariants = cva(
-  cn(
-    "mx-auto flex h-[inherit] min-h-[inherit] w-[inherit] max-w-7xl flex-col items-center gap-3 px-3",
-  ),
+  cn("mx-auto flex w-[inherit] max-w-7xl flex-col items-center gap-3 px-3"),
   {
     variants: {
       paddingBottom: {
