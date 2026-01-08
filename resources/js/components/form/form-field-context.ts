@@ -2,10 +2,12 @@ import { createContext, useContext } from "react";
 
 export type FormFieldContextProps = {
   error: string | undefined;
+  handle: string;
 };
 
 export const FormFieldContext = createContext<FormFieldContextProps>({
   error: undefined,
+  handle: "",
 } as FormFieldContextProps);
 
 function useFormField() {

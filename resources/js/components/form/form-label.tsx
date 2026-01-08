@@ -1,8 +1,7 @@
 import { Label } from "@/blocks/label";
-import { Tooltip } from "@/blocks/tooltip";
-import { useLocalization } from "@narsil-cms/components/localization";
 import { cn } from "@narsil-cms/lib/utils";
 import { type ComponentProps } from "react";
+import { LabelRequired } from "../label";
 import useFormField from "./form-field-context";
 
 type FormLabelProps = ComponentProps<typeof Label> & {
@@ -10,8 +9,6 @@ type FormLabelProps = ComponentProps<typeof Label> & {
 };
 
 function FormLabel({ children, className, required = false, ...props }: FormLabelProps) {
-  const { trans } = useLocalization();
-
   const { error, handle } = useFormField();
 
   return (
@@ -23,11 +20,7 @@ function FormLabel({ children, className, required = false, ...props }: FormLabe
       {...props}
     >
       <span className="first-letter:uppercase">{children}</span>
-      {required && (
-        <Tooltip tooltip={trans("accessibility.required")}>
-          <span className="text-red-500">*</span>
-        </Tooltip>
-      )}
+      {required && <LabelRequired />}
     </Label>
   );
 }

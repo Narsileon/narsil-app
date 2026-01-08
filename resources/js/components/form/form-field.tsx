@@ -56,6 +56,7 @@ function FormField({ conditions, element, handle, render }: FormFieldProps) {
 
   const contextValue = {
     error: getError(),
+    handle: handle,
   };
 
   return visible ? (
