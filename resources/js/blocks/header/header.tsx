@@ -50,7 +50,6 @@ function Header({ className, navigation_menu, ...props }: HeaderProps) {
             return (
               <NavigationMenuItem
                 className={cn("leading-6 md:leading-normal", active && "text-primary")}
-                asChild={true}
                 key={index}
               >
                 <Link href={url}>{title}</Link>

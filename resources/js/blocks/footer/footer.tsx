@@ -107,7 +107,9 @@ function Footer({ className, footer, page, session, ...props }: FooterProps) {
               {page?.urls?.map((url, index) => {
                 return (
                   <DropdownMenuItem asChild={true} key={index}>
-                    <Link href={url.url}>{url.display_language}</Link>
+                    <Link href={url.url} preserveScroll={true} preserveState={true}>
+                      {url.display_language}
+                    </Link>
                   </DropdownMenuItem>
                 );
               })}
@@ -123,7 +125,6 @@ function Footer({ className, footer, page, session, ...props }: FooterProps) {
               return (
                 <NavigationMenuItem
                   className="leading-6 transition-colors duration-150 md:leading-normal"
-                  asChild={true}
                   key={index}
                 >
                   <Link href={url}>{label}</Link>
