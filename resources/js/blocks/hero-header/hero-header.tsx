@@ -1,22 +1,35 @@
 import { BlockRenderer } from "@/blocks";
 import { Container } from "@/blocks/container";
 import { Heading } from "@/blocks/heading";
+import { useGlobal } from "@/providers/global";
+import { LayoutProps } from "@/types";
 import { set } from "lodash-es";
 import { type ComponentProps } from "react";
 
 type HeroHeaderProps = {
+  buttons: unknown[];
   excerpt: string;
   headline: {
     headline: string;
     headline_level: ComponentProps<typeof Heading>["level"];
     headline_style: ComponentProps<typeof Heading>["variant"];
   };
-  buttons: unknown[];
+  layout: LayoutProps;
 };
 
-function HeroHeader({ excerpt, headline, buttons }: HeroHeaderProps) {
+function HeroHeader({ buttons, excerpt, headline, layout }: HeroHeaderProps) {
+  const { headerHeight } = useGlobal();
+
   return (
-    <Container>
+    <Container
+      className="justify-center"
+      paddingBottom={layout.padding.bottom}
+      paddingTop={layout.padding.top}
+      variant={layout.size}
+      style={{
+        minHeight: `calc(100vh - ${headerHeight}px)`,
+      }}
+    >
       <Heading level={headline.headline_level} variant={headline.headline_style}>
         {headline.headline}
       </Heading>

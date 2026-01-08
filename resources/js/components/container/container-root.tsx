@@ -7,7 +7,14 @@ import containerRootVariants from "./container-root-variants";
 type ContainerProps = ComponentProps<"div"> &
   VariantProps<typeof containerRootVariants> & { asChild?: boolean };
 
-function ContainerRoot({ asChild = false, className, variant, ...props }: ContainerProps) {
+function ContainerRoot({
+  asChild = false,
+  className,
+  paddingBottom,
+  paddingTop,
+  variant,
+  ...props
+}: ContainerProps) {
   const Comp = asChild ? Slot.Root : "div";
 
   return (
@@ -16,6 +23,8 @@ function ContainerRoot({ asChild = false, className, variant, ...props }: Contai
       className={cn(
         containerRootVariants({
           className: className,
+          paddingBottom: paddingBottom,
+          paddingTop: paddingTop,
           variant: variant,
         }),
       )}

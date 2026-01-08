@@ -10,12 +10,12 @@ function Main({ className, style, ...props }: HeaderProps) {
   return (
     <main
       className={cn(
-        "flex min-h-svh flex-col items-center justify-center bg-secondary text-secondary-foreground",
+        "flex h-fit min-h-svh flex-col items-center justify-center bg-secondary text-secondary-foreground",
         className,
       )}
       style={{
         ...style,
-        marginTop: `-${headerHeight}px`,
+        minHeight: `calc(100vh - ${headerHeight}px)`,
       }}
       {...props}
     />

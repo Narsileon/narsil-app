@@ -2,13 +2,15 @@ import { Button } from "@/blocks/button";
 import { Container } from "@/blocks/container";
 import { Heading } from "@/blocks/heading";
 import { FormElement, FormProvider, FormRoot } from "@/components/form";
+import { LayoutProps } from "@/types";
 import { useState } from "react";
 
 type FormProps = {
   form: App.Http.Data.FormData | App.Http.Data.FormData[];
+  layout: LayoutProps;
 };
 
-function Form({ form }: FormProps) {
+function Form({ form, layout }: FormProps) {
   if (Array.isArray(form)) {
     form = form[0];
   }
@@ -17,7 +19,11 @@ function Form({ form }: FormProps) {
   const [success, setSuccess] = useState<boolean>(false);
 
   return (
-    <Container variant="sm">
+    <Container
+      paddingBottom={layout.padding.bottom}
+      paddingTop={layout.padding.top}
+      variant={layout.size}
+    >
       {success ? (
         <p>Submitted successfully</p>
       ) : (

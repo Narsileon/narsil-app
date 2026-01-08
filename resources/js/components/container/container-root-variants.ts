@@ -19,14 +19,14 @@ const containerRootVariants = cva(
       },
       variant: {
         sm: "w-full px-4 md:px-10 xl:max-w-5xl",
-        md: "w-full px-4 md:px-10 lg:max-w-[100rem]",
+        md: "w-full px-4 md:px-10 lg:max-w-7xl",
         lg: "w-full px-4 md:px-10",
       },
     },
     defaultVariants: {
-      paddingBottom: "md",
-      paddingTop: "md",
-      variant: "md",
+      paddingBottom: "none",
+      paddingTop: "none",
+      variant: "lg",
     },
   },
 );
