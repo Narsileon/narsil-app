@@ -20,7 +20,7 @@ const containerRootVariants = cva(
         lg: "pt-16 md:pt-24 lg:pt-32 xl:pt-40",
       },
       variant: {
-        sm: "w-full px-4 md:px-10 xl:max-w-[75rem]",
+        sm: "w-full px-4 md:px-10 xl:max-w-5xl",
         md: "w-full px-4 md:px-10 lg:max-w-[100rem]",
         lg: "w-full px-4 md:px-10",
       },

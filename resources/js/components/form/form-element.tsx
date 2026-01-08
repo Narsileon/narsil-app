@@ -25,7 +25,7 @@ function FormElement({ className, ...props }: FormElementProps) {
     return (
       <fieldset className="col-span-full flex flex-col gap-x-8 gap-y-4 rounded-md border p-4">
         <legend className="px-2">{element.label}</legend>
-        <div className="flex flex-col gap-x-8 gap-y-4 p-2">
+        <div className="grid grid-cols-12 gap-x-8 gap-y-4 p-2">
           {element.elements.map((element) => {
             return <FormElement key={element.handle} {...element} />;
           })}
