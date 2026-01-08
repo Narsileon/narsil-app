@@ -19,6 +19,7 @@ final class FooterData extends Data
      * @param string|null $address_line_1
      * @param string|null $address_line_2
      * @param string|null $company
+     * @param string|null $copyright
      * @param string|null $email
      * @param string|null $logo
      * @param string|null $phone
@@ -31,6 +32,7 @@ final class FooterData extends Data
         public ?string $address_line_1,
         public ?string $address_line_2,
         public ?string $company,
+        public ?string $copyright,
         public ?string $email,
         public ?string $logo,
         public ?string $phone,
@@ -56,6 +58,7 @@ final class FooterData extends Data
             address_line_1: $footer->{Footer::ADDRESS_LINE_1},
             address_line_2: $footer->{Footer::ADDRESS_LINE_2},
             company: $footer->{Footer::COMPANY},
+            copyright: $footer->{Footer::COPYRIGHT},
             email: $footer->{Footer::EMAIL},
             logo: $footer->{Footer::LOGO},
             phone: $footer->{Footer::PHONE},

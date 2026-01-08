@@ -8,6 +8,7 @@ declare namespace App.Http.Data {
     address_line_1: string | null;
     address_line_2: string | null;
     company: string | null;
+    copyright: string | null;
     email: string | null;
     logo: string | null;
     phone: string | null;
