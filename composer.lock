@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "80544a4aa6f5ff2bbb8483eacbed71f9",
+    "content-hash": "302109068a726942af9a0fb100aa75e8",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -1440,16 +1440,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v12.45.1",
+            "version": "v12.46.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "1ca7e2a2ee17ae5bc435af7cb52d2f130148e2fa"
+                "reference": "9dcff48d25a632c1fadb713024c952fec489c4ae"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/1ca7e2a2ee17ae5bc435af7cb52d2f130148e2fa",
-                "reference": "1ca7e2a2ee17ae5bc435af7cb52d2f130148e2fa",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/9dcff48d25a632c1fadb713024c952fec489c4ae",
+                "reference": "9dcff48d25a632c1fadb713024c952fec489c4ae",
                 "shasum": ""
             },
             "require": {
@@ -1658,7 +1658,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2026-01-07T00:50:24+00:00"
+            "time": "2026-01-07T23:26:53+00:00"
         },
         {
             "name": "laravel/horizon",
@@ -2656,7 +2656,7 @@
             "dist": {
                 "type": "path",
                 "url": "../narsil-cms",
-                "reference": "46851e369d114b86c3f10e93793f47927dec2907"
+                "reference": "86d8870cd05f77847770f2488d64cc5d31bb7122"
             },
             "require": {
                 "inertiajs/inertia-laravel": "^2.0",
@@ -2667,6 +2667,8 @@
                 "laravel/tinker": "^2.0",
                 "nuwave/lighthouse": "^6.62",
                 "php": "^8.4",
+                "spatie/laravel-data": "^4.18",
+                "spatie/laravel-typescript-transformer": "^2.5",
                 "tightenco/ziggy": "^2.0"
             },
             "type": "library",

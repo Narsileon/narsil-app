@@ -1,3 +1,4 @@
+import { replaceLastPath } from "@narsil-cms/lib/utils";
 import { cloneDeep, get, unset } from "lodash-es";
 import { useEffect, useState } from "react";
 import useForm from "./form-context";
@@ -33,7 +34,7 @@ function FormField({ conditions, element, handle, render }: FormFieldProps) {
     let nextVisible = true;
 
     for (const condition of conditions || []) {
-      if (data?.[condition.handle] !== condition.value) {
+      if (get(data, replaceLastPath(handle, condition.handle)) !== condition.value) {
         nextVisible = false;
         break;
       }
