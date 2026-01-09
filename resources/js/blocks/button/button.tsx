@@ -8,19 +8,31 @@ import { type ComponentProps } from "react";
 type ButtonProps = ComponentProps<typeof ButtonRoot> & {
   icon?: IconName;
   label?: string;
-  url?: string;
+  link?: {
+    type: "internal" | "external";
+    url: string;
+  };
 };
 
-function Button({ asChild = false, children, icon, label, url, ...props }: ButtonProps) {
+function Button({ asChild = false, children, icon, label, link, ...props }: ButtonProps) {
   const iconName = icon;
 
-  return url ? (
-    <ButtonRoot asChild={true} {...props}>
-      <Link href={url}>
-        {iconName ? <Icon name={iconName} /> : null}
-        <Slot.Slottable>{label ?? children}</Slot.Slottable>
-      </Link>
-    </ButtonRoot>
+  return link ? (
+    link.type === "external" ? (
+      <ButtonRoot asChild={true} {...props}>
+        <a href={link.url} target="_blank">
+          {iconName ? <Icon name={iconName} /> : null}
+          <Slot.Slottable>{label ?? children}</Slot.Slottable>
+        </a>
+      </ButtonRoot>
+    ) : (
+      <ButtonRoot asChild={true} {...props}>
+        <Link href={link.url}>
+          {iconName ? <Icon name={iconName} /> : null}
+          <Slot.Slottable>{label ?? children}</Slot.Slottable>
+        </Link>
+      </ButtonRoot>
+    )
   ) : (
     <ButtonRoot asChild={asChild} {...props}>
       {iconName ? <Icon name={iconName} /> : null}
