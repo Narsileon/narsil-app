@@ -137,7 +137,7 @@ final class SitePageData extends Data
         $nodes->loadMissing([
             EntityNode::RELATION_BLOCK,
             EntityNode::RELATION_ELEMENT,
-            EntityNode::RELATION_ENTITIES,
+            EntityNode::RELATION_RELATIONS,
         ]);
 
         static::$nodes = $nodes->groupBy(EntityNode::PARENT_UUID);
@@ -187,13 +187,18 @@ final class SitePageData extends Data
                 }
                 else
                 {
-                    if (count($node->{EntityNode::RELATION_ENTITIES}) > 0)
+                    if (count($node->{EntityNode::RELATION_RELATIONS}) > 0)
                     {
-                        $target = $node->{EntityNode::RELATION_ENTITIES}->first()?->{EntityNodeRelation::RELATION_TARGET};
+                        $target = $node->{EntityNode::RELATION_RELATIONS}->first()?->{EntityNodeRelation::RELATION_TARGET};
 
                         if ($target::class === Form::class)
                         {
                             $target = FormData::fromModel($target);
+                        }
+
+                        if ($target::class === SitePage::class)
+                        {
+                            $target = SiteUrlData::fromModel($target->{SitePage::RELATION_URL});
                         }
 
                         Arr::set($data, $key, $target);

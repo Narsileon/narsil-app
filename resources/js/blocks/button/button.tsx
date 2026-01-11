@@ -11,6 +11,7 @@ type ButtonProps = ComponentProps<typeof ButtonRoot> & {
   link?: {
     type: "internal" | "external";
     url: string;
+    link: App.Http.Data.SiteUrlData;
   };
 };
 
@@ -27,7 +28,7 @@ function Button({ asChild = false, children, icon, label, link, ...props }: Butt
       </ButtonRoot>
     ) : (
       <ButtonRoot asChild={true} {...props}>
-        <Link href={link.url}>
+        <Link href={link.link.url}>
           {iconName ? <Icon name={iconName} /> : null}
           <Slot.Slottable>{label ?? children}</Slot.Slottable>
         </Link>
