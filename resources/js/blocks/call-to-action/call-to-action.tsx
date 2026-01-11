@@ -14,7 +14,11 @@ function CallToAction({ layout, ...props }: CallToActionProps) {
       paddingTop={layout.padding.top}
       variant={layout.size}
     >
-      <Button {...props} />
+      <Button
+        className="transition-transform duration-200 will-change-transform hover:scale-105"
+        size="lg"
+        {...props}
+      />
     </Container>
   );
 }
