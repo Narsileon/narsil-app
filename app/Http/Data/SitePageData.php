@@ -9,7 +9,6 @@ use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Config;
 use Narsil\Contracts\Fields\BuilderField;
-use Narsil\Interfaces\ITemplateElement;
 use Narsil\Models\Entities\Entity;
 use Narsil\Models\Entities\EntityNode;
 use Narsil\Models\Entities\EntityNodeRelation;
@@ -17,6 +16,7 @@ use Narsil\Models\Forms\Form;
 use Narsil\Models\Sites\SitePage;
 use Narsil\Models\Sites\SitePageEntity;
 use Narsil\Models\Collections\Block;
+use Narsil\Models\Collections\Element;
 use Narsil\Models\Collections\Field;
 use Spatie\LaravelData\Data;
 use Spatie\TypeScriptTransformer\Attributes\TypeScript;
@@ -160,11 +160,11 @@ final class SitePageData extends Data
         {
             $element = $node->{EntityNode::RELATION_ELEMENT};
 
-            $handle = $element->{ITemplateElement::HANDLE};
+            $handle = $element->{Element::HANDLE};
 
-            if ($element->{ITemplateElement::BASE_TYPE} === Field::TABLE)
+            if ($element->{Element::BASE_TYPE} === Field::TABLE)
             {
-                $field = $element->{ITemplateElement::RELATION_BASE};
+                $field = $element->{Element::RELATION_BASE};
 
                 $key = $path ? "$path.$handle" : $handle;
 
@@ -206,7 +206,7 @@ final class SitePageData extends Data
             }
             else
             {
-                $block = $element->{ITemplateElement::RELATION_BASE};
+                $block = $element->{Element::RELATION_BASE};
 
                 if ($block->{Block::VIRTUAL})
                 {

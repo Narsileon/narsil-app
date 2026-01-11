@@ -4,7 +4,7 @@ namespace App\Http\Data;
 
 #region USE
 
-use Narsil\Interfaces\IFormElement;
+use Narsil\Models\Forms\Element;
 use Narsil\Models\Forms\Fieldset;
 use Narsil\Models\Forms\Input;
 use Spatie\LaravelData\Data;
@@ -48,29 +48,29 @@ final class FormElementData extends Data
     #region PUBLIC METHODS
 
     /**
-     * @param IFormElement $formElement
+     * @param Element $element
      *
      * @return static
      */
-    public static function fromModel(IFormElement $formElement): self
+    public static function fromModel(Element $element): self
     {
-        $base = $formElement->{IFormElement::RELATION_BASE};
+        $base = $element->{Element::RELATION_BASE};
 
-        $baseData = match ($formElement->{IFormElement::BASE_TYPE})
+        $baseData = match ($element->{Element::BASE_TYPE})
         {
             Fieldset::TABLE => FieldsetData::fromModel($base),
             Input::TABLE => InputData::fromModel($base),
         };
 
         return new static(
-            description: $formElement->{IFormElement::DESCRIPTION},
-            handle: $formElement->{IFormElement::HANDLE},
-            label: $formElement->{IFormElement::LABEL},
-            position: $formElement->{IFormElement::POSITION},
-            required: $formElement->{IFormElement::REQUIRED},
-            width: $formElement->{IFormElement::WIDTH},
+            description: $element->{Element::DESCRIPTION},
+            handle: $element->{Element::HANDLE},
+            label: $element->{Element::LABEL},
+            position: $element->{Element::POSITION},
+            required: $element->{Element::REQUIRED},
+            width: $element->{Element::WIDTH},
 
-            conditions: $formElement->{IFormElement::RELATION_CONDITIONS}
+            conditions: $element->{Element::RELATION_CONDITIONS}
                 ->map(function ($condition)
                 {
                     return FormElementConditionData::from($condition);
