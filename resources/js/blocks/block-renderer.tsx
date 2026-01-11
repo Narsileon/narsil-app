@@ -1,5 +1,6 @@
 import { Accordion } from "@/blocks/accordion";
 import { Button } from "@/blocks/button";
+import { CallToAction } from "@/blocks/call-to-action";
 import { Form } from "@/blocks/form";
 import { HeroHeader } from "@/blocks/hero-header";
 
@@ -14,6 +15,7 @@ type BlockRendererProps = {
 const blocks = {
   ["accordion"]: Accordion,
   ["button"]: Button,
+  ["call_to_action"]: CallToAction,
   ["hero_header"]: HeroHeader,
   ["form"]: Form,
 };
