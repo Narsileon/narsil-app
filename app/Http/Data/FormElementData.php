@@ -4,7 +4,7 @@ namespace App\Http\Data;
 
 #region USE
 
-use Narsil\Interfaces\IFormHasElement;
+use Narsil\Interfaces\IFormElement;
 use Narsil\Models\Forms\Fieldset;
 use Narsil\Models\Forms\Input;
 use Spatie\LaravelData\Data;
@@ -25,7 +25,7 @@ final class FormElementData extends Data
      * @param boolean $required
      * @param integer $width
      * @param FormElementConditionData[] $conditions
-     * @param FieldsetData|InputData $element
+     * @param FieldsetData|InputData $base
      *
      * @return void
      */
@@ -37,7 +37,7 @@ final class FormElementData extends Data
         public bool $required,
         public int $width,
         public array $conditions,
-        public FieldsetData|InputData $element,
+        public FieldsetData|InputData $base,
     )
     {
         //
@@ -48,35 +48,35 @@ final class FormElementData extends Data
     #region PUBLIC METHODS
 
     /**
-     * @param IFormHasElement $formElement
+     * @param IFormElement $formElement
      *
      * @return static
      */
-    public static function fromModel(IFormHasElement $formElement): self
+    public static function fromModel(IFormElement $formElement): self
     {
-        $element = $formElement->{IFormHasElement::RELATION_ELEMENT};
+        $base = $formElement->{IFormElement::RELATION_BASE};
 
-        $elementData = match ($formElement->{IFormHasElement::ELEMENT_TYPE})
+        $baseData = match ($formElement->{IFormElement::BASE_TYPE})
         {
-            Fieldset::TABLE => FieldsetData::fromModel($element),
-            Input::TABLE => InputData::fromModel($element),
+            Fieldset::TABLE => FieldsetData::fromModel($base),
+            Input::TABLE => InputData::fromModel($base),
         };
 
         return new static(
-            description: $formElement->{IFormHasElement::DESCRIPTION},
-            handle: $formElement->{IFormHasElement::HANDLE},
-            label: $formElement->{IFormHasElement::LABEL},
-            position: $formElement->{IFormHasElement::POSITION},
-            required: $formElement->{IFormHasElement::REQUIRED},
-            width: $formElement->{IFormHasElement::WIDTH},
+            description: $formElement->{IFormElement::DESCRIPTION},
+            handle: $formElement->{IFormElement::HANDLE},
+            label: $formElement->{IFormElement::LABEL},
+            position: $formElement->{IFormElement::POSITION},
+            required: $formElement->{IFormElement::REQUIRED},
+            width: $formElement->{IFormElement::WIDTH},
 
-            conditions: $formElement->{IFormHasElement::RELATION_CONDITIONS}
+            conditions: $formElement->{IFormElement::RELATION_CONDITIONS}
                 ->map(function ($condition)
                 {
                     return FormElementConditionData::from($condition);
                 })
                 ->all(),
-            element: $elementData,
+            base: $baseData,
         );
     }
 

@@ -11,31 +11,27 @@ type FormProviderProps = {
 
 function FormProvider({ action, tabs = [], id, render }: FormProviderProps) {
   function flattenValues(
-    elements: (App.Http.Data.FieldsetData | App.Http.Data.FormTabData | App.Http.Data.InputData)[],
+    bases: (App.Http.Data.FieldsetData | App.Http.Data.FormTabData | App.Http.Data.InputData)[],
   ): Record<string, unknown> {
     const receivedValues: Record<string, unknown> = {};
 
-    elements.map((element) => {
-      if ("elements" in element) {
-        element.elements?.map((hasElement) => {
-          const childElement = hasElement.element;
+    bases.map((base) => {
+      if ("elements" in base) {
+        base.elements?.map((element) => {
+          const child = element.base;
 
-          if ("elements" in childElement) {
-            Object.assign(receivedValues, flattenValues([childElement]));
-          } else if ("type" in childElement) {
+          if ("elements" in child) {
+            Object.assign(receivedValues, flattenValues([child]));
+          } else if ("type" in child) {
             set(
               receivedValues,
-              hasElement.handle,
-              (childElement.settings as Record<string, unknown>)?.value ?? "",
+              element.handle,
+              (child.settings as Record<string, unknown>)?.value ?? "",
             );
           }
         });
-      } else if ("type" in element) {
-        set(
-          receivedValues,
-          element.handle,
-          (element.settings as Record<string, unknown>)?.value ?? "",
-        );
+      } else if ("type" in base) {
+        set(receivedValues, base.handle, (base.settings as Record<string, unknown>)?.value ?? "");
       }
     });
 

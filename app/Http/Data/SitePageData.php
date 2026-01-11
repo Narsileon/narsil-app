@@ -9,15 +9,15 @@ use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Config;
 use Narsil\Contracts\Fields\BuilderField;
-use Narsil\Interfaces\IStructureHasElement;
+use Narsil\Interfaces\ITemplateElement;
 use Narsil\Models\Entities\Entity;
 use Narsil\Models\Entities\EntityNode;
 use Narsil\Models\Entities\EntityNodeRelation;
 use Narsil\Models\Forms\Form;
 use Narsil\Models\Sites\SitePage;
 use Narsil\Models\Sites\SitePageEntity;
-use Narsil\Models\Structures\Block;
-use Narsil\Models\Structures\Field;
+use Narsil\Models\Collections\Block;
+use Narsil\Models\Collections\Field;
 use Spatie\LaravelData\Data;
 use Spatie\TypeScriptTransformer\Attributes\TypeScript;
 
@@ -160,11 +160,11 @@ final class SitePageData extends Data
         {
             $element = $node->{EntityNode::RELATION_ELEMENT};
 
-            $handle = $element->{IStructureHasElement::HANDLE};
+            $handle = $element->{ITemplateElement::HANDLE};
 
-            if ($element->{IStructureHasElement::ELEMENT_TYPE} === Field::TABLE)
+            if ($element->{ITemplateElement::BASE_TYPE} === Field::TABLE)
             {
-                $field = $element->{IStructureHasElement::RELATION_ELEMENT};
+                $field = $element->{ITemplateElement::RELATION_BASE};
 
                 $key = $path ? "$path.$handle" : $handle;
 
@@ -206,7 +206,7 @@ final class SitePageData extends Data
             }
             else
             {
-                $block = $element->{IStructureHasElement::RELATION_ELEMENT};
+                $block = $element->{ITemplateElement::RELATION_BASE};
 
                 if ($block->{Block::VIRTUAL})
                 {

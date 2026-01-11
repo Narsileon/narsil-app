@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "302109068a726942af9a0fb100aa75e8",
+    "content-hash": "80544a4aa6f5ff2bbb8483eacbed71f9",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -2656,7 +2656,7 @@
             "dist": {
                 "type": "path",
                 "url": "../narsil-cms",
-                "reference": "86d8870cd05f77847770f2488d64cc5d31bb7122"
+                "reference": "b4598c9d8a3931e2ce63d36b44723e978e836d1b"
             },
             "require": {
                 "inertiajs/inertia-laravel": "^2.0",
@@ -2667,8 +2667,6 @@
                 "laravel/tinker": "^2.0",
                 "nuwave/lighthouse": "^6.62",
                 "php": "^8.4",
-                "spatie/laravel-data": "^4.18",
-                "spatie/laravel-typescript-transformer": "^2.5",
                 "tightenco/ziggy": "^2.0"
             },
             "type": "library",

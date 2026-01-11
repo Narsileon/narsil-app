@@ -35,14 +35,14 @@ declare namespace App.Http.Data {
     value: string;
   };
   export type FormElementData = {
+    base: App.Http.Data.FieldsetData | App.Http.Data.InputData;
+    conditions: Array<App.Http.Data.FormElementConditionData>;
     description: string;
     handle: string;
     label: string;
     position: number;
     required: boolean;
     width: number;
-    conditions: Array<App.Http.Data.FormElementConditionData>;
-    element: App.Http.Data.FieldsetData | App.Http.Data.InputData;
   };
   export type FormTabData = {
     description: string;
