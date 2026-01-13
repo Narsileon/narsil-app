@@ -5,13 +5,13 @@ import { FormContext, type FormContextProps } from "./form-context";
 type FormProviderProps = {
   action: string;
   id: string;
-  tabs?: App.Http.Data.FormTabData[];
+  tabs?: App.Http.Data.FormStepData[];
   render: (props: FormContextProps) => React.ReactNode;
 };
 
 function FormProvider({ action, tabs = [], id, render }: FormProviderProps) {
   function flattenValues(
-    bases: (App.Http.Data.FieldsetData | App.Http.Data.FormTabData | App.Http.Data.InputData)[],
+    bases: (App.Http.Data.FieldsetData | App.Http.Data.FormStepData | App.Http.Data.InputData)[],
   ): Record<string, unknown> {
     const receivedValues: Record<string, unknown> = {};
 

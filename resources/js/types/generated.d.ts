@@ -27,7 +27,7 @@ declare namespace App.Http.Data {
   export type FormData = {
     id: number;
     slug: string;
-    tabs: Array<App.Http.Data.FormTabData>;
+    tabs: Array<App.Http.Data.FormStepData>;
   };
   export type FormElementConditionData = {
     handle: string;
@@ -44,7 +44,7 @@ declare namespace App.Http.Data {
     required: boolean;
     width: number;
   };
-  export type FormTabData = {
+  export type FormStepData = {
     description: string;
     handle: string;
     label: string;

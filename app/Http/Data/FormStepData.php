@@ -4,14 +4,14 @@ namespace App\Http\Data;
 
 #region USE
 
-use Narsil\Models\Forms\FormTab;
+use Narsil\Models\Forms\FormStep;
 use Spatie\LaravelData\Data;
 use Spatie\TypeScriptTransformer\Attributes\TypeScript;
 
 #endregion
 
 #[TypeScript]
-final class FormTabData extends Data
+final class FormStepData extends Data
 {
     #region CONSTRUCTOR
 
@@ -40,19 +40,19 @@ final class FormTabData extends Data
     #region PUBLIC METHODS
 
     /**
-     * @param FormTab $formTab
+     * @param FormStep $formStep
      *
      * @return static
      */
-    public static function fromModel(FormTab $formTab): self
+    public static function fromModel(FormStep $formStep): self
     {
         return new static(
-            description: $formTab->{FormTab::DESCRIPTION},
-            handle: $formTab->{FormTab::HANDLE},
-            label: $formTab->{FormTab::LABEL},
-            position: $formTab->{FormTab::POSITION},
+            description: $formStep->{FormStep::DESCRIPTION},
+            handle: $formStep->{FormStep::HANDLE},
+            label: $formStep->{FormStep::LABEL},
+            position: $formStep->{FormStep::POSITION},
 
-            elements: $formTab->{FormTab::RELATION_ELEMENTS}
+            elements: $formStep->{FormStep::RELATION_ELEMENTS}
                 ->map(function ($element)
                 {
                     return FormElementData::from($element);

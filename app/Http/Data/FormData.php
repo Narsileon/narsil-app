@@ -19,7 +19,7 @@ final class FormData extends Data
     /**
      * @param integer $id
      * @param string $slug
-     * @param FormTabData[] $tabs
+     * @param FormStepData[] $tabs
      *
      * @return void
      */
@@ -55,7 +55,7 @@ final class FormData extends Data
             tabs: $form->{Form::RELATION_TABS}
                 ->map(function ($tab)
                 {
-                    return FormTabData::from($tab);
+                    return FormStepData::from($tab);
                 })
                 ->all(),
         );
