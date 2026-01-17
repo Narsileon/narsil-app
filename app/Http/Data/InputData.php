@@ -54,15 +54,15 @@ final class InputData extends Data
             description: $input->{Input::DESCRIPTION},
             handle: $input->{Input::HANDLE},
             label: $input->{Input::LABEL},
-            placeholder: $input->{Input::PLACEHOLDER},
-            settings: $input->{Input::SETTINGS},
-            type: $input->{Input::TYPE},
             options: $input->{Input::RELATION_OPTIONS}
                 ->map(function ($option)
                 {
                     return InputOptionData::from($option);
                 })
                 ->all(),
+            placeholder: $input->{Input::PLACEHOLDER},
+            settings: $input->{Input::SETTINGS},
+            type: $input->{Input::TYPE},
         );
     }
 

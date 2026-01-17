@@ -89,19 +89,18 @@ final class SitePageData extends Data
         $data = static::resolveData($sitePage);
 
         return new static(
-            id: $sitePage->{SitePage::ID},
-            slug: $sitePage->{SitePage::SLUG},
-            title: $sitePage->{SitePage::TITLE},
+            change_freq: $sitePage->{SitePage::CHANGE_FREQ},
             data: $data,
+            id: $sitePage->{SitePage::ID},
             meta_description: $sitePage->{SitePage::META_DESCRIPTION},
             open_graph_description: $sitePage->{SitePage::OPEN_GRAPH_DESCRIPTION},
             open_graph_image: $sitePage->{SitePage::OPEN_GRAPH_IMAGE},
             open_graph_title: $sitePage->{SitePage::OPEN_GRAPH_TITLE},
             open_graph_type: $sitePage->{SitePage::OPEN_GRAPH_TYPE},
-            robots: $sitePage->{SitePage::ROBOTS},
-            change_freq: $sitePage->{SitePage::CHANGE_FREQ},
             priority: $sitePage->{SitePage::PRIORITY},
-
+            robots: $sitePage->{SitePage::ROBOTS},
+            slug: $sitePage->{SitePage::SLUG},
+            title: $sitePage->{SitePage::TITLE},
             urls: $sitePage->{SitePage::RELATION_URLS}
                 ->map(function ($url)
                 {

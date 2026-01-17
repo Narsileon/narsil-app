@@ -48,16 +48,15 @@ final class FormStepData extends Data
     {
         return new static(
             description: $formStep->{FormStep::DESCRIPTION},
-            handle: $formStep->{FormStep::HANDLE},
-            label: $formStep->{FormStep::LABEL},
-            position: $formStep->{FormStep::POSITION},
-
             elements: $formStep->{FormStep::RELATION_ELEMENTS}
                 ->map(function ($element)
                 {
                     return FormElementData::from($element);
                 })
                 ->all(),
+            handle: $formStep->{FormStep::HANDLE},
+            label: $formStep->{FormStep::LABEL},
+            position: $formStep->{FormStep::POSITION},
         );
     }
 

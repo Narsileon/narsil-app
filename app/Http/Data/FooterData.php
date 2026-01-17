@@ -66,23 +66,22 @@ final class FooterData extends Data
             copyright: $footer->{Footer::COPYRIGHT},
             country: Locale::getDisplayRegion('_' . $footer->{Footer::COUNTRY}, App::getLocale()),
             email: $footer->{Footer::EMAIL},
-            logo: $footer->{Footer::LOGO},
-            phone: $footer->{Footer::PHONE},
-            postal_code: $footer->{Footer::POSTAL_CODE},
-            street: $footer->{Footer::STREET},
-
             links: $footer->{Footer::RELATION_LINKS}
                 ->map(function ($link)
                 {
                     return FooterLinkData::from($link);
                 })
                 ->all(),
+            logo: $footer->{Footer::LOGO},
+            phone: $footer->{Footer::PHONE},
+            postal_code: $footer->{Footer::POSTAL_CODE},
             social_media: $footer->{Footer::RELATION_SOCIAL_MEDIA}
                 ->map(function ($socialMedium)
                 {
                     return FooterSocialMediumData::from($socialMedium);
                 })
                 ->all(),
+            street: $footer->{Footer::STREET},
         );
     }
 

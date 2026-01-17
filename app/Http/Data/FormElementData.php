@@ -63,20 +63,19 @@ final class FormElementData extends Data
         };
 
         return new static(
-            description: $element->{Element::DESCRIPTION},
-            handle: $element->{Element::HANDLE},
-            label: $element->{Element::LABEL},
-            position: $element->{Element::POSITION},
-            required: $element->{Element::REQUIRED},
-            width: $element->{Element::WIDTH},
-
+            base: $baseData,
             conditions: $element->{Element::RELATION_CONDITIONS}
                 ->map(function ($condition)
                 {
                     return FormElementConditionData::from($condition);
                 })
                 ->all(),
-            base: $baseData,
+            description: $element->{Element::DESCRIPTION},
+            handle: $element->{Element::HANDLE},
+            label: $element->{Element::LABEL},
+            position: $element->{Element::POSITION},
+            required: $element->{Element::REQUIRED},
+            width: $element->{Element::WIDTH},
         );
     }
 

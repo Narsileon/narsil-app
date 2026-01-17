@@ -51,7 +51,6 @@ final class FormData extends Data
         return new static(
             id: $form->{Form::ID},
             slug: $form->{Form::SLUG},
-
             tabs: $form->{Form::RELATION_TABS}
                 ->map(function ($tab)
                 {

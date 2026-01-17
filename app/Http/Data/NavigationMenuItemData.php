@@ -46,16 +46,15 @@ final class NavigationMenuItemData extends Data
     public static function fromModel(SitePage $sitePage): self
     {
         return new static(
-            id: $sitePage->{SitePage::ID},
-            title: $sitePage->{SitePage::TITLE},
-            url: $sitePage->{SitePage::RELATION_URLS}->first()->{SiteUrl::URL},
-
             children: $sitePage->{SitePage::RELATION_CHILDREN}
                 ->map(function (SitePage $child)
                 {
                     return static::fromModel($child);
                 })
                 ->all(),
+            id: $sitePage->{SitePage::ID},
+            title: $sitePage->{SitePage::TITLE},
+            url: $sitePage->{SitePage::RELATION_URLS}->first()->{SiteUrl::URL},
         );
     }
 

@@ -43,15 +43,14 @@ final class FieldsetData extends Data
     public static function fromModel(Fieldset $fieldset): self
     {
         return new static(
-            handle: $fieldset->{Fieldset::HANDLE},
-            label: $fieldset->{Fieldset::LABEL},
-
             elements: $fieldset->{Fieldset::RELATION_ELEMENTS}
                 ->map(function ($element)
                 {
                     return FormElementData::from($element);
                 })
                 ->all(),
+            handle: $fieldset->{Fieldset::HANDLE},
+            label: $fieldset->{Fieldset::LABEL},
         );
     }
 
