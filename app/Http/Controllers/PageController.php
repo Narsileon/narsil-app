@@ -6,18 +6,18 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Http\Data\FooterData;
+use App\Http\Data\GlobalData;
 use App\Http\Data\HeaderData;
 use App\Http\Data\NavigationMenuItemData;
 use App\Http\Data\SitePageData;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\App;
 use Inertia\Inertia;
 use Inertia\Response;
 use Narsil\Models\Sites\Site;
 use Narsil\Models\Sites\SitePage;
 use Narsil\Services\PageService;
-use Narsil\Support\TranslationsBag;
 use Narsil\Support\Tree;
+use Spatie\LaravelData\DataCollection;
 
 #endregion
 
@@ -34,22 +34,14 @@ class PageController extends Controller
     {
         $sitePage = PageService::resolvePage($request);
 
-        $header = $this->header($sitePage);
-        $footer = $this->footer($sitePage);
-        $navigationMenu = $this->navigationMenu($sitePage);
-        $page = $this->page($sitePage);
-        $session = $this->session($sitePage);
+        $data = new GlobalData(
+            footer: $this->footer($sitePage),
+            header: $this->header($sitePage),
+            navigation: $this->navigationMenu($sitePage),
+            page: $this->page($sitePage),
+        );
 
-        $translations = app(TranslationsBag::class)->get();
-
-        return Inertia::render('frontend/index', [
-            'footer' => $footer,
-            'header' => $header,
-            'navigation_menu' => $navigationMenu,
-            'page' => $page,
-            'session' => $session,
-            'translations' => $translations,
-        ]);
+        return Inertia::render('frontend/index', $data);
     }
 
     #endregion
@@ -85,17 +77,17 @@ class PageController extends Controller
      *
      * @param SitePage $sitePage
      *
-     * @return array
+     * @return DataCollection
      */
-    private function navigationMenu(SitePage $sitePage): array
+    private function navigationMenu(SitePage $sitePage): DataCollection
     {
-        $tree = new Tree($sitePage->{SitePage::RELATION_SITE}->{Site::RELATION_PAGES}->where(SitePage::SHOW_IN_MENU, '=', true))
+        $tree = new Tree($sitePage->{SitePage::RELATION_SITE}->{Site::RELATION_PAGES}->where(SitePage::SHOW_IN_MENU, true))
             ->getNestedTree();
 
-        return $tree->map(function ($page)
+        return NavigationMenuItemData::collect($tree->map(function (SitePage $sitePage)
         {
-            return NavigationMenuItemData::from($page);
-        })->toArray();
+            return NavigationMenuItemData::from($sitePage);
+        }), DataCollection::class);
     }
 
     /**
@@ -108,20 +100,6 @@ class PageController extends Controller
     private function page(SitePage $sitePage): SitePageData
     {
         return SitePageData::from($sitePage);
-    }
-
-    /**
-     * Get the session data.
-     *
-     * @param SitePage $sitePage
-     *
-     * @return array
-     */
-    private function session(SitePage $sitePage): array
-    {
-        return [
-            'locale' => App::getLocale(),
-        ];
     }
 
     #endregion

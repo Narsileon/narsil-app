@@ -12,13 +12,13 @@ import {
   NavigationMenuList,
   NavigationMenuRoot,
 } from "@/components/navigation-menu";
-import type { GlobalProps } from "@/types";
 import { Link } from "@inertiajs/react";
 import { cn } from "@narsil-cms/lib/utils";
 import { upperCase, upperFirst } from "lodash-es";
 import { type ComponentProps, useMemo } from "react";
 
-type FooterProps = ComponentProps<"footer"> & Pick<GlobalProps, "footer" | "page" | "session">;
+type FooterProps = ComponentProps<"footer"> &
+  Pick<App.Http.Data.GlobalData, "footer" | "page" | "session">;
 
 function Footer({ className, footer, page, session, ...props }: FooterProps) {
   const siteUrl = useMemo(

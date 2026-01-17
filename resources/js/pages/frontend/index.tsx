@@ -1,12 +1,30 @@
 import { BlockRenderer } from "@/blocks";
-import { Button } from "@/blocks/button";
 import { Container } from "@/blocks/container";
-import { Heading } from "@/blocks/heading";
-import { GlobalProps } from "@/types";
 import { Head } from "@inertiajs/react";
 import { Fragment } from "react";
 
-function Page({ page }: GlobalProps) {
+function Page({ footer, page }: App.Http.Data.GlobalData) {
+  const organization = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: footer.company,
+    url: window.location.origin,
+    logo: `${window.location.origin}/favicon.svg`,
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: footer.street,
+      postalCode: footer.postal_code,
+      addressLocality: footer.city,
+      addressCountry: footer.country,
+    },
+    contactPoint: {
+      "@type": "ContactPoint",
+      telephone: footer.phone,
+      email: footer.email,
+    },
+    sameAs: footer.social_media.map((socialMedium) => socialMedium.url),
+  };
+
   return (
     <>
       <Head>
@@ -26,33 +44,23 @@ function Page({ page }: GlobalProps) {
             content={page.open_graph_description || (page.meta_description as string)}
           />
         ) : null}
+        <script type="application/ld+json">{JSON.stringify(organization, null, 2)}</script>
       </Head>
       <Container>
-        {page.data ? (
-          Object.entries(page.data).map(([handle, element]) => {
-            if (Array.isArray(element)) {
-              return (
-                <Fragment key={handle}>
-                  {element.map((block, index) => {
-                    return <BlockRenderer block={block} key={index} />;
-                  })}
-                </Fragment>
-              );
-            }
-            return <BlockRenderer block={element} key={handle} />;
-          })
-        ) : (
-          <div className="flex flex-col gap-8">
-            <Heading level="h1" variant="h4">
-              No content?
-            </Heading>
-            <Button asChild={true}>
-              <a href="/narsil/dashboard" target="_blank">
-                Visit Admin Panel
-              </a>
-            </Button>
-          </div>
-        )}
+        {page.data
+          ? Object.entries(page.data).map(([handle, element]) => {
+              if (Array.isArray(element)) {
+                return (
+                  <Fragment key={handle}>
+                    {element.map((block, index) => {
+                      return <BlockRenderer block={block} key={index} />;
+                    })}
+                  </Fragment>
+                );
+              }
+              return <BlockRenderer block={element} key={handle} />;
+            })
+          : null}
       </Container>
     </>
   );

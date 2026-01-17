@@ -53,6 +53,14 @@ declare namespace App.Http.Data {
     position: number;
     elements: Array<App.Http.Data.FormElementData>;
   };
+  export type GlobalData = {
+    page: App.Http.Data.SitePageData;
+    header: App.Http.Data.HeaderData;
+    footer: App.Http.Data.FooterData;
+    navigation: Array<App.Http.Data.NavigationMenuItemData>;
+    session: App.Http.Data.SessionData;
+    translations: { [key: string]: string };
+  };
   export type HeaderData = {};
   export type InputData = {
     description: string;
@@ -72,6 +80,10 @@ declare namespace App.Http.Data {
     title: string;
     url: string;
     children: Array<App.Http.Data.NavigationMenuItemData>;
+  };
+  export type SessionData = {
+    locale: string;
+    url: string;
   };
   export type SitePageData = {
     id: number;

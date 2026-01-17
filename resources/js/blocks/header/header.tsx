@@ -4,14 +4,13 @@ import {
   NavigationMenuRoot,
 } from "@/components/navigation-menu";
 import { useGlobal } from "@/providers/global";
-import type { GlobalProps } from "@/types";
 import { Link } from "@inertiajs/react";
 import { cn } from "@narsil-cms/lib/utils";
 import { useEffect, useRef, type ComponentProps } from "react";
 
-type HeaderProps = ComponentProps<"header"> & Pick<GlobalProps, "navigation_menu">;
+type HeaderProps = ComponentProps<"header"> & Pick<App.Http.Data.GlobalData, "navigation">;
 
-function Header({ className, navigation_menu, ...props }: HeaderProps) {
+function Header({ className, navigation, ...props }: HeaderProps) {
   const { setHeaderHeight } = useGlobal();
 
   const ref = useRef<HTMLDivElement>(null);
@@ -44,7 +43,7 @@ function Header({ className, navigation_menu, ...props }: HeaderProps) {
       </Link>
       <NavigationMenuRoot className="flex-none grow-0 justify-center md:justify-start">
         <NavigationMenuList className="gap-4 font-bold lg:gap-8">
-          {navigation_menu[0].children.map(({ title, url }, index) => {
+          {navigation[0].children.map(({ title, url }, index) => {
             const active = window.location.href.includes(url);
 
             return (
