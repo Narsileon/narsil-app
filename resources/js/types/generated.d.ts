@@ -29,7 +29,7 @@ declare namespace App.Http.Data {
   export type FormData = {
     id: number;
     slug: string;
-    tabs: Array<App.Http.Data.FormStepData>;
+    steps: Array<App.Http.Data.FormStepData>;
   };
   export type FormElementConditionData = {
     handle: string;

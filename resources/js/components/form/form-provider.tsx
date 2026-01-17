@@ -5,11 +5,11 @@ import { FormContext, type FormContextProps } from "./form-context";
 type FormProviderProps = {
   action: string;
   id: string;
-  tabs?: App.Http.Data.FormStepData[];
+  steps?: App.Http.Data.FormStepData[];
   render: (props: FormContextProps) => React.ReactNode;
 };
 
-function FormProvider({ action, tabs = [], id, render }: FormProviderProps) {
+function FormProvider({ action, steps = [], id, render }: FormProviderProps) {
   function flattenValues(
     bases: (App.Http.Data.FieldsetData | App.Http.Data.FormStepData | App.Http.Data.InputData)[],
   ): Record<string, unknown> {
@@ -54,7 +54,7 @@ function FormProvider({ action, tabs = [], id, render }: FormProviderProps) {
     setError,
     submit,
     transform,
-  } = useForm<Record<string, any>>(Object.assign(flattenValues(tabs)));
+  } = useForm<Record<string, any>>(Object.assign(flattenValues(steps)));
 
   const contextValue = {
     action: action,

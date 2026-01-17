@@ -33,7 +33,7 @@ function Form({ form, layout }: FormProps) {
         <FormProvider
           id={form.slug}
           action={`/forms/${form.id}/submit`}
-          tabs={form.tabs}
+          steps={form.steps}
           render={() => {
             return (
               <FormRoot
@@ -46,13 +46,13 @@ function Form({ form, layout }: FormProps) {
                 }}
               >
                 <Heading className="col-span-full text-center" variant="h4">
-                  {form.tabs[index].label}
+                  {form.steps[index].label}
                 </Heading>
-                {form.tabs[index]?.elements?.map((element, index) => {
+                {form.steps[index]?.elements?.map((element, index) => {
                   return <FormElement {...element} key={index} />;
                 })}
                 <div className="col-span-full flex flex-row-reverse items-center justify-between">
-                  {form.tabs.length > 1 && index < form.tabs.length - 1 ? (
+                  {form.steps.length > 1 && index < form.steps.length - 1 ? (
                     <Button
                       label={trans("ui.next")}
                       onClick={(event) => {

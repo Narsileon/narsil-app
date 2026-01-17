@@ -19,14 +19,14 @@ final class FormData extends Data
     /**
      * @param integer $id
      * @param string $slug
-     * @param FormStepData[] $tabs
+     * @param FormStepData[] $steps
      *
      * @return void
      */
     public function __construct(
         public int $id,
         public string $slug,
-        public array $tabs,
+        public array $steps,
     )
     {
         app(TranslationsBag::class)
@@ -51,7 +51,7 @@ final class FormData extends Data
         return new static(
             id: $form->{Form::ID},
             slug: $form->{Form::SLUG},
-            tabs: $form->{Form::RELATION_TABS}
+            steps: $form->{Form::RELATION_STEPS}
                 ->map(function ($tab)
                 {
                     return FormStepData::from($tab);
