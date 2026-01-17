@@ -5,13 +5,15 @@ declare namespace App.Http.Data {
     elements: Array<App.Http.Data.FormElementData>;
   };
   export type FooterData = {
-    address_line_1: string | null;
-    address_line_2: string | null;
+    city: string | null;
     company: string | null;
     copyright: string | null;
+    country: string | null;
     email: string | null;
     logo: string | null;
     phone: string | null;
+    postal_code: string | null;
+    street: string | null;
     links: Array<App.Http.Data.FooterLinkData>;
     social_media: Array<App.Http.Data.FooterSocialMediumData>;
   };
@@ -35,14 +37,14 @@ declare namespace App.Http.Data {
     value: string;
   };
   export type FormElementData = {
-    base: App.Http.Data.FieldsetData | App.Http.Data.InputData;
-    conditions: Array<App.Http.Data.FormElementConditionData>;
     description: string;
     handle: string;
     label: string;
     position: number;
     required: boolean;
     width: number;
+    conditions: Array<App.Http.Data.FormElementConditionData>;
+    base: App.Http.Data.FieldsetData | App.Http.Data.InputData;
   };
   export type FormStepData = {
     description: string;

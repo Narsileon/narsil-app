@@ -4,6 +4,8 @@ namespace App\Http\Data;
 
 #region USE
 
+use Illuminate\Support\Facades\App;
+use Locale;
 use Narsil\Models\Globals\Footer;
 use Spatie\LaravelData\Data;
 use Spatie\TypeScriptTransformer\Attributes\TypeScript;
@@ -16,26 +18,30 @@ final class FooterData extends Data
     #region CONSTRUCTOR
 
     /**
-     * @param string|null $address_line_1
-     * @param string|null $address_line_2
+     * @param string|null $city
      * @param string|null $company
      * @param string|null $copyright
+     * @param string|null $country
      * @param string|null $email
      * @param string|null $logo
      * @param string|null $phone
+     * @param string|null $postal_code
+     * @param string|null $street
      * @param FooterLinkData[] $links
      * @param FooterSocialMediumData[] $social_media
      *
      * @return void
      */
     public function __construct(
-        public ?string $address_line_1,
-        public ?string $address_line_2,
+        public ?string $city,
         public ?string $company,
         public ?string $copyright,
+        public ?string $country,
         public ?string $email,
         public ?string $logo,
         public ?string $phone,
+        public ?string $postal_code,
+        public ?string $street,
         public array $links,
         public array $social_media,
     )
@@ -55,13 +61,15 @@ final class FooterData extends Data
     public static function fromModel(Footer $footer): self
     {
         return new static(
-            address_line_1: $footer->{Footer::ADDRESS_LINE_1},
-            address_line_2: $footer->{Footer::ADDRESS_LINE_2},
+            city: $footer->{Footer::CITY},
             company: $footer->{Footer::COMPANY},
             copyright: $footer->{Footer::COPYRIGHT},
+            country: Locale::getDisplayRegion('_' . $footer->{Footer::COUNTRY}, App::getLocale()),
             email: $footer->{Footer::EMAIL},
             logo: $footer->{Footer::LOGO},
             phone: $footer->{Footer::PHONE},
+            postal_code: $footer->{Footer::POSTAL_CODE},
+            street: $footer->{Footer::STREET},
 
             links: $footer->{Footer::RELATION_LINKS}
                 ->map(function ($link)

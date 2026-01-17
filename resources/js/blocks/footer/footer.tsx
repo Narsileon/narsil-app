@@ -48,8 +48,8 @@ function Footer({ className, footer, page, session, ...props }: FooterProps) {
             <div className="flex flex-col gap-0.5 lg:gap-2">
               <p className="font-bold">{footer.company}</p>
               <p className="flex flex-col gap-0.5">
-                <span>{footer?.address_line_1}</span>
-                <span>{footer?.address_line_2}</span>
+                <span>{footer?.street}</span>
+                <span>{`${footer?.postal_code} ${footer?.city} - ${footer?.country}`}</span>
               </p>
             </div>
             <div className="flex flex-col justify-end">
