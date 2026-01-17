@@ -15,11 +15,11 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.3",
-    "@typescript-eslint/eslint-plugin": "^8.52.0",
-    "@typescript-eslint/parser": "^8.52.0",
+    "@typescript-eslint/eslint-plugin": "^8.53.0",
+    "@typescript-eslint/parser": "^8.53.0",
     "eslint": "^9.39.2",
     "eslint-plugin-react": "^7.37.5",
-    "prettier": "^3.7.4",
+    "prettier": "^3.8.0",
     "prettier-plugin-organize-imports": "^4.3.0",
     "prettier-plugin-tailwindcss": "^0.7.2",
     "typescript": "^5.9.3"
