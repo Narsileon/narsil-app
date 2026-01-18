@@ -19,15 +19,21 @@ type FormElementProps = App.Http.Data.FormElementData & {
 };
 
 function FormElement({ className, ...props }: FormElementProps) {
-  const { base, width } = props;
+  const { base, handle, width } = props;
 
   if ("elements" in base) {
     return (
       <fieldset className="col-span-full flex flex-col gap-y-4 rounded-md border p-4">
         <legend className="px-2">{base.label}</legend>
         <div className="lg:gap-x-8gap-y-4 grid grid-cols-12 p-2 sm:gap-x-4">
-          {base.elements.map((base) => {
-            return <FormElement key={base.handle} {...base} />;
+          {base.elements.map((element) => {
+            return (
+              <FormElement
+                {...element}
+                handle={`${handle}.${element.handle}`}
+                key={element.handle}
+              />
+            );
           })}
         </div>
       </fieldset>
