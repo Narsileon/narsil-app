@@ -5,11 +5,12 @@ import { FormContext, type FormContextProps } from "./form-context";
 type FormProviderProps = {
   action: string;
   id: string;
+  initialValues?: Record<string, unknown>;
   steps?: App.Http.Data.FormStepData[];
   render: (props: FormContextProps) => React.ReactNode;
 };
 
-function FormProvider({ action, steps = [], id, render }: FormProviderProps) {
+function FormProvider({ action, initialValues = {}, steps = [], id, render }: FormProviderProps) {
   function flattenValues(
     bases: (App.Http.Data.FieldsetData | App.Http.Data.FormStepData | App.Http.Data.InputData)[],
   ): Record<string, unknown> {
@@ -38,6 +39,8 @@ function FormProvider({ action, steps = [], id, render }: FormProviderProps) {
     return receivedValues;
   }
 
+  const mergedInitialValues = Object.assign(flattenValues(steps), initialValues);
+
   const {
     data,
     errors,
@@ -54,7 +57,7 @@ function FormProvider({ action, steps = [], id, render }: FormProviderProps) {
     setError,
     submit,
     transform,
-  } = useForm<Record<string, any>>(Object.assign(flattenValues(steps)));
+  } = useForm<Record<string, any>>(mergedInitialValues);
 
   const contextValue = {
     action: action,

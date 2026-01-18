@@ -8,7 +8,7 @@ type FormRootProps = ComponentProps<"form"> & {
 };
 
 function FormRoot({ className, options, ...props }: FormRootProps) {
-  const { action, id, isDirty, post, transform } = useForm();
+  const { action, id, post } = useForm();
 
   const onSubmit = useCallback(
     (event?: React.FormEvent) => {
@@ -22,7 +22,7 @@ function FormRoot({ className, options, ...props }: FormRootProps) {
 
       post?.(action, submitOptions);
     },
-    [action, isDirty, options, post, transform],
+    [action, options, post],
   );
 
   return (

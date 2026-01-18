@@ -34,14 +34,24 @@ function Form({ form, layout }: FormProps) {
           id={form.slug}
           action={`/forms/${form.id}/submit`}
           steps={form.steps}
-          render={() => {
+          initialValues={{
+            _step: 0,
+          }}
+          render={({ setData }) => {
             return (
               <FormRoot
                 className="w-full grid-cols-12 items-center gap-y-4 sm:gap-x-4 lg:gap-x-8"
                 options={{
                   preserveState: true,
                   onSuccess: () => {
-                    setSuccess(true);
+                    if (index < form.steps.length - 1) {
+                      const nextIndex = index + 1;
+
+                      setData?.("_step", nextIndex);
+                      setIndex(nextIndex);
+                    } else {
+                      setSuccess(true);
+                    }
                   },
                 }}
               >
@@ -53,13 +63,7 @@ function Form({ form, layout }: FormProps) {
                 })}
                 <div className="col-span-full flex flex-row-reverse items-center justify-between">
                   {form.steps.length > 1 && index < form.steps.length - 1 ? (
-                    <Button
-                      label={trans("ui.next")}
-                      onClick={(event) => {
-                        event.preventDefault();
-                        setIndex(index + 1);
-                      }}
-                    />
+                    <Button label={trans("ui.next")} form={form.slug} type="submit" />
                   ) : (
                     <Button
                       className="col-span-full justify-self-end"
