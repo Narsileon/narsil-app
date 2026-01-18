@@ -36,6 +36,7 @@ function Form({ form, layout }: FormProps) {
           steps={form.steps}
           initialValues={{
             _step: 0,
+            _uuid: form.uuid,
           }}
           render={({ setData }) => {
             return (
@@ -78,7 +79,11 @@ function Form({ form, layout }: FormProps) {
                       variant="ghost"
                       onClick={(event) => {
                         event.preventDefault();
-                        setIndex(index - 1);
+
+                        const previousIndex = index - 1;
+
+                        setData?.("_step", previousIndex);
+                        setIndex(previousIndex);
                       }}
                     />
                   ) : null}

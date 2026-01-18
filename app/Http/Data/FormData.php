@@ -4,8 +4,10 @@ namespace App\Http\Data;
 
 #region USE
 
+use Illuminate\Support\Str;
 use Narsil\Models\Forms\Form;
 use Narsil\Support\TranslationsBag;
+use Spatie\LaravelData\Attributes\Computed;
 use Spatie\LaravelData\Data;
 use Spatie\TypeScriptTransformer\Attributes\TypeScript;
 
@@ -29,6 +31,8 @@ final class FormData extends Data
         public array $steps,
     )
     {
+        $this->uuid = Str::uuid7();
+
         app(TranslationsBag::class)
             ->add('ui.next')
             ->add('ui.previous')
@@ -36,6 +40,13 @@ final class FormData extends Data
             ->add('ui.submit')
             ->add('ui.submited');
     }
+
+    #endregion
+
+    #region PROPERTIES
+
+    #[Computed]
+    public string $uuid;
 
     #endregion
 

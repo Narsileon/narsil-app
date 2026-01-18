@@ -30,6 +30,7 @@ declare namespace App.Http.Data {
     id: number;
     slug: string;
     steps: Array<App.Http.Data.FormStepData>;
+    uuid: string;
   };
   export type FormElementConditionData = {
     handle: string;
