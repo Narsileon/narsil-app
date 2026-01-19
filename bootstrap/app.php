@@ -2,11 +2,13 @@
 
 #region USE
 
+use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
+use Narsil\Jobs\PublishCollectionsJob;
 use Symfony\Component\HttpFoundation\Response;
 
 #endregion
@@ -20,6 +22,13 @@ return Application::configure(basePath: dirname(__DIR__))
     ->withMiddleware(function (Middleware $middleware): void
     {
         //
+    })
+    ->withSchedule(function (Schedule $schedule)
+    {
+        $schedule
+            ->job(new PublishCollectionsJob())
+            ->hourly()
+            ->withoutOverlapping();
     })
     ->withExceptions(function (Exceptions $exceptions): void
     {

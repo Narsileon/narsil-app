@@ -31,6 +31,9 @@ hooks:
     - exec: composer install
       service: web
       directory: /var/www/html
+    - exec: php artisan optimize:clear
+      service: web
+      directory: /var/www/html
     - exec: php artisan migrate
       service: web
       directory: /var/www/html
