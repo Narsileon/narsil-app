@@ -22,7 +22,7 @@
   ],
   "require": {
     "narsil/cms": "dev-main",
-    "spatie/laravel-data": "^4.18",
+    "spatie/laravel-data": "^4.19",
     "spatie/laravel-typescript-transformer": "^2.5"
   },
   "require-dev": {
