@@ -7,7 +7,7 @@ function Page({ footer, page }: App.Http.Data.GlobalData) {
   const organization = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: footer.company,
+    name: footer.organization,
     url: window.location.origin,
     logo: `${window.location.origin}/favicon.svg`,
     address: {
@@ -44,7 +44,9 @@ function Page({ footer, page }: App.Http.Data.GlobalData) {
             content={page.open_graph_description || (page.meta_description as string)}
           />
         ) : null}
-        <script type="application/ld+json">{JSON.stringify(organization, null, 2)}</script>
+        {footer.organizationSchema ? (
+          <script type="application/ld+json">{JSON.stringify(organization, null, 2)}</script>
+        ) : null}
       </Head>
       <Container>
         {page.data

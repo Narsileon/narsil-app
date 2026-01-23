@@ -46,7 +46,7 @@ function Footer({ className, footer, page, session, ...props }: FooterProps) {
           </div>
           <div className="flex flex-row gap-10">
             <div className="flex flex-col gap-0.5 lg:gap-2">
-              <p className="font-bold">{footer.company}</p>
+              <p className="font-bold">{footer.organization}</p>
               <p className="flex flex-col gap-0.5">
                 <span>{footer?.street}</span>
                 <span>{`${footer?.postal_code} ${footer?.city} - ${footer?.country}`}</span>
@@ -118,7 +118,7 @@ function Footer({ className, footer, page, session, ...props }: FooterProps) {
         </div>
       </div>
       <div className="flex flex-col flex-wrap items-center gap-2 border-t border-slate-200 pt-4 text-sm text-slate-700 md:flex-row md:justify-between lg:gap-x-8">
-        <div>{`©${new Date().getFullYear()} ${footer.company}. ${footer.copyright}`}</div>
+        <div>{`©${new Date().getFullYear()} ${footer.organization}. ${footer.copyright}`}</div>
         <NavigationMenuRoot
           className="flex-none grow-0 justify-center md:justify-start"
           aria-label="Footer Menu"

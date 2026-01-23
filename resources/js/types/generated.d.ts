@@ -6,11 +6,12 @@ declare namespace App.Http.Data {
   };
   export type FooterData = {
     city: string | null;
-    company: string | null;
     copyright: string | null;
     country: string | null;
     email: string | null;
     logo: string | null;
+    organization: string | null;
+    organizationSchema: boolean | null;
     phone: string | null;
     postal_code: string | null;
     street: string | null;

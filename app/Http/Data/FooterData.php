@@ -19,11 +19,12 @@ final class FooterData extends Data
 
     /**
      * @param string|null $city
-     * @param string|null $company
      * @param string|null $copyright
      * @param string|null $country
      * @param string|null $email
      * @param string|null $logo
+     * @param string|null $organization
+     * @param bool $organizationSchema
      * @param string|null $phone
      * @param string|null $postal_code
      * @param string|null $street
@@ -34,11 +35,12 @@ final class FooterData extends Data
      */
     public function __construct(
         public ?string $city,
-        public ?string $company,
         public ?string $copyright,
         public ?string $country,
         public ?string $email,
         public ?string $logo,
+        public ?string $organization,
+        public ?bool $organizationSchema,
         public ?string $phone,
         public ?string $postal_code,
         public ?string $street,
@@ -62,7 +64,6 @@ final class FooterData extends Data
     {
         return new static(
             city: $footer->{Footer::CITY},
-            company: $footer->{Footer::COMPANY},
             copyright: $footer->{Footer::COPYRIGHT},
             country: Locale::getDisplayRegion('_' . $footer->{Footer::COUNTRY}, App::getLocale()),
             email: $footer->{Footer::EMAIL},
@@ -73,6 +74,8 @@ final class FooterData extends Data
                 })
                 ->all(),
             logo: $footer->{Footer::LOGO},
+            organization: $footer->{Footer::ORGANIZATION},
+            organizationSchema: $footer->{Footer::ORGANIZATION_SCHEMA},
             phone: $footer->{Footer::PHONE},
             postal_code: $footer->{Footer::POSTAL_CODE},
             social_media: $footer->{Footer::RELATION_SOCIAL_MEDIA}
