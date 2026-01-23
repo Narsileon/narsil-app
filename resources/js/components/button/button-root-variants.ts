@@ -21,7 +21,7 @@ const buttonRootVariants = cva(
           "hover:bg-accent hover:text-accent-foreground",
         ),
         primary: cn(
-          "bg-primary/80 font-bold text-primary-foreground",
+          "bg-radial from-primary/80 from-50% to-primary font-bold text-primary-foreground",
           "focus-visible:bg-primary",
           "hover:bg-primary",
           "[&_svg]:text-primary-foreground",
