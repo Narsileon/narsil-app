@@ -7,7 +7,7 @@ type InputTimeProps = ComponentProps<typeof InputContent>;
 function InputTime({ className, ...props }: InputTimeProps) {
   return (
     <InputRoot>
-      <InputContent className={cn("", className)} {...props} type="date" />
+      <InputContent className={cn("", className)} {...props} type="time" />
     </InputRoot>
   );
 }
