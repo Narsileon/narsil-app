@@ -3,9 +3,10 @@ import { Header } from "@/blocks/header";
 import { Main } from "@/blocks/main";
 import { GlobalProvider } from "@/providers/global";
 import { LocalizationProvider } from "@narsil-cms/components/localization";
+import { type ReactNode } from "react";
 
 type LayoutProps = {
-  children: React.ReactNode & {
+  children: ReactNode & {
     props: App.Http.Data.GlobalData;
   };
 };

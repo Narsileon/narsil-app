@@ -1,6 +1,6 @@
 import { VisitOptions } from "@inertiajs/core";
 import { cn } from "@narsil-cms/lib/utils";
-import { useCallback, type ComponentProps } from "react";
+import { useCallback, type ComponentProps, type FormEvent } from "react";
 import useForm from "./form-context";
 
 type FormRootProps = ComponentProps<"form"> & {
@@ -11,7 +11,7 @@ function FormRoot({ className, options, ...props }: FormRootProps) {
   const { action, id, post } = useForm();
 
   const onSubmit = useCallback(
-    (event?: React.FormEvent) => {
+    (event?: FormEvent) => {
       event?.preventDefault();
 
       const submitOptions: VisitOptions = {

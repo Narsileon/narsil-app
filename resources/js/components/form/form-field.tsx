@@ -1,12 +1,12 @@
 import { replaceLastPath } from "@narsil-cms/lib/utils";
 import { cloneDeep, get, unset } from "lodash-es";
-import { useEffect, useState } from "react";
+import { type ReactNode, useEffect, useState } from "react";
 import useForm from "./form-context";
 import { FormFieldContext } from "./form-field-context";
 
 type FormFieldProps = App.Http.Data.FormElementData & {
   element: App.Http.Data.InputData;
-  render: (element: { value: unknown; onFieldChange: (value: unknown) => void }) => React.ReactNode;
+  render: (element: { value: unknown; onFieldChange: (value: unknown) => void }) => ReactNode;
 };
 
 function FormField({ conditions, element, handle, render }: FormFieldProps) {

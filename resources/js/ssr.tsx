@@ -1,6 +1,6 @@
 import { createInertiaApp } from "@inertiajs/react";
 import createServer from "@inertiajs/react/server";
-import { type ComponentProps } from "react";
+import { type ComponentProps, type ReactNode } from "react";
 import { renderToReadableStream, renderToString } from "react-dom/server";
 import Layout from "./layouts/layout";
 
@@ -8,7 +8,7 @@ createServer(
   (page) =>
     createInertiaApp({
       page,
-      render: (async (element: React.ReactNode) => {
+      render: (async (element: ReactNode) => {
         const stream = await renderToReadableStream(element);
         await stream.allReady;
         return new Response(stream).text();

@@ -1,5 +1,6 @@
 import { useForm } from "@inertiajs/react";
 import { set } from "lodash-es";
+import { type ReactNode } from "react";
 import { FormContext, type FormContextProps } from "./form-context";
 
 type FormProviderProps = {
@@ -7,7 +8,7 @@ type FormProviderProps = {
   id: string;
   initialValues?: Record<string, unknown>;
   steps?: App.Http.Data.FormStepData[];
-  render: (props: FormContextProps) => React.ReactNode;
+  render: (props: FormContextProps) => ReactNode;
 };
 
 function FormProvider({ action, initialValues = {}, steps = [], id, render }: FormProviderProps) {
