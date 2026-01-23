@@ -33,7 +33,7 @@ function Header({ className, navigation, ...props }: HeaderProps) {
     <header
       ref={ref}
       className={cn(
-        "sticky top-0 right-0 left-0 z-10 flex w-full items-center justify-between bg-background px-4 py-2 text-foreground md:px-4 md:py-4 lg:px-14 xl:px-20",
+        "sticky top-0 right-0 left-0 z-10 flex w-full items-center justify-between bg-layout px-4 py-2 text-layout-foreground md:px-4 md:py-4 lg:px-14 xl:px-20",
         className,
       )}
       {...props}
@@ -41,7 +41,10 @@ function Header({ className, navigation, ...props }: HeaderProps) {
       <Link className="text-lg font-bold" href="/">
         NARSIL
       </Link>
-      <NavigationMenuRoot className="flex-none grow-0 justify-center md:justify-start">
+      <NavigationMenuRoot
+        className="flex-none grow-0 justify-center md:justify-start"
+        aria-label="Header Menu"
+      >
         <NavigationMenuList className="gap-4 font-bold lg:gap-8">
           {navigation[0].children.map(({ title, url }, index) => {
             const active = window.location.href.includes(url);

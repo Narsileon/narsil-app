@@ -32,7 +32,7 @@ function Footer({ className, footer, page, session, ...props }: FooterProps) {
   return (
     <footer
       className={cn(
-        "mx-auto flex w-full flex-col gap-6 bg-background p-4 text-slate-950 md:gap-8 md:px-4 md:pt-6 lg:gap-10 lg:px-14 lg:pt-6 xl:px-20 xl:pt-8",
+        "mx-auto flex w-full flex-col gap-6 bg-layout p-4 text-layout-foreground md:gap-8 md:px-4 md:pt-6 lg:gap-10 lg:px-14 lg:pt-6 xl:px-20 xl:pt-8",
         className,
       )}
       {...props}
@@ -119,7 +119,10 @@ function Footer({ className, footer, page, session, ...props }: FooterProps) {
       </div>
       <div className="flex flex-col flex-wrap items-center gap-2 border-t border-slate-200 pt-4 text-sm text-slate-700 md:flex-row md:justify-between lg:gap-x-8">
         <div>{`©${new Date().getFullYear()} ${footer.company}. ${footer.copyright}`}</div>
-        <NavigationMenuRoot className="flex-none grow-0 justify-center md:justify-start">
+        <NavigationMenuRoot
+          className="flex-none grow-0 justify-center md:justify-start"
+          aria-label="Footer Menu"
+        >
           <NavigationMenuList className="gap-4 text-sm lg:gap-8">
             {footer.links?.map(({ label, url }, index) => {
               return (

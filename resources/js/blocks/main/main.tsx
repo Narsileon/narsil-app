@@ -10,7 +10,7 @@ function Main({ className, style, ...props }: HeaderProps) {
   return (
     <main
       className={cn(
-        "flex h-fit min-h-svh flex-col items-center justify-center bg-secondary text-secondary-foreground",
+        "flex h-fit min-h-svh flex-col items-center justify-center bg-background text-foreground",
         className,
       )}
       style={{

@@ -7,6 +7,8 @@
   --color-card: var(--card);
   --color-foreground: var(--foreground);
   --color-input: var(--input);
+  --color-layout-foreground: var(--layout-foreground);
+  --color-layout: var(--layout);
   --color-muted-foreground: var(--muted-foreground);
   --color-muted: var(--muted);
   --color-popover-foreground: var(--popover-foreground);
@@ -21,19 +23,22 @@
 :root {
   --accent-foreground: var(--color-slate-950);
   --accent: var(--color-slate-200);
-  --background: var(--color-slate-50);
+  --background: var(--color-slate-950);
   --border: var(--color-slate-300);
   --card-foreground: var(--color-slate-950);
   --card: var(--color-slate-50);
-  --foreground: var(--color-slate-950);
-  --input: var(--color-slate-300);
+  --destructive: var(--color-red-500);
+  --foreground: var(--color-white);
+  --input: var(--color-slate-800);
+  --layout-foreground: var(--color-slate-950);
+  --layout: var(--color-slate-50);
   --muted-foreground: var(--color-slate-500);
   --muted: var(--color-slate-200);
-  --popover-foreground: var(--color-slate-50);
+  --popover-foreground: var(--color-white);
   --popover: var(--color-slate-950);
-  --primary-foreground: var(--color-slate-50);
+  --primary-foreground: var(--color-white);
   --primary: var(--color-pink-600);
   --ring: var(--color-slate-400);
-  --secondary-foreground: var(--color-slate-50);
-  --secondary: var(--color-slate-950);
+  --secondary-foreground: var(--color-white);
+  --secondary: var(--color-cyan-600);
 }

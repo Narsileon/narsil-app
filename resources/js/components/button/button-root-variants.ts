@@ -16,12 +16,12 @@ const buttonRootVariants = cva(
           "hover:bg-accent hover:text-accent-foreground",
         ),
         outline: cn(
-          "border border-input bg-background shadow-sm",
+          "border border-input bg-layout shadow-sm",
           "focus-visible:border-shine",
           "hover:bg-accent hover:text-accent-foreground",
         ),
         primary: cn(
-          "bg-primary/80 text-primary-foreground",
+          "bg-primary/80 font-bold text-primary-foreground",
           "focus-visible:bg-primary",
           "hover:bg-primary",
           "[&_svg]:text-primary-foreground",
