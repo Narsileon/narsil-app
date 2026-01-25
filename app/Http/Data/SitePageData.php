@@ -171,17 +171,26 @@ final class SitePageData extends Data
                 {
                     $blockNodes = static::$nodes->get($node->{EntityNode::UUID}, []);
 
-                    foreach ($blockNodes as $index => $blockNode)
+                    $realIndex = 0;
+
+                    foreach ($blockNodes as $blockNode)
                     {
-                        Arr::set($data, "$key.$index", [
+                        if ($blockNode->getTranslationWithFallback(EntityNode::ACTIVE, App::getLocale()) === false)
+                        {
+                            continue;
+                        }
+
+                        Arr::set($data, "$key.$realIndex", [
                             Block::HANDLE => $blockNode->{EntityNode::RELATION_BLOCK}->{Block::HANDLE},
                             EntityNode::BLOCK_ID => $blockNode->{EntityNode::BLOCK_ID},
                             EntityNode::UUID => $blockNode->{EntityNode::UUID},
                         ]);
 
-                        $nextPath = "$key.$index." . EntityNode::RELATION_CHILDREN;
+                        $nextPath = "$key.$realIndex." . EntityNode::RELATION_CHILDREN;
 
                         static::processNodes($data, $blockNode->{EntityNode::UUID}, $nextPath);
+
+                        $realIndex++;
                     }
                 }
                 else
