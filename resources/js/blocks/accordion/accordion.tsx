@@ -49,11 +49,10 @@ function Accordion({ accordion_builder, layout }: AccordionProps) {
                 }
               />
               <AccordionPanel>
-                tezteterzb hdhe qjrt jhrtjsfjsrj rt
-                {/* <div
+                <div
                   className="prose pb-4"
                   dangerouslySetInnerHTML={{ __html: item.children.accordion_item_content }}
-                /> */}
+                />
               </AccordionPanel>
             </AccordionItem>
           );
