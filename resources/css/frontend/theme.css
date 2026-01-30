@@ -5,6 +5,7 @@
   --color-border: var(--border);
   --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
+  --color-destructive: var(--destructive);
   --color-foreground: var(--foreground);
   --color-input: var(--input);
   --color-layout-foreground: var(--layout-foreground);
