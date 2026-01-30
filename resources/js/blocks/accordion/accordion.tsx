@@ -1,14 +1,15 @@
 import { Container } from "@/blocks/container";
 import { Heading } from "@/blocks/heading";
 import { Icon } from "@/blocks/icon";
+import { LayoutProps } from "@/types";
 import {
-  AccordionContent,
   AccordionHeader,
   AccordionItem,
+  AccordionPanel,
   AccordionRoot,
   AccordionTrigger,
-} from "@/components/accordion";
-import { LayoutProps } from "@/types";
+} from "@narsil-cms/components/accordion";
+import { cn } from "@narsil-cms/lib/utils";
 
 type AccordionProps = {
   accordion_builder: {
@@ -27,29 +28,33 @@ function Accordion({ accordion_builder, layout }: AccordionProps) {
       paddingTop={layout.padding.top}
       variant={layout.size}
     >
-      <AccordionRoot className="w-full" collapsible={true} type="single">
+      <AccordionRoot className="w-full">
         {accordion_builder.map((item, index) => {
           return (
             <AccordionItem value={index.toString()} key={index}>
-              <AccordionHeader asChild>
-                <Heading level="h2">
-                  <AccordionTrigger>
-                    {item.children.accordion_item_trigger}
-                    <Icon
-                      className={
-                        "transition-transform duration-300 will-change-transform group-data-[state=open]:rotate-180"
-                      }
-                      name="chevron-down"
-                    />
-                  </AccordionTrigger>
-                </Heading>
-              </AccordionHeader>
-              <AccordionContent>
-                <div
+              <AccordionHeader
+                render={
+                  <Heading level="h2">
+                    <AccordionTrigger>
+                      {item.children.accordion_item_trigger}
+                      <Icon
+                        className={cn(
+                          "pointer-events-none shrink-0 transition-transform duration-300 will-change-transform",
+                          "group-aria-expanded/accordion-trigger:rotate-180",
+                        )}
+                        name="chevron-down"
+                      />
+                    </AccordionTrigger>
+                  </Heading>
+                }
+              />
+              <AccordionPanel>
+                tezteterzb hdhe qjrt jhrtjsfjsrj rt
+                {/* <div
                   className="prose pb-4"
                   dangerouslySetInnerHTML={{ __html: item.children.accordion_item_content }}
-                />
-              </AccordionContent>
+                /> */}
+              </AccordionPanel>
             </AccordionItem>
           );
         })}
