@@ -1,7 +1,7 @@
 import { Container } from "@/blocks/container";
-import { Heading } from "@/blocks/heading";
 import { Icon } from "@/blocks/icon";
 import { LayoutProps } from "@/types";
+import { Heading } from "@narsil-cms/blocks/heading";
 import {
   AccordionHeader,
   AccordionItem,

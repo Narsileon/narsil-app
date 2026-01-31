@@ -1,8 +1,8 @@
 import { Button } from "@/blocks/button";
 import { Container } from "@/blocks/container";
-import { Heading } from "@/blocks/heading";
 import { FormElement, FormProvider, FormRoot } from "@/components/form";
 import { LayoutProps } from "@/types";
+import { Heading } from "@narsil-cms/blocks/heading";
 import { useLocalization } from "@narsil-cms/components/localization";
 import { useState } from "react";
 
