@@ -4,6 +4,8 @@
 @import "./frontend/font.css";
 @import "./frontend/theme.css";
 
+@source "../../vendor/narsil/cms/resources";
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
