@@ -4,6 +4,7 @@ namespace App\Http\Data;
 
 #region USE
 
+use Illuminate\Support\Str;
 use Narsil\Support\TranslationsBag;
 use Spatie\LaravelData\Attributes\Computed;
 use Spatie\LaravelData\Data;
@@ -34,12 +35,19 @@ final class GlobalData extends Data
         public SessionData $session = new SessionData(),
     )
     {
+        $this->nonce = Str::uuid7()->toString();
         $this->translations = app(TranslationsBag::class)->get();
     }
 
     #endregion
 
     #region PROPERTIES
+
+    #[Computed]
+    /**
+     * @var string
+     */
+    public string $nonce;
 
     #[Computed]
     /**
