@@ -1,7 +1,6 @@
 import { Container } from "@/blocks/container";
 import { Icon } from "@/blocks/icon";
 import { LayoutProps } from "@/types";
-import { Heading } from "@narsil-cms/blocks/heading";
 import {
   AccordionHeader,
   AccordionItem,
@@ -9,6 +8,7 @@ import {
   AccordionRoot,
   AccordionTrigger,
 } from "@narsil-cms/components/accordion";
+import { Heading } from "@narsil-cms/components/heading";
 import { cn } from "@narsil-cms/lib/utils";
 
 type AccordionProps = {
