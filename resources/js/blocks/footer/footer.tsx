@@ -1,11 +1,5 @@
 import { Button } from "@/blocks/button";
 import { Icon } from "@/blocks/icon";
-import {
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuRoot,
-  DropdownMenuTrigger,
-} from "@/components/dropdown-menu";
 import { IconName } from "@/components/icon";
 import {
   NavigationMenuItem,
@@ -13,6 +7,14 @@ import {
   NavigationMenuRoot,
 } from "@/components/navigation-menu";
 import { Link } from "@inertiajs/react";
+import {
+  DropdownMenuItem,
+  DropdownMenuPopup,
+  DropdownMenuPortal,
+  DropdownMenuPositioner,
+  DropdownMenuRoot,
+  DropdownMenuTrigger,
+} from "@narsil-cms/components/dropdown-menu";
 import { cn } from "@narsil-cms/lib/utils";
 import { upperCase, upperFirst } from "lodash-es";
 import { type ComponentProps, useMemo } from "react";
@@ -89,31 +91,41 @@ function Footer({ className, footer, page, session, ...props }: FooterProps) {
             })}
           </div>
           <DropdownMenuRoot>
-            <DropdownMenuTrigger className="group" asChild={true}>
-              <Button variant="ghost">
-                <Icon name="globe" />
-                <span className="font-bold">{upperFirst(siteUrl?.display_language)}</span>
-                <span className="-ml-1">{`(${upperCase(siteUrl?.language)})`}</span>
-                <Icon
-                  className={cn(
-                    "-ml-1 size-4 text-slate-700 duration-300",
-                    "group-data-[state=open]:rotate-180",
-                  )}
-                  name="chevron-down"
-                />
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent>
-              {page?.urls?.map((url, index) => {
-                return (
-                  <DropdownMenuItem asChild={true} key={index}>
-                    <Link href={url.url} preserveScroll={true} preserveState={true}>
-                      {url.display_language}
-                    </Link>
-                  </DropdownMenuItem>
-                );
-              })}
-            </DropdownMenuContent>
+            <DropdownMenuTrigger
+              className="group"
+              render={
+                <Button variant="ghost">
+                  <Icon name="globe" />
+                  <span className="font-bold">{upperFirst(siteUrl?.display_language)}</span>
+                  <span className="-ml-1">{`(${upperCase(siteUrl?.language)})`}</span>
+                  <Icon
+                    className={cn(
+                      "-ml-1 size-4 text-slate-700 duration-300",
+                      "group-data-[state=open]:rotate-180",
+                    )}
+                    name="chevron-down"
+                  />
+                </Button>
+              }
+            />
+            <DropdownMenuPortal>
+              <DropdownMenuPositioner>
+                <DropdownMenuPopup>
+                  {page?.urls?.map((url, index) => {
+                    return (
+                      <DropdownMenuItem
+                        key={index}
+                        render={
+                          <Link href={url.url} preserveScroll={true} preserveState={true}>
+                            {url.display_language}
+                          </Link>
+                        }
+                      />
+                    );
+                  })}
+                </DropdownMenuPopup>
+              </DropdownMenuPositioner>
+            </DropdownMenuPortal>
           </DropdownMenuRoot>
         </div>
       </div>
