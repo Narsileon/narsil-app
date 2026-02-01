@@ -1,7 +1,7 @@
 import { BlockRenderer } from "@/blocks";
-import { Container } from "@/blocks/container";
 import { useGlobal } from "@/providers/global";
 import { LayoutProps } from "@/types";
+import { Container } from "@narsil-cms/components/container";
 import { Heading } from "@narsil-cms/components/heading";
 import { set } from "lodash-es";
 import { type ComponentProps } from "react";

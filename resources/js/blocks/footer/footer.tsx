@@ -1,7 +1,6 @@
-import { Button } from "@/blocks/button";
 import { Icon } from "@/blocks/icon";
-import { IconName } from "@/components/icon";
 import { Link } from "@inertiajs/react";
+import { Button } from "@narsil-cms/components/button";
 import {
   DropdownMenuItem,
   DropdownMenuPopup,
@@ -57,7 +56,6 @@ function Footer({ className, footer, page, session, ...props }: FooterProps) {
             <div className="flex flex-col justify-end">
               <Button
                 className="w-fit leading-6 text-slate-900 transition-colors duration-150 hover:text-pink-600 md:leading-normal"
-                asChild={true}
                 size="link"
                 variant="link"
               >
@@ -65,7 +63,6 @@ function Footer({ className, footer, page, session, ...props }: FooterProps) {
               </Button>
               <Button
                 className="w-fit leading-6 text-slate-900 transition-colors duration-150 hover:text-pink-600 md:leading-normal"
-                asChild={true}
                 size="link"
                 variant="link"
               >
@@ -78,13 +75,8 @@ function Footer({ className, footer, page, session, ...props }: FooterProps) {
           <div className="flex justify-end gap-6">
             {footer.social_media?.map(({ icon, url }, index) => {
               return (
-                <Button
-                  asChild={true}
-                  icon={icon as IconName}
-                  variant="ghost"
-                  size="icon"
-                  key={index}
-                >
+                <Button variant="ghost" size="icon" key={index}>
+                  <Icon name={icon} />
                   <a href={url} target="_blank" />
                 </Button>
               );

@@ -1,6 +1,6 @@
 import { Button } from "@/blocks/button";
-import { Container } from "@/blocks/container";
 import { LayoutProps } from "@/types";
+import { Container } from "@narsil-cms/components/container";
 import { type ComponentProps } from "react";
 
 type CallToActionProps = ComponentProps<typeof Button> & {

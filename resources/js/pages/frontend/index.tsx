@@ -1,6 +1,6 @@
 import { BlockRenderer } from "@/blocks";
-import { Container } from "@/blocks/container";
 import { Head } from "@inertiajs/react";
+import { Container } from "@narsil-cms/components/container";
 import { Fragment } from "react";
 
 function Page({ footer, page }: App.Http.Data.GlobalData) {

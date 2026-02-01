@@ -1,4 +1,3 @@
-import { Container } from "@/blocks/container";
 import { Icon } from "@/blocks/icon";
 import { LayoutProps } from "@/types";
 import {
@@ -8,6 +7,7 @@ import {
   AccordionRoot,
   AccordionTrigger,
 } from "@narsil-cms/components/accordion";
+import { Container } from "@narsil-cms/components/container";
 import { Heading } from "@narsil-cms/components/heading";
 import { cn } from "@narsil-cms/lib/utils";
 
