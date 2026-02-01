@@ -1,11 +1,10 @@
 import { Icon } from "@/blocks/icon";
-import { ButtonRoot } from "@/components/button";
 import { type IconName } from "@/components/icon";
 import { Link } from "@inertiajs/react";
-import { Slot } from "radix-ui";
+import { Button as ButtonPrimitive } from "@narsil-cms/components/button";
 import { type ComponentProps } from "react";
 
-type ButtonProps = ComponentProps<typeof ButtonRoot> & {
+type ButtonProps = ComponentProps<typeof ButtonPrimitive> & {
   icon?: IconName;
   label?: string;
   link?: {
@@ -15,30 +14,36 @@ type ButtonProps = ComponentProps<typeof ButtonRoot> & {
   };
 };
 
-function Button({ asChild = false, children, icon, label, link, ...props }: ButtonProps) {
+function Button({ children, icon, label, link, ...props }: ButtonProps) {
   const iconName = icon;
 
   return link ? (
     link.type === "external" ? (
-      <ButtonRoot asChild={true} {...props}>
-        <a href={link.url} target="_blank">
-          {iconName ? <Icon name={iconName} /> : null}
-          <Slot.Slottable>{label ?? children}</Slot.Slottable>
-        </a>
-      </ButtonRoot>
+      <ButtonPrimitive
+        render={
+          <a href={link.url} target="_blank">
+            {iconName ? <Icon name={iconName} /> : null}
+            {label ?? children}
+          </a>
+        }
+        {...props}
+      />
     ) : (
-      <ButtonRoot asChild={true} {...props}>
-        <Link href={link.link.url}>
-          {iconName ? <Icon name={iconName} /> : null}
-          <Slot.Slottable>{label ?? children}</Slot.Slottable>
-        </Link>
-      </ButtonRoot>
+      <ButtonPrimitive
+        render={
+          <Link href={link.link.url}>
+            {iconName ? <Icon name={iconName} /> : null}
+            {label ?? children}
+          </Link>
+        }
+        {...props}
+      />
     )
   ) : (
-    <ButtonRoot asChild={asChild} {...props}>
+    <ButtonPrimitive {...props}>
       {iconName ? <Icon name={iconName} /> : null}
-      <Slot.Slottable>{label ?? children}</Slot.Slottable>
-    </ButtonRoot>
+      {label ?? children}
+    </ButtonPrimitive>
   );
 }
 
