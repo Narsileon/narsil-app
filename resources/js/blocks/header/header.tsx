@@ -2,6 +2,7 @@ import { useGlobal } from "@/providers/global";
 import { Link } from "@inertiajs/react";
 import {
   NavigationMenuItem,
+  NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuRoot,
 } from "@narsil-cms/components/navigation-menu";
@@ -41,20 +42,17 @@ function Header({ className, navigation, ...props }: HeaderProps) {
       <Link className="text-lg font-bold" href="/">
         NARSIL
       </Link>
-      <NavigationMenuRoot
-        className="flex-none grow-0 justify-center md:justify-start"
-        aria-label="Header Menu"
-      >
+      <NavigationMenuRoot aria-label="Header Menu">
         <NavigationMenuList className="gap-4 font-bold lg:gap-8">
           {navigation[0].children.map(({ title, url }, index) => {
             const active = window.location.href.includes(url);
 
             return (
-              <NavigationMenuItem
-                className={cn("leading-6 md:leading-normal", active && "text-primary")}
-                key={index}
-              >
-                <Link href={url}>{title}</Link>
+              <NavigationMenuItem key={index}>
+                <NavigationMenuLink
+                  {...(active ? { "data-active": true } : {})}
+                  render={<Link href={url}>{title}</Link>}
+                />
               </NavigationMenuItem>
             );
           })}
