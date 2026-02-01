@@ -1,4 +1,4 @@
-import { Icon } from "@/blocks/icon";
+import { Icon } from "@/components/icon";
 import { LayoutProps } from "@/types";
 import {
   AccordionHeader,

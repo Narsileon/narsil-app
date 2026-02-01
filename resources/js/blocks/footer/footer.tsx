@@ -1,4 +1,4 @@
-import { Icon } from "@/blocks/icon";
+import { Icon, IconName } from "@/components/icon";
 import { Link } from "@inertiajs/react";
 import { Button } from "@narsil-cms/components/button";
 import {
@@ -76,7 +76,7 @@ function Footer({ className, footer, page, session, ...props }: FooterProps) {
             {footer.social_media?.map(({ icon, url }, index) => {
               return (
                 <Button variant="ghost" size="icon" key={index}>
-                  <Icon name={icon} />
+                  <Icon name={icon as IconName} />
                   <a href={url} target="_blank" />
                 </Button>
               );

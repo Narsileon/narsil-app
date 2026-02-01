@@ -1,11 +1,5 @@
-import {
-  InputDate,
-  InputDatetime,
-  InputNumber,
-  InputText,
-  InputTextarea,
-  InputTime,
-} from "@/blocks/inputs";
+import { Input } from "@narsil-cms/components/input";
+import { Textarea } from "@narsil-cms/components/textarea";
 import { cn } from "@narsil-cms/lib/utils";
 import { ComponentProps } from "react";
 import FormDescription from "./form-description";
@@ -64,39 +58,44 @@ function FormElement({ className, ...props }: FormElementProps) {
                 <FormDescription>{props.description as string}</FormDescription>
               ) : null}
               {base.type === "Narsil\\Contracts\\Fields\\DateField" ? (
-                <InputDate
-                  {...(inputProps as ComponentProps<typeof InputDate>)}
+                <Input
+                  {...(inputProps as ComponentProps<typeof Input>)}
+                  type="date"
                   onChange={(event) => onFieldChange(event.target.value)}
                 />
               ) : base.type === "Narsil\\Contracts\\Fields\\DateTimeField" ? (
-                <InputDatetime
-                  {...(inputProps as ComponentProps<typeof InputDatetime>)}
+                <Input
+                  {...(inputProps as ComponentProps<typeof Input>)}
+                  type="datetime-local"
                   onChange={(event) => onFieldChange(event.target.value)}
                 />
               ) : base.type === "Narsil\\Contracts\\Fields\\EmailField" ? (
-                <InputText
-                  {...(inputProps as ComponentProps<typeof InputText>)}
+                <Input
+                  {...(inputProps as ComponentProps<typeof Input>)}
                   type="email"
                   onChange={(event) => onFieldChange(event.target.value)}
                 />
               ) : base.type === "Narsil\\Contracts\\Fields\\NumberField" ? (
-                <InputNumber
-                  {...(inputProps as ComponentProps<typeof InputNumber>)}
+                <Input
+                  {...(inputProps as ComponentProps<typeof Input>)}
+                  type="number"
                   onChange={(event) => onFieldChange(event.target.value)}
                 />
               ) : base.type === "Narsil\\Contracts\\Fields\\TextareaField" ? (
-                <InputTextarea
-                  {...(inputProps as ComponentProps<typeof InputTextarea>)}
+                <Textarea
+                  {...(inputProps as ComponentProps<typeof Textarea>)}
                   onChange={(event) => onFieldChange(event.target.value)}
                 />
               ) : base.type === "Narsil\\Contracts\\Fields\\TimeField" ? (
-                <InputTime
-                  {...(inputProps as ComponentProps<typeof InputTime>)}
+                <Input
+                  {...(inputProps as ComponentProps<typeof Input>)}
+                  type="time"
                   onChange={(event) => onFieldChange(event.target.value)}
                 />
               ) : (
-                <InputText
-                  {...(inputProps as ComponentProps<typeof InputText>)}
+                <Input
+                  {...(inputProps as ComponentProps<typeof Input>)}
+                  type="text"
                   onChange={(event) => onFieldChange(event.target.value)}
                 />
               )}

@@ -1,5 +1,4 @@
-import { Icon } from "@/blocks/icon";
-import { type IconName } from "@/components/icon";
+import { Icon, type IconName } from "@/components/icon";
 import { Link } from "@inertiajs/react";
 import { Button as ButtonPrimitive } from "@narsil-cms/components/button";
 import { type ComponentProps } from "react";

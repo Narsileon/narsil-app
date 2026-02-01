@@ -1,6 +1,6 @@
+import Icon from "./icon";
 import { IconName } from "./icon-registry";
-import IconRoot from "./icon-root";
 
-export { IconRoot };
+export { Icon };
 
 export type { IconName };
