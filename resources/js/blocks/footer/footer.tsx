@@ -1,11 +1,6 @@
 import { Button } from "@/blocks/button";
 import { Icon } from "@/blocks/icon";
 import { IconName } from "@/components/icon";
-import {
-  NavigationMenuItem,
-  NavigationMenuList,
-  NavigationMenuRoot,
-} from "@/components/navigation-menu";
 import { Link } from "@inertiajs/react";
 import {
   DropdownMenuItem,
@@ -15,6 +10,11 @@ import {
   DropdownMenuRoot,
   DropdownMenuTrigger,
 } from "@narsil-cms/components/dropdown-menu";
+import {
+  NavigationMenuItem,
+  NavigationMenuList,
+  NavigationMenuRoot,
+} from "@narsil-cms/components/navigation-menu";
 import { cn } from "@narsil-cms/lib/utils";
 import { upperCase, upperFirst } from "lodash-es";
 import { type ComponentProps, useMemo } from "react";

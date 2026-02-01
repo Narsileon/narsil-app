@@ -1,10 +1,10 @@
+import { useGlobal } from "@/providers/global";
+import { Link } from "@inertiajs/react";
 import {
   NavigationMenuItem,
   NavigationMenuList,
   NavigationMenuRoot,
-} from "@/components/navigation-menu";
-import { useGlobal } from "@/providers/global";
-import { Link } from "@inertiajs/react";
+} from "@narsil-cms/components/navigation-menu";
 import { cn } from "@narsil-cms/lib/utils";
 import { useEffect, useRef, type ComponentProps } from "react";
 
