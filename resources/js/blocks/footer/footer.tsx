@@ -1,4 +1,3 @@
-import { Icon, IconName } from "@/components/icon";
 import { Link } from "@inertiajs/react";
 import { Button } from "@narsil-cms/components/button";
 import {
@@ -9,6 +8,7 @@ import {
   DropdownMenuRoot,
   DropdownMenuTrigger,
 } from "@narsil-cms/components/dropdown-menu";
+import { Icon, IconName } from "@narsil-cms/components/icon";
 import {
   NavigationMenuItem,
   NavigationMenuList,
