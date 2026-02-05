@@ -2750,7 +2750,7 @@
             "dist": {
                 "type": "path",
                 "url": "../narsil-cms",
-                "reference": "4e83f55b9b695e7a1ade36ab4b9727059b331a6b"
+                "reference": "51a282277c9f213a36b823e40d8a46ac1da6aac5"
             },
             "require": {
                 "inertiajs/inertia-laravel": "^2.0",
@@ -2768,7 +2768,7 @@
             "extra": {
                 "laravel": {
                     "providers": [
-                        "Narsil\\Cms\\NarsilServiceProvider"
+                        "Narsil\\Cms\\ServiceProvider"
                     ]
                 }
             },
@@ -2830,7 +2830,7 @@
             "dist": {
                 "type": "path",
                 "url": "../narsil-ui",
-                "reference": "f9c8590fdcaacb6c2311b8889e3397828c45a58b"
+                "reference": "39a72bcdd65215b882cb8b6f2e15332f4694771a"
             },
             "require": {
                 "laravel/framework": "^12.48",
@@ -2840,13 +2840,13 @@
             "extra": {
                 "laravel": {
                     "providers": [
-                        "Narsil\\NarsilUIServiceProvider"
+                        "Narsil\\Ui\\ServiceProvider"
                     ]
                 }
             },
             "autoload": {
                 "psr-4": {
-                    "Narsil\\": "src/",
+                    "Narsil\\Ui\\": "src/",
                     "Database\\Factories\\": "database/factories/",
                     "Database\\Seeders\\": "database/seeders/"
                 }

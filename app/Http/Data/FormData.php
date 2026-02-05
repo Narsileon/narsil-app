@@ -6,7 +6,7 @@ namespace App\Http\Data;
 
 use Illuminate\Support\Str;
 use Narsil\Cms\Models\Forms\Form;
-use Narsil\Cms\Support\TranslationsBag;
+use Narsil\Ui\Support\TranslationsBag;
 use Spatie\LaravelData\Attributes\Computed;
 use Spatie\LaravelData\Data;
 use Spatie\TypeScriptTransformer\Attributes\TypeScript;
