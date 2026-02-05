@@ -6,7 +6,7 @@ namespace App\Http\Data;
 
 use Illuminate\Support\Facades\App;
 use Locale;
-use Narsil\Models\Globals\Footer;
+use Narsil\Cms\Models\Globals\Footer;
 use Spatie\LaravelData\Data;
 use Spatie\TypeScriptTransformer\Attributes\TypeScript;
 

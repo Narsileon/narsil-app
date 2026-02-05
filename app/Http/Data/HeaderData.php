@@ -4,7 +4,7 @@ namespace App\Http\Data;
 
 #region USE
 
-use Narsil\Models\Globals\Header;
+use Narsil\Cms\Models\Globals\Header;
 use Spatie\LaravelData\Data;
 use Spatie\TypeScriptTransformer\Attributes\TypeScript;
 

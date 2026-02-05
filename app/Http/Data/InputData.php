@@ -4,7 +4,7 @@ namespace App\Http\Data;
 
 #region USE
 
-use Narsil\Models\Forms\Input;
+use Narsil\Cms\Models\Forms\Input;
 use Spatie\LaravelData\Data;
 use Spatie\TypeScriptTransformer\Attributes\TypeScript;
 

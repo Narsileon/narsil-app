@@ -8,7 +8,7 @@ use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
-use Narsil\Jobs\PublishCollectionsJob;
+use Narsil\Cms\Jobs\PublishCollectionsJob;
 use Symfony\Component\HttpFoundation\Response;
 
 #endregion

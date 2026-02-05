@@ -4,7 +4,7 @@ namespace App\Http\Data;
 
 #region USE
 
-use Narsil\Models\AbstractCondition;
+use Narsil\Cms\Models\AbstractCondition;
 use Spatie\LaravelData\Data;
 use Spatie\TypeScriptTransformer\Attributes\TypeScript;
 

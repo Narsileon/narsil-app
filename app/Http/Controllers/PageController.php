@@ -13,10 +13,10 @@ use App\Http\Data\SitePageData;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 use Inertia\Response;
-use Narsil\Models\Sites\Site;
-use Narsil\Models\Sites\SitePage;
-use Narsil\Services\PageService;
-use Narsil\Support\Tree;
+use Narsil\Cms\Models\Sites\Site;
+use Narsil\Cms\Models\Sites\SitePage;
+use Narsil\Cms\Services\PageService;
+use Narsil\Cms\Support\Tree;
 use Spatie\LaravelData\DataCollection;
 
 #endregion

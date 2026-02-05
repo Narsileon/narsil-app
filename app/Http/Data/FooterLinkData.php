@@ -4,9 +4,9 @@ namespace App\Http\Data;
 
 #region USE
 
-use Narsil\Models\Globals\FooterLink;
-use Narsil\Models\Sites\SitePage;
-use Narsil\Models\Sites\SiteUrl;
+use Narsil\Cms\Models\Globals\FooterLink;
+use Narsil\Cms\Models\Sites\SitePage;
+use Narsil\Cms\Models\Sites\SiteUrl;
 use Spatie\LaravelData\Data;
 use Spatie\TypeScriptTransformer\Attributes\TypeScript;
 

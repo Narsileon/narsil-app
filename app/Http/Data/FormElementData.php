@@ -4,9 +4,9 @@ namespace App\Http\Data;
 
 #region USE
 
-use Narsil\Models\Forms\Element;
-use Narsil\Models\Forms\Fieldset;
-use Narsil\Models\Forms\Input;
+use Narsil\Cms\Models\Forms\Element;
+use Narsil\Cms\Models\Forms\Fieldset;
+use Narsil\Cms\Models\Forms\Input;
 use Spatie\LaravelData\Data;
 use Spatie\TypeScriptTransformer\Attributes\TypeScript;
 

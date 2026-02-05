@@ -6,8 +6,8 @@ namespace Database\Seeders;
 
 use Carbon\Carbon;
 use Illuminate\Database\Seeder;
-use Narsil\Models\Policies\Role;
-use Narsil\Models\User;
+use Narsil\Cms\Models\Policies\Role;
+use Narsil\Cms\Models\User;
 
 #endregion
 

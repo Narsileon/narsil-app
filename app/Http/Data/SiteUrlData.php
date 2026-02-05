@@ -4,8 +4,8 @@ namespace App\Http\Data;
 
 #region USE
 
-use Narsil\Models\Hosts\HostLocaleLanguage;
-use Narsil\Models\Sites\SiteUrl;
+use Narsil\Cms\Models\Hosts\HostLocaleLanguage;
+use Narsil\Cms\Models\Sites\SiteUrl;
 use Spatie\LaravelData\Data;
 use Spatie\TypeScriptTransformer\Attributes\TypeScript;
 
