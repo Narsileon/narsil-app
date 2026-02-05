@@ -3,7 +3,7 @@ import { Header } from "@/blocks/header";
 import { Main } from "@/blocks/main";
 import { GlobalProvider } from "@/providers/global";
 import { CSPProvider } from "@base-ui/react/csp-provider";
-import { LocalizationProvider } from "@narsil-cms/components/localization";
+import { LocalizationProvider } from "@narsil-ui/components/localization";
 import { type ReactNode } from "react";
 
 type LayoutProps = {

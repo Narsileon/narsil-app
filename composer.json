@@ -18,6 +18,11 @@
       "name": "narsil/cms",
       "type": "path",
       "url": "../narsil-cms/"
+    },
+    {
+      "name": "narsil/ui",
+      "type": "path",
+      "url": "../narsil-ui/"
     }
   ],
   "require": {
@@ -86,6 +91,6 @@
       "php-http/discovery": true
     }
   },
-  "minimum-stability": "stable",
+  "minimum-stability": "dev",
   "prefer-stable": true
 }

@@ -1,6 +1,6 @@
-import { Input } from "@narsil-cms/components/input";
-import { Textarea } from "@narsil-cms/components/textarea";
-import { cn } from "@narsil-cms/lib/utils";
+import { Input } from "@narsil-ui/components/input";
+import { Textarea } from "@narsil-ui/components/textarea";
+import { cn } from "@narsil-ui/lib/utils";
 import { ComponentProps } from "react";
 import FormDescription from "./form-description";
 import FormField from "./form-field";

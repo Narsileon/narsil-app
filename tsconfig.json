@@ -1,23 +1,28 @@
 {
-  "compilerOptions": {
-    "allowJs": true,
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "isolatedModules": true,
-    "jsx": "react-jsx",
-    "module": "esnext",
-    "moduleResolution": "bundler",
-    "noEmit": true,
-    "noFallthroughCasesInSwitch": true,
-    "paths": {
-      "@/*": ["./resources/js/*"],
-      "@narsil-cms/*": ["./vendor/narsil/cms/resources/js/*"]
+    "compilerOptions": {
+        "allowJs": true,
+        "esModuleInterop": true,
+        "forceConsistentCasingInFileNames": true,
+        "isolatedModules": true,
+        "jsx": "react-jsx",
+        "module": "esnext",
+        "moduleResolution": "bundler",
+        "noEmit": true,
+        "noFallthroughCasesInSwitch": true,
+        "paths": {
+            "@/*": ["./resources/js/*"],
+            "@narsil-cms/*": ["./vendor/narsil/cms/resources/js/*"],
+            "@narsil-ui/*": ["./vendor/narsil/ui/resources/js/*"]
+        },
+        "skipLibCheck": true,
+        "strict": true,
+        "target": "esnext",
+        "types": ["vite/client"]
     },
-    "skipLibCheck": true,
-    "strict": true,
-    "target": "esnext",
-    "types": ["vite/client"]
-  },
-  "include": ["resources/js/**/*", "vendor/narsil/cms/resources/js/**/*"],
-  "exclude": ["node_modules"]
+    "include": [
+        "resources/js/**/*",
+        "vendor/narsil/cms/resources/js/**/*",
+        "vendor/narsil/ui/resources/js/**/*"
+    ],
+    "exclude": ["node_modules"]
 }

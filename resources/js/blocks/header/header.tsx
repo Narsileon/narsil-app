@@ -5,8 +5,8 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuRoot,
-} from "@narsil-cms/components/navigation-menu";
-import { cn } from "@narsil-cms/lib/utils";
+} from "@narsil-ui/components/navigation-menu";
+import { cn } from "@narsil-ui/lib/utils";
 import { useEffect, useRef, type ComponentProps } from "react";
 
 type HeaderProps = ComponentProps<"header"> & Pick<App.Http.Data.GlobalData, "navigation">;

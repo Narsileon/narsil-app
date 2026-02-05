@@ -4,7 +4,8 @@
 @import "./frontend/font.css";
 @import "./frontend/theme.css";
 
-@source "../../vendor/narsil/cms/resources";
+@source "../../vendor/narsil/cms/resources/js";
+@source "../../vendor/narsil/ui/resources/js";
 
 @layer base {
   * {

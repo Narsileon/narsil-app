@@ -1,6 +1,6 @@
 import { Link } from "@inertiajs/react";
-import { Button as ButtonPrimitive } from "@narsil-cms/components/button";
-import { Icon, type IconName } from "@narsil-cms/components/icon";
+import { Button as ButtonPrimitive } from "@narsil-ui/components/button";
+import { Icon, type IconName } from "@narsil-ui/components/icon";
 import { type ComponentProps } from "react";
 
 type ButtonProps = ComponentProps<typeof ButtonPrimitive> & {

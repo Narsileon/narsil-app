@@ -1,5 +1,5 @@
 import { useGlobal } from "@/providers/global";
-import { cn } from "@narsil-cms/lib/utils";
+import { cn } from "@narsil-ui/lib/utils";
 import { type ComponentProps } from "react";
 
 type HeaderProps = ComponentProps<"main">;

@@ -1,6 +1,6 @@
-import { Label } from "@narsil-cms/components/label";
-import { useLocalization } from "@narsil-cms/components/localization";
-import { cn } from "@narsil-cms/lib/utils";
+import { Label } from "@narsil-ui/components/label";
+import { useLocalization } from "@narsil-ui/components/localization";
+import { cn } from "@narsil-ui/lib/utils";
 import { type ComponentProps } from "react";
 import useFormField from "./form-field-context";
 

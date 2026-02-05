@@ -1,5 +1,5 @@
-import { Heading } from "@narsil-cms/components/heading";
-import { SectionContent, SectionHeader, SectionRoot } from "@narsil-cms/components/section";
+import { Heading } from "@narsil-ui/components/heading";
+import { SectionContent, SectionHeader, SectionRoot } from "@narsil-ui/components/section";
 
 function Dashboard() {
   return (

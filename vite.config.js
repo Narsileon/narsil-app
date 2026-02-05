@@ -29,6 +29,7 @@ export default defineConfig(({ mode }) => {
       alias: {
         "@": path.join(__dirname, "/resources/js"),
         "@narsil-cms": path.join(__dirname, "/vendor/narsil/cms/resources/js"),
+        "@narsil-ui": path.join(__dirname, "/vendor/narsil/ui/resources/js"),
       },
       preserveSymlinks: true,
     },

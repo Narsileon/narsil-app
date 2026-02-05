@@ -8,4 +8,5 @@
 
 @import "../../vendor/narsil/cms/resources/css/app.css";
 
-@source "../../vendor/narsil/cms/resources";
+@source "../../vendor/narsil/cms/resources/js";
+@source "../../vendor/narsil/ui/resources/js";

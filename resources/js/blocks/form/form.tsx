@@ -1,9 +1,9 @@
 import { Button } from "@/blocks/button";
 import { FormElement, FormProvider, FormRoot } from "@/components/form";
 import { LayoutProps } from "@/types";
-import { Container } from "@narsil-cms/components/container";
-import { Heading } from "@narsil-cms/components/heading";
-import { useLocalization } from "@narsil-cms/components/localization";
+import { Container } from "@narsil-ui/components/container";
+import { Heading } from "@narsil-ui/components/heading";
+import { useLocalization } from "@narsil-ui/components/localization";
 import { useState } from "react";
 
 type FormProps = {

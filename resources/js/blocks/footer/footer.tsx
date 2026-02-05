@@ -1,5 +1,5 @@
 import { Link } from "@inertiajs/react";
-import { Button } from "@narsil-cms/components/button";
+import { Button } from "@narsil-ui/components/button";
 import {
   DropdownMenuItem,
   DropdownMenuPopup,
@@ -7,14 +7,14 @@ import {
   DropdownMenuPositioner,
   DropdownMenuRoot,
   DropdownMenuTrigger,
-} from "@narsil-cms/components/dropdown-menu";
-import { Icon, IconName } from "@narsil-cms/components/icon";
+} from "@narsil-ui/components/dropdown-menu";
+import { Icon, IconName } from "@narsil-ui/components/icon";
 import {
   NavigationMenuItem,
   NavigationMenuList,
   NavigationMenuRoot,
-} from "@narsil-cms/components/navigation-menu";
-import { cn } from "@narsil-cms/lib/utils";
+} from "@narsil-ui/components/navigation-menu";
+import { cn } from "@narsil-ui/lib/utils";
 import { upperCase, upperFirst } from "lodash-es";
 import { type ComponentProps, useMemo } from "react";
 
