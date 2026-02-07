@@ -1,3 +1,4 @@
+import { FieldsetLegend, FieldSetRoot } from "@narsil-ui/components/fieldset";
 import { Input } from "@narsil-ui/components/input";
 import { Textarea } from "@narsil-ui/components/textarea";
 import { cn } from "@narsil-ui/lib/utils";
@@ -17,9 +18,9 @@ function FormElement({ className, ...props }: FormElementProps) {
 
   if ("elements" in base) {
     return (
-      <fieldset className="col-span-full flex flex-col gap-y-4 rounded-md border p-4">
-        <legend className="px-2">{base.label}</legend>
-        <div className="lg:gap-x-8gap-y-4 grid grid-cols-12 p-2 sm:gap-x-4">
+      <FieldSetRoot className="col-span-full">
+        <FieldsetLegend>{base.label}</FieldsetLegend>
+        <div className="grid grid-cols-12 gap-y-4 sm:gap-x-4 lg:gap-x-8">
           {base.elements.map((element) => {
             return (
               <FormElement
@@ -30,7 +31,7 @@ function FormElement({ className, ...props }: FormElementProps) {
             );
           })}
         </div>
-      </fieldset>
+      </FieldSetRoot>
     );
   } else {
     return (

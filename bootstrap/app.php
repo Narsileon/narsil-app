@@ -45,8 +45,8 @@ return Application::configure(basePath: dirname(__DIR__))
 
             if ($isError && $request->is('narsil/*'))
             {
-                $title = trans("narsil::errors.titles.$code");
-                $description = trans("narsil::errors.descriptions.$code");
+                $title = trans("narsil-cms::errors.titles.$code");
+                $description = trans("narsil-cms::errors.descriptions.$code");
 
                 return Inertia::render('narsil/cms::error', [
                     'code' => $code,

@@ -12,7 +12,7 @@ use Narsil\Cms\Contracts\Fields\BuilderField;
 use Narsil\Cms\Models\Entities\Entity;
 use Narsil\Cms\Models\Entities\EntityNode;
 use Narsil\Cms\Models\Entities\EntityNodeRelation;
-use Narsil\Cms\Models\Forms\Form;
+use Narsil\Cms\Form\Models\Form;
 use Narsil\Cms\Models\Sites\SitePage;
 use Narsil\Cms\Models\Sites\SitePageEntity;
 use Narsil\Cms\Models\Collections\Block;
