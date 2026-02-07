@@ -9,7 +9,7 @@
 @import "../../vendor/narsil/cms/resources/css/app.css";
 @import "../../vendor/narsil/ui/resources/css/colors.css";
 @import "../../vendor/narsil/ui/resources/css/theme.css";
-@import "../../vendor/narsil/ui/resources/css//utilities.css";
+@import "../../vendor/narsil/ui/resources/css/utilities.css";
 
-@source "@narsil-cms";
-@source "@narsil-ui";
+@source "../../vendor/narsil/cms/resources/js";
+@source "../../vendor/narsil/ui/resources/js";
