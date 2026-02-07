@@ -1,13 +1,10 @@
+import { FieldDescription, FieldError, FieldLabel, FieldRoot } from "@narsil-ui/components/field";
 import { FieldsetLegend, FieldSetRoot } from "@narsil-ui/components/fieldset";
 import { Input } from "@narsil-ui/components/input";
 import { Textarea } from "@narsil-ui/components/textarea";
 import { cn } from "@narsil-ui/lib/utils";
 import { ComponentProps } from "react";
-import FormDescription from "./form-description";
 import FormField from "./form-field";
-import FormItem from "./form-item";
-import FormLabel from "./form-label";
-import FormMessage from "./form-message";
 
 type FormElementProps = App.Http.Data.FormElementData & {
   className?: string;
@@ -38,7 +35,7 @@ function FormElement({ className, ...props }: FormElementProps) {
       <FormField
         {...props}
         element={base}
-        render={({ value, onFieldChange }) => {
+        render={({ error, value, onFieldChange }) => {
           const inputProps = {
             ...(base.settings ?? {}),
             id: props.handle,
@@ -49,14 +46,14 @@ function FormElement({ className, ...props }: FormElementProps) {
           };
 
           return (
-            <FormItem className={cn("", className)} width={width}>
+            <FieldRoot className={cn("", className)} width={width}>
               <div className="flex items-center justify-between gap-3">
                 <div className="flex items-center gap-1">
-                  <FormLabel required={props.required}>{props.label}</FormLabel>
+                  <FieldLabel required={props.required}>{props.label}</FieldLabel>
                 </div>
               </div>
               {props.description ? (
-                <FormDescription>{props.description as string}</FormDescription>
+                <FieldDescription>{props.description as string}</FieldDescription>
               ) : null}
               {base.type === "Narsil\\Cms\\Contracts\\Fields\\DateField" ? (
                 <Input
@@ -100,8 +97,8 @@ function FormElement({ className, ...props }: FormElementProps) {
                   onChange={(event) => onFieldChange(event.target.value)}
                 />
               )}
-              <FormMessage />
-            </FormItem>
+              <FieldError>{error}</FieldError>
+            </FieldRoot>
           );
         }}
       />

@@ -6,7 +6,11 @@ import { FormFieldContext } from "./form-field-context";
 
 type FormFieldProps = App.Http.Data.FormElementData & {
   element: App.Http.Data.InputData;
-  render: (element: { value: unknown; onFieldChange: (value: unknown) => void }) => ReactNode;
+  render: (element: {
+    error: string | undefined;
+    value: unknown;
+    onFieldChange: (value: unknown) => void;
+  }) => ReactNode;
 };
 
 function FormField({ conditions, element, handle, render }: FormFieldProps) {
@@ -63,6 +67,7 @@ function FormField({ conditions, element, handle, render }: FormFieldProps) {
   return visible ? (
     <FormFieldContext.Provider value={contextValue}>
       {render({
+        error: getError(),
         value: getValue(),
 
         onFieldChange: (value) => {
