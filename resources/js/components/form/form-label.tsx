@@ -1,12 +1,12 @@
 import { Label } from "@narsil-ui/components/label";
-import { useLocalization } from "@narsil-ui/components/localization";
+import { useTranslator } from "@narsil-ui/components/translator";
 import { cn } from "@narsil-ui/lib/utils";
 import { type ComponentProps } from "react";
 import useFormField from "./form-field-context";
 
 function FormLabel({ children, className, ...props }: ComponentProps<typeof Label>) {
   const { error, handle } = useFormField();
-  const { trans } = useLocalization();
+  const { trans } = useTranslator();
 
   return (
     <Label

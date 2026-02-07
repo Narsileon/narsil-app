@@ -3,7 +3,7 @@ import { FormElement, FormProvider, FormRoot } from "@/components/form";
 import { LayoutProps } from "@/types";
 import { Container } from "@narsil-ui/components/container";
 import { Heading } from "@narsil-ui/components/heading";
-import { useLocalization } from "@narsil-ui/components/localization";
+import { useTranslator } from "@narsil-ui/components/translator";
 import { useState } from "react";
 
 type FormProps = {
@@ -16,7 +16,7 @@ function Form({ form, layout }: FormProps) {
     form = form[0];
   }
 
-  const { trans } = useLocalization();
+  const { trans } = useTranslator();
 
   const [index, setIndex] = useState<number>(0);
   const [success, setSuccess] = useState<boolean>(false);
