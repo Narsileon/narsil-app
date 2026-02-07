@@ -75,10 +75,16 @@ function Footer({ className, footer, page, session, ...props }: FooterProps) {
           <div className="flex justify-end gap-6">
             {footer.social_media?.map(({ icon, url }, index) => {
               return (
-                <Button variant="ghost" size="icon" key={index}>
-                  <Icon name={icon as IconName} />
-                  <a href={url} target="_blank" />
-                </Button>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  key={index}
+                  render={
+                    <a href={url} target="_blank">
+                      <Icon name={icon as IconName} />
+                    </a>
+                  }
+                />
               );
             })}
           </div>
