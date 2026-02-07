@@ -58,16 +58,14 @@ function Footer({ className, footer, page, session, ...props }: FooterProps) {
                 className="w-fit leading-6 text-slate-900 transition-colors duration-150 hover:text-pink-600 md:leading-normal"
                 size="link"
                 variant="link"
-              >
-                <a href={`mailto:${footer.email}`}>{footer.email}</a>
-              </Button>
+                render={<a href={`mailto:${footer.email}`}>{footer.email}</a>}
+              />
               <Button
                 className="w-fit leading-6 text-slate-900 transition-colors duration-150 hover:text-pink-600 md:leading-normal"
                 size="link"
                 variant="link"
-              >
-                <a href={`tel:${footer.phone?.replace(/\s+/g, "")}`}>{footer.phone}</a>
-              </Button>
+                render={<a href={`tel:${footer.phone?.replace(/\s+/g, "")}`}>{footer.phone}</a>}
+              />
             </div>
           </div>
         </div>
