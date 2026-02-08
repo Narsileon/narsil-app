@@ -17,7 +17,7 @@ function Layout({ children }: LayoutProps) {
 
   return (
     <CSPProvider nonce={nonce}>
-      <TranslatorProvider translations={translations}>
+      <TranslatorProvider locale={session.locale} translations={translations}>
         <GlobalProvider>
           <Header navigation={navigation} />
           <Main>{children}</Main>
