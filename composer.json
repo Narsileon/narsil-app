@@ -34,6 +34,7 @@
     "laravel/nightwatch": "^1.22",
     "narsil/cms": "dev-main",
     "narsil/cms-form": "dev-main",
+    "narsil/ui": "dev-main",
     "spatie/laravel-data": "^4.19",
     "spatie/laravel-typescript-transformer": "^2.5"
   },
