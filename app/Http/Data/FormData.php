@@ -34,7 +34,7 @@ final class FormData extends Data
         $this->uuid = Str::uuid7();
 
         app(TranslationsBag::class)
-            ->add('narsil-ui::tooltip.required')
+            ->add('narsil-ui::tooltips.required')
             ->add('ui.next')
             ->add('ui.previous')
             ->add('ui.submit')
