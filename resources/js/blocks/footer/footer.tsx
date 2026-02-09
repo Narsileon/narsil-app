@@ -56,12 +56,14 @@ function Footer({ className, footer, page, session, ...props }: FooterProps) {
             <div className="flex flex-col justify-end">
               <Button
                 className="w-fit leading-6 text-slate-900 transition-colors duration-150 hover:text-pink-600 md:leading-normal"
+                nativeButton={false}
                 size="link"
                 variant="link"
                 render={<a href={`mailto:${footer.email}`}>{footer.email}</a>}
               />
               <Button
                 className="w-fit leading-6 text-slate-900 transition-colors duration-150 hover:text-pink-600 md:leading-normal"
+                nativeButton={false}
                 size="link"
                 variant="link"
                 render={<a href={`tel:${footer.phone?.replace(/\s+/g, "")}`}>{footer.phone}</a>}
@@ -74,8 +76,9 @@ function Footer({ className, footer, page, session, ...props }: FooterProps) {
             {footer.social_media?.map(({ icon, url }, index) => {
               return (
                 <Button
-                  variant="ghost"
+                  nativeButton={false}
                   size="icon"
+                  variant="ghost"
                   key={index}
                   render={
                     <a href={url} target="_blank">

@@ -19,6 +19,7 @@ function Button({ children, icon, label, link, ...props }: ButtonProps) {
   return link ? (
     link.type === "external" ? (
       <ButtonPrimitive
+        nativeButton={false}
         render={
           <a href={link.url} target="_blank">
             {iconName ? <Icon name={iconName} /> : null}
@@ -29,6 +30,7 @@ function Button({ children, icon, label, link, ...props }: ButtonProps) {
       />
     ) : (
       <ButtonPrimitive
+        nativeButton={false}
         render={
           <Link href={link.link.url}>
             {iconName ? <Icon name={iconName} /> : null}
