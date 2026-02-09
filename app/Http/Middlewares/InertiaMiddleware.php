@@ -30,6 +30,8 @@ class InertiaMiddleware extends Middleware
      * Determine the current asset version.
      *
      * @see https://inertiajs.com/asset-versioning
+     *
+     * @return string|null
      */
     public function version(Request $request): ?string
     {
