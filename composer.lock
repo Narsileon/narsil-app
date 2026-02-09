@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8ffc1a6c0967cd753e45e4f3321784e9",
+    "content-hash": "72d72428e41282b01afe32dfe59332a7",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -2747,10 +2747,16 @@
         {
             "name": "narsil/cms",
             "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Narsileon/narsil-cms.git",
+                "reference": "2e41df0695697a0dbf2b3e217fe53a9883e35f63"
+            },
             "dist": {
-                "type": "path",
-                "url": "../narsil-cms",
-                "reference": "c35f8c41760de8b4ee8b57ce209ddaf19b1ab397"
+                "type": "zip",
+                "url": "https://api.github.com/repos/Narsileon/narsil-cms/zipball/2e41df0695697a0dbf2b3e217fe53a9883e35f63",
+                "reference": "2e41df0695697a0dbf2b3e217fe53a9883e35f63",
+                "shasum": ""
             },
             "require": {
                 "inertiajs/inertia-laravel": "^2.0",
@@ -2764,6 +2770,7 @@
                 "php": "^8.4",
                 "tightenco/ziggy": "^2.0"
             },
+            "default-branch": true,
             "type": "library",
             "extra": {
                 "laravel": {
@@ -2820,17 +2827,25 @@
                 "tailwind",
                 "vite"
             ],
-            "transport-options": {
-                "relative": true
-            }
+            "support": {
+                "source": "https://github.com/Narsileon/narsil-cms/tree/main",
+                "issues": "https://github.com/Narsileon/narsil-cms/issues"
+            },
+            "time": "2026-02-09T13:32:39+00:00"
         },
         {
             "name": "narsil/cms-form",
             "version": "dev-main",
-            "dist": {
-                "type": "path",
-                "url": "../narsil-cms-form",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Narsileon/narsil-cms-form.git",
                 "reference": "fce75d965fc830ddf4319b06582a0e73c77fd33e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Narsileon/narsil-cms-form/zipball/fce75d965fc830ddf4319b06582a0e73c77fd33e",
+                "reference": "fce75d965fc830ddf4319b06582a0e73c77fd33e",
+                "shasum": ""
             },
             "require": {
                 "inertiajs/inertia-laravel": "^2.0",
@@ -2838,6 +2853,7 @@
                 "narsil/cms": "dev-main",
                 "php": "^8.4"
             },
+            "default-branch": true,
             "type": "library",
             "extra": {
                 "laravel": {
@@ -2894,22 +2910,31 @@
                 "tailwind",
                 "vite"
             ],
-            "transport-options": {
-                "relative": true
-            }
+            "support": {
+                "source": "https://github.com/Narsileon/narsil-cms-form/tree/main",
+                "issues": "https://github.com/Narsileon/narsil-cms-form/issues"
+            },
+            "time": "2026-02-08T07:55:11+00:00"
         },
         {
             "name": "narsil/ui",
             "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Narsileon/narsil-ui.git",
+                "reference": "8bf1154a66b25c5b23ec1840c6ac875836c0ac82"
+            },
             "dist": {
-                "type": "path",
-                "url": "../narsil-ui",
-                "reference": "5f31054b7e9081ffe9a0e53a7b1aedc9b79a37bb"
+                "type": "zip",
+                "url": "https://api.github.com/repos/Narsileon/narsil-ui/zipball/8bf1154a66b25c5b23ec1840c6ac875836c0ac82",
+                "reference": "8bf1154a66b25c5b23ec1840c6ac875836c0ac82",
+                "shasum": ""
             },
             "require": {
                 "laravel/framework": "^12.48",
                 "php": "^8.4"
             },
+            "default-branch": true,
             "type": "library",
             "extra": {
                 "laravel": {
@@ -2964,9 +2989,11 @@
                 "tailwind",
                 "ui"
             ],
-            "transport-options": {
-                "relative": true
-            }
+            "support": {
+                "source": "https://github.com/Narsileon/narsil-ui/tree/main",
+                "issues": "https://github.com/Narsileon/narsil-ui/issues"
+            },
+            "time": "2026-02-08T15:37:59+00:00"
         },
         {
             "name": "nesbot/carbon",
