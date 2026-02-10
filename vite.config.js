@@ -11,10 +11,6 @@ export default defineConfig(({ mode }) => {
   const __dirname = dirname(fileURLToPath(import.meta.url));
 
   return {
-    build: {
-      minify: false,
-      sourcemap: true,
-    },
     plugins: [
       laravel({
         input: [
