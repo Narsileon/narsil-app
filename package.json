@@ -3,8 +3,8 @@
   "type": "module",
   "private": true,
   "workspaces": [
-    "vendor/narsil/cms",
-    "vendor/narsil/ui"
+    "vendor/narsil/base",
+    "vendor/narsil/cms"
   ],
   "scripts": {
     "build": "vite build && vite build --ssr",

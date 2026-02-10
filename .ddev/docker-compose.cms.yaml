@@ -1,7 +1,6 @@
 services:
   web:
     volumes:
+      - ../../narsil-base:/var/www/narsil-base/
       - ../../narsil-cms:/var/www/narsil-cms/
       - ../../narsil-cms-form:/var/www/narsil-cms-form/
-      - ../../narsil-ui:/var/www/narsil-ui/
-

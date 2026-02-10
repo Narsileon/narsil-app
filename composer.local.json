@@ -7,6 +7,11 @@
   "license": "proprietary",
   "repositories": [
     {
+      "name": "narsil/base",
+      "type": "path",
+      "url": "../narsil-base/"
+    },
+    {
       "name": "narsil/cms",
       "type": "path",
       "url": "../narsil-cms/"
@@ -15,18 +20,13 @@
       "name": "narsil/cms-form",
       "type": "path",
       "url": "../narsil-cms-form/"
-    },
-    {
-      "name": "narsil/ui",
-      "type": "path",
-      "url": "../narsil-ui/"
     }
   ],
   "require": {
     "laravel/nightwatch": "^1.22",
+    "narsil/base": "dev-main",
     "narsil/cms": "dev-main",
     "narsil/cms-form": "dev-main",
-    "narsil/ui": "dev-main",
     "spatie/laravel-data": "^4.19",
     "spatie/laravel-typescript-transformer": "^2.5"
   },

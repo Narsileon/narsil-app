@@ -16,22 +16,22 @@
   "repositories": [
     {
       "type": "vcs",
+      "url": "https://github.com/Narsileon/narsil-base.git"
+    },
+    {
+      "type": "vcs",
       "url": "https://github.com/Narsileon/narsil-cms.git"
     },
     {
       "type": "vcs",
       "url": "https://github.com/Narsileon/narsil-cms-form.git"
-    },
-    {
-      "type": "vcs",
-      "url": "https://github.com/Narsileon/narsil-ui.git"
     }
   ],
   "require": {
     "laravel/nightwatch": "^1.22",
+    "narsil/base": "dev-main",
     "narsil/cms": "dev-main",
     "narsil/cms-form": "dev-main",
-    "narsil/ui": "dev-main",
     "spatie/laravel-data": "^4.19",
     "spatie/laravel-typescript-transformer": "^2.5"
   },

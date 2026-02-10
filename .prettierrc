@@ -1,7 +1,7 @@
 {
   "overrides": [
     {
-      "files": ["vendor/narsil/cms/**/*", "vendor/narsil/cms-form/**/*", "vendor/narsil/ui/**/*"],
+      "files": ["vendor/narsil/base/**/*", "vendor/narsil/cms/**/*", "vendor/narsil/cms-form/**/*"],
       "options": {
         "tailwindStylesheet": "./resources/css/backend.css"
       }

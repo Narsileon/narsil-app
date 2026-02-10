@@ -12,7 +12,7 @@
         "paths": {
             "@/*": ["./resources/js/*"],
             "@narsil-cms/*": ["./vendor/narsil/cms/resources/js/*"],
-            "@narsil-ui/*": ["./vendor/narsil/ui/resources/js/*"]
+            "@narsil-ui/*": ["./vendor/narsil/base/resources/js/*"]
         },
         "skipLibCheck": true,
         "strict": true,
@@ -21,8 +21,8 @@
     },
     "include": [
         "resources/js/**/*",
+        "vendor/narsil/base/resources/js/**/*",
         "vendor/narsil/cms/resources/js/**/*",
-        "vendor/narsil/ui/resources/js/**/*"
     ],
     "exclude": ["node_modules"]
 }
