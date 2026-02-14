@@ -1,8 +1,8 @@
+import Layout from "@/layouts/layout";
 import { createInertiaApp } from "@inertiajs/react";
 import createServer from "@inertiajs/react/server";
 import { type ComponentProps, type ReactNode } from "react";
 import { renderToReadableStream, renderToString } from "react-dom/server";
-import Layout from "./layouts/layout";
 
 createServer(
   (page) =>

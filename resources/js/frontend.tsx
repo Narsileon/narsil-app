@@ -1,7 +1,7 @@
+import Layout from "@/layouts/layout";
 import { createInertiaApp } from "@inertiajs/react";
 import { type ComponentProps } from "react";
 import { createRoot, hydrateRoot } from "react-dom/client";
-import Layout from "./layouts/layout";
 
 createInertiaApp({
   resolve: (name) => {
