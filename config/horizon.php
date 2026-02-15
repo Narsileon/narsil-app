@@ -45,7 +45,7 @@ return [
     |
     */
 
-    'path' => env('HORIZON_PATH', 'narsil/horizon'),
+    'path' => env('HORIZON_PATH', 'admin/horizon'),
 
     /*
     |--------------------------------------------------------------------------

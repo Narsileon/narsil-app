@@ -11,6 +11,10 @@ export default defineConfig(({ mode }) => {
   const __dirname = dirname(fileURLToPath(import.meta.url));
 
   return {
+    build: {
+      cssMinify: true,
+      minify: true,
+    },
     plugins: [
       laravel({
         input: [
@@ -19,8 +23,8 @@ export default defineConfig(({ mode }) => {
           "resources/js/backend.tsx",
           "resources/js/frontend.tsx",
         ],
-        refresh: true,
         ssr: "resources/js/ssr.tsx",
+        refresh: true,
       }),
       react(),
       tailwindcss(),

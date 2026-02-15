@@ -43,7 +43,7 @@ return Application::configure(basePath: dirname(__DIR__))
                 503,
             ]);
 
-            if ($isError && $request->is('narsil/*'))
+            if ($isError && $request->is('admin/*'))
             {
                 $title = trans("narsil-cms::errors.titles.$code");
                 $description = trans("narsil-cms::errors.descriptions.$code");

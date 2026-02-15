@@ -1,11 +1,11 @@
 import Layout from "@/layouts/layout";
-import { createInertiaApp } from "@inertiajs/react";
+import { createInertiaApp, type ResolvedComponent } from "@inertiajs/react";
 import { type ComponentProps } from "react";
 import { createRoot, hydrateRoot } from "react-dom/client";
 
 createInertiaApp({
   resolve: (name) => {
-    const appPages = import.meta.glob("@/pages/**/*.tsx", {
+    const appPages = import.meta.glob<ResolvedComponent>("@/pages/**/*.tsx", {
       eager: true,
     });
 

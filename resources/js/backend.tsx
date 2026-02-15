@@ -1,4 +1,4 @@
-import { createInertiaApp } from "@inertiajs/react";
+import { createInertiaApp, type ResolvedComponent } from "@inertiajs/react";
 import Layout from "@narsil-cms/layouts/layout";
 import { type ComponentProps } from "react";
 import { createRoot } from "react-dom/client";
@@ -7,10 +7,10 @@ createInertiaApp({
   resolve: (name) => {
     const [vendorPath, componentPath] = name.includes("::") ? name.split("::") : [null, name];
 
-    const appPages = import.meta.glob("@/pages/**/*.tsx", {
+    const appPages = import.meta.glob<ResolvedComponent>("@/pages/**/*.tsx", {
       eager: true,
     });
-    const vendorPages = import.meta.glob("@narsil-cms/pages/**/*.tsx", {
+    const vendorPages = import.meta.glob<ResolvedComponent>("@narsil-cms/pages/**/*.tsx", {
       eager: true,
     });
 

@@ -91,7 +91,7 @@ return [
     |
     */
 
-    'prefix' => 'narsil',
+    'prefix' => 'admin',
 
     'domain' => null,
 
