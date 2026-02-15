@@ -82,7 +82,7 @@ function Footer({ className, footer, page, session, ...props }: FooterProps) {
                   key={index}
                   render={
                     <a href={url} target="_blank">
-                      <Icon name={icon as IconName} />
+                      <Icon className="size-6" name={icon as IconName} />
                     </a>
                   }
                 />
