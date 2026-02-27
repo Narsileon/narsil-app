@@ -45,10 +45,10 @@ return Application::configure(basePath: dirname(__DIR__))
 
             if ($isError && $request->is('admin/*'))
             {
-                $title = trans("narsil-cms::errors.titles.$code");
-                $description = trans("narsil-cms::errors.descriptions.$code");
+                $title = trans("narsil::errors.titles.$code");
+                $description = trans("narsil::errors.descriptions.$code");
 
-                return Inertia::render('narsil/cms::error', [
+                return Inertia::render('narsil/base::error', [
                     'code' => $code,
                     'description' => $description,
                     'title' => $title,

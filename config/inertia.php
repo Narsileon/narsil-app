@@ -49,6 +49,7 @@ return [
 
     'page_paths' => [
         resource_path('js/pages'),
+        base_path('vendor/narsil/base/resources/js/pages'),
         base_path('vendor/narsil/cms/resources/js/pages'),
     ],
 

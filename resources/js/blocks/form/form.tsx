@@ -1,13 +1,14 @@
 import { Button } from "@/blocks/button";
-import { FormElement, FormProvider, FormRoot } from "@/components/form";
-import { LayoutProps } from "@/types";
+import type { LayoutProps } from "@/types";
 import { Container } from "@narsil-ui/components/container";
+import { FormElement, FormProvider, FormRoot } from "@narsil-ui/components/form";
 import { Heading } from "@narsil-ui/components/heading";
 import { useTranslator } from "@narsil-ui/components/translator";
+import type { FormData } from "@narsil-ui/types";
 import { useState } from "react";
 
 type FormProps = {
-  form: App.Http.Data.FormData | App.Http.Data.FormData[];
+  form: FormData;
   layout: LayoutProps;
 };
 
@@ -21,6 +22,11 @@ function Form({ form, layout }: FormProps) {
   const [index, setIndex] = useState<number>(0);
   const [success, setSuccess] = useState<boolean>(false);
 
+  const initialData = {
+    _step: 0,
+    _uuid: form.id,
+  };
+
   return (
     <Container
       paddingBottom={layout.padding.bottom}
@@ -31,13 +37,10 @@ function Form({ form, layout }: FormProps) {
         <p>{trans("ui.submited")}</p>
       ) : (
         <FormProvider
-          id={form.slug}
+          id={form.id}
           action={`/forms/${form.id}/submit`}
+          initialData={initialData}
           steps={form.steps}
-          initialValues={{
-            _step: 0,
-            _uuid: form.uuid,
-          }}
           render={({ setData }) => {
             return (
               <FormRoot
@@ -64,12 +67,12 @@ function Form({ form, layout }: FormProps) {
                 })}
                 <div className="col-span-full flex flex-row-reverse items-center justify-between">
                   {form.steps.length > 1 && index < form.steps.length - 1 ? (
-                    <Button label={trans("ui.next")} form={form.slug} type="submit" />
+                    <Button label={trans("ui.next")} form={form.id} type="submit" />
                   ) : (
                     <Button
                       className="col-span-full justify-self-end"
                       label={trans("ui.submit")}
-                      form={form.slug}
+                      form={form.id}
                       type="submit"
                     />
                   )}

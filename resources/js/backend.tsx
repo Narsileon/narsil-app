@@ -10,9 +10,13 @@ createInertiaApp({
     const appPages = import.meta.glob<ResolvedComponent>("@/pages/**/*.tsx", {
       eager: true,
     });
-    const vendorPages = import.meta.glob<ResolvedComponent>("@narsil-cms/pages/**/*.tsx", {
-      eager: true,
-    });
+
+    const vendorPages = import.meta.glob<ResolvedComponent>(
+      ["@narsil-cms/pages/**/*.tsx", "@narsil-ui/pages/**/*.tsx"],
+      {
+        eager: true,
+      },
+    );
 
     const appKey = `/resources/js/pages/backend/${componentPath}.tsx`;
     const vendorKey = `/vendor/${vendorPath}/resources/js/pages/${componentPath}.tsx`;

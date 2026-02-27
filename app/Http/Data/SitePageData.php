@@ -8,7 +8,6 @@ use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Config;
-use Narsil\Cms\Contracts\Fields\BuilderField;
 use Narsil\Cms\Models\Entities\Entity;
 use Narsil\Cms\Models\Entities\EntityNode;
 use Narsil\Cms\Models\Entities\EntityNodeRelation;
@@ -167,7 +166,7 @@ final class SitePageData extends Data
 
                 $key = $path ? "$path.$handle" : $handle;
 
-                if ($field->{Field::TYPE} === BuilderField::class)
+                if ($field->{Field::TYPE} === 'builder')
                 {
                     $blockNodes = static::$nodes->get($node->{EntityNode::UUID}, []);
 

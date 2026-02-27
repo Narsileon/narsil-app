@@ -2,7 +2,7 @@
 
 #region USE
 
-use Narsil\Cms\Models\User;
+use Narsil\Base\Models\User;
 
 #endregion
 
