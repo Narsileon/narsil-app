@@ -4,8 +4,10 @@ namespace Database\Seeders;
 
 #region USE
 
+use Database\Seeders\SiteSeeder;
 use Database\Seeders\UserSeeder;
 use Illuminate\Database\Seeder;
+use Narsil\Cms\Database\Seeders\Templates\ContentTemplateSeeder;
 
 #endregion
 
@@ -20,6 +22,8 @@ final class DatabaseSeeder extends Seeder
     {
         $this->call([
             UserSeeder::class,
+            ContentTemplateSeeder::class,
+            SiteSeeder::class,
         ]);
     }
 
