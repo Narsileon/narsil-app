@@ -56,14 +56,14 @@ function Footer({ className, footer, page, session, ...props }: FooterProps) {
             </div>
             <div className="flex flex-col justify-end">
               <Button
-                className="w-fit leading-6 text-slate-900 transition-colors duration-150 hover:text-pink-600 md:leading-normal"
+                className="w-fit leading-6 text-slate-900 transition-colors duration-150 hover:text-pink-600 focus:text-pink-600 md:leading-normal"
                 nativeButton={false}
                 size="link"
                 variant="link"
                 render={<a href={`mailto:${footer.email}`}>{footer.email}</a>}
               />
               <Button
-                className="w-fit leading-6 text-slate-900 transition-colors duration-150 hover:text-pink-600 md:leading-normal"
+                className="w-fit leading-6 text-slate-900 transition-colors duration-150 hover:text-pink-600 focus:text-pink-600 md:leading-normal"
                 nativeButton={false}
                 size="link"
                 variant="link"
