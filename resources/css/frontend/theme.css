@@ -15,7 +15,6 @@
   --color-popover: var(--popover);
   --color-primary-foreground: var(--primary-foreground);
   --color-primary: var(--primary);
-  --color-ring: var(--ring);
   --color-secondary-foreground: var(--secondary-foreground);
   --color-secondary: var(--secondary);
 }
@@ -37,7 +36,6 @@
   --popover: var(--color-slate-950);
   --primary-foreground: var(--color-white);
   --primary: var(--color-pink-600);
-  --ring: var(--color-slate-400);
   --secondary-foreground: var(--color-white);
   --secondary: var(--color-cyan-600);
 }

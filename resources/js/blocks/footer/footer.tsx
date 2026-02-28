@@ -11,6 +11,7 @@ import {
 import { Icon, IconName } from "@narsil-ui/components/icon";
 import {
   NavigationMenuItem,
+  NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuRoot,
 } from "@narsil-ui/components/navigation-menu";
@@ -134,14 +135,13 @@ function Footer({ className, footer, page, session, ...props }: FooterProps) {
           className="flex-none grow-0 justify-center md:justify-start"
           aria-label="Footer Menu"
         >
-          <NavigationMenuList className="gap-4 text-sm lg:gap-8">
+          <NavigationMenuList className="gap-4 text-sm">
             {footer.links?.map(({ label, url }, index) => {
               return (
-                <NavigationMenuItem
-                  className="leading-6 transition-colors duration-150 md:leading-normal"
-                  key={index}
-                >
-                  <Link href={url}>{label}</Link>
+                <NavigationMenuItem className="leading-6 md:leading-normal" key={index}>
+                  <NavigationMenuLink>
+                    <Link href={url}>{label}</Link>
+                  </NavigationMenuLink>
                 </NavigationMenuItem>
               );
             })}
