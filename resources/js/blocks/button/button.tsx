@@ -9,7 +9,7 @@ type ButtonProps = ComponentProps<typeof ButtonPrimitive> & {
   link?: {
     type: "internal" | "external";
     url: string;
-    link: App.Http.Data.SiteUrlData;
+    page: App.Http.Data.SiteUrlData;
   };
 };
 
@@ -32,7 +32,7 @@ function Button({ children, icon, label, link, ...props }: ButtonProps) {
       <ButtonPrimitive
         nativeButton={false}
         render={
-          <Link href={link.link.url}>
+          <Link href={link.page.url}>
             {iconName ? <Icon name={iconName} /> : null}
             {label ?? children}
           </Link>
