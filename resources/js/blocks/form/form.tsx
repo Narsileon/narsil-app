@@ -1,6 +1,7 @@
 import { Button } from "@/blocks/button";
 import type { LayoutProps } from "@/types";
 import { Container } from "@narsil-ui/components/container";
+import { FieldsetLegend, FieldSetRoot } from "@narsil-ui/components/fieldset";
 import { FormElement, FormProvider, FormRoot } from "@narsil-ui/components/form";
 import { Heading } from "@narsil-ui/components/heading";
 import { useTranslator } from "@narsil-ui/components/translator";
@@ -8,7 +9,9 @@ import type { FormData } from "@narsil-ui/types";
 import { useState } from "react";
 
 type FormProps = {
-  form: FormData;
+  form: Omit<App.Http.Data.FormData, "steps"> & {
+    steps: FormData["steps"];
+  };
   layout: LayoutProps;
 };
 
@@ -24,7 +27,7 @@ function Form({ form, layout }: FormProps) {
 
   const initialData = {
     _step: 0,
-    _uuid: form.id,
+    _uuid: form.uuid,
   };
 
   return (
@@ -37,7 +40,7 @@ function Form({ form, layout }: FormProps) {
         <p>{trans("ui.submited")}</p>
       ) : (
         <FormProvider
-          id={form.id}
+          id={form.uuid}
           action={`/forms/${form.id}/submit`}
           initialData={initialData}
           steps={form.steps}
@@ -63,16 +66,41 @@ function Form({ form, layout }: FormProps) {
                   {form.steps[index].label}
                 </Heading>
                 {form.steps[index]?.elements?.map((element, index) => {
-                  return <FormElement {...element} key={index} />;
+                  return (
+                    <FormElement
+                      {...element}
+                      render={(fieldset) => {
+                        return (
+                          <FieldSetRoot className="col-span-full">
+                            <FieldsetLegend>{fieldset.label}</FieldsetLegend>
+                            <div className="grid grid-cols-12 gap-8 p-4">
+                              {fieldset.elements.map((fieldsetElement, index) => {
+                                const virtualHandle = `${element.id}.${fieldsetElement.id}`;
+
+                                return (
+                                  <FormElement
+                                    {...fieldsetElement}
+                                    id={virtualHandle}
+                                    key={index}
+                                  />
+                                );
+                              })}
+                            </div>
+                          </FieldSetRoot>
+                        );
+                      }}
+                      key={index}
+                    />
+                  );
                 })}
                 <div className="col-span-full flex flex-row-reverse items-center justify-between">
                   {form.steps.length > 1 && index < form.steps.length - 1 ? (
-                    <Button label={trans("ui.next")} form={form.id} type="submit" />
+                    <Button label={trans("ui.next")} form={form.uuid} type="submit" />
                   ) : (
                     <Button
                       className="col-span-full justify-self-end"
                       label={trans("ui.submit")}
-                      form={form.id}
+                      form={form.uuid}
                       type="submit"
                     />
                   )}

@@ -22,6 +22,12 @@ declare namespace App.Http.Data {
     label: string;
     url: string;
   };
+  export type FormData = {
+    id: number;
+    slug: string;
+    steps: Array<any>;
+    uuid: string;
+  };
   export type GlobalData = {
     page: App.Http.Data.SitePageData;
     header: App.Http.Data.HeaderData;

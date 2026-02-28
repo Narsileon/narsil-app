@@ -196,14 +196,15 @@ final class SitePageData extends Data
                 {
                     if (count($node->{EntityNode::RELATION_RELATIONS}) > 0)
                     {
-                        $target = $node->{EntityNode::RELATION_RELATIONS}->first()?->{EntityNodeRelation::RELATION_TARGET};
+                        $nodeRelation = $node->{EntityNode::RELATION_RELATIONS}->first();
 
-                        if ($target::class === Form::class)
+                        $target = $nodeRelation?->{EntityNodeRelation::RELATION_TARGET};
+
+                        if ($nodeRelation->{EntityNodeRelation::TARGET_TYPE} === Form::TABLE)
                         {
                             $target = FormData::fromModel($target);
                         }
-
-                        if ($target::class === SitePage::class)
+                        else if ($nodeRelation->{EntityNodeRelation::TARGET_TYPE} === SitePage::TABLE)
                         {
                             $target = SiteUrlData::fromModel($target->{SitePage::RELATION_URL});
                         }
