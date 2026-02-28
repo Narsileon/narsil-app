@@ -10,9 +10,9 @@ type HeroHeaderProps = {
   buttons: unknown[];
   excerpt: string;
   headline: {
-    headline: string;
-    headline_level: ComponentProps<typeof Heading>["level"];
-    headline_style: ComponentProps<typeof Heading>["variant"];
+    level: ComponentProps<typeof Heading>["level"];
+    style: ComponentProps<typeof Heading>["variant"];
+    title: string;
   };
   layout: LayoutProps;
 };
@@ -30,8 +30,8 @@ function HeroHeader({ buttons, excerpt, headline, layout }: HeroHeaderProps) {
         minHeight: `calc(100vh - ${headerHeight}px)`,
       }}
     >
-      <Heading level={headline.headline_level} variant={headline.headline_style}>
-        {headline.headline}
+      <Heading level={headline.level} variant={headline.style}>
+        {headline.title}
       </Heading>
       <div dangerouslySetInnerHTML={{ __html: excerpt }} />
       {buttons?.map((button, index) => {

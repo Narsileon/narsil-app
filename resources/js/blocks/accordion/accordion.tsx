@@ -12,16 +12,16 @@ import { Icon } from "@narsil-ui/components/icon";
 import { cn } from "@narsil-ui/lib/utils";
 
 type AccordionProps = {
-  accordion_builder: {
+  items: {
     children: {
-      accordion_item_content: string;
-      accordion_item_trigger: string;
+      content: string;
+      trigger: string;
     };
   }[];
   layout: LayoutProps;
 };
 
-function Accordion({ accordion_builder, layout }: AccordionProps) {
+function Accordion({ items, layout }: AccordionProps) {
   return (
     <Container
       paddingBottom={layout.padding.bottom}
@@ -29,14 +29,14 @@ function Accordion({ accordion_builder, layout }: AccordionProps) {
       variant={layout.size}
     >
       <AccordionRoot className="w-full">
-        {accordion_builder.map((item, index) => {
+        {items.map((item, index) => {
           return (
             <AccordionItem value={index.toString()} key={index}>
               <AccordionHeader
                 render={
                   <Heading level="h2">
                     <AccordionTrigger>
-                      {item.children.accordion_item_trigger}
+                      {item.children.trigger}
                       <Icon
                         className={cn(
                           "pointer-events-none shrink-0 transition-transform duration-300 will-change-transform",
@@ -51,7 +51,7 @@ function Accordion({ accordion_builder, layout }: AccordionProps) {
               <AccordionPanel>
                 <div
                   className="prose pb-4"
-                  dangerouslySetInnerHTML={{ __html: item.children.accordion_item_content }}
+                  dangerouslySetInnerHTML={{ __html: item.children.content }}
                 />
               </AccordionPanel>
             </AccordionItem>
