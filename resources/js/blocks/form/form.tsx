@@ -73,7 +73,7 @@ function Form({ form, layout }: FormProps) {
                         return (
                           <FieldSetRoot className="col-span-full">
                             <FieldsetLegend>{fieldset.label}</FieldsetLegend>
-                            <div className="grid grid-cols-12 gap-8 p-4">
+                            <div className="grid grid-cols-12 gap-8">
                               {fieldset.elements.map((fieldsetElement, index) => {
                                 const virtualHandle = `${element.id}.${fieldsetElement.id}`;
 
