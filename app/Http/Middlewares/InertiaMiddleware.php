@@ -50,7 +50,7 @@ class InertiaMiddleware extends Middleware
      */
     public function share(Request $request): array
     {
-        // $this->setSearchPath('cms');
+        $this->setSearchPath('cms');
 
         return [
             ...parent::share($request),
