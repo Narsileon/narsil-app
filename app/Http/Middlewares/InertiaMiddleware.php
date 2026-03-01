@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use Inertia\Middleware;
 use Narsil\Base\Traits\HasSchemas;
 
-#endregions
+#endregion
 
 class InertiaMiddleware extends Middleware
 {
@@ -46,11 +46,13 @@ class InertiaMiddleware extends Middleware
      *
      * @see https://inertiajs.com/shared-data
      *
-     * @return array<string, mixed>
+     * @return array<string,mixed>
      */
     public function share(Request $request): array
     {
-        $this->setSearchPath('cms');
+        $schema = $this->getDefaultSchema();
+
+        $this->setSearchPath($schema);
 
         return [
             ...parent::share($request),
