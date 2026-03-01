@@ -6,11 +6,14 @@ namespace App\Http\Middlewares;
 
 use Illuminate\Http\Request;
 use Inertia\Middleware;
+use Narsil\Base\Traits\HasSchemas;
 
 #endregions
 
 class InertiaMiddleware extends Middleware
 {
+    use HasSchemas;
+
     #region PROPERTIES
 
     /**
@@ -47,6 +50,8 @@ class InertiaMiddleware extends Middleware
      */
     public function share(Request $request): array
     {
+        // $this->setSearchPath('cms');
+
         return [
             ...parent::share($request),
         ];
