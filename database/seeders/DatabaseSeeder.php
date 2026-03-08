@@ -9,6 +9,7 @@ use Database\Seeders\UserSeeder;
 use Illuminate\Database\Seeder;
 use Narsil\Base\Traits\HasSchemas;
 use Narsil\Cms\Database\Seeders\Templates\ContentTemplateSeeder;
+use Narsil\Cms\Form\Database\Seeders\Blocks\FormBlockSeeder;
 
 #endregion
 
@@ -31,8 +32,13 @@ final class DatabaseSeeder extends Seeder
         {
             $this->setSearchPath($schema);
 
+            $formBlockSeeder = new FormBlockSeeder()->run();
+
+            new ContentTemplateSeeder([
+                $formBlockSeeder,
+            ])->run();
+
             $this->call([
-                ContentTemplateSeeder::class,
                 SiteSeeder::class,
             ]);
         }

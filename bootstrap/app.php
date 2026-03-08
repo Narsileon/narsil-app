@@ -48,7 +48,7 @@ return Application::configure(basePath: dirname(__DIR__))
                 $title = trans("narsil::errors.titles.$code");
                 $description = trans("narsil::errors.descriptions.$code");
 
-                return Inertia::render('narsil/base::error', [
+                return Inertia::render('narsil/base::errors/index', [
                     'code' => $code,
                     'description' => $description,
                     'title' => $title,

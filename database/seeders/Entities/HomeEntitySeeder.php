@@ -39,11 +39,11 @@ class HomeEntitySeeder extends EntitySeeder
     {
         $faker = Factory::create();
 
-        $AccordionBlockSeeder = new AccordionBlockSeeder()->run();
-        $AccordionItemBlockSeeder = new AccordionItemBlockSeeder()->run();
-        $ButtonBlockSeeder = new ButtonBlockSeeder()->run();
-        $CallToActionBlockSeeder = new CallToActionBlockSeeder()->run();
-        $HeroHeaderBlockSeeder = new HeroHeaderBlockSeeder()->run();
+        $accordionBlockSeeder = new AccordionBlockSeeder()->run();
+        $accordionItemBlockSeeder = new AccordionItemBlockSeeder()->run();
+        $buttonBlockSeeder = new ButtonBlockSeeder()->run();
+        $callToActionBlockSeeder = new CallToActionBlockSeeder()->run();
+        $heroHeaderBlockSeeder = new HeroHeaderBlockSeeder()->run();
 
         $contactPage = SitePage::query()
             ->where(SitePage::SLUG . '->en', '=', 'contact')
@@ -52,7 +52,7 @@ class HomeEntitySeeder extends EntitySeeder
         return [
             ContentTemplateSeeder::CONTENT => [
                 [
-                    EntityNode::BLOCK_ID => $HeroHeaderBlockSeeder->{Block::ID},
+                    EntityNode::BLOCK_ID => $heroHeaderBlockSeeder->{Block::ID},
                     EntityNode::RELATION_CHILDREN => [
                         HeroHeaderBlockSeeder::LAYOUT => [
                             LayoutBlockSeeder::SIZE => 'lg',
@@ -68,7 +68,7 @@ class HomeEntitySeeder extends EntitySeeder
                         ],
                         HeroHeaderBlockSeeder::EXCERPT => '<p>' . $faker->sentences(6, true) . '</p>',
                         HeroHeaderBlockSeeder::BUTTONS => [[
-                            EntityNode::BLOCK_ID => $ButtonBlockSeeder->{Block::ID},
+                            EntityNode::BLOCK_ID => $buttonBlockSeeder->{Block::ID},
                             EntityNode::RELATION_CHILDREN => [
                                 ButtonBlockSeeder::LABEL => 'Get started',
                                 ButtonBlockSeeder::LINK => [
@@ -80,7 +80,7 @@ class HomeEntitySeeder extends EntitySeeder
                     ],
                 ],
                 [
-                    EntityNode::BLOCK_ID => $AccordionBlockSeeder->{Block::ID},
+                    EntityNode::BLOCK_ID => $accordionBlockSeeder->{Block::ID},
                     EntityNode::RELATION_CHILDREN => [
                         AccordionBlockSeeder::LAYOUT => [
                             LayoutBlockSeeder::SIZE => 'sm',
@@ -91,21 +91,21 @@ class HomeEntitySeeder extends EntitySeeder
                         ],
                         AccordionBlockSeeder::ITEMS => [
                             [
-                                EntityNode::BLOCK_ID => $AccordionItemBlockSeeder->{Block::ID},
+                                EntityNode::BLOCK_ID => $accordionItemBlockSeeder->{Block::ID},
                                 EntityNode::RELATION_CHILDREN => [
                                     AccordionItemBlockSeeder::TRIGGER => $faker->sentence(6, true),
                                     AccordionItemBlockSeeder::CONTENT => $faker->sentences(6, true),
                                 ],
                             ],
                             [
-                                EntityNode::BLOCK_ID => $AccordionItemBlockSeeder->{Block::ID},
+                                EntityNode::BLOCK_ID => $accordionItemBlockSeeder->{Block::ID},
                                 EntityNode::RELATION_CHILDREN => [
                                     AccordionItemBlockSeeder::TRIGGER => $faker->sentence(6, true),
                                     AccordionItemBlockSeeder::CONTENT => $faker->sentences(6, true),
                                 ],
                             ],
                             [
-                                EntityNode::BLOCK_ID => $AccordionItemBlockSeeder->{Block::ID},
+                                EntityNode::BLOCK_ID => $accordionItemBlockSeeder->{Block::ID},
                                 EntityNode::RELATION_CHILDREN => [
                                     AccordionItemBlockSeeder::TRIGGER => $faker->sentence(6, true),
                                     AccordionItemBlockSeeder::CONTENT => $faker->sentences(6, true),
@@ -115,7 +115,7 @@ class HomeEntitySeeder extends EntitySeeder
                     ],
                 ],
                 [
-                    EntityNode::BLOCK_ID => $CallToActionBlockSeeder->{Block::ID},
+                    EntityNode::BLOCK_ID => $callToActionBlockSeeder->{Block::ID},
                     EntityNode::RELATION_CHILDREN => [
                         CallToActionBlockSeeder::LAYOUT => [
                             LayoutBlockSeeder::SIZE => 'sm',
