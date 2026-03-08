@@ -9,7 +9,6 @@ use PHPUnit\Framework\TestCase;
 #endregion
 
 /**
- * @version 1.0.0
  * @author Jonathan Rigaux
  */
 final class ExampleTest extends TestCase
