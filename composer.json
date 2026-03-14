@@ -16,16 +16,19 @@
   "license": "proprietary",
   "repositories": [
     {
-      "type": "vcs",
-      "url": "https://github.com/Narsileon/narsil-base.git"
+      "name": "narsil/base",
+      "type": "path",
+      "url": "../narsil-base/"
     },
     {
-      "type": "vcs",
-      "url": "https://github.com/Narsileon/narsil-cms.git"
+      "name": "narsil/cms",
+      "type": "path",
+      "url": "../narsil-cms/"
     },
     {
-      "type": "vcs",
-      "url": "https://github.com/Narsileon/narsil-cms-form.git"
+      "name": "narsil/cms-form",
+      "type": "path",
+      "url": "../narsil-cms-form/"
     }
   ],
   "require": {
@@ -34,7 +37,7 @@
     "narsil/cms": "dev-main",
     "narsil/cms-form": "dev-main",
     "spatie/laravel-data": "^4.19",
-    "spatie/laravel-typescript-transformer": "^2.5"
+    "spatie/laravel-typescript-transformer": "^3.0"
   },
   "require-dev": {
     "fakerphp/faker": "^1.0",
