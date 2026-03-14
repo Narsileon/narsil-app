@@ -37,7 +37,7 @@
     "narsil/cms": "dev-main",
     "narsil/cms-form": "dev-main",
     "spatie/laravel-data": "^4.19",
-    "spatie/laravel-typescript-transformer": "^3.0"
+    "spatie/laravel-typescript-transformer": "^2.6"
   },
   "require-dev": {
     "fakerphp/faker": "^1.0",
