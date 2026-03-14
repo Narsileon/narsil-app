@@ -7,7 +7,7 @@ createInertiaApp({
   resolve: (name) => {
     const [vendorPath, componentPath] = name.includes("::") ? name.split("::") : [null, name];
 
-    const appPages = import.meta.glob<ResolvedComponent>("@/pages/**/*.tsx", {
+    const appPages = import.meta.glob<ResolvedComponent>("@/pages/backend/**/*.tsx", {
       eager: true,
     });
 

@@ -2,6 +2,7 @@
 
 #region USE
 
+use App\Http\Middlewares\InertiaMiddleware;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
@@ -21,7 +22,9 @@ return Application::configure(basePath: dirname(__DIR__))
     )
     ->withMiddleware(function (Middleware $middleware): void
     {
-        //
+        $middleware->web(append: [
+            InertiaMiddleware::class,
+        ]);
     })
     ->withSchedule(function (Schedule $schedule)
     {

@@ -5,7 +5,7 @@ import { createRoot, hydrateRoot } from "react-dom/client";
 
 createInertiaApp({
   resolve: (name) => {
-    const appPages = import.meta.glob<ResolvedComponent>("@/pages/**/*.tsx", {
+    const appPages = import.meta.glob<ResolvedComponent>("@/pages/frontend/**/*.tsx", {
       eager: true,
     });
 

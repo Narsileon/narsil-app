@@ -19,7 +19,7 @@ function Layout({ children }: LayoutProps) {
     <CSPProvider nonce={nonce}>
       <TranslatorProvider locale={session.locale} translations={translations}>
         <GlobalProvider>
-          <Header navigation={navigation} />
+          <Header navigation={navigation} session={session} />
           <Main>{children}</Main>
           <Footer footer={footer} page={page} session={session} />
         </GlobalProvider>

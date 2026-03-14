@@ -9,9 +9,10 @@ import {
 import { cn } from "@narsil-ui/lib/utils";
 import { useEffect, useRef, type ComponentProps } from "react";
 
-type HeaderProps = ComponentProps<"header"> & Pick<App.Http.Data.GlobalData, "navigation">;
+type HeaderProps = ComponentProps<"header"> &
+  Pick<App.Http.Data.GlobalData, "navigation" | "session">;
 
-function Header({ className, navigation, ...props }: HeaderProps) {
+function Header({ className, navigation, session, ...props }: HeaderProps) {
   const { setHeaderHeight } = useGlobal();
 
   const ref = useRef<HTMLDivElement>(null);
@@ -45,7 +46,7 @@ function Header({ className, navigation, ...props }: HeaderProps) {
       <NavigationMenuRoot aria-label="Header Menu">
         <NavigationMenuList className="gap-4 font-bold lg:gap-8">
           {navigation[0].children.map(({ title, url }, index) => {
-            const active = window.location.href.includes(url);
+            const active = session.url.startsWith(url);
 
             return (
               <NavigationMenuItem key={index}>

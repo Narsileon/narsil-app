@@ -1,15 +1,17 @@
 import { BlockRenderer } from "@/blocks";
-import { Head } from "@inertiajs/react";
+import { Head, usePage } from "@inertiajs/react";
 import { Container } from "@narsil-ui/components/container";
 import { Fragment } from "react";
 
-function Page({ footer, page }: App.Http.Data.GlobalData) {
+function Page({ footer, page, session }: App.Http.Data.GlobalData) {
+  const { url } = usePage();
+
   const organization = {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: footer.organization,
-    url: window.location.origin,
-    logo: `${window.location.origin}/favicon.svg`,
+    url: session.url,
+    logo: `${session.url}/favicon.svg`,
     address: {
       "@type": "PostalAddress",
       streetAddress: footer.street,

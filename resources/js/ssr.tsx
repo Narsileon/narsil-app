@@ -14,7 +14,7 @@ createServer(
         return new Response(stream).text();
       }) as unknown as typeof renderToString,
       resolve: (name) => {
-        const appPages = import.meta.glob("@/pages/**/*.tsx", {
+        const appPages = import.meta.glob("@/pages/frontend/**/*.tsx", {
           eager: true,
         });
 
