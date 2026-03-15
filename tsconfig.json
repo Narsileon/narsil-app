@@ -23,6 +23,7 @@
         "resources/js/**/*",
         "vendor/narsil/base/resources/js/**/*",
         "vendor/narsil/cms/resources/js/**/*",
+        "vendor/narsil/cms-form/resources/js/**/*",
     ],
     "exclude": ["node_modules"]
 }

@@ -4,7 +4,8 @@
   "private": true,
   "workspaces": [
     "vendor/narsil/base",
-    "vendor/narsil/cms"
+    "vendor/narsil/cms",
+    "vendor/narsil/cms-form"
   ],
   "scripts": {
     "build": "vite build && vite build --ssr",
