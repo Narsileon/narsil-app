@@ -1,4 +1,6 @@
 import { createInertiaApp, type ResolvedComponent } from "@inertiajs/react";
+import bootFormPlugin from "@narsil-cms-form/index";
+import bootCmsPlugin from "@narsil-cms/index";
 import Layout from "@narsil-cms/layouts/layout";
 import { type ComponentProps } from "react";
 import { createRoot } from "react-dom/client";
@@ -35,6 +37,8 @@ createInertiaApp({
     return page;
   },
   setup({ el, App, props }) {
+    bootCmsPlugin();
+    bootFormPlugin();
     createRoot(el).render(<App {...props} />);
   },
 });

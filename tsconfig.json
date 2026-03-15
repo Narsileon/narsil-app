@@ -12,6 +12,7 @@
         "paths": {
             "@/*": ["./resources/js/*"],
             "@narsil-cms/*": ["./vendor/narsil/cms/resources/js/*"],
+            "@narsil-cms-form/*": ["./vendor/narsil/cms-form/resources/js/*"],
             "@narsil-ui/*": ["./vendor/narsil/base/resources/js/*"]
         },
         "skipLibCheck": true,
