@@ -1,6 +1,5 @@
 .git
 .gitignore
-*.graphql
 *.yaml
 components.json
 tsconfig.json
