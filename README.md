@@ -48,15 +48,13 @@ pnpm outdated
 Upgrade dependencies to latest minor versions:
 
 ```bash
-pnpm add -g npm-check-updates
-ncu -u -t minor
+pnpm dlx npm-check-updates -u -t minor
 ```
 
 Upgrade dependencies to latest major versions:
 
 ```bash
-pnpm add -g npm-check-updates
-ncu -u -t latest
+pnpm dlx npm-check-updates -u -t latest
 ```
 
 ### DDEV
