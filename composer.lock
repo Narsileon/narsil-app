@@ -2832,7 +2832,7 @@
       "dist": {
         "type": "path",
         "url": "../narsil-cms",
-        "reference": "ef966d435d6ffc4c043e68e01697585ea5b087ea"
+        "reference": "837ec823331aed84ace4254621d38a078e3b5e70"
       },
       "require": {
         "narsil/base": "dev-main"

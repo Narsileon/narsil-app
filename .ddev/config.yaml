@@ -3,6 +3,7 @@ type: laravel
 docroot: public
 php_version: "8.5"
 webserver_type: nginx-fpm
+nodejs_version: "24.14.1"
 xdebug_enabled: false
 additional_hostnames: []
 additional_fqdns: [
@@ -14,7 +15,7 @@ database:
 use_dns_when_possible: true
 composer_version: "2"
 web_environment: []
-corepack_enable: false
+corepack_enable: true
 web_extra_exposed_ports:
   - name: vite
     container_port: 5173
@@ -39,10 +40,10 @@ hooks:
     - exec: php artisan storage:link
       service: web
       directory: /var/www/html
-    - exec: yarn
+    - exec: pnpm i
       service: web
       directory: /var/www/html
-    - exec: yarn dev
+    - exec: pnpm dev
       service: web
       directory: /var/www/html
 

@@ -36,32 +36,26 @@ composer outdated
 Install dependencies:
 
 ```bash
-yarn install
-```
-
-Update dependencies:
-
-```bash
-yarn upgrade
+pnpm i
 ```
 
 Check outdated dependencies:
 
 ```bash
-yarn outdated
+pnpm outdated
 ```
 
 Upgrade dependencies to latest minor versions:
 
 ```bash
-yarn global add npm-check-updates
+pnpm add -g npm-check-updates
 ncu -u -t minor
 ```
 
 Upgrade dependencies to latest major versions:
 
 ```bash
-yarn global add npm-check-updates
+pnpm add -g npm-check-updates
 ncu -u -t latest
 ```
 
