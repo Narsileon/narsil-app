@@ -40,10 +40,10 @@ hooks:
     - exec: php artisan storage:link
       service: web
       directory: /var/www/html
-    - exec: pnpm i
+    - exec: yarn
       service: web
       directory: /var/www/html
-    - exec: pnpm dev
+    - exec: yarn dev
       service: web
       directory: /var/www/html
 

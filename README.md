@@ -36,13 +36,13 @@ composer outdated
 Install dependencies:
 
 ```bash
-pnpm i
+yarn install
 ```
 
 Check outdated dependencies:
 
 ```bash
-pnpm outdated
+yarn outdated
 ```
 
 Upgrade dependencies to latest minor versions:
