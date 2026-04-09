@@ -7,6 +7,16 @@ settings:
 importers:
 
   .:
+    dependencies:
+      '@narsil/base':
+        specifier: workspace:*
+        version: link:vendor/narsil/base
+      '@narsil/cms':
+        specifier: workspace:*
+        version: link:vendor/narsil/cms
+      '@narsil/cms-form':
+        specifier: workspace:*
+        version: link:vendor/narsil/cms-form
     devDependencies:
       '@eslint/eslintrc':
         specifier: ^3.3.5
@@ -35,12 +45,6 @@ importers:
       typescript:
         specifier: ^6.0.2
         version: 6.0.2
-
-  vendor/narsil/base: {}
-
-  vendor/narsil/cms: {}
-
-  vendor/narsil/cms-form: {}
 
 packages:
 
