@@ -4,3 +4,4 @@ services:
       - ../../narsil-base:/var/www/narsil-base/
       - ../../narsil-cms:/var/www/narsil-cms/
       - ../../narsil-cms-form:/var/www/narsil-cms-form/
+      - ../../narsil-skills:/var/www/narsil-skills/
