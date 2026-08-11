@@ -23,6 +23,7 @@ final class GlobalData extends Data
      * @param HeaderData $header
      * @param FooterData $footer
      * @param NavigationMenuItemData[] $navigation
+     * @param boolean $editorMode
      * @param SessionData $session
      *
      * @return void
@@ -32,6 +33,7 @@ final class GlobalData extends Data
         public HeaderData $header,
         public FooterData $footer,
         public DataCollection $navigation,
+        public bool $editorMode = false,
         public SessionData $session = new SessionData(),
     )
     {

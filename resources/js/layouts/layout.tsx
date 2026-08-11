@@ -3,8 +3,9 @@ import { Header } from "@/blocks/header";
 import { Main } from "@/blocks/main";
 import { GlobalProvider } from "@/providers/global";
 import { CSPProvider } from "@base-ui/react/csp-provider";
+import { initPreviewBridge } from "@narsil-cms/live-editor/core/preview-bridge";
 import { TranslatorProvider } from "@narsil-ui/components/translator";
-import { type ReactNode } from "react";
+import { useEffect, type ReactNode } from "react";
 
 type LayoutProps = {
   children: ReactNode & {
@@ -13,7 +14,15 @@ type LayoutProps = {
 };
 
 function Layout({ children }: LayoutProps) {
-  const { footer, navigation, nonce, page, session, translations } = children.props;
+  const { editorMode, footer, navigation, nonce, page, session, translations } = children.props;
+
+  useEffect(() => {
+    if (!editorMode) {
+      return;
+    }
+
+    return initPreviewBridge();
+  }, [editorMode]);
 
   return (
     <CSPProvider nonce={nonce}>

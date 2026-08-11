@@ -1,5 +1,6 @@
 import { Button } from "@/blocks/button";
 import type { LayoutProps } from "@/types";
+import { nodeAttributes } from "@narsil-cms/live-editor/core/preview-bridge";
 import { Container } from "@narsil-ui/components/container";
 import { FieldsetLegend, FieldSetRoot } from "@narsil-ui/components/fieldset";
 import { FormElement, FormProvider, FormRoot } from "@narsil-ui/components/form";
@@ -13,9 +14,10 @@ type FormProps = {
     steps: FormData["steps"];
   };
   layout: LayoutProps;
+  nodeId?: string;
 };
 
-function Form({ form, layout }: FormProps) {
+function Form({ form, layout, nodeId }: FormProps) {
   if (Array.isArray(form)) {
     form = form[0];
   }
@@ -35,6 +37,7 @@ function Form({ form, layout }: FormProps) {
       paddingBottom={layout.padding.bottom}
       paddingTop={layout.padding.top}
       variant={layout.size}
+      {...nodeAttributes(nodeId)}
     >
       {success ? (
         <p>{trans("ui.submited")}</p>

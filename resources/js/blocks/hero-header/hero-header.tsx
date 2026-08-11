@@ -1,6 +1,7 @@
 import { BlockRenderer } from "@/blocks";
 import { useGlobal } from "@/providers/global";
 import { LayoutProps } from "@/types";
+import { nodeAttributes } from "@narsil-cms/live-editor/core/preview-bridge";
 import { Container } from "@narsil-ui/components/container";
 import { Heading } from "@narsil-ui/components/heading";
 import { set } from "lodash-es";
@@ -15,9 +16,10 @@ type HeroHeaderProps = {
     title: string;
   };
   layout: LayoutProps;
+  nodeId?: string;
 };
 
-function HeroHeader({ buttons, excerpt, headline, layout }: HeroHeaderProps) {
+function HeroHeader({ buttons, excerpt, headline, layout, nodeId }: HeroHeaderProps) {
   const { headerHeight } = useGlobal();
 
   return (
@@ -29,6 +31,7 @@ function HeroHeader({ buttons, excerpt, headline, layout }: HeroHeaderProps) {
       style={{
         minHeight: `calc(100vh - ${headerHeight}px)`,
       }}
+      {...nodeAttributes(nodeId)}
     >
       <Heading level={headline.level} variant={headline.style}>
         {headline.title}

@@ -50,13 +50,37 @@ class InertiaMiddleware extends Middleware
      */
     public function share(Request $request): array
     {
-        $schema = $this->getDefaultSchema();
-
-        $this->setSearchPath($schema);
+        $this->setSearchPath($this->getRequestedSchema($request));
 
         return [
             ...parent::share($request),
         ];
+    }
+
+    #endregion
+
+    #region PROTECTED METHODS
+
+    /**
+     * Get the schema to read from.
+     *
+     * The live editor previews a page inside an iframe and passes the schema it
+     * is editing, so the preview shows that workspace instead of the default.
+     *
+     * @param Request $request
+     *
+     * @return string
+     */
+    protected function getRequestedSchema(Request $request): string
+    {
+        $schema = $request->query('_schema');
+
+        if (is_string($schema) && in_array($schema, $this->getSchemas()))
+        {
+            return $schema;
+        }
+
+        return $this->getDefaultSchema();
     }
 
     #endregion

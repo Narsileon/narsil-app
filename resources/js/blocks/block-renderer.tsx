@@ -3,10 +3,12 @@ import { Button } from "@/blocks/button";
 import { CallToAction } from "@/blocks/call-to-action";
 import { Form } from "@/blocks/form";
 import { HeroHeader } from "@/blocks/hero-header";
+import { type ComponentType } from "react";
 
 type BlockRendererProps = {
   block: {
     handle: string;
+    uuid?: string;
     children: Record<string, unknown>;
   };
   [key: string]: unknown;
@@ -23,9 +25,13 @@ const blocks = {
 type BlockName = keyof typeof blocks;
 
 function BlockRenderer({ block, ...props }: BlockRendererProps) {
-  const BlockComponent = blocks[block.handle as BlockName];
+  const BlockComponent = blocks[block.handle as BlockName] as
+    ComponentType<Record<string, unknown>> | undefined;
 
-  return BlockComponent ? <BlockComponent {...block.children} {...props} /> : null;
+  // nodeId lets the live editor map a rendered block back to its entity node.
+  const blockProps = { ...block.children, nodeId: block.uuid, ...props };
+
+  return BlockComponent ? <BlockComponent {...blockProps} /> : null;
 }
 
 export default BlockRenderer;

@@ -1,4 +1,5 @@
 import { LayoutProps } from "@/types";
+import { nodeAttributes } from "@narsil-cms/live-editor/core/preview-bridge";
 import {
   AccordionHeader,
   AccordionItem,
@@ -13,25 +14,28 @@ import { cn } from "@narsil-ui/lib/utils";
 
 type AccordionProps = {
   items: {
+    uuid?: string;
     children: {
       content: string;
       trigger: string;
     };
   }[];
   layout: LayoutProps;
+  nodeId?: string;
 };
 
-function Accordion({ items, layout }: AccordionProps) {
+function Accordion({ items, layout, nodeId }: AccordionProps) {
   return (
     <Container
       paddingBottom={layout.padding.bottom}
       paddingTop={layout.padding.top}
       variant={layout.size}
+      {...nodeAttributes(nodeId)}
     >
       <AccordionRoot className="w-full">
         {items.map((item, index) => {
           return (
-            <AccordionItem value={index.toString()} key={index}>
+            <AccordionItem value={index.toString()} {...nodeAttributes(item.uuid)} key={index}>
               <AccordionHeader
                 render={
                   <Heading level="h2">

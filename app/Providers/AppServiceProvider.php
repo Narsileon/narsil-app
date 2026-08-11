@@ -4,6 +4,7 @@ namespace App\Providers;
 
 #region USE
 
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\ServiceProvider;
 
 #endregion
@@ -19,7 +20,10 @@ final class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        if ($this->app->environment('local'))
+        {
+            Gate::before(fn () => true);
+        }
     }
 
     /**

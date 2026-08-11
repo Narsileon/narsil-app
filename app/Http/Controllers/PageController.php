@@ -35,6 +35,7 @@ class PageController extends Controller
         $sitePage = PageService::resolvePage($request);
 
         $data = new GlobalData(
+            editorMode: $request->boolean('_editor'),
             footer: $this->footer($sitePage),
             header: $this->header($sitePage),
             navigation: $this->navigationMenu($sitePage),

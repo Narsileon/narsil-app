@@ -33,6 +33,7 @@ declare namespace App.Http.Data {
     header: App.Http.Data.HeaderData;
     footer: App.Http.Data.FooterData;
     navigation: Array<App.Http.Data.NavigationMenuItemData>;
+    editorMode: boolean;
     session: App.Http.Data.SessionData;
     nonce: string;
     translations: { [key: string]: string };
