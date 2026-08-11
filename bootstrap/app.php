@@ -46,7 +46,7 @@ return Application::configure(basePath: dirname(__DIR__))
                 503,
             ]);
 
-            if ($isError && $request->is('admin/*'))
+            if ($isError && $request->is('narsil/*'))
             {
                 $title = trans("narsil::errors.titles.$code");
                 $description = trans("narsil::errors.descriptions.$code");
