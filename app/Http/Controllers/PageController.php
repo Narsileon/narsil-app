@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers;
 
-#region
+#region USE
 
-use App\Http\Controllers\Controller;
 use App\Http\Data\FooterData;
 use App\Http\Data\GlobalData;
 use App\Http\Data\HeaderData;
@@ -82,7 +81,9 @@ class PageController extends Controller
      */
     private function navigationMenu(SitePage $sitePage): DataCollection
     {
-        $tree = new Tree($sitePage->{SitePage::RELATION_SITE}->{Site::RELATION_PAGES}->where(SitePage::SHOW_IN_MENU, true))
+        $pages = ($sitePage->{SitePage::RELATION_SITE})->{Site::RELATION_PAGES};
+
+        $tree = new Tree($pages->where(SitePage::SHOW_IN_MENU, true))
             ->getNestedTree();
 
         return NavigationMenuItemData::collect($tree->map(function (SitePage $sitePage)
