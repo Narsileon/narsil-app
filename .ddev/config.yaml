@@ -26,6 +26,9 @@ web_extra_daemons:
   - name: "horizon"
     command: "php artisan horizon"
     directory: /var/www/html
+  - name: "vite"
+    command: "while true; do node_modules/.bin/vite --host 0.0.0.0; sleep 1; done"
+    directory: /var/www/html
 hooks:
   post-start:
     - exec: composer install
@@ -41,9 +44,6 @@ hooks:
       service: web
       directory: /var/www/html
     - exec: yarn
-      service: web
-      directory: /var/www/html
-    - exec: yarn dev
       service: web
       directory: /var/www/html
 

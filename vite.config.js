@@ -9,6 +9,8 @@ import { defineConfig, loadEnv } from "vite";
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), "");
 
+  const isProduction = mode === "production";
+
   const __dirname = dirname(fileURLToPath(import.meta.url));
 
   return {
@@ -27,10 +29,12 @@ export default defineConfig(({ mode }) => {
         refresh: true,
       }),
       inertia({
-        ssr: {
-          cluster: true,
-          entry: "resources/js/ssr.tsx",
-        },
+        ssr: isProduction
+          ? {
+              cluster: true,
+              entry: "resources/js/ssr.tsx",
+            }
+          : false,
       }),
       react(),
       tailwindcss(),
