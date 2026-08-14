@@ -9,9 +9,6 @@ use Tests\TestCase;
 
 #endregion
 
-/**
- * @author Jonathan Rigaux
- */
 final class ExampleTest extends TestCase
 {
     use RefreshDatabase;

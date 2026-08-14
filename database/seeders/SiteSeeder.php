@@ -17,9 +17,6 @@ use Narsil\Cms\Models\Sites\SitePageEntity;
 
 #endregion
 
-/**
- * @author Jonathan Rigaux
- */
 final class SiteSeeder extends Seeder
 {
     #region PUBLIC METHODS

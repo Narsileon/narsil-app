@@ -8,9 +8,6 @@ use PHPUnit\Framework\TestCase;
 
 #endregion
 
-/**
- * @author Jonathan Rigaux
- */
 final class ExampleTest extends TestCase
 {
     #region PUBLIC METHODS

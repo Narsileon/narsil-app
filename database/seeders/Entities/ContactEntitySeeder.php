@@ -18,9 +18,6 @@ use Narsil\Cms\Models\Entities\EntityNode;
 
 #endregion
 
-/**
- * @author Jonathan Rigaux
- */
 class ContactEntitySeeder extends EntitySeeder
 {
     #region PROTECTED METHODS
