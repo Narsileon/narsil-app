@@ -6,8 +6,14 @@
 
 @source "../../vendor/narsil/base/resources/js";
 @source "../../vendor/narsil/cms/resources/js";
+@source "../../resources/views";
+@source "../../app/View";
 
 @layer base {
+  [x-cloak] {
+    display: none !important;
+  }
+
   * {
     @apply border-border outline-primary;
   }

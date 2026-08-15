@@ -6,20 +6,17 @@ namespace App\Http\Controllers;
 
 #region USE
 
-use App\Http\Data\FooterData;
-use App\Http\Data\GlobalData;
-use App\Http\Data\HeaderData;
-use App\Http\Data\NavigationMenuItemData;
-use App\Http\Data\SitePageData;
+use App\Http\Resources\FooterResource;
+use App\Http\Resources\HeaderResource;
+use App\Http\Resources\NavigationResource;
+use App\Http\Resources\SitePageResource;
+use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
-use Inertia\Inertia;
-use Inertia\Response;
 use Narsil\Base\Narsil;
 use Narsil\Cms\Models\Sites\Site;
 use Narsil\Cms\Models\Sites\SitePage;
 use Narsil\Cms\Services\PageService;
 use Narsil\Cms\Support\Tree;
-use Spatie\LaravelData\DataCollection;
 
 #endregion
 
@@ -30,21 +27,22 @@ class PageController extends Controller
     /**
      * @param Request $request
      *
-     * @return Response
+     * @return View
      */
-    public function __invoke(Request $request): Response
+    public function __invoke(Request $request): View
     {
         $sitePage = PageService::resolvePage($request, $this->getPreviewLocale($request));
 
-        $data = new GlobalData(
-            editorMode: $request->boolean('_editor'),
-            footer: $this->footer($sitePage),
-            header: $this->header($sitePage),
-            navigation: $this->navigationMenu($sitePage),
-            page: $this->page($sitePage),
-        );
+        $data = [
+            'editorMode' => $request->boolean('_editor'),
+            'footer' => $this->footer($sitePage, $request),
+            'header' => $this->header($sitePage, $request),
+            'navigation' => $this->navigationMenu($sitePage, $request),
+            'page' => $this->page($sitePage, $request),
+            'session' => $this->session(),
+        ];
 
-        return Inertia::render('frontend/index', $data);
+        return view('pages.frontend.index', $data);
     }
 
     #endregion
@@ -75,56 +73,73 @@ class PageController extends Controller
      * Get the footer data.
      *
      * @param SitePage $sitePage
+     * @param Request $request
      *
-     * @return FooterData
+     * @return array
      */
-    private function footer(SitePage $sitePage): FooterData
+    private function footer(SitePage $sitePage, Request $request): array
     {
-        return FooterData::from($sitePage->{SitePage::RELATION_SITE}->{Site::RELATION_FOOTER});
+        return (new FooterResource($sitePage->{SitePage::RELATION_SITE}->{Site::RELATION_FOOTER}))->toArray($request);
     }
 
     /**
      * Get the header data.
      *
      * @param SitePage $sitePage
+     * @param Request $request
      *
-     * @return HeaderData
+     * @return array
      */
-    private function header(SitePage $sitePage): HeaderData
+    private function header(SitePage $sitePage, Request $request): array
     {
-        return HeaderData::from($sitePage->{SitePage::RELATION_SITE}->{Site::RELATION_HEADER});
+        return (new HeaderResource(null))->toArray($request);
     }
 
     /**
      * Get the navigation menu data.
      *
      * @param SitePage $sitePage
+     * @param Request $request
      *
-     * @return DataCollection
+     * @return array
      */
-    private function navigationMenu(SitePage $sitePage): DataCollection
+    private function navigationMenu(SitePage $sitePage, Request $request): array
     {
         $pages = ($sitePage->{SitePage::RELATION_SITE})->{Site::RELATION_PAGES};
 
         $tree = new Tree($pages->where(SitePage::SHOW_IN_MENU, true))
             ->getNestedTree();
 
-        return NavigationMenuItemData::collect($tree->map(function (SitePage $sitePage)
+        return $tree->map(function (SitePage $sitePage) use ($request): array
         {
-            return NavigationMenuItemData::from($sitePage);
-        }), DataCollection::class);
+            return (new NavigationResource($sitePage))->toArray($request);
+        })->all();
     }
 
     /**
      * Get the page data.
      *
      * @param SitePage $sitePage
+     * @param Request $request
      *
-     * @return SitePageData
+     * @return array
      */
-    private function page(SitePage $sitePage): SitePageData
+    private function page(SitePage $sitePage, Request $request): array
     {
-        return SitePageData::from($sitePage);
+        return (new SitePageResource($sitePage))->toArray($request);
+    }
+
+    /**
+     * Get the frontend session data.
+     *
+     * @return array<string,string>
+     */
+    private function session(): array
+    {
+        return [
+            'locale' => app()->getLocale(),
+            'url' => config('app.url'),
+        ];
     }
 
     #endregion

@@ -8,7 +8,7 @@
     "vendor/narsil/cms-form"
   ],
   "scripts": {
-    "build": "vite build && vite build --ssr",
+    "build": "vite build",
     "dev": "vite",
     "format:check": "prettier --check resources/js/**/*.{ts,tsx} vendor/narsil/cms/resources/js/**/*.{ts,tsx}",
     "format:write": "prettier --write resources/js/**/*.{ts,tsx} vendor/narsil/cms/resources/js/**/*.{ts,tsx}",

@@ -1,0 +1,92 @@
+<?php
+
+declare(strict_types=1);
+
+namespace App\View\Components;
+
+#region USE
+
+use Illuminate\View\Component;
+
+#endregion
+
+final class HeroHeader extends Component
+{
+    #region CONSTRUCTOR
+
+    /**
+     * @param array<string,mixed> $data
+     * @param string|null $nodeId
+     * @param string $paddingBottom
+     * @param string $paddingTop
+     *
+     * @return void
+     */
+    public function __construct(
+        array $data,
+        ?string $nodeId = null,
+        string $paddingBottom = '',
+        string $paddingTop = '',
+    )
+    {
+        $headlineStyle = $data['headline']['style'] ?? 'h1';
+
+        $this->blockData = $data;
+        $this->headlineStyle = match ($headlineStyle)
+        {
+            'h1' => 'text-4xl md:text-5xl',
+            'h2' => 'text-3xl md:text-4xl',
+            'h3' => 'text-2xl md:text-3xl',
+            'h4' => 'text-xl md:text-2xl',
+            'h5' => 'text-lg md:text-xl',
+            'h6' => 'text-base md:text-lg',
+            default => 'text-4xl md:text-5xl',
+        };
+        $this->nodeId = $nodeId;
+        $this->paddingBottom = $paddingBottom;
+        $this->paddingTop = $paddingTop;
+    }
+
+    #endregion
+
+    #region PROPERTIES
+
+    /**
+     * @var array<string,mixed>
+     */
+    public readonly array $blockData;
+
+    /**
+     * @var string
+     */
+    public readonly string $headlineStyle;
+
+    /**
+     * @var string|null
+     */
+    public readonly ?string $nodeId;
+
+    /**
+     * @var string
+     */
+    public readonly string $paddingBottom;
+
+    /**
+     * @var string
+     */
+    public readonly string $paddingTop;
+
+    #endregion
+
+    #region PUBLIC METHODS
+
+    /**
+     * @return string
+     */
+    public function render(): string
+    {
+        return 'components.hero-header';
+    }
+
+    #endregion
+}

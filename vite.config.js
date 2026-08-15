@@ -1,4 +1,3 @@
-import inertia from "@inertiajs/vite";
 import tailwindcss from "@tailwindcss/vite";
 import react from "@vitejs/plugin-react";
 import laravel from "laravel-vite-plugin";
@@ -8,8 +7,6 @@ import { defineConfig, loadEnv } from "vite";
 
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), "");
-
-  const isProduction = mode === "production";
 
   const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -24,17 +21,9 @@ export default defineConfig(({ mode }) => {
           "resources/css/backend.css",
           "resources/css/frontend.css",
           "resources/js/backend.tsx",
-          "resources/js/frontend.tsx",
+          "resources/js/frontend.ts",
         ],
         refresh: true,
-      }),
-      inertia({
-        ssr: isProduction
-          ? {
-              cluster: true,
-              entry: "resources/js/ssr.tsx",
-            }
-          : false,
       }),
       react(),
       tailwindcss(),

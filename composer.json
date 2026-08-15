@@ -38,11 +38,10 @@
     ],
     "require": {
         "laravel/nightwatch": "^1.28",
+        "livewire/livewire": "^3.0",
         "narsil/base": "dev-main",
         "narsil/cms": "dev-main",
-        "narsil/cms-form": "dev-main",
-        "spatie/laravel-data": "^4.23",
-        "spatie/laravel-typescript-transformer": "^3.3"
+        "narsil/cms-form": "dev-main"
     },
     "require-dev": {
         "fakerphp/faker": "^1.24",

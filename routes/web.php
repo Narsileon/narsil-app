@@ -3,13 +3,13 @@
 #region USE
 
 use App\Http\Controllers\PageController;
-use App\Http\Middlewares\InertiaMiddleware;
+use App\Http\Middlewares\FrontendSchemaMiddleware;
 use Illuminate\Support\Facades\Route;
 
 #endregion
 
 Route::middleware([
-    InertiaMiddleware::class,
+    FrontendSchemaMiddleware::class,
 ])->group(function ()
 {
     Route::get('/', function ()
@@ -18,9 +18,9 @@ Route::middleware([
     });
 
     Route::get('/{path?}', PageController::class)
-        ->where('path', '.*');
+        ->where('path', '^(?!narsil(?:/|$)).*');
 
     Route::domain('{subdomain}')
         ->get('/{path?}', PageController::class)
-        ->where('path', '.*');
+        ->where('path', '^(?!narsil(?:/|$)).*');
 });
