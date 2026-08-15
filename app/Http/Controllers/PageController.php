@@ -12,6 +12,7 @@ use App\Http\Data\SitePageData;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 use Inertia\Response;
+use Narsil\Base\Narsil;
 use Narsil\Cms\Models\Sites\Site;
 use Narsil\Cms\Models\Sites\SitePage;
 use Narsil\Cms\Services\PageService;
@@ -31,7 +32,7 @@ class PageController extends Controller
      */
     public function __invoke(Request $request): Response
     {
-        $sitePage = PageService::resolvePage($request);
+        $sitePage = PageService::resolvePage($request, $this->getPreviewLocale($request));
 
         $data = new GlobalData(
             editorMode: $request->boolean('_editor'),
@@ -47,6 +48,26 @@ class PageController extends Controller
     #endregion
 
     #region PRIVATE METHODS
+
+    /**
+     * Get the language requested by the live-editor preview.
+     *
+     * @param Request $request
+     *
+     * @return string|null
+     */
+    private function getPreviewLocale(Request $request): ?string
+    {
+        $language = $request->query('_preview_language');
+        $locale = null;
+
+        if (is_string($language) && in_array($language, app(Narsil::class)->getLocales(), true))
+        {
+            $locale = $language;
+        }
+
+        return $locale;
+    }
 
     /**
      * Get the footer data.
