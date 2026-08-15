@@ -81,7 +81,7 @@ final class SitePageData extends Data
     /**
      * @param SitePage $sitePage
      *
-     * @return static
+     * @return self
      */
     public static function fromModel(SitePage $sitePage): self
     {
