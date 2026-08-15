@@ -14,7 +14,9 @@
 				class="group/accordion-trigger relative flex w-full flex-1 cursor-pointer items-start justify-between rounded-lg border border-transparent py-2.5 text-left text-sm font-medium outline-none transition-all hover:underline focus-visible:underline"
 				type="button"
 			>
-				<span>{{ $item['children']['trigger'] }}</span>
+				<span>
+					{{ $item['children']['trigger'] }}
+				</span>
 				<svg
 					:class="active === {{ $index }} ? 'rotate-180' : ''"
 					aria-hidden="true"
@@ -39,7 +41,9 @@
 			>
 				<div
 					class="prose [&_a]:underline-offset-3 [&_a]:hover:text-foreground pb-2.5 pt-0 [&_a]:underline [&_p:not(:last-child)]:mb-4"
-				>{!! $item['children']['content'] !!}</div>
+				>
+					{!! $item['children']['content'] !!}
+				</div>
 			</div>
 		</div>
 	@endforeach

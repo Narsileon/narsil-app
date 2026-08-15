@@ -1,5 +1,8 @@
-<span class="font-bold">
-	{{ $label }}@if ($required)
+<span
+	class="font-bold"
+>
+	{{ $label }}
+	@if ($required)
 		*
 	@endif
 </span>

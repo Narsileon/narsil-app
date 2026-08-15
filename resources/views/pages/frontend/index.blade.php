@@ -62,40 +62,58 @@
 		<a
 			class="text-lg font-bold"
 			href="{{ url('/') }}"
-		>NARSIL</a>
+		>
+			NARSIL
+		</a>
 		<button
 			@click="open = !open"
 			aria-label="Toggle navigation"
 			class="md:hidden"
 			type="button"
 		>
-			<span aria-hidden="true">☰</span>
+			<span
+				aria-hidden="true"
+			>
+				☰
+			</span>
 		</button>
 		<nav
 			:class="open ? 'block' : 'hidden md:block'"
 			class="bg-layout absolute left-0 right-0 top-full p-4 md:static md:block md:bg-transparent md:p-0"
 		>
-			<ul class="flex flex-col gap-4 font-bold md:flex-row lg:gap-8">
+			<ul
+				class="flex flex-col gap-4 font-bold md:flex-row lg:gap-8"
+			>
 				@foreach ($navigation[0]['children'] ?? [] as $item)
 					<li>
 						<a
 							class="{{ str_starts_with($session['url'], $item['url']) ? 'underline' : '' }}"
 							href="{{ $item['url'] }}"
-						>{{ $item['title'] }}</a>
+						>
+							{{ $item['title'] }}
+						</a>
 					</li>
 				@endforeach
 			</ul>
 		</nav>
 	</header>
-	<main class="bg-background text-foreground flex h-fit min-h-svh flex-col items-center justify-center">
-		<div class="w-full">
+	<main
+		class="bg-background text-foreground flex h-fit min-h-svh flex-col items-center justify-center"
+	>
+		<div
+			class="w-full"
+		>
 			@foreach ($page['data'] ?? [] as $element)
 				@if (is_array($element) && array_is_list($element))
 					@foreach ($element as $block)
-                        <x-block-renderer :block="$block" />
+						<x-block-renderer
+							:block="$block"
+						/>
 					@endforeach
 				@elseif (is_array($element))
-                    <x-block-renderer :block="$element" />
+					<x-block-renderer
+						:block="$element"
+					/>
 				@endif
 			@endforeach
 		</div>
@@ -103,31 +121,71 @@
 	<footer
 		class="bg-layout text-layout-foreground mx-auto flex w-full flex-col gap-6 p-4 md:gap-8 md:px-4 md:pt-6 lg:gap-10 lg:px-14 lg:pt-6 xl:px-20 xl:pt-8"
 	>
-		<div class="flex flex-col justify-between gap-6 sm:flex-row">
-			<div class="flex flex-col gap-6 md:gap-8 lg:gap-10">
+		<div
+			class="flex flex-col justify-between gap-6 sm:flex-row"
+		>
+			<div
+				class="flex flex-col gap-6 md:gap-8 lg:gap-10"
+			>
 				<a
 					class="text-lg font-bold"
 					href="{{ url('/') }}"
-				>NARSIL</a>
-				<div class="flex flex-row gap-10">
-					<div class="flex flex-col gap-0.5 lg:gap-2">
-						<p class="font-bold">{{ $footer['organization'] }}</p>
-						<p class="flex flex-col gap-0.5"><span>{{ $footer['street'] }}</span><span>{{ $footer['postal_code'] }}
-								{{ $footer['city'] }} - {{ $footer['country'] }}</span></p>
+				>
+					NARSIL
+				</a>
+				<div
+					class="flex flex-row gap-10"
+				>
+					<div
+						class="flex flex-col gap-0.5 lg:gap-2"
+					>
+						<p
+							class="font-bold"
+						>
+							{{ $footer['organization'] }}
+						</p>
+						<p
+							class="flex flex-col gap-0.5"
+						>
+							<span>
+								{{ $footer['street'] }}
+							</span>
+							<span>
+								{{ $footer['postal_code'] }}
+								{{ $footer['city'] }} - {{ $footer['country'] }}
+							</span>
+						</p>
 					</div>
-					<div class="flex flex-col justify-end"><a href="mailto:{{ $footer['email'] }}">{{ $footer['email'] }}</a><a
+					<div
+						class="flex flex-col justify-end"
+					>
+						<a
+							href="mailto:{{ $footer['email'] }}"
+						>
+							{{ $footer['email'] }}
+						</a>
+						<a
 							href="tel:{{ preg_replace('/\s+/', '', $footer['phone'] ?? '') }}"
-						>{{ $footer['phone'] }}</a></div>
+						>
+							{{ $footer['phone'] }}
+						</a>
+					</div>
 				</div>
 			</div>
-			<div class="flex flex-row justify-between gap-6 sm:flex-col-reverse md:gap-8 lg:gap-10">
-				<div class="flex justify-end gap-6">
+			<div
+				class="flex flex-row justify-between gap-6 sm:flex-col-reverse md:gap-8 lg:gap-10"
+			>
+				<div
+					class="flex justify-end gap-6"
+				>
 					@foreach ($footer['social_media'] as $social)
 						<a
 							aria-label="{{ $social['label'] }}"
 							href="{{ $social['url'] }}"
 							target="_blank"
-						>{{ $social['label'] }}</a>
+						>
+							{{ $social['label'] }}
+						</a>
 					@endforeach
 				</div>
 				<div
@@ -140,7 +198,9 @@
 						aria-haspopup="menu"
 						class="hover:bg-background/10 inline-flex items-center gap-2 rounded-md px-2 py-1 font-bold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-current"
 						type="button"
-					>🌐 {{ $page['urls'][0]['display_language'] ?? $session['locale'] }}<svg
+					>
+						🌐 {{ $page['urls'][0]['display_language'] ?? $session['locale'] }}
+						<svg
 							:class="open ? 'rotate-180' : ''"
 							aria-hidden="true"
 							class="size-4 transition-transform"
@@ -154,7 +214,8 @@
 								stroke-linecap="round"
 								stroke-linejoin="round"
 							/>
-						</svg></button>
+						</svg>
+					</button>
 					<div
 						@click.outside="open = false"
 						@keydown.escape.window="open = false"
@@ -169,7 +230,9 @@
 								class="hover:bg-accent hover:text-accent-foreground focus:bg-accent block rounded-sm px-3 py-2 text-sm transition-colors focus:outline-none"
 								href="{{ $url['url'] }}"
 								role="menuitem"
-							>{{ $url['display_language'] }}</a>
+							>
+								{{ $url['display_language'] }}
+							</a>
 						@endforeach
 					</div>
 				</div>
@@ -178,10 +241,18 @@
 		<div
 			class="flex flex-col flex-wrap items-center gap-2 border-t border-slate-200 pt-4 text-sm text-slate-700 md:flex-row md:justify-between lg:gap-x-8"
 		>
-			<div>©{{ date('Y') }} {{ $footer['organization'] }}. {{ $footer['copyright'] }}</div>
-			<nav class="flex gap-4">
+			<div>
+				©{{ date('Y') }} {{ $footer['organization'] }}. {{ $footer['copyright'] }}
+			</div>
+			<nav
+				class="flex gap-4"
+			>
 				@foreach ($footer['links'] as $link)
-					<a href="{{ $link['url'] }}">{{ $link['label'] }}</a>
+					<a
+						href="{{ $link['url'] }}"
+					>
+						{{ $link['label'] }}
+					</a>
 				@endforeach
 			</nav>
 		</div>

@@ -64,8 +64,12 @@
     }
 }"
 >
-	<template x-if="submitted">
-		<p>{{ __('ui.submited') }}</p>
+	<template
+		x-if="submitted"
+	>
+		<p>
+			{{ __('ui.submited') }}
+		</p>
 	</template>
 	<form
 		@submit="handleSubmit"
@@ -94,13 +98,25 @@
 				x-cloak
 				x-show="step === {{ $stepIndex }}"
 			>
-				<h2 class="col-span-full text-center text-2xl font-bold">{{ $stepData['label'] ?? '' }}</h2>
+				<h2
+					class="col-span-full text-center text-2xl font-bold"
+				>
+					{{ $stepData['label'] ?? '' }}
+				</h2>
 				@foreach ($stepData['elements'] ?? [] as $element)
 					@if (isset($element['input']))
-						<x-form.field :field="$element" />
+						<x-form.field
+							:field="$element"
+						/>
 					@else
-						<fieldset class="col-span-full grid grid-cols-12 gap-4">
-							<legend class="col-span-full font-bold">{{ $element['label'] ?? '' }}</legend>
+						<fieldset
+							class="col-span-full grid grid-cols-12 gap-4"
+						>
+							<legend
+								class="col-span-full font-bold"
+							>
+								{{ $element['label'] ?? '' }}
+							</legend>
 							@foreach ($element['elements'] ?? [] as $fieldsetElement)
 								<x-form.field
 									:field="$fieldsetElement"
@@ -110,25 +126,33 @@
 						</fieldset>
 					@endif
 				@endforeach
-				<div class="col-span-full flex flex-row-reverse items-center justify-between">
+				<div
+					class="col-span-full flex flex-row-reverse items-center justify-between"
+				>
 					@if ($stepIndex < count($steps) - 1)
 						<button
 							class="bg-primary text-primary-foreground rounded-md px-4 py-2"
 							type="submit"
-						>{{ __('narsil::ui.next') }}</button>
+						>
+							{{ __('narsil::ui.next') }}
+						</button>
 					@else
 						<button
 							:disabled="submitting"
 							class="bg-primary text-primary-foreground rounded-md px-4 py-2"
 							type="submit"
-						>{{ __('ui.submit') }}</button>
+						>
+							{{ __('ui.submit') }}
+						</button>
 					@endif
 					@if ($stepIndex > 0)
 						<button
 							@click="step--"
 							class="px-4 py-2"
 							type="button"
-						>{{ __('narsil::ui.previous') }}</button>
+						>
+							{{ __('narsil::ui.previous') }}
+						</button>
 					@endif
 				</div>
 			</div>
