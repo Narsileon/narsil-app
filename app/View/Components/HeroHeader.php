@@ -29,19 +29,7 @@ final class HeroHeader extends Component
         string $paddingTop = '',
     )
     {
-        $headlineStyle = $data['headline']['style'] ?? 'h1';
-
         $this->blockData = $data;
-        $this->headlineStyle = match ($headlineStyle)
-        {
-            'h1' => 'text-4xl md:text-5xl',
-            'h2' => 'text-3xl md:text-4xl',
-            'h3' => 'text-2xl md:text-3xl',
-            'h4' => 'text-xl md:text-2xl',
-            'h5' => 'text-lg md:text-xl',
-            'h6' => 'text-base md:text-lg',
-            default => 'text-4xl md:text-5xl',
-        };
         $this->nodeId = $nodeId;
         $this->paddingBottom = $paddingBottom;
         $this->paddingTop = $paddingTop;
@@ -55,11 +43,6 @@ final class HeroHeader extends Component
      * @var array<string,mixed>
      */
     public readonly array $blockData;
-
-    /**
-     * @var string
-     */
-    public readonly string $headlineStyle;
 
     /**
      * @var string|null

@@ -21,11 +21,11 @@
 	@yield('head')
 </head>
 
-	<body
-		class="text-base antialiased"
-		data-editor-mode="{{ $editorMode ?? false ? 'true' : 'false' }}"
-	>
-		@yield('body')
-	</body>
+<body
+	class="text-base antialiased"
+	data-editor-mode="{{ $editorMode ?? false ? 'true' : 'false' }}"
+>
+	@yield('body')
+</body>
 
 </html>

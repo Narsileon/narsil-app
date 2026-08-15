@@ -1,7 +1,7 @@
 <svg
 	{{ $attributes->merge([
 	    'aria-hidden' => 'true',
-		'class' => 'size-5',
+	    'class' => 'size-5',
 	    'fill' => 'none',
 	    'viewBox' => '0 0 24 24',
 	]) }}

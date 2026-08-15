@@ -1,5 +1,7 @@
-<section
-	class="{{ $paddingTop }} {{ $paddingBottom }} mx-auto flex w-full max-w-7xl flex-col items-center gap-4 px-4"
+<x-ui.container
+	:padding-bottom="$paddingBottom"
+	:padding-top="$paddingTop"
+	class="flex flex-col items-center gap-4"
 	data-narsil-node="{{ $nodeId }}"
 	x-data="{ active: null }"
 >
@@ -40,4 +42,4 @@
 			</div>
 		</div>
 	@endforeach
-</section>
+</x-ui.container>

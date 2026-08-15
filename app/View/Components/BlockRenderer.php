@@ -6,7 +6,6 @@ namespace App\View\Components;
 
 #region USE
 
-use App\View\Helpers\BlockLayoutHelper;
 use Illuminate\View\Component;
 
 #endregion
@@ -17,11 +16,9 @@ final class BlockRenderer extends Component
 
     /**
      * @param array<string,mixed> $block
-     * @param BlockLayoutHelper $layoutHelper
-     *
      * @return void
      */
-    public function __construct(array $block, BlockLayoutHelper $layoutHelper)
+    public function __construct(array $block)
     {
         $handle = $block['handle'] ?? null;
 
@@ -38,10 +35,10 @@ final class BlockRenderer extends Component
         $this->blockData = $block['children'] ?? [];
         $this->nodeId = $block['uuid'] ?? null;
 
-        $layout = $layoutHelper->padding($this->blockData['layout']['padding'] ?? []);
+        $padding = $this->blockData['layout']['padding'] ?? [];
 
-        $this->paddingBottom = $layout['paddingBottom'];
-        $this->paddingTop = $layout['paddingTop'];
+        $this->paddingBottom = is_string($padding['bottom'] ?? null) ? $padding['bottom'] : '';
+        $this->paddingTop = is_string($padding['top'] ?? null) ? $padding['top'] : '';
     }
 
     #endregion

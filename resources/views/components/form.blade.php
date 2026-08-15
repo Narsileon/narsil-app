@@ -1,9 +1,10 @@
-<section
-	class="{{ $paddingTop }} {{ $paddingBottom }} mx-auto w-full max-w-7xl px-4"
+<x-ui.container
+	:padding-bottom="$paddingBottom"
+	:padding-top="$paddingTop"
 	data-narsil-node="{{ $nodeId }}"
 	x-data="{
     step: 0,
-    submitted: @js($submitted),
+    submitted: {{ Js::from($submitted) }},
     submitting: false,
     validateStep(stepIndex = this.step, report = true) {
         const stepElement = Array.from(this.$refs.form.querySelectorAll('[data-form-step]')).find((element) => element.dataset.formStep === String(stepIndex));
@@ -129,31 +130,31 @@
 				<div
 					class="col-span-full flex flex-row-reverse items-center justify-between"
 				>
-				@if ($stepIndex < count($steps) - 1)
-					<x-ui.button
-						type="submit"
-					>
-						{{ __('narsil::ui.next') }}
-					</x-ui.button>
-				@else
-					<x-ui.button
-						x-bind:disabled="submitting"
-						type="submit"
-					>
-						{{ __('ui.submit') }}
-					</x-ui.button>
-				@endif
-				@if ($stepIndex > 0)
-					<x-ui.button
-						@click="step--"
-						variant="ghost"
-						type="button"
-					>
-						{{ __('narsil::ui.previous') }}
-					</x-ui.button>
+					@if ($stepIndex < count($steps) - 1)
+						<x-ui.button
+							type="submit"
+						>
+							{{ __('narsil::ui.next') }}
+						</x-ui.button>
+					@else
+						<x-ui.button
+							type="submit"
+							x-bind:disabled="submitting"
+						>
+							{{ __('ui.submit') }}
+						</x-ui.button>
+					@endif
+					@if ($stepIndex > 0)
+						<x-ui.button
+							@click="step--"
+							type="button"
+							variant="ghost"
+						>
+							{{ __('narsil::ui.previous') }}
+						</x-ui.button>
 					@endif
 				</div>
 			</div>
 		@endforeach
 	</form>
-</section>
+</x-ui.container>

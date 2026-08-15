@@ -1,9 +1,11 @@
-<section
-	class="{{ $paddingTop }} {{ $paddingBottom }} mx-auto flex w-full max-w-7xl justify-center px-4"
+<x-ui.container
+	:padding-bottom="$paddingBottom"
+	:padding-top="$paddingTop"
+	class="flex justify-center"
 	data-narsil-node="{{ $nodeId }}"
 >
 	<x-button
 		:data="$data"
 		:node-id="$nodeId"
 	/>
-</section>
+</x-ui.container>
