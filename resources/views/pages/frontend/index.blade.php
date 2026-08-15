@@ -71,11 +71,7 @@
 			class="md:hidden"
 			type="button"
 		>
-			<span
-				aria-hidden="true"
-			>
-				☰
-			</span>
+			<x-icons.menu />
 		</button>
 		<nav
 			:class="open ? 'block' : 'hidden md:block'"
@@ -184,7 +180,10 @@
 							href="{{ $social['url'] }}"
 							target="_blank"
 						>
-							{{ $social['label'] }}
+							<x-dynamic-component
+								:component="'icons.' . $social['icon']"
+								class="text-primary transition-colors hover:text-primary/80"
+							/>
 						</a>
 					@endforeach
 				</div>
@@ -199,22 +198,12 @@
 						class="hover:bg-background/10 inline-flex items-center gap-2 rounded-md px-2 py-1 font-bold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-current"
 						type="button"
 					>
-						🌐 {{ $page['urls'][0]['display_language'] ?? $session['locale'] }}
-						<svg
+						<x-icons.globe class="text-primary" />
+						{{ $page['urls'][0]['display_language'] ?? $session['locale'] }}
+						<x-icons.chevron-down
 							:class="open ? 'rotate-180' : ''"
-							aria-hidden="true"
-							class="size-4 transition-transform"
-							fill="none"
-							stroke-width="2"
-							stroke="currentColor"
-							viewBox="0 0 24 24"
-						>
-							<path
-								d="m6 9 6 6 6-6"
-								stroke-linecap="round"
-								stroke-linejoin="round"
-							/>
-						</svg>
+							class="text-primary transition-transform"
+						/>
 					</button>
 					<div
 						@click.outside="open = false"

@@ -1,6 +1,4 @@
-<span
-	class="font-bold"
->
+<span>
 	{{ $label }}
 	@if ($required)
 		*

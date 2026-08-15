@@ -22,7 +22,7 @@
 </head>
 
 <body
-	class="text-sm antialiased"
+	class="text-base antialiased"
 	data-editor-mode="{{ $editorMode ?? false ? 'true' : 'false' }}"
 >
 	@yield('body')

@@ -129,30 +129,28 @@
 				<div
 					class="col-span-full flex flex-row-reverse items-center justify-between"
 				>
-					@if ($stepIndex < count($steps) - 1)
-						<button
-							class="bg-primary text-primary-foreground rounded-md px-4 py-2"
-							type="submit"
-						>
-							{{ __('narsil::ui.next') }}
-						</button>
-					@else
-						<button
-							:disabled="submitting"
-							class="bg-primary text-primary-foreground rounded-md px-4 py-2"
-							type="submit"
-						>
-							{{ __('ui.submit') }}
-						</button>
-					@endif
-					@if ($stepIndex > 0)
-						<button
-							@click="step--"
-							class="px-4 py-2"
-							type="button"
-						>
-							{{ __('narsil::ui.previous') }}
-						</button>
+				@if ($stepIndex < count($steps) - 1)
+					<x-ui.button
+						type="submit"
+					>
+						{{ __('narsil::ui.next') }}
+					</x-ui.button>
+				@else
+					<x-ui.button
+						x-bind:disabled="submitting"
+						type="submit"
+					>
+						{{ __('ui.submit') }}
+					</x-ui.button>
+				@endif
+				@if ($stepIndex > 0)
+					<x-ui.button
+						@click="step--"
+						variant="ghost"
+						type="button"
+					>
+						{{ __('narsil::ui.previous') }}
+					</x-ui.button>
 					@endif
 				</div>
 			</div>
