@@ -17,32 +17,25 @@
 				<span>
 					{{ $item['children']['trigger'] }}
 				</span>
-				<svg
+				<x-icons.chevron-down
 					:class="active === {{ $index }} ? 'rotate-180' : ''"
-					aria-hidden="true"
-					class="pointer-events-none size-4 shrink-0 transition-transform duration-300"
-					fill="none"
-					stroke-width="2"
-					stroke="currentColor"
-					viewBox="0 0 24 24"
-				>
-					<path
-						d="m6 9 6 6 6-6"
-						stroke-linecap="round"
-						stroke-linejoin="round"
-					/>
-				</svg>
+					class="pointer-events-none size-5 shrink-0 transition-transform duration-300"
+				/>
 			</button>
 			<div
-				class="overflow-hidden text-sm"
-				x-cloak
-				x-show="active === {{ $index }}"
-				x-transition
+				:aria-hidden="active !== {{ $index }}"
+				:class="active === {{ $index }} ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'"
+				:inert="active !== {{ $index }}"
+				class="grid overflow-hidden text-sm transition-[grid-template-rows,opacity] duration-300 ease-out"
 			>
 				<div
-					class="prose [&_a]:underline-offset-3 [&_a]:hover:text-foreground pb-2.5 pt-0 [&_a]:underline [&_p:not(:last-child)]:mb-4"
+					class="min-h-0"
 				>
-					{!! $item['children']['content'] !!}
+					<div
+						class="prose [&_a]:underline-offset-3 [&_a]:hover:text-foreground pb-2.5 pt-0 [&_a]:underline [&_p:not(:last-child)]:mb-4"
+					>
+						{!! $item['children']['content'] !!}
+					</div>
 				</div>
 			</div>
 		</div>
