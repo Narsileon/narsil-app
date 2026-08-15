@@ -21,15 +21,11 @@
 	@yield('head')
 </head>
 
-<body
-	class="text-base antialiased"
-	data-editor-mode="{{ $editorMode ?? false ? 'true' : 'false' }}"
->
-	@yield('body')
-	<script
-		defer
-		src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
-	></script>
-</body>
+	<body
+		class="text-base antialiased"
+		data-editor-mode="{{ $editorMode ?? false ? 'true' : 'false' }}"
+	>
+		@yield('body')
+	</body>
 
 </html>

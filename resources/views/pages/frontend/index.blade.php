@@ -143,10 +143,14 @@
 						<p
 							class="flex flex-col gap-0.5"
 						>
-							<span>
+							<span
+								class="min-h-6"
+							>
 								{{ $footer['street'] }}
 							</span>
-							<span>
+							<span
+								class="min-h-6"
+							>
 								{{ $footer['postal_code'] }}
 								{{ $footer['city'] }} - {{ $footer['country'] }}
 							</span>
@@ -156,11 +160,13 @@
 						class="flex flex-col justify-end"
 					>
 						<a
+							class="min-h-6"
 							href="mailto:{{ $footer['email'] }}"
 						>
 							{{ $footer['email'] }}
 						</a>
 						<a
+							class="min-h-6"
 							href="tel:{{ preg_replace('/\s+/', '', $footer['phone'] ?? '') }}"
 						>
 							{{ $footer['phone'] }}
@@ -182,7 +188,7 @@
 						>
 							<x-dynamic-component
 								:component="'icons.' . $social['icon']"
-								class="text-primary transition-colors hover:text-primary/80"
+								class="text-primary hover:text-primary/80 transition-colors"
 							/>
 						</a>
 					@endforeach
@@ -198,7 +204,9 @@
 						class="hover:bg-background/10 inline-flex items-center gap-2 rounded-md px-2 py-1 font-bold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-current"
 						type="button"
 					>
-						<x-icons.globe class="text-primary" />
+						<x-icons.globe
+							class="text-primary"
+						/>
 						{{ $page['urls'][0]['display_language'] ?? $session['locale'] }}
 						<x-icons.chevron-down
 							:class="open ? 'rotate-180' : ''"
