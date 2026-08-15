@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Providers;
 
 #region USE
@@ -22,7 +24,7 @@ final class AppServiceProvider extends ServiceProvider
     {
         if ($this->app->environment('local'))
         {
-            Gate::before(fn () => true);
+            Gate::before(fn() => true);
         }
     }
 
