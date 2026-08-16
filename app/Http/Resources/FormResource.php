@@ -37,9 +37,9 @@ final class FormResource extends JsonResource
         $form = $this->resource;
 
         return [
-            'id' => $form->{Form::ID},
-            'slug' => $form->{Form::SLUG},
-            'steps' => $form->{Form::RELATION_STEPS}->map(function (FormStep $step): array
+            Form::ID => $form->{Form::ID},
+            Form::SLUG => $form->{Form::SLUG},
+            Form::RELATION_STEPS => $form->{Form::RELATION_STEPS}->map(function (FormStep $step): array
             {
                 return FormStepData::fromElement($step)->toArray();
             })->all(),

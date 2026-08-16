@@ -33,9 +33,9 @@ final class SiteUrlResource extends JsonResource
         $language = $url->{SiteUrl::RELATION_HOST_LOCALE_LANGUAGE};
 
         return [
-            'display_language' => $language->{HostLocaleLanguage::ATTRIBUTE_DISPLAY_LANGUAGE},
-            'language' => $language->{HostLocaleLanguage::LANGUAGE},
-            'url' => $url->{SiteUrl::URL},
+            HostLocaleLanguage::ATTRIBUTE_DISPLAY_LANGUAGE => $language->{HostLocaleLanguage::ATTRIBUTE_DISPLAY_LANGUAGE},
+            HostLocaleLanguage::LANGUAGE => $language->{HostLocaleLanguage::LANGUAGE},
+            SiteUrl::URL => $url->{SiteUrl::URL},
         ];
     }
 

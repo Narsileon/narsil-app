@@ -32,31 +32,31 @@ final class FooterResource extends JsonResource
         $footer = $this->resource;
 
         return [
-            'city' => $footer->{Footer::CITY},
-            'copyright' => $footer->{Footer::COPYRIGHT},
-            'country' => Locale::getDisplayRegion('_' . $footer->{Footer::COUNTRY}, App::getLocale()),
-            'email' => $footer->{Footer::EMAIL},
-            'links' => $footer->{Footer::RELATION_LINKS}->map(function (FooterLink $link): array
+            Footer::CITY => $footer->{Footer::CITY},
+            Footer::COPYRIGHT => $footer->{Footer::COPYRIGHT},
+            Footer::COUNTRY => Locale::getDisplayRegion('_' . $footer->{Footer::COUNTRY}, App::getLocale()),
+            Footer::EMAIL => $footer->{Footer::EMAIL},
+            Footer::RELATION_LINKS => $footer->{Footer::RELATION_LINKS}->map(function (FooterLink $link): array
             {
                 return [
-                    'label' => $link->{FooterLink::LABEL} ?: $link->{FooterLink::RELATION_SITE_PAGE}?->{SitePage::TITLE},
-                    'url' => $link->{FooterLink::RELATION_SITE_PAGE}?->{SitePage::RELATION_URLS}->first()?->{SiteUrl::URL},
+                    FooterLink::LABEL => $link->{FooterLink::LABEL} ?: $link->{FooterLink::RELATION_SITE_PAGE}?->{SitePage::TITLE},
+                    SiteUrl::URL => $link->{FooterLink::RELATION_SITE_PAGE}?->{SitePage::RELATION_URLS}->first()?->{SiteUrl::URL},
                 ];
             })->all(),
-            'logo' => $footer->{Footer::LOGO},
-            'organization' => $footer->{Footer::ORGANIZATION},
-            'organizationSchema' => $footer->{Footer::ORGANIZATION_SCHEMA},
-            'phone' => $footer->{Footer::PHONE},
-            'postal_code' => $footer->{Footer::POSTAL_CODE},
-            'social_media' => $footer->{Footer::RELATION_SOCIAL_MEDIA}->map(function (FooterSocialMedium $socialMedium): array
+            Footer::LOGO => $footer->{Footer::LOGO},
+            Footer::ORGANIZATION => $footer->{Footer::ORGANIZATION},
+            Footer::ORGANIZATION_SCHEMA => $footer->{Footer::ORGANIZATION_SCHEMA},
+            Footer::PHONE => $footer->{Footer::PHONE},
+            Footer::POSTAL_CODE => $footer->{Footer::POSTAL_CODE},
+            Footer::RELATION_SOCIAL_MEDIA => $footer->{Footer::RELATION_SOCIAL_MEDIA}->map(function (FooterSocialMedium $socialMedium): array
             {
                 return [
-                    'icon' => $socialMedium->{FooterSocialMedium::ICON},
-                    'label' => $socialMedium->{FooterSocialMedium::LABEL},
-                    'url' => $socialMedium->{FooterSocialMedium::URL},
+                    FooterSocialMedium::ICON => $socialMedium->{FooterSocialMedium::ICON},
+                    FooterSocialMedium::LABEL => $socialMedium->{FooterSocialMedium::LABEL},
+                    FooterSocialMedium::URL => $socialMedium->{FooterSocialMedium::URL},
                 ];
             })->all(),
-            'street' => $footer->{Footer::STREET},
+            Footer::STREET => $footer->{Footer::STREET},
         ];
     }
 

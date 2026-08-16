@@ -27,13 +27,13 @@ final class NavigationResource extends JsonResource
         $page = $this->resource;
 
         return [
-            'children' => collect($page->{SitePage::RELATION_CHILDREN})->map(function (SitePage $child) use ($request): array
+            SitePage::RELATION_CHILDREN => collect($page->{SitePage::RELATION_CHILDREN})->map(function (SitePage $child) use ($request): array
             {
                 return (new self($child))->toArray($request);
             })->all(),
-            'id' => $page->{SitePage::ID},
-            'title' => $page->{SitePage::TITLE},
-            'url' => $page->{SitePage::RELATION_URLS}->first()?->{SiteUrl::URL},
+            SitePage::ID => $page->{SitePage::ID},
+            SitePage::TITLE => $page->{SitePage::TITLE},
+            SiteUrl::URL => $page->{SitePage::RELATION_URLS}->first()?->{SiteUrl::URL},
         ];
     }
 
