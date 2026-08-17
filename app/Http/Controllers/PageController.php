@@ -79,7 +79,8 @@ class PageController extends Controller
      */
     private function footer(SitePage $sitePage, Request $request): array
     {
-        return (new FooterResource($sitePage->{SitePage::RELATION_SITE}->{Site::RELATION_FOOTER}))->toArray($request);
+        return new FooterResource($sitePage->{SitePage::RELATION_SITE}->{Site::RELATION_FOOTER})
+            ->toArray($request);
     }
 
     /**
@@ -92,7 +93,8 @@ class PageController extends Controller
      */
     private function header(SitePage $sitePage, Request $request): array
     {
-        return (new HeaderResource(null))->toArray($request);
+        return new HeaderResource(null)
+            ->toArray($request);
     }
 
     /**
@@ -112,7 +114,8 @@ class PageController extends Controller
 
         return $tree->map(function (SitePage $sitePage) use ($request): array
         {
-            return (new NavigationResource($sitePage))->toArray($request);
+            return new NavigationResource($sitePage)
+                ->toArray($request);
         })->all();
     }
 
@@ -126,7 +129,8 @@ class PageController extends Controller
      */
     private function page(SitePage $sitePage, Request $request): array
     {
-        return (new SitePageResource($sitePage))->toArray($request);
+        return new SitePageResource($sitePage)
+            ->toArray($request);
     }
 
     /**

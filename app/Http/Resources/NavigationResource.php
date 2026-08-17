@@ -29,7 +29,8 @@ final class NavigationResource extends JsonResource
         return [
             SitePage::RELATION_CHILDREN => collect($page->{SitePage::RELATION_CHILDREN})->map(function (SitePage $child) use ($request): array
             {
-                return (new self($child))->toArray($request);
+                return new self($child)
+                    ->toArray($request);
             })->all(),
             SitePage::ID => $page->{SitePage::ID},
             SitePage::TITLE => $page->{SitePage::TITLE},

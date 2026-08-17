@@ -35,13 +35,15 @@ final class DatabaseSeeder extends Seeder
         {
             $this->setSearchPath($schema);
 
-            $formBlockSeeder = (new FormBlockSeeder())->run();
+            $formBlockSeeder = new FormBlockSeeder()
+                ->run();
 
-            (new ContentTemplateSeeder([
+            new ContentTemplateSeeder([
                 $formBlockSeeder,
-            ]))->run();
+            ])->run();
 
-            $site = (new SiteSeeder())->run();
+            $site = new SiteSeeder()
+                ->run();
 
             SitemapJob::dispatchSync($site, $schema);
         }

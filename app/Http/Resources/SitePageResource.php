@@ -61,7 +61,8 @@ final class SitePageResource extends JsonResource
             'title' => $page->{SitePage::TITLE},
             'urls' => $page->{SitePage::RELATION_URLS}->map(function ($url) use ($request): array
             {
-                return (new SiteUrlResource($url))->toArray($request);
+                return new SiteUrlResource($url)
+                    ->toArray($request);
             })->all(),
         ];
     }
@@ -148,11 +149,13 @@ final class SitePageResource extends JsonResource
 
                     if ($relation->{EntityNodeRelation::TARGET_TYPE} === Form::TABLE)
                     {
-                        $target = (new FormResource($target))->toArray($request);
+                        $target = new FormResource($target)
+                            ->toArray($request);
                     }
                     elseif ($relation->{EntityNodeRelation::TARGET_TYPE} === SitePage::TABLE)
                     {
-                        $target = (new SiteUrlResource($target->{SitePage::RELATION_URL}))->toArray($request);
+                        $target = new SiteUrlResource($target->{SitePage::RELATION_URL})
+                            ->toArray($request);
                     }
 
                     Arr::set($data, $key, $target);

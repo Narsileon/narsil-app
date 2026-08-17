@@ -52,11 +52,11 @@ return Application::configure(basePath: dirname(__DIR__))
                 $title = trans("narsil::errors.titles.$code");
                 $description = trans("narsil::errors.descriptions.$code");
 
-                $props = (new InertiaResource([
+                $props = new InertiaResource([
                     'code' => $code,
                     'description' => $description,
                     'title' => $title,
-                ]))->toArray($request);
+                ])->toArray($request);
 
                 return Inertia::render('narsil/base::errors/index', $props)
                     ->rootView('backend')

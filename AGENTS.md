@@ -79,3 +79,8 @@ Binding guidance:
 - If the change belongs in `base`, `cms`, or `cms-form`, make it there instead of duplicating logic in the app.
 - Keep imports and page resolution consistent with the current workspace aliases and vendor package paths.
 - Avoid editing generated files unless the task explicitly requires it.
+
+## Testing
+
+- When browser or feature testing is blocked by authentication, temporarily bypass login through the Laravel gate in the local testing environment so the protected page can be exercised.
+- Keep authentication bypasses explicitly limited to testing and do not leave them enabled in production or committed as runtime behavior.
