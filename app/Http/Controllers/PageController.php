@@ -11,11 +11,13 @@ use App\Http\Resources\HeaderResource;
 use App\Http\Resources\NavigationResource;
 use App\Http\Resources\SitePageResource;
 use Illuminate\Contracts\View\View;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Narsil\Base\Narsil;
 use Narsil\Cms\Models\Sites\Site;
 use Narsil\Cms\Models\Sites\SitePage;
 use Narsil\Cms\Services\PageService;
+use Narsil\Cms\Services\RedirectService;
 use Narsil\Cms\Support\Tree;
 
 #endregion
@@ -27,10 +29,17 @@ class PageController extends Controller
     /**
      * @param Request $request
      *
-     * @return View
+     * @return RedirectResponse|View
      */
-    public function __invoke(Request $request): View
+    public function __invoke(Request $request): RedirectResponse|View
     {
+        $redirect = app(RedirectService::class)->resolve($request);
+
+        if ($redirect)
+        {
+            return $redirect;
+        }
+
         $sitePage = PageService::resolvePage($request, $this->getPreviewLocale($request));
 
         $data = [
