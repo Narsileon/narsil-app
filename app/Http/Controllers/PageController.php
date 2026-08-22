@@ -51,7 +51,7 @@ class PageController extends Controller
             'session' => $this->session(),
         ];
 
-        return view('pages.frontend.index', $data);
+        return view('pages.index', $data);
     }
 
     #endregion
