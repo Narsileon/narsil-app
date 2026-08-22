@@ -108,7 +108,7 @@
 				</x-ui.heading>
 				@foreach ($stepData['elements'] ?? [] as $element)
 					@if (isset($element['input']))
-						<x-form.field
+						<x-block.form.field
 							:field="$element"
 						/>
 					@else
@@ -121,7 +121,7 @@
 								{{ $element['label'] ?? '' }}
 							</legend>
 							@foreach ($element['elements'] ?? [] as $fieldsetElement)
-								<x-form.field
+								<x-block.form.field
 									:field="$fieldsetElement"
 									:name-prefix="$element['id'] ?? null"
 								/>

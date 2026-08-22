@@ -4,7 +4,7 @@
 	class="flex justify-center"
 	data-narsil-node="{{ $nodeId }}"
 >
-	<x-button
+	<x-block.button
 		:data="$data"
 		:node-id="$nodeId"
 	/>

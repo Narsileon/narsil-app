@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\View\Components;
+namespace App\View\Components\Block;
 
 #region USE
 
@@ -68,7 +68,7 @@ final class HeroHeader extends Component
      */
     public function render(): string
     {
-        return 'components.hero-header';
+        return 'components.block.hero-header';
     }
 
     #endregion

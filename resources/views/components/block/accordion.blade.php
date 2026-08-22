@@ -19,7 +19,7 @@
 				<span>
 					{{ $item['children']['trigger'] }}
 				</span>
-				<x-icons.chevron-down
+				<x-icon.chevron-down
 					:class="active === {{ $index }} ? 'rotate-180' : ''"
 					class="pointer-events-none size-5 shrink-0 transition-transform duration-300"
 				/>

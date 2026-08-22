@@ -24,11 +24,11 @@ final class BlockRenderer extends Component
 
         $this->blockView = match ($handle)
         {
-            'accordion' => 'components.accordion',
-            'button' => 'components.button',
-            'call_to_action' => 'components.call-to-action',
-            'form' => 'components.form',
-            'hero_header' => 'components.hero-header',
+            'accordion' => 'components.block.accordion',
+            'button' => 'components.block.button',
+            'call_to_action' => 'components.block.call-to-action',
+            'form' => 'components.block.form',
+            'hero_header' => 'components.block.hero-header',
             default => null,
         };
 

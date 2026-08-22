@@ -71,7 +71,7 @@
 						target="_blank"
 					>
 						<x-dynamic-component
-							:component="'icons.' . $social['icon']"
+							:component="'icon.' . $social['icon']"
 							class="text-primary hover:text-primary/80 transition-colors"
 						/>
 					</a>
@@ -88,11 +88,11 @@
 					class="hover:bg-background/10 inline-flex items-center gap-2 rounded-md px-2 py-1 font-bold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-current"
 					type="button"
 				>
-					<x-icons.globe
+					<x-icon.globe
 						class="text-primary"
 					/>
 					{{ $page['urls'][0]['display_language'] ?? $session['locale'] }}
-					<x-icons.chevron-down
+					<x-icon.chevron-down
 						:class="open ? 'rotate-180' : ''"
 						class="text-primary transition-transform"
 					/>

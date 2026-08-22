@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\View\Components\Form;
+namespace App\View\Components\Ui;
 
 #region USE
 
@@ -51,7 +51,7 @@ final class Label extends Component
      */
     public function render(): string
     {
-        return 'components.form.label';
+        return 'components.ui.label';
     }
 
     #endregion

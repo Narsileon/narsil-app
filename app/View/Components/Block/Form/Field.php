@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\View\Components\Form;
+namespace App\View\Components\Block\Form;
 
 #region USE
 
@@ -128,7 +128,7 @@ final class Field extends Component
      */
     public function render(): string
     {
-        return 'components.form.field';
+        return 'components.block.form.field';
     }
 
     #endregion

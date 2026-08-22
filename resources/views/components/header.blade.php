@@ -14,7 +14,7 @@
 		class="md:hidden"
 		type="button"
 	>
-		<x-icons.menu />
+		<x-icon.menu />
 	</button>
 	<nav
 		:class="open ? 'block' : 'hidden md:block'"

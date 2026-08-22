@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\View\Components;
+namespace App\View\Components\Block;
 
 #region USE
 
@@ -55,7 +55,7 @@ final class Button extends Component
      */
     public function render(): string
     {
-        return 'components.button';
+        return 'components.block.button';
     }
 
     #endregion

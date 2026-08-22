@@ -1,7 +1,7 @@
 <label
 	class="md:col-span-{{ max(1, min(12, (int) (($fieldData['width'] ?? 100) / 8.333))) }} col-span-full flex flex-col gap-2"
 >
-	<x-form.label
+	<x-ui.label
 		:field-name="$fieldName"
 		:field="$fieldData"
 	/>
