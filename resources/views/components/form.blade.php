@@ -99,11 +99,13 @@
 				x-cloak
 				x-show="step === {{ $stepIndex }}"
 			>
-				<h2
-					class="col-span-full text-center text-2xl font-bold"
+				<x-ui.heading
+					class="col-span-full text-center font-bold"
+					level="h2"
+					variant="h3"
 				>
 					{{ $stepData['label'] ?? '' }}
-				</h2>
+				</x-ui.heading>
 				@foreach ($stepData['elements'] ?? [] as $element)
 					@if (isset($element['input']))
 						<x-form.field
