@@ -80,6 +80,16 @@ Binding guidance:
 - Keep imports and page resolution consistent with the current workspace aliases and vendor package paths.
 - Avoid editing generated files unless the task explicitly requires it.
 
+## Blade Component Boundaries
+
+- Put component logic, props, defaults, computed values, validation, and persistence in Laravel View Component or Livewire PHP classes.
+- Keep markup, Tailwind class strings, class merging, and visual variants in Blade components.
+- Do not move Tailwind class maps into PHP classes; PHP may provide the data needed by Blade to select a variant.
+- Prefer package-owned PHP components in `vendor/narsil/base` when the behavior is shared by the Narsil workspace.
+- Every UI component folder must use `root.blade.php` as its entry point: `ui/button/root`, `ui/card/root`, and `ui/icon/root`.
+- Compound UI components keep their named children beside the root: `ui/card/title`, `ui/table/row`, and `ui/pagination/link`.
+- Use singular component folder names and the `root` entry point consistently; do not create duplicate leaf entry points such as `button/button.blade.php` or `icon/icon.blade.php`.
+
 ## Testing
 
 - When browser or feature testing is blocked by authentication, temporarily bypass login through the Laravel gate in the local testing environment so the protected page can be exercised.

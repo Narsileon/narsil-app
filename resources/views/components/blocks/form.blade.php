@@ -1,6 +1,16 @@
-<x-ui.container
-	:padding-bottom="$paddingBottom"
-	:padding-top="$paddingTop"
+@php
+	$containerPadding = match (true) {
+	    $paddingTop === 'lg' || $paddingBottom === 'lg'
+	        => 'pt-16 pb-16 md:pt-24 md:pb-24 lg:pt-32 lg:pb-32 xl:pt-40 xl:pb-40',
+	    $paddingTop === 'md' || $paddingBottom === 'md'
+	        => 'pt-8 pb-8 md:pt-12 md:pb-12 lg:pt-16 lg:pb-16 xl:pt-20 xl:pb-20',
+	    $paddingTop === 'sm' || $paddingBottom === 'sm' => 'pt-4 pb-4 md:pt-6 md:pb-6 lg:pt-8 lg:pb-8 xl:pt-10 xl:pb-10',
+	    default => '',
+	};
+@endphp
+
+<x-narsil::ui.container.root
+	class="{{ $containerPadding }}"
 	data-narsil-node="{{ $nodeId }}"
 	x-data="{
     step: 0,
@@ -99,16 +109,16 @@
 				x-cloak
 				x-show="step === {{ $stepIndex }}"
 			>
-				<x-ui.heading
+				<x-narsil::ui.heading.root
 					class="col-span-full text-center font-bold"
 					level="h2"
 					variant="h3"
 				>
 					{{ $stepData['label'] ?? '' }}
-				</x-ui.heading>
+				</x-narsil::ui.heading.root>
 				@foreach ($stepData['elements'] ?? [] as $element)
 					@if (isset($element['input']))
-						<x-block.form.field
+						<x-blocks.form.field
 							:field="$element"
 						/>
 					@else
@@ -121,7 +131,7 @@
 								{{ $element['label'] ?? '' }}
 							</legend>
 							@foreach ($element['elements'] ?? [] as $fieldsetElement)
-								<x-block.form.field
+								<x-blocks.form.field
 									:field="$fieldsetElement"
 									:name-prefix="$element['id'] ?? null"
 								/>
@@ -133,30 +143,30 @@
 					class="col-span-full flex flex-row-reverse items-center justify-between"
 				>
 					@if ($stepIndex < count($steps) - 1)
-						<x-ui.button
+						<x-narsil::ui.button.root
 							type="submit"
 						>
 							{{ __('narsil::ui.next') }}
-						</x-ui.button>
+						</x-narsil::ui.button.root>
 					@else
-						<x-ui.button
+						<x-narsil::ui.button.root
 							type="submit"
 							x-bind:disabled="submitting"
 						>
 							{{ __('ui.submit') }}
-						</x-ui.button>
+						</x-narsil::ui.button.root>
 					@endif
 					@if ($stepIndex > 0)
-						<x-ui.button
+						<x-narsil::ui.button.root
 							@click="step--"
 							type="button"
 							variant="ghost"
 						>
 							{{ __('narsil::ui.previous') }}
-						</x-ui.button>
+						</x-narsil::ui.button.root>
 					@endif
 				</div>
 			</div>
 		@endforeach
 	</form>
-</x-ui.container>
+</x-narsil::ui.container.root>

@@ -1,10 +1,11 @@
 <label
 	class="md:col-span-{{ max(1, min(12, (int) (($fieldData['width'] ?? 100) / 8.333))) }} col-span-full flex flex-col gap-2"
 >
-	<x-ui.label
-		:field-name="$fieldName"
-		:field="$fieldData"
-	/>
+	<x-narsil::blocks.label.root
+		:required="$fieldData['required'] ?? false"
+	>
+		{{ $fieldData['label'] ?? $fieldName }}
+	</x-narsil::blocks.label.root>
 	@if ($fieldType === 'textarea' || $fieldType === 'rich-text')
 		<textarea
 		 @required($fieldData['required'] ?? false)
@@ -22,11 +23,15 @@
 		>
 			<option
 				value=""
-			>{{ $fieldInput['placeholder'] ?? '' }}</option>
+			>
+				{{ $fieldInput['placeholder'] ?? '' }}
+			</option>
 			@foreach ($fieldOptions as $option)
 				<option
 					value="{{ $option['value'] ?? '' }}"
-				>{{ $option['label'] ?? '' }}</option>
+				>
+					{{ $option['label'] ?? '' }}
+				</option>
 			@endforeach
 		</select>
 	@elseif (in_array($fieldType, ['checkbox', 'switch'], true))

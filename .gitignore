@@ -11,6 +11,8 @@
 /.phpunit.cache
 /.pnpm-store
 /.vscode
+!/.vscode/
+!/.vscode/settings.json
 /.zed
 /auth.json
 /bootstrap/ssr

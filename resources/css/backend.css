@@ -12,4 +12,6 @@
 @import "../../vendor/narsil/cms/resources/css/app.css";
 
 @source "../../vendor/narsil/base/resources/js";
+@source "../../vendor/narsil/base/resources/views";
 @source "../../vendor/narsil/cms/resources/js";
+@source "../../vendor/narsil/cms/resources/views";

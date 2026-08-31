@@ -3,9 +3,15 @@
 
 @import "./frontend/font.css";
 @import "./frontend/theme.css";
+@import "../../vendor/narsil/cms/resources/css/app.css";
 
 @source "../../resources/views";
 @source "../../app/View";
+@source "../../vendor/narsil/base/resources/js";
+@source "../../vendor/narsil/base/resources/views";
+@source "../../vendor/narsil/cms/resources/js";
+@source "../../vendor/narsil/cms/resources/views";
+@source inline("{md:,}col-span-{3,4,6,8,9,12}");
 
 @layer base {
   [x-cloak] {

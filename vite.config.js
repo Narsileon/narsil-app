@@ -35,6 +35,7 @@ export default defineConfig(({ mode }) => {
         "@narsil-cms-form": path.join(__dirname, "/vendor/narsil/cms-form/resources/js"),
         "@narsil-ui": path.join(__dirname, "/vendor/narsil/base/resources/js"),
       },
+      dedupe: ["react", "react-dom"],
       preserveSymlinks: true,
     },
     server: {

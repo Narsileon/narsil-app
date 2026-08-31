@@ -25,8 +25,5 @@
     "prettier-plugin-organize-imports": "^4.3.0",
     "prettier-plugin-tailwindcss": "^0.8.1",
     "typescript": "^6.0.3"
-  },
-  "dependencies": {
-    "alpinejs": "^3.16.1"
   }
 }

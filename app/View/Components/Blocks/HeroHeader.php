@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\View\Components\Block;
+namespace App\View\Components\Blocks;
 
 #region USE
 
@@ -10,7 +10,7 @@ use Illuminate\View\Component;
 
 #endregion
 
-final class Form extends Component
+final class HeroHeader extends Component
 {
     #region CONSTRUCTOR
 
@@ -29,20 +29,10 @@ final class Form extends Component
         string $paddingTop = '',
     )
     {
-        $form = is_array($data['form'] ?? null) ? $data['form'] : [];
-
-        if (isset($form[0]) && is_array($form[0]))
-        {
-            $form = $form[0];
-        }
-
         $this->blockData = $data;
-        $this->form = $form;
         $this->nodeId = $nodeId;
         $this->paddingBottom = $paddingBottom;
         $this->paddingTop = $paddingTop;
-        $this->steps = is_array($form['steps'] ?? null) ? $form['steps'] : [];
-        $this->submitted = (bool) session('success', false);
     }
 
     #endregion
@@ -53,11 +43,6 @@ final class Form extends Component
      * @var array<string,mixed>
      */
     public readonly array $blockData;
-
-    /**
-     * @var array<string,mixed>
-     */
-    public readonly array $form;
 
     /**
      * @var string|null
@@ -74,16 +59,6 @@ final class Form extends Component
      */
     public readonly string $paddingTop;
 
-    /**
-     * @var boolean
-     */
-    public readonly bool $submitted;
-
-    /**
-     * @var array<int,array<string,mixed>>
-     */
-    public readonly array $steps;
-
     #endregion
 
     #region PUBLIC METHODS
@@ -93,7 +68,7 @@ final class Form extends Component
      */
     public function render(): string
     {
-        return 'components.block.form';
+        return 'components.blocks.hero-header';
     }
 
     #endregion

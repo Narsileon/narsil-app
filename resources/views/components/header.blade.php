@@ -14,11 +14,13 @@
 		class="md:hidden"
 		type="button"
 	>
-		<x-icon.menu />
+		<x-narsil::ui.icon.root
+			name="bars"
+		/>
 	</button>
 	<nav
-		:class="open ? 'block' : 'hidden md:block'"
 		class="bg-layout absolute left-0 right-0 top-full p-4 md:static md:block md:bg-transparent md:p-0"
+		x-bind:class="open ? 'block' : 'hidden md:block'"
 	>
 		<ul
 			class="flex flex-col gap-4 font-bold md:flex-row lg:gap-8"
