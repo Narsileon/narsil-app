@@ -1,5 +1,12 @@
+@php
+	$isToggle = in_array($fieldType, ['checkbox', 'switch'], true);
+	$fieldClasses = $isToggle
+	    ? 'flex-row-reverse items-center justify-end gap-2'
+	    : 'flex-col gap-2';
+@endphp
+
 <label
-	class="md:col-span-{{ max(1, min(12, (int) (($fieldData['width'] ?? 100) / 8.333))) }} col-span-full flex flex-col gap-2"
+	class="md:col-span-{{ max(1, min(12, (int) (($fieldData['width'] ?? 100) / 8.333))) }} col-span-full flex {{ $fieldClasses }} {{ $fieldData['className'] ?? '' }}"
 >
 	<x-narsil::blocks.label.root
 		:required="$fieldData['required'] ?? false"

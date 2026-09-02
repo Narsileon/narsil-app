@@ -19,6 +19,13 @@
   resolved "https://registry.yarnpkg.com/@alpinejs/collapse/-/collapse-3.16.3.tgz#2c75034baa714332f66ddb10c2cec6161f14ce31"
   integrity sha512-ekH5VBTpMBNnffAfvL+3mqFLIWNW4bUmCExEl+1WdGPewtVYBI2kMWNd2lVOsrvsDRSij7VGmAG0AK5s8WD03g==
 
+"@alpinejs/sort@^3.16.3":
+  version "3.17.1"
+  resolved "https://registry.yarnpkg.com/@alpinejs/sort/-/sort-3.17.1.tgz#315f55a911b99a8d9cd343cafa7da70983356f57"
+  integrity sha512-Q6qF00WI4cQAZdIxPgbsHnxZIiIv4T1kfSPyEy2QB/SLhLdISuIjzTBa3TQAe1P45BkRtNk5Y8fQuDZuKhN/6w==
+  dependencies:
+    sortablejs "^1.15.2"
+
 "@babel/runtime@^7.29.2":
   version "7.29.7"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.29.7.tgz#12022450c45a4da6d8d8287b18a4ff2ddb23f768"
@@ -780,6 +787,13 @@
   version "3.13.4"
   resolved "https://registry.yarnpkg.com/@types/alpinejs__collapse/-/alpinejs__collapse-3.13.4.tgz#d55adf28fbcdd582a0f17a669413ea18997b4fae"
   integrity sha512-kUBJWEDrHahD2Tb1lrir7iNTGN9ukvoJFjOY41EGC7F21E1KMSch5NrGgE0sqINrRT3lf1UZm3wxB3CNjJHBwg==
+  dependencies:
+    "@types/alpinejs" "*"
+
+"@types/alpinejs__sort@^3.13.0":
+  version "3.13.0"
+  resolved "https://registry.yarnpkg.com/@types/alpinejs__sort/-/alpinejs__sort-3.13.0.tgz#db427c1d689e8f6c4a8949e931ca000afa4704b1"
+  integrity sha512-iR9vEy6e3yXbYAK45/hpulzlt8SSKTsvYUl/t5nuWjtbJPoGxzxUUqOm3egp83Gqtf//TyJnDCI4OTebAKDRAA==
   dependencies:
     "@types/alpinejs" "*"
 
@@ -3067,6 +3081,11 @@ side-channel@^1.1.0:
     side-channel-list "^1.0.1"
     side-channel-map "^1.0.1"
     side-channel-weakmap "^1.0.2"
+
+sortablejs@^1.15.2:
+  version "1.15.7"
+  resolved "https://registry.yarnpkg.com/sortablejs/-/sortablejs-1.15.7.tgz#83a0bddc472117ee328dea20b2e6f490fed20f86"
+  integrity sha512-Kk8wLQPlS+yi1ZEf48a4+fzHa4yxjC30M/Sr2AnQu+f/MPwvvX9XjZ6OWejiz8crBsLwSq8GHqaxaET7u6ux0A==
 
 source-map-js@^1.2.1:
   version "1.2.1"

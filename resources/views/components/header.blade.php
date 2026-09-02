@@ -18,23 +18,23 @@
 			name="bars"
 		/>
 	</button>
-	<nav
+	<x-narsil::ui.navigation-menu.root
 		class="bg-layout absolute left-0 right-0 top-full p-4 md:static md:block md:bg-transparent md:p-0"
 		x-bind:class="open ? 'block' : 'hidden md:block'"
 	>
-		<ul
-			class="flex flex-col gap-4 font-bold md:flex-row lg:gap-8"
+		<x-narsil::ui.navigation-menu.list
+			class="flex-col items-stretch gap-4 font-bold md:flex-row md:items-center lg:gap-8"
 		>
 			@foreach ($navigation[0]['children'] ?? [] as $item)
-				<li>
-					<a
-						class="{{ str_starts_with($session['url'], $item['url']) ? 'underline' : '' }}"
-						href="{{ $item['url'] }}"
+				<x-narsil::ui.navigation-menu.item>
+					<x-narsil::ui.navigation-menu.link
+						:data-active="str_starts_with(request()->url(), $item['url']) ? 'true' : null"
+						:href="$item['url']"
 					>
 						{{ $item['title'] }}
-					</a>
-				</li>
+					</x-narsil::ui.navigation-menu.link>
+				</x-narsil::ui.navigation-menu.item>
 			@endforeach
-		</ul>
-	</nav>
+		</x-narsil::ui.navigation-menu.list>
+	</x-narsil::ui.navigation-menu.root>
 </header>
