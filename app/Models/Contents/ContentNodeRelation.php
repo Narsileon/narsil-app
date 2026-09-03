@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Models\Contents;
 
 #region USE
@@ -17,7 +19,7 @@ class ContentNodeRelation extends EntityNodeRelation
      *
      * @var string
      */
-    public const TABLE = 'content_node_relation';
+    public final const TABLE = 'content_node_relation';
 
     #endregion
 }

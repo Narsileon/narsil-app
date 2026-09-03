@@ -72,35 +72,6 @@ final class SitePageResource extends JsonResource
     #region PRIVATE METHODS
 
     /**
-     * @param SitePage $page
-     * @param Request $request
-     *
-     * @return array
-     */
-    private function resolveData(SitePage $page, Request $request): array
-    {
-        $entities = $page->{SitePage::RELATION_ENTITIES}->keyBy(SitePageEntity::LANGUAGE);
-        $entity = $entities->get(App::getLocale(), $entities->get(Config::get('app.fallback_locale')))?->{SitePageEntity::RELATION_TARGET};
-
-        if (!$entity)
-        {
-            return [];
-        }
-
-        $nodes = $entity->{Entity::RELATION_NODES};
-
-        $nodes->loadMissing([
-            EntityNode::RELATION_BLOCK,
-            EntityNode::RELATION_ELEMENT,
-            EntityNode::RELATION_RELATIONS,
-        ]);
-
-        $this->nodes = $nodes->groupBy(EntityNode::PARENT_UUID);
-
-        return $this->processNodes([], null, null, $request);
-    }
-
-    /**
      * @param array $data
      * @param string|null $parentUuid
      * @param string|null $path
@@ -174,6 +145,35 @@ final class SitePageResource extends JsonResource
         }
 
         return $data;
+    }
+
+    /**
+     * @param SitePage $page
+     * @param Request $request
+     *
+     * @return array
+     */
+    private function resolveData(SitePage $page, Request $request): array
+    {
+        $entities = $page->{SitePage::RELATION_ENTITIES}->keyBy(SitePageEntity::LANGUAGE);
+        $entity = $entities->get(App::getLocale(), $entities->get(Config::get('app.fallback_locale')))?->{SitePageEntity::RELATION_TARGET};
+
+        if (!$entity)
+        {
+            return [];
+        }
+
+        $nodes = $entity->{Entity::RELATION_NODES};
+
+        $nodes->loadMissing([
+            EntityNode::RELATION_BLOCK,
+            EntityNode::RELATION_ELEMENT,
+            EntityNode::RELATION_RELATIONS,
+        ]);
+
+        $this->nodes = $nodes->groupBy(EntityNode::PARENT_UUID);
+
+        return $this->processNodes([], null, null, $request);
     }
 
     #endregion

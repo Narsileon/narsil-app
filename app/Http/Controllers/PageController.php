@@ -59,6 +59,20 @@ class PageController extends Controller
     #region PRIVATE METHODS
 
     /**
+     * Get the footer data.
+     *
+     * @param SitePage $sitePage
+     * @param Request $request
+     *
+     * @return array
+     */
+    private function footer(SitePage $sitePage, Request $request): array
+    {
+        return new FooterResource($sitePage->{SitePage::RELATION_SITE}->{Site::RELATION_FOOTER})
+            ->toArray($request);
+    }
+
+    /**
      * Get the language requested by the live-editor preview.
      *
      * @param Request $request
@@ -76,20 +90,6 @@ class PageController extends Controller
         }
 
         return $locale;
-    }
-
-    /**
-     * Get the footer data.
-     *
-     * @param SitePage $sitePage
-     * @param Request $request
-     *
-     * @return array
-     */
-    private function footer(SitePage $sitePage, Request $request): array
-    {
-        return new FooterResource($sitePage->{SitePage::RELATION_SITE}->{Site::RELATION_FOOTER})
-            ->toArray($request);
     }
 
     /**

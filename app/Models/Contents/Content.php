@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Models\Contents;
 
 #region USE
@@ -17,7 +19,7 @@ class Content extends Entity
      *
      * @var string
      */
-    public const TABLE = 'contents';
+    public final const TABLE = 'contents';
 
     #endregion
 }

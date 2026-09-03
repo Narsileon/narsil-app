@@ -14,7 +14,7 @@
 	data-narsil-node="{{ $nodeId }}"
 	x-data="{
     step: 0,
-    submitted: {{ Js::from($submitted) }},
+	    submitted: @js($submitted),
     submitting: false,
     validateStep(stepIndex = this.step, report = true) {
         const stepElement = Array.from(this.$refs.form.querySelectorAll('[data-form-step]')).find((element) => element.dataset.formStep === String(stepIndex));
@@ -95,7 +95,7 @@
 		<input
 			name="_uuid"
 			type="hidden"
-			value="{{ $form['uuid'] ?? (string) Str::uuid() }}"
+			value="{{ $form['uuid'] ?? $uuid }}"
 		>
 		<input
 			name="_step"

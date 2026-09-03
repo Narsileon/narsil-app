@@ -24,7 +24,10 @@ final class AppServiceProvider extends ServiceProvider
     {
         if ($this->app->environment('local'))
         {
-            Gate::before(fn() => true);
+            Gate::before(function (): bool
+            {
+                return true;
+            });
         }
     }
 

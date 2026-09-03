@@ -6,6 +6,7 @@ namespace App\View\Components\Blocks;
 
 #region USE
 
+use Illuminate\Support\Str;
 use Illuminate\View\Component;
 
 #endregion
@@ -43,6 +44,7 @@ final class Form extends Component
         $this->paddingTop = $paddingTop;
         $this->steps = is_array($form['steps'] ?? null) ? $form['steps'] : [];
         $this->submitted = (bool) session('success', false);
+        $this->uuid = is_string($form['uuid'] ?? null) ? $form['uuid'] : (string) Str::uuid();
     }
 
     #endregion
@@ -83,6 +85,11 @@ final class Form extends Component
      * @var array<int,array<string,mixed>>
      */
     public readonly array $steps;
+
+    /**
+     * @var string
+     */
+    public readonly string $uuid;
 
     #endregion
 

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Tests\Unit;
 
-#region PUBLIC METHODS
+#region USE
 
 use PHPUnit\Framework\TestCase;
 

@@ -16,6 +16,7 @@ final class BlockRenderer extends Component
 
     /**
      * @param array<string,mixed> $block
+     *
      * @return void
      */
     public function __construct(array $block)
