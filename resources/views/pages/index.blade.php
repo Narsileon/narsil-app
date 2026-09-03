@@ -2,7 +2,8 @@
 
 @section('head')
 	<title>
-		{{ $page['title'] }}</title>
+		{{ $page['title'] }}
+	</title>
 	<meta
 		content="{{ $page['meta_description'] ?: $page['title'] }}"
 		name="description"
