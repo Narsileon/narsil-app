@@ -9,16 +9,16 @@
 	};
 @endphp
 
-<x-narsil::ui.container.root
+<x-narsil::ui.container.container-root
 	class="{{ $containerPadding }} flex min-h-[calc(100vh-64px)] flex-col items-center justify-center gap-4 text-center"
 	data-narsil-node="{{ $nodeId }}"
 >
-	<x-narsil::ui.heading.root
+	<x-narsil::ui.heading.heading-root
 		:variant="$blockData['headline']['style'] ?? 'h1'"
 		level="h1"
 	>
 		{{ $blockData['headline']['title'] ?? '' }}
-	</x-narsil::ui.heading.root>
+	</x-narsil::ui.heading.heading-root>
 	<div>
 		{!! $blockData['excerpt'] ?? '' !!}
 	</div>
@@ -31,4 +31,4 @@
 			/>
 		@endforeach
 	</div>
-</x-narsil::ui.container.root>
+</x-narsil::ui.container.container-root>

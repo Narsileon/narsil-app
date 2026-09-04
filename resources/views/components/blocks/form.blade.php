@@ -9,7 +9,7 @@
 	};
 @endphp
 
-<x-narsil::ui.container.root
+<x-narsil::ui.container.container-root
 	class="{{ $containerPadding }}"
 	data-narsil-node="{{ $nodeId }}"
 	x-data="{
@@ -109,13 +109,13 @@
 				x-cloak
 				x-show="step === {{ $stepIndex }}"
 			>
-				<x-narsil::ui.heading.root
+				<x-narsil::ui.heading.heading-root
 					class="col-span-full text-center font-bold"
 					level="h2"
 					variant="h3"
 				>
 					{{ $stepData['label'] ?? '' }}
-				</x-narsil::ui.heading.root>
+				</x-narsil::ui.heading.heading-root>
 				@foreach ($stepData['elements'] ?? [] as $element)
 					@if (isset($element['input']))
 						<x-blocks.form.field
@@ -143,30 +143,30 @@
 					class="col-span-full flex flex-row-reverse items-center justify-between"
 				>
 					@if ($stepIndex < count($steps) - 1)
-						<x-narsil::ui.button.root
+						<x-narsil::ui.button.button-root
 							type="submit"
 						>
 							{{ __('narsil::ui.next') }}
-						</x-narsil::ui.button.root>
+						</x-narsil::ui.button.button-root>
 					@else
-						<x-narsil::ui.button.root
+						<x-narsil::ui.button.button-root
 							type="submit"
 							x-bind:disabled="submitting"
 						>
 							{{ __('ui.submit') }}
-						</x-narsil::ui.button.root>
+						</x-narsil::ui.button.button-root>
 					@endif
 					@if ($stepIndex > 0)
-						<x-narsil::ui.button.root
+						<x-narsil::ui.button.button-root
 							@click="step--"
 							type="button"
 							variant="ghost"
 						>
 							{{ __('narsil::ui.previous') }}
-						</x-narsil::ui.button.root>
+						</x-narsil::ui.button.button-root>
 					@endif
 				</div>
 			</div>
 		@endforeach
 	</form>
-</x-narsil::ui.container.root>
+</x-narsil::ui.container.container-root>

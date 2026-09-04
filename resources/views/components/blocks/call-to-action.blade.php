@@ -9,7 +9,7 @@
 	};
 @endphp
 
-<x-narsil::ui.container.root
+<x-narsil::ui.container.container-root
 	class="{{ $containerPadding }} flex justify-center"
 	data-narsil-node="{{ $nodeId }}"
 >
@@ -17,4 +17,4 @@
 		:data="$data"
 		:node-id="$nodeId"
 	/>
-</x-narsil::ui.container.root>
+</x-narsil::ui.container.container-root>

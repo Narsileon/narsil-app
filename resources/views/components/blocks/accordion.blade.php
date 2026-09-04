@@ -9,30 +9,30 @@
 	};
 @endphp
 
-<x-narsil::ui.container.root
+<x-narsil::ui.container.container-root
 	class="{{ $containerPadding }} flex flex-col items-center gap-4"
 	data-narsil-node="{{ $nodeId }}"
 >
-	<x-narsil::ui.accordion.root>
+	<x-narsil::ui.accordion.accordion-root>
 		@foreach ($data['items'] ?? [] as $index => $item)
-			<x-narsil::ui.accordion.item
+			<x-narsil::ui.accordion.accordion-item
 				:data-narsil-node="$item['uuid'] ?? ''"
 				:value="$index"
 			>
-				<x-narsil::ui.accordion.header>
-					<x-narsil::ui.accordion.trigger
+				<x-narsil::ui.accordion.accordion-header>
+					<x-narsil::ui.accordion.accordion-trigger
 						:value="$index"
 					>
 						<span>
 							{{ $item['children']['trigger'] }}
 						</span>
-						<x-narsil::ui.icon.root
+						<x-narsil::ui.icon.icon-root
 							class="pointer-events-none size-4 shrink-0 transition-transform duration-300 group-data-[state=open]/accordion-trigger:rotate-180"
 							name="chevron-down"
 						/>
-					</x-narsil::ui.accordion.trigger>
-				</x-narsil::ui.accordion.header>
-				<x-narsil::ui.accordion.panel
+					</x-narsil::ui.accordion.accordion-trigger>
+				</x-narsil::ui.accordion.accordion-header>
+				<x-narsil::ui.accordion.accordion-panel
 					:value="$index"
 				>
 					<div
@@ -40,8 +40,8 @@
 					>
 						{!! $item['children']['content'] !!}
 					</div>
-				</x-narsil::ui.accordion.panel>
-			</x-narsil::ui.accordion.item>
+				</x-narsil::ui.accordion.accordion-panel>
+			</x-narsil::ui.accordion.accordion-item>
 		@endforeach
-	</x-narsil::ui.accordion.root>
-</x-narsil::ui.container.root>
+	</x-narsil::ui.accordion.accordion-root>
+</x-narsil::ui.container.container-root>

@@ -8,11 +8,11 @@
 <label
 	class="md:col-span-{{ max(1, min(12, (int) (($fieldData['width'] ?? 100) / 8.333))) }} col-span-full flex {{ $fieldClasses }} {{ $fieldData['className'] ?? '' }}"
 >
-	<x-narsil::blocks.label.root
+	<x-narsil::blocks.label.label-root
 		:required="$fieldData['required'] ?? false"
 	>
 		{{ $fieldData['label'] ?? $fieldName }}
-	</x-narsil::blocks.label.root>
+	</x-narsil::blocks.label.label-root>
 	@if ($fieldType === 'textarea' || $fieldType === 'rich-text')
 		<textarea
 		 @required($fieldData['required'] ?? false)
