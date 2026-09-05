@@ -22,6 +22,7 @@ export default defineConfig(({ mode }) => {
           "resources/css/frontend.css",
           "resources/js/backend.tsx",
           "resources/js/frontend.ts",
+          "resources/js/livewire.ts",
         ],
         refresh: true,
       }),
