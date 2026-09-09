@@ -71,7 +71,7 @@
 						target="_blank"
 					>
 						<x-narsil::ui.icon.icon-root
-							:name="'fa-brands-' . $social['icon']"
+							:name="$social['icon']"
 							class="text-primary hover:text-primary/80 transition-colors"
 						/>
 					</a>
@@ -88,8 +88,8 @@
 					{{ $page['urls'][0]['display_language'] ?? $session['locale'] }}
 					<x-narsil::ui.icon.icon-root
 						class="text-primary size-4 transition-transform"
-						name="chevron-down"
-						x-bind:class="open ? 'rotate-180' : ''"
+						name="fa-regular-chevron-down"
+						x-bind:class="dropdownOpen ? 'rotate-180' : ''"
 					/>
 				</x-narsil::ui.dropdown-menu.dropdown-menu-trigger>
 				<x-narsil::ui.dropdown-menu.dropdown-menu-positioner

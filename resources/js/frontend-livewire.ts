@@ -1,15 +1,13 @@
-import Alpine from "@narsil-ui/alpine";
+import { Livewire } from "../../vendor/livewire/livewire/dist/livewire.esm.js";
 
-Alpine.start();
+Livewire.start();
 
 function initializeEditorBridge(): void {
   if (document.body.dataset.editorMode !== "true") {
     return;
   }
 
-  import("@narsil-cms/live-editor/core/preview-bridge").then(({
-    initPreviewBridge,
-  }): void => {
+  import("@narsil-cms/live-editor/core/preview-bridge").then(({ initPreviewBridge }): void => {
     initPreviewBridge();
   });
 }

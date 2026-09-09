@@ -15,7 +15,7 @@
 		type="button"
 	>
 		<x-narsil::ui.icon.icon-root
-			name="bars"
+			name="fa-regular-bars"
 		/>
 	</button>
 	<x-narsil::ui.navigation-menu.navigation-menu-root

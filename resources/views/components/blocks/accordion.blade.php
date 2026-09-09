@@ -28,7 +28,7 @@
 						</span>
 						<x-narsil::ui.icon.icon-root
 							class="pointer-events-none size-4 shrink-0 transition-transform duration-300 group-data-[state=open]/accordion-trigger:rotate-180"
-							name="chevron-down"
+							name="fa-regular-chevron-down"
 						/>
 					</x-narsil::ui.accordion.accordion-trigger>
 				</x-narsil::ui.accordion.accordion-header>

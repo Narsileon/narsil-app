@@ -17,7 +17,8 @@
 		href="/favicon.svg"
 		rel="icon"
 	>
-	@vite(['resources/css/frontend.css', 'resources/js/frontend.ts'])
+	@vite(['resources/css/frontend.css', 'resources/js/frontend-livewire.ts'])
+	@livewireStyles
 	@yield('head')
 </head>
 
@@ -26,6 +27,7 @@
 	data-editor-mode="{{ $editorMode ?? false ? 'true' : 'false' }}"
 >
 	@yield('body')
+	@livewireScriptConfig
 </body>
 
 </html>

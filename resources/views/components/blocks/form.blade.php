@@ -14,7 +14,7 @@
 	data-narsil-node="{{ $nodeId }}"
 	x-data="{
     step: 0,
-	    submitted: @js($submitted),
+	    submitted: {{ Illuminate\Support\Js::from($submitted) }},
     submitting: false,
     validateStep(stepIndex = this.step, report = true) {
         const stepElement = Array.from(this.$refs.form.querySelectorAll('[data-form-step]')).find((element) => element.dataset.formStep === String(stepIndex));
