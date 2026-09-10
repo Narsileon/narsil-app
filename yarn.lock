@@ -181,7 +181,7 @@
   dependencies:
     "@floating-ui/utils" "^0.2.12"
 
-"@floating-ui/dom@^1.0.0", "@floating-ui/dom@^1.5.3", "@floating-ui/dom@^1.8.0":
+"@floating-ui/dom@^1.0.0", "@floating-ui/dom@^1.8.0":
   version "1.8.0"
   resolved "https://registry.yarnpkg.com/@floating-ui/dom/-/dom-1.8.0.tgz#8a20e6facbe2456afdbeb6c8b968a72df689cf63"
   integrity sha512-yXSrzeHZBTZadLOlfyhCkJHNeLJnHRnRInwdZ40L7ZiaAtrBwoYlsDrX3v5zB1Utk7CLfzcOVnVVWoXEky7Ceg==
@@ -763,20 +763,6 @@
   version "3.13.11"
   resolved "https://registry.yarnpkg.com/@types/alpinejs/-/alpinejs-3.13.11.tgz#ecf938c0f4678d617c77933961e9385e45ece148"
   integrity sha512-3KhGkDixCPiLdL3Z/ok1GxHwLxEWqQOKJccgaQL01wc0EVM2tCTaqlC3NIedmxAXkVzt/V6VTM8qPgnOHKJ1MA==
-
-"@types/alpinejs__anchor@^3.13.1":
-  version "3.13.1"
-  resolved "https://registry.yarnpkg.com/@types/alpinejs__anchor/-/alpinejs__anchor-3.13.1.tgz#00b1854c66983772d4246082e4fc21f3539045ec"
-  integrity sha512-UyQ+qz456eshmbiMpyj8yX6YDP1Cyoget2EWMYHjFLFx4fw08/iDlaIyps97zfwTK26oIb6sAK67Lm7nsxZwzA==
-  dependencies:
-    "@types/alpinejs" "*"
-
-"@types/alpinejs__collapse@^3.13.4":
-  version "3.13.4"
-  resolved "https://registry.yarnpkg.com/@types/alpinejs__collapse/-/alpinejs__collapse-3.13.4.tgz#d55adf28fbcdd582a0f17a669413ea18997b4fae"
-  integrity sha512-kUBJWEDrHahD2Tb1lrir7iNTGN9ukvoJFjOY41EGC7F21E1KMSch5NrGgE0sqINrRT3lf1UZm3wxB3CNjJHBwg==
-  dependencies:
-    "@types/alpinejs" "*"
 
 "@types/alpinejs__sort@^3.13.0":
   version "3.13.0"
