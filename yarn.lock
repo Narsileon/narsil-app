@@ -7,18 +7,6 @@
   resolved "https://registry.yarnpkg.com/@alloc/quick-lru/-/quick-lru-5.2.0.tgz#7bf68b20c0a350f936915fcae06f58e32007ce30"
   integrity sha512-UrcABB+4bUrFABwbluTIBErXwvbsU/V7TZWfmbgJfbkwiBuziS9gxdODUyuiecfdGQ85jglMW6juS3+z5TsKLw==
 
-"@alpinejs/anchor@^3.16.3":
-  version "3.16.3"
-  resolved "https://registry.yarnpkg.com/@alpinejs/anchor/-/anchor-3.16.3.tgz#1ec38bd7ae610142262eb039b18f20b496267e7b"
-  integrity sha512-l53MqW/ZNzR+0jmQ6WhRWEb0K3ZxXhWxgjnLTA+GDX99wCO47lYaD8SIPjxXRARfcrRKPzrpj1llKa0pfwg1kw==
-  dependencies:
-    "@floating-ui/dom" "^1.5.3"
-
-"@alpinejs/collapse@^3.16.3":
-  version "3.16.3"
-  resolved "https://registry.yarnpkg.com/@alpinejs/collapse/-/collapse-3.16.3.tgz#2c75034baa714332f66ddb10c2cec6161f14ce31"
-  integrity sha512-ekH5VBTpMBNnffAfvL+3mqFLIWNW4bUmCExEl+1WdGPewtVYBI2kMWNd2lVOsrvsDRSij7VGmAG0AK5s8WD03g==
-
 "@alpinejs/sort@^3.16.3":
   version "3.17.1"
   resolved "https://registry.yarnpkg.com/@alpinejs/sort/-/sort-3.17.1.tgz#315f55a911b99a8d9cd343cafa7da70983356f57"
