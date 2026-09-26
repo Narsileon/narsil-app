@@ -59,8 +59,6 @@ class PageController extends Controller
     #region PRIVATE METHODS
 
     /**
-     * Get the footer data.
-     *
      * @param SitePage $sitePage
      * @param Request $request
      *
@@ -73,8 +71,6 @@ class PageController extends Controller
     }
 
     /**
-     * Get the language requested by the live-editor preview.
-     *
      * @param Request $request
      *
      * @return string|null
@@ -93,8 +89,6 @@ class PageController extends Controller
     }
 
     /**
-     * Get the header data.
-     *
      * @param SitePage $sitePage
      * @param Request $request
      *
@@ -107,8 +101,6 @@ class PageController extends Controller
     }
 
     /**
-     * Get the navigation menu data.
-     *
      * @param SitePage $sitePage
      * @param Request $request
      *
@@ -129,8 +121,6 @@ class PageController extends Controller
     }
 
     /**
-     * Get the page data.
-     *
      * @param SitePage $sitePage
      * @param Request $request
      *
@@ -143,8 +133,6 @@ class PageController extends Controller
     }
 
     /**
-     * Get the frontend session data.
-     *
      * @return array<string,string>
      */
     private function session(): array

@@ -16,8 +16,6 @@ final class AppServiceProvider extends ServiceProvider
     #region PUBLIC METHODS
 
     /**
-     * Bootstrap any application services.
-     *
      * @return void
      */
     public function boot(): void
