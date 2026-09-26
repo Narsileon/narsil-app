@@ -8,7 +8,6 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Narsil\Base\Narsil;
-use Narsil\Cms\Enums\SchemaEnum;
 use Narsil\Cms\Form\ServiceProvider as CmsFormServiceProvider;
 use Narsil\Cms\ServiceProvider as CmsServiceProvider;
 
@@ -30,11 +29,6 @@ final class NarsilServiceProvider extends ServiceProvider
                 'en',
                 'de',
                 'fr',
-            ])
-            ->schemas([
-                SchemaEnum::LIVE->value,
-                SchemaEnum::STAGE->value,
-                SchemaEnum::DEV->value,
             ])
             ->plugins([
                 CmsServiceProvider::class,

@@ -6,10 +6,7 @@ namespace Database\Seeders;
 
 #region USE
 
-use Database\Seeders\SiteSeeder;
-use Database\Seeders\UserSeeder;
 use Illuminate\Database\Seeder;
-use Narsil\Base\Traits\HasSchemas;
 use Narsil\Cms\Database\Seeders\Templates\ContentTemplateSeeder;
 use Narsil\Cms\Form\Database\Seeders\Blocks\FormBlockSeeder;
 use Narsil\Cms\Jobs\SitemapJob;
@@ -18,8 +15,6 @@ use Narsil\Cms\Jobs\SitemapJob;
 
 final class DatabaseSeeder extends Seeder
 {
-    use HasSchemas;
-
     #region PUBLIC METHODS
 
     /**
@@ -31,22 +26,17 @@ final class DatabaseSeeder extends Seeder
             UserSeeder::class,
         ]);
 
-        foreach ($this->getSchemas() as $schema)
-        {
-            $this->setSearchPath($schema);
+        $formBlockSeeder = new FormBlockSeeder()
+            ->run();
 
-            $formBlockSeeder = new FormBlockSeeder()
-                ->run();
+        new ContentTemplateSeeder([
+            $formBlockSeeder,
+        ])->run();
 
-            new ContentTemplateSeeder([
-                $formBlockSeeder,
-            ])->run();
+        $site = new SiteSeeder()
+            ->run();
 
-            $site = new SiteSeeder()
-                ->run();
-
-            SitemapJob::dispatchSync($site, $schema);
-        }
+        SitemapJob::dispatchSync($site);
     }
 
     #endregion

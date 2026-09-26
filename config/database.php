@@ -100,7 +100,7 @@ return [
             'charset' => env('DB_CHARSET', 'utf8'),
             'prefix' => '',
             'prefix_indexes' => true,
-            'search_path' => 'public',
+            'search_path' => 'cms,public',
             'sslmode' => 'prefer',
         ],
 
@@ -133,7 +133,7 @@ return [
     */
 
     'migrations' => [
-        'table' => 'migrations',
+        'table' => env('DB_CONNECTION') === 'pgsql' ? 'public.migrations' : 'migrations',
         'update_date_on_publish' => true,
     ],
 

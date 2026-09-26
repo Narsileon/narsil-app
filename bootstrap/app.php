@@ -9,9 +9,7 @@ use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
 use Illuminate\Http\Request;
-use Inertia\Inertia;
 use Narsil\Cms\Http\Middleware\InertiaMiddleware;
-use Narsil\Cms\Http\Resources\InertiaResource;
 use Narsil\Cms\Jobs\PublishCollectionsJob;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -54,16 +52,13 @@ return Application::configure(basePath: dirname(__DIR__))
                 $title = trans("narsil::errors.titles.$code");
                 $description = trans("narsil::errors.descriptions.$code");
 
-                $props = new InertiaResource([
+                $props = [
                     'code' => $code,
                     'description' => $description,
                     'title' => $title,
-                ])->toArray($request);
+                ];
 
-                return Inertia::render('narsil/base::errors/index', $props)
-                    ->rootView('backend')
-                    ->toResponse($request)
-                    ->setStatusCode($response->getStatusCode());
+                return response()->view('narsil::pages.errors.index', $props, $code);
             }
 
             return $response;
