@@ -16,8 +16,8 @@ use Narsil\Cms\Database\Seeders\Blocks\HeroHeaderBlockSeeder;
 use Narsil\Cms\Database\Seeders\Blocks\LayoutBlockSeeder;
 use Narsil\Cms\Database\Seeders\Blocks\LinkBlockSeeder;
 use Narsil\Cms\Database\Seeders\Blocks\PaddingBlockSeeder;
-use Narsil\Cms\Database\Seeders\Templates\ContentTemplateSeeder;
 use Narsil\Cms\Database\Seeders\EntitySeeder;
+use Narsil\Cms\Database\Seeders\Templates\ContentTemplateSeeder;
 use Narsil\Cms\Models\Collections\Block;
 use Narsil\Cms\Models\Collections\Template;
 use Narsil\Cms\Models\Entities\Entity;
@@ -72,7 +72,7 @@ class HomeEntitySeeder extends EntitySeeder
                                 ButtonBlockSeeder::LINK => [
                                     LinkBlockSeeder::TYPE => 'external',
                                     LinkBlockSeeder::URL => '/narsil/cms',
-                                ]
+                                ],
                             ],
                         ]],
                     ],
@@ -126,7 +126,7 @@ class HomeEntitySeeder extends EntitySeeder
                         CallToActionBlockSeeder::LINK => [
                             LinkBlockSeeder::TYPE => 'internal',
                             LinkBlockSeeder::PAGE => $contactPage?->{SitePage::ATTRIBUTE_IDENTIFIER},
-                        ]
+                        ],
                     ],
                 ],
             ],

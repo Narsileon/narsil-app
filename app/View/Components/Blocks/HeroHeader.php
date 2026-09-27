@@ -27,8 +27,7 @@ final class HeroHeader extends Component
         ?string $nodeId = null,
         string $paddingBottom = '',
         string $paddingTop = '',
-    )
-    {
+    ) {
         $this->blockData = $data;
         $this->nodeId = $nodeId;
         $this->paddingBottom = $paddingBottom;

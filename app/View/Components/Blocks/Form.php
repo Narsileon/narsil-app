@@ -28,8 +28,7 @@ final class Form extends Component
         ?string $nodeId = null,
         string $paddingBottom = '',
         string $paddingTop = '',
-    )
-    {
+    ) {
         $form = is_array($data['form'] ?? null) ? $data['form'] : [];
 
         if (isset($form[0]) && is_array($form[0]))
@@ -77,14 +76,14 @@ final class Form extends Component
     public readonly string $paddingTop;
 
     /**
-     * @var boolean
-     */
-    public readonly bool $submitted;
-
-    /**
      * @var array<int,array<string,mixed>>
      */
     public readonly array $steps;
+
+    /**
+     * @var boolean
+     */
+    public readonly bool $submitted;
 
     /**
      * @var string

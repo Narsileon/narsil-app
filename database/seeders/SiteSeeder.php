@@ -105,16 +105,16 @@ final class SiteSeeder extends Seeder
 
                 $contact?->update([
                     SitePage::PARENT_ID => $home->{SitePage::ID},
-                    SitePage::RIGHT_ID  => $imprint->{SitePage::ID},
+                    SitePage::RIGHT_ID => $imprint->{SitePage::ID},
                 ]);
                 $imprint?->update([
-                    SitePage::LEFT_ID   => $contact->{SitePage::ID},
+                    SitePage::LEFT_ID => $contact->{SitePage::ID},
                     SitePage::PARENT_ID => $home->{SitePage::ID},
-                    SitePage::RIGHT_ID  => $privacyNotice->{SitePage::ID},
+                    SitePage::RIGHT_ID => $privacyNotice->{SitePage::ID},
                 ]);
                 $privacyNotice?->update([
                     SitePage::PARENT_ID => $home->{SitePage::ID},
-                    SitePage::LEFT_ID   => $imprint->{SitePage::ID},
+                    SitePage::LEFT_ID => $imprint->{SitePage::ID},
                 ]);
 
                 if ($footer && $imprint)

@@ -27,7 +27,7 @@ final class SiteUrlResource extends JsonResource
         $url = $this->resource;
 
         $url->loadMissing([
-            SiteUrl::RELATION_HOST_LOCALE_LANGUAGE
+            SiteUrl::RELATION_HOST_LOCALE_LANGUAGE,
         ]);
 
         $language = $url->{SiteUrl::RELATION_HOST_LOCALE_LANGUAGE};

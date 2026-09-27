@@ -25,8 +25,7 @@ final class Footer extends Component
         array $footer,
         array $page,
         array $session,
-    )
-    {
+    ) {
         $this->footer = $footer;
         $this->page = $page;
         $this->session = $session;

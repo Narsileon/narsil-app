@@ -8,8 +8,8 @@ namespace Database\Seeders\Entities;
 
 use Narsil\Cms\Database\Seeders\Blocks\LayoutBlockSeeder;
 use Narsil\Cms\Database\Seeders\Blocks\PaddingBlockSeeder;
-use Narsil\Cms\Database\Seeders\Templates\ContentTemplateSeeder;
 use Narsil\Cms\Database\Seeders\EntitySeeder;
+use Narsil\Cms\Database\Seeders\Templates\ContentTemplateSeeder;
 use Narsil\Cms\Form\Database\Seeders\Blocks\FormBlockSeeder;
 use Narsil\Cms\Form\Database\Seeders\Forms\ContactFormSeeder;
 use Narsil\Cms\Form\Models\Form;

@@ -23,8 +23,7 @@ final class Header extends Component
     public function __construct(
         array $navigation,
         array $session,
-    )
-    {
+    ) {
         $this->navigation = $navigation;
         $this->session = $session;
     }
