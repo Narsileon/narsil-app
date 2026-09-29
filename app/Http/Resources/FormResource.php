@@ -9,7 +9,6 @@ namespace App\Http\Resources;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Support\Str;
-use Narsil\Base\Support\TranslationsBag;
 use Narsil\Cms\Form\Http\Data\Forms\FormStepData;
 use Narsil\Cms\Form\Models\Form;
 use Narsil\Cms\Form\Models\FormStep;
@@ -27,12 +26,6 @@ final class FormResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
-        app(TranslationsBag::class)
-            ->add('narsil::tooltips.required')
-            ->add('narsil::ui.next')
-            ->add('narsil::ui.previous')
-            ->add('ui.submit')
-            ->add('ui.submited');
 
         $form = $this->resource;
 

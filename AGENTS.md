@@ -1,17 +1,16 @@
 # Narsil App Agents
 
-This repository is a Laravel + React Inertia application that acts as the host app for the Narsil workspace.
-The app provides the frontend shell, the backend shell, and the wiring that mounts the CMS packages.
+This repository is a Laravel + Blade + Livewire application that acts as the host app for the Narsil workspace.
+The app provides the public frontend, the Livewire backend shell, and the wiring that mounts the CMS packages.
 
 ## Project
 
 - Root app: `/home/narsilien/dev/narsil-app`
-- Stack: Laravel, Inertia, React, TypeScript, Vite, Tailwind, PHP
-- Frontend entry: `resources/js/frontend.tsx`
-- Backend entry: `resources/js/backend.tsx`
-- Shared Inertia page resolution is configured in `config/inertia.php`
+- Stack: Laravel, Blade, Livewire, Alpine.js, TypeScript, Vite, Tailwind, PHP
+- Backend entry: `resources/js/backend-livewire.ts`
+- Frontend entry: `resources/js/frontend-livewire.ts`
 
-The app is a headless CMS host. Public pages live under `resources/js/pages/frontend/`, while admin pages are resolved from the app and from the CMS workspace package.
+The app is a headless CMS host. Public and admin pages are rendered from Blade views in the app and workspace packages.
 
 ## Workspace
 
@@ -37,9 +36,8 @@ When you are changing shared presentation or foundation behavior, check whether 
 
 `narsil/cms` is the main backend package.
 
-- Its pages are loaded by the backend Inertia resolver in `resources/js/backend.tsx`
+- Its admin pages use Blade views and Livewire components
 - Its CSS is imported by `resources/css/backend.css` and `resources/css/frontend.css`
-- Its resources are exposed through the Inertia page path list in `config/inertia.php`
 
 The CMS owns the admin experience, page components, and shared backend UI that the app consumes.
 
@@ -47,7 +45,7 @@ The CMS owns the admin experience, page components, and shared backend UI that t
 
 `narsil/cms-form` provides the CMS form plugin.
 
-- It is booted in `resources/js/backend.tsx`
+- Its fields are rendered by Blade components
 - It extends the backend experience rather than the public frontend
 
 Use this package when the change is form-specific and belongs to the CMS plugin layer.
@@ -61,7 +59,6 @@ The skill files live at:
 - `../narsil-skills/skills/php/SKILL.md`
 - `../narsil-skills/skills/laravel/SKILL.md`
 - `../narsil-skills/skills/blade/SKILL.md`
-- `../narsil-skills/skills/react/SKILL.md`
 - `../narsil-skills/skills/html/SKILL.md`
 - `../narsil-skills/skills/tailwind/SKILL.md`
 - `../narsil-skills/skills/eslint/SKILL.md`
@@ -70,7 +67,7 @@ Binding guidance:
 
 - PHP and Laravel edits should follow the PHP/Laravel skills first.
 - Blade components should follow the Blade skill and its PHP/HTML/Tailwind references.
-- React and TypeScript edits should follow the React skill, then HTML/Tailwind, then ESLint.
+- TypeScript edits should follow the General, HTML/Tailwind, and ESLint skills.
 - General refactors and bug fixes should follow the General skill.
 
 ## Working Rules

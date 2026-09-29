@@ -4,7 +4,6 @@
         "esModuleInterop": true,
         "forceConsistentCasingInFileNames": true,
         "isolatedModules": true,
-        "jsx": "react-jsx",
         "module": "esnext",
         "moduleResolution": "bundler",
         "noEmit": true,
@@ -12,7 +11,6 @@
         "paths": {
             "@/*": ["./resources/js/*"],
             "@narsil-cms/*": ["./vendor/narsil/cms/resources/js/*"],
-            "@narsil-cms-form/*": ["./vendor/narsil/cms-form/resources/js/*"],
             "@narsil-ui/*": ["./vendor/narsil/base/resources/js/*"]
         },
         "skipLibCheck": true,
@@ -23,8 +21,7 @@
     "include": [
         "resources/js/**/*",
         "vendor/narsil/base/resources/js/**/*",
-        "vendor/narsil/cms/resources/js/**/*",
-        "vendor/narsil/cms-form/resources/js/**/*",
+        "vendor/narsil/cms/resources/js/**/*"
     ],
     "exclude": ["node_modules"]
 }

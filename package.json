@@ -10,9 +10,9 @@
   "scripts": {
     "build": "vite build",
     "dev": "vite",
-    "format:check": "prettier --check resources/js/**/*.{ts,tsx} vendor/narsil/cms/resources/js/**/*.{ts,tsx}",
-    "format:write": "prettier --write resources/js/**/*.{ts,tsx} vendor/narsil/cms/resources/js/**/*.{ts,tsx}",
-    "lint": "eslint resources/js/**/*.{ts,tsx} vendor/narsil/cms/resources/js/**/*.{ts,tsx} --ext .ts,.tsx",
+    "format:check": "prettier --check \"resources/js/**/*.ts\" \"vendor/narsil/cms/resources/js/**/*.ts\"",
+    "format:write": "prettier --write \"resources/js/**/*.ts\" \"vendor/narsil/cms/resources/js/**/*.ts\"",
+    "lint": "eslint \"resources/js/**/*.ts\" \"vendor/narsil/cms/resources/js/**/*.ts\" --ext .ts",
     "preview": "vite preview"
   },
   "devDependencies": {
@@ -20,7 +20,6 @@
     "@typescript-eslint/eslint-plugin": "^8.66.0",
     "@typescript-eslint/parser": "^8.66.0",
     "eslint": "^9.39.5",
-    "eslint-plugin-react": "^7.37.5",
     "prettier": "^3.9.6",
     "prettier-plugin-organize-imports": "^4.3.0",
     "prettier-plugin-tailwindcss": "^0.8.1",

@@ -1,13 +1,12 @@
 import tseslint from "@typescript-eslint/eslint-plugin";
 import tsParser from "@typescript-eslint/parser";
-import reactPlugin from "eslint-plugin-react";
 
 const eslintConfig = [
   {
     ignores: ["vendor/**/*.d.ts"],
   },
   {
-    files: ["resources/js/**/*.{ts,tsx}", "vendor/narsil/cms/resources/js/**/*.{ts,tsx}"],
+    files: ["resources/js/**/*.ts", "vendor/narsil/cms/resources/js/**/*.ts"],
     languageOptions: {
       parser: tsParser,
       parserOptions: {
@@ -18,7 +17,6 @@ const eslintConfig = [
     },
     plugins: {
       "@typescript-eslint": tseslint,
-      react: reactPlugin,
     },
     rules: {
       // Code quality rules
@@ -45,25 +43,6 @@ const eslintConfig = [
       "prefer-const": "warn",
       "prefer-template": "warn",
 
-      // React rules
-      "react/jsx-key": "error",
-      "react/jsx-no-duplicate-props": "error",
-      "react/jsx-no-undef": "error",
-      "react/no-children-prop": "off",
-      "react/no-danger-with-children": "error",
-      "react/no-deprecated": "warn",
-      "react/no-direct-mutation-state": "error",
-      "react/no-find-dom-node": "warn",
-      "react/no-is-mounted": "error",
-      "react/no-render-return-value": "error",
-      "react/no-string-refs": "error",
-      "react/no-unescaped-entities": "warn",
-      "react/no-unknown-property": "error",
-      "react/no-unsafe": "warn",
-      "react/prop-types": "off",
-      "react/react-in-jsx-scope": "off",
-      "react/require-render-return": "error",
-
       // Typescript rules
       "@typescript-eslint/ban-ts-comment": "warn",
       "@typescript-eslint/no-empty-object-type": "warn",
@@ -81,11 +60,6 @@ const eslintConfig = [
           caughtErrorsIgnorePattern: "^(_|ignore)",
         },
       ],
-    },
-    settings: {
-      react: {
-        version: "detect",
-      },
     },
   },
 ];

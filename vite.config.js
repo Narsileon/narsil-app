@@ -1,5 +1,4 @@
 import tailwindcss from "@tailwindcss/vite";
-import react from "@vitejs/plugin-react";
 import laravel from "laravel-vite-plugin";
 import path, { dirname } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -20,23 +19,19 @@ export default defineConfig(({ mode }) => {
         input: [
           "resources/css/backend.css",
           "resources/css/frontend.css",
-          "resources/js/backend.tsx",
           "resources/js/backend-livewire.ts",
           "resources/js/frontend-livewire.ts",
         ],
         refresh: true,
       }),
-      react(),
       tailwindcss(),
     ],
     resolve: {
       alias: {
         "@": path.join(__dirname, "/resources/js"),
         "@narsil-cms": path.join(__dirname, "/vendor/narsil/cms/resources/js"),
-        "@narsil-cms-form": path.join(__dirname, "/vendor/narsil/cms-form/resources/js"),
         "@narsil-ui": path.join(__dirname, "/vendor/narsil/base/resources/js"),
       },
-      dedupe: ["react", "react-dom"],
       preserveSymlinks: true,
     },
     server: {
