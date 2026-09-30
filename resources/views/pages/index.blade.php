@@ -56,10 +56,13 @@
 @endsection
 
 @section('body')
-	<x-header
-		:navigation="$navigation"
-		:session="$session"
-	/>
+	<x-header.root>
+		<x-ui.brand.root />
+		<x-header.navigation-toggle />
+		<x-header.navigation
+			:items="$navigation[0]['children'] ?? []"
+		/>
+	</x-header.root>
 	<main
 		class="bg-background text-foreground flex h-fit min-h-svh flex-col items-center justify-center"
 	>
@@ -81,9 +84,58 @@
 			@endforeach
 		</div>
 	</main>
-	<x-footer
-		:footer="$footer"
-		:page="$page"
-		:session="$session"
-	/>
+	<x-footer.root>
+		<div
+			class="flex flex-col justify-between gap-6 sm:flex-row"
+		>
+			<div
+				class="flex flex-col gap-6 md:gap-8 lg:gap-10"
+			>
+				<x-ui.brand.root />
+				<div
+					class="flex flex-row gap-10"
+				>
+					<div
+						class="flex flex-col gap-0.5 lg:gap-2"
+					>
+						<x-footer.organization
+							:organization="$footer['organization']"
+						/>
+						<x-footer.address
+							:city="$footer['city']"
+							:country="$footer['country']"
+							:postal-code="$footer['postal_code']"
+							:street="$footer['street']"
+						/>
+					</div>
+					<x-footer.contact
+						:email="$footer['email']"
+						:phone="$footer['phone']"
+					/>
+				</div>
+			</div>
+			<div
+				class="flex flex-row justify-between gap-6 sm:flex-col-reverse md:gap-8 lg:gap-10"
+			>
+				<x-footer.social-media
+					:social-media="$footer['social_media']"
+				/>
+				<x-footer.language-switcher
+					:page="$page"
+					:session="$session"
+				/>
+			</div>
+		</div>
+		<div
+			class="flex flex-col flex-wrap items-center gap-2 border-t border-slate-200 pt-4 text-slate-700 md:flex-row md:justify-between lg:gap-x-8"
+		>
+			<x-footer.copyright
+				:copyright="$footer['copyright']"
+				:organization="$footer['organization']"
+			/>
+			<x-footer.legal-links
+				:links="$footer['links']"
+			/>
+		</div>
+	</x-footer.root>
 @endsection

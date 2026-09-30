@@ -1,12 +1,10 @@
 @php
 	$isToggle = in_array($fieldType, ['checkbox', 'switch'], true);
-	$fieldClasses = $isToggle
-	    ? 'flex-row-reverse items-center justify-end gap-2'
-	    : 'flex-col gap-2';
+	$fieldClasses = $isToggle ? 'flex-row-reverse items-center justify-end gap-2' : 'flex-col gap-2';
 @endphp
 
 <label
-	class="md:col-span-{{ max(1, min(12, (int) (($fieldData['width'] ?? 100) / 8.333))) }} col-span-full flex {{ $fieldClasses }} {{ $fieldData['className'] ?? '' }}"
+	{{ $attributes->twMerge('md:col-span-' . max(1, min(12, (int) (($fieldData['width'] ?? 100) / 8.333))) . ' ' . $fieldClasses . ' ' . ($fieldData['className'] ?? '') . ' col-span-full flex') }}
 >
 	<x-narsil::blocks.label.label-root
 		:required="$fieldData['required'] ?? false"

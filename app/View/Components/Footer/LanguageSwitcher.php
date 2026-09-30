@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\View\Components;
+namespace App\View\Components\Footer;
 
 #region USE
 
@@ -10,23 +10,20 @@ use Illuminate\View\Component;
 
 #endregion
 
-final class Footer extends Component
+final class LanguageSwitcher extends Component
 {
     #region CONSTRUCTOR
 
     /**
-     * @param array<string,mixed> $footer
      * @param array<string,mixed> $page
-     * @param array<string,mixed> $session
+     * @param array<string,string|null> $session
      *
      * @return void
      */
     public function __construct(
-        array $footer,
         array $page,
         array $session,
     ) {
-        $this->footer = $footer;
         $this->page = $page;
         $this->session = $session;
     }
@@ -38,15 +35,10 @@ final class Footer extends Component
     /**
      * @var array<string,mixed>
      */
-    public readonly array $footer;
-
-    /**
-     * @var array<string,mixed>
-     */
     public readonly array $page;
 
     /**
-     * @var array<string,mixed>
+     * @var array<string,string|null>
      */
     public readonly array $session;
 
@@ -55,11 +47,11 @@ final class Footer extends Component
     #region PUBLIC METHODS
 
     /**
-     * @return string
+     * {@inheritDoc}
      */
     public function render(): string
     {
-        return 'components.footer';
+        return 'components.footer.language-switcher';
     }
 
     #endregion

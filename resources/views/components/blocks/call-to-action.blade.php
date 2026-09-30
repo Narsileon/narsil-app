@@ -10,7 +10,7 @@
 @endphp
 
 <x-narsil::ui.container.container-root
-	class="{{ $containerPadding }} flex justify-center"
+	{{ $attributes->twMerge($containerPadding . ' flex justify-center') }}
 	data-narsil-node="{{ $nodeId }}"
 >
 	<x-blocks.button

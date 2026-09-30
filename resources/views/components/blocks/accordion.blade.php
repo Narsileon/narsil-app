@@ -10,7 +10,7 @@
 @endphp
 
 <x-narsil::ui.container.container-root
-	class="{{ $containerPadding }} flex flex-col items-center gap-4"
+	{{ $attributes->twMerge($containerPadding . ' flex flex-col items-center gap-4') }}
 	data-narsil-node="{{ $nodeId }}"
 >
 	<x-narsil::ui.accordion.accordion-root>

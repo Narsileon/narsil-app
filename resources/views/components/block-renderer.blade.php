@@ -5,11 +5,13 @@
 			:node-id="$nodeId"
 			:padding-bottom="$paddingBottom"
 			:padding-top="$paddingTop"
+			{{ $attributes->twMerge() }}
 		/>
 	@elseif ($blockView === 'components.blocks.button')
 		<x-blocks.button
 			:data="$blockData"
 			:node-id="$nodeId"
+			{{ $attributes->twMerge() }}
 		/>
 	@elseif ($blockView === 'components.blocks.hero-header')
 		<x-blocks.hero-header
@@ -17,6 +19,7 @@
 			:node-id="$nodeId"
 			:padding-bottom="$paddingBottom"
 			:padding-top="$paddingTop"
+			{{ $attributes->twMerge() }}
 		/>
 	@else
 		@include($blockView, [
