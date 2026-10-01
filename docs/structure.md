@@ -10,7 +10,6 @@ The host app bootstraps Laravel and composes the local Narsil packages.
 │   │   └── Commands/  # Console commands
 │   ├── Http/  # HTTP request handling
 │   │   ├── Controllers/  # HTTP controllers
-│   │   ├── Middlewares/  # HTTP middleware
 │   │   ├── Requests/  # HTTP requests
 │   │   └── Resources/  # HTTP response resources
 │   ├── Jobs/  # Background jobs
@@ -20,9 +19,12 @@ The host app bootstraps Laravel and composes the local Narsil packages.
 │   ├── Policies/  # Eloquent model policies
 │   ├── Providers/  # Laravel service providers
 │   └── View/  # Blade view components
-│       └── Components/  # UI components
+│       └── Components/  # App Blade components
+│           ├── Blocks/  # Feature blocks
+│           ├── Contents/  # CMS content components
+│           ├── Layout/  # App shell components
+│           └── Ui/  # Reusable UI components
 ├── bootstrap/  # Laravel bootstrap files
-│   └── cache/  # Framework cache
 ├── config/  # Application configuration
 ├── database/  # Database files
 │   ├── factories/  # Eloquent model factories
@@ -45,10 +47,13 @@ The host app bootstraps Laravel and composes the local Narsil packages.
 │   ├── css/  # Stylesheets
 │   │   └── frontend/  # Frontend stylesheets
 │   ├── js/  # Frontend code
-│   │   └── pages/  # Frontend pages
-│   │       └── backend/  # Backend pages
+│   │   └── types/  # Frontend TypeScript types
 │   └── views/  # Blade views
-│       ├── components/  # Blade components
+│       ├── components/  # Blade component categories
+│       │   ├── blocks/  # Feature blocks
+│       │   ├── contents/  # CMS content components
+│       │   ├── layout/  # App shell components
+│       │   └── ui/  # Reusable UI components
 │       ├── layouts/  # Blade layouts
 │       └── pages/  # Frontend pages
 └── routes/  # HTTP routes

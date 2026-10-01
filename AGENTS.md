@@ -1,93 +1,9 @@
-# Narsil App Agents
+# Narsil App
 
-This repository is a Laravel + Blade + Livewire application that acts as the host app for the Narsil workspace.
-The app provides the public frontend, the Livewire backend shell, and the wiring that mounts the CMS packages.
+Laravel, Blade, and Livewire host app for users building sites with Narsil CMS. This is the user-owned application repository; sibling workspace links and shared contributor skills apply only during local Narsil development.
 
-## Project
+For local contributor conventions, follow the shared [General](../narsil-skills/skills/general/SKILL.md), [PHP](../narsil-skills/skills/php/SKILL.md), [Laravel](../narsil-skills/skills/laravel/SKILL.md), [Blade](../narsil-skills/skills/blade/SKILL.md), [HTML](../narsil-skills/skills/html/SKILL.md), [Tailwind](../narsil-skills/skills/tailwind/SKILL.md), and [ESLint](../narsil-skills/skills/eslint/SKILL.md) skills.
 
-- Root app: `/home/narsilien/dev/narsil-app`
-- Stack: Laravel, Blade, Livewire, Alpine.js, TypeScript, Vite, Tailwind, PHP
-- Backend entry: `resources/js/backend-livewire.ts`
-- Frontend entry: `resources/js/frontend-livewire.ts`
-
-The app is a headless CMS host. Public and admin pages are rendered from Blade views in the app and workspace packages.
-
-## Workspace
-
-This repository is wired to the local Narsil workspace packages:
-
-- `vendor/narsil/base`
-- `vendor/narsil/cms`
-- `vendor/narsil/cms-form`
-
-Composer and Node workspaces are aligned to these packages in:
-
-- `composer.json`
-- `composer.prod.json`
-- `package.json`
-- `pnpm-workspace.yaml`
-
-### Base
-
-`narsil/base` is the shared foundation package for the workspace. Treat it as the common UI/runtime layer that other Narsil packages build on.
-When you are changing shared presentation or foundation behavior, check whether the same change belongs in the base package rather than in the app layer.
-
-### CMS
-
-`narsil/cms` is the main backend package.
-
-- Its admin pages use Blade views and Livewire components
-- Its CSS is imported by `resources/css/backend.css` and `resources/css/frontend.css`
-
-The CMS owns the admin experience, page components, and shared backend UI that the app consumes.
-
-### Form
-
-`narsil/cms-form` provides the CMS form plugin.
-
-- Its fields are rendered by Blade components
-- It extends the backend experience rather than the public frontend
-
-Use this package when the change is form-specific and belongs to the CMS plugin layer.
-
-## Skill Binding
-
-Use the `narsil-skills` repo as the source of truth for stack-specific agent instructions.
-The skill files live at:
-
-- `../narsil-skills/skills/general/SKILL.md`
-- `../narsil-skills/skills/php/SKILL.md`
-- `../narsil-skills/skills/laravel/SKILL.md`
-- `../narsil-skills/skills/blade/SKILL.md`
-- `../narsil-skills/skills/html/SKILL.md`
-- `../narsil-skills/skills/tailwind/SKILL.md`
-- `../narsil-skills/skills/eslint/SKILL.md`
-
-Binding guidance:
-
-- PHP and Laravel edits should follow the PHP/Laravel skills first.
-- Blade components should follow the Blade skill and its PHP/HTML/Tailwind references.
-- TypeScript edits should follow the General, HTML/Tailwind, and ESLint skills.
-- General refactors and bug fixes should follow the General skill.
-
-## Working Rules
-
-- Prefer changing the app layer only when the behavior is specific to this repository.
-- If the change belongs in `base`, `cms`, or `cms-form`, make it there instead of duplicating logic in the app.
-- Keep imports and page resolution consistent with the current workspace aliases and vendor package paths.
-- Avoid editing generated files unless the task explicitly requires it.
-
-## Blade Component Boundaries
-
-- Put component logic, props, defaults, computed values, validation, and persistence in Laravel View Component or Livewire PHP classes.
-- Keep markup, Tailwind class strings, class merging, and visual variants in Blade components.
-- Do not move Tailwind class maps into PHP classes; PHP may provide the data needed by Blade to select a variant.
-- Prefer package-owned PHP components in `vendor/narsil/base` when the behavior is shared by the Narsil workspace.
-- Every UI component folder must use `root.blade.php` as its entry point: `ui/button/root`, `ui/card/root`, and `ui/icon/root`.
-- Compound UI components keep their named children beside the root: `ui/card/title`, `ui/table/row`, and `ui/pagination/link`.
-- Use singular component folder names and the `root` entry point consistently; do not create duplicate leaf entry points such as `button/button.blade.php` or `icon/icon.blade.php`.
-
-## Testing
-
-- When browser or feature testing is blocked by authentication, temporarily bypass login through the Laravel gate in the local testing environment so the protected page can be exercised.
-- Keep authentication bypasses explicitly limited to testing and do not leave them enabled in production or committed as runtime behavior.
+- Preserve the local Composer and Node workspace wiring used during Narsil development.
+- Use DDEV for app runtime and browser checks. Keep generated files out of changes unless required.
+- If authentication blocks local feature/browser checks, bypass the gate only for that local test and remove the bypass afterward.
