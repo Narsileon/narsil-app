@@ -22,7 +22,7 @@
 					>
 						{{ $footer['organization'] }}
 					</p>
-					<x-ui.address.address-root
+					<x-narsil::blocks.address.address-root
 						:city="$footer['city']"
 						:country="$footer['country']"
 						:postal-code="$footer['postal_code']"
@@ -71,7 +71,7 @@
 	<div
 		class="flex flex-col flex-wrap items-center gap-2 border-t border-slate-200 pt-4 text-slate-700 md:flex-row md:justify-between lg:gap-x-8"
 	>
-		<x-ui.copyright.copyright-root
+		<x-narsil::ui.copyright.copyright-root
 			:copyright="$footer['copyright']"
 			:organization="$footer['organization']"
 		/>
