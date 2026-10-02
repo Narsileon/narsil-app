@@ -81,7 +81,7 @@
 		x-if="submitted"
 	>
 		<p>
-			{{ __('ui.submited') }}
+			{{ __('narsil-cms-form::ui.submited') }}
 		</p>
 	</template>
 	<form
@@ -155,7 +155,7 @@
 							type="submit"
 							x-bind:disabled="submitting"
 						>
-							{{ __('ui.submit') }}
+							{{ __('narsil-cms-form::ui.submit') }}
 						</x-narsil::ui.button.button-root>
 					@endif
 					@if ($stepIndex > 0)

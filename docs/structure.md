@@ -1,22 +1,15 @@
 # Structure
 
-The host app bootstraps Laravel and composes the local Narsil packages.
+The Laravel host app composes Narsil CMS content and app-specific Blade components.
 
 ```text
 .  # Narsil app root
 ├── app/  # Host-specific Laravel code
-│   ├── Casts/  # Model casts
-│   ├── Console/  # Console commands
-│   │   └── Commands/  # Console commands
 │   ├── Http/  # HTTP request handling
 │   │   ├── Controllers/  # HTTP controllers
-│   │   ├── Requests/  # HTTP requests
 │   │   └── Resources/  # HTTP response resources
-│   ├── Jobs/  # Background jobs
 │   ├── Models/  # Eloquent models
 │   │   └── Contents/  # Contents models
-│   ├── Observers/  # Eloquent model observers
-│   ├── Policies/  # Eloquent model policies
 │   ├── Providers/  # Laravel service providers
 │   └── View/  # Blade view components
 │       └── Components/  # App Blade components
@@ -27,8 +20,6 @@ The host app bootstraps Laravel and composes the local Narsil packages.
 ├── bootstrap/  # Laravel bootstrap files
 ├── config/  # Application configuration
 ├── database/  # Database files
-│   ├── factories/  # Eloquent model factories
-│   ├── migrations/  # Database migrations
 │   └── seeders/  # Database seeders
 │       └── Entities/  # Entity seeders
 ├── docs/  # Documentation
@@ -38,16 +29,11 @@ The host app bootstraps Laravel and composes the local Narsil packages.
 │   │   └── pint.md  # PHP formatting commands
 │   ├── index.md  # Documentation index
 │   └── structure.md  # Root structure reference
-├── lang/  # Translations
-│   ├── de/  # German translations
-│   ├── en/  # English translations
-│   └── fr/  # French translations
 ├── public/  # Web root and built assets
 ├── resources/  # Frontend and Blade resources
 │   ├── css/  # Stylesheets
 │   │   └── frontend/  # Frontend stylesheets
-│   ├── js/  # Frontend code
-│   │   └── types/  # Frontend TypeScript types
+│   ├── js/  # Frontend and backend Livewire entry points
 │   └── views/  # Blade views
 │       ├── components/  # Blade component categories
 │       │   ├── blocks/  # Feature blocks
