@@ -28,7 +28,7 @@
 			property="og:description"
 		>
 	@endif
-	<x-blocks.organization-schema.organization-schema-root
+	<x-narsil-cms::blocks.organization-schema.organization-schema-root
 		:footer="$footer"
 		:session="$session"
 	/>
