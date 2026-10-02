@@ -32,16 +32,16 @@
 				<div
 					class="flex flex-col justify-end"
 				>
-					<x-ui.link.link-root
+					<x-narsil::ui.link.link-root
 						:href="'mailto:' . ($footer['email'] ?? '')"
 					>
 						{{ $footer['email'] }}
-					</x-ui.link.link-root>
-					<x-ui.link.link-root
+					</x-narsil::ui.link.link-root>
+					<x-narsil::ui.link.link-root
 						:href="'tel:' . \Illuminate\Support\Str::replaceMatches('/\s+/', '', $footer['phone'] ?? '')"
 					>
 						{{ $footer['phone'] }}
-					</x-ui.link.link-root>
+					</x-narsil::ui.link.link-root>
 				</div>
 			</div>
 		</div>
@@ -80,11 +80,11 @@
 			data-slot="footer-legal-nav"
 		>
 			@foreach ($footer['links'] as $link)
-				<x-ui.link.link-root
+				<x-narsil::ui.link.link-root
 					:href="$link['url']"
 				>
 					{{ $link['label'] }}
-				</x-ui.link.link-root>
+				</x-narsil::ui.link.link-root>
 			@endforeach
 		</nav>
 	</div>
