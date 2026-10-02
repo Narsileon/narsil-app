@@ -6,14 +6,14 @@ namespace App\Http\Controllers;
 
 #region USE
 
-use App\Http\Resources\FooterResource;
-use App\Http\Resources\HeaderResource;
-use App\Http\Resources\NavigationResource;
-use App\Http\Resources\SitePageResource;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Narsil\Base\Narsil;
+use Narsil\Cms\Http\Resources\Frontend\FooterResource;
+use Narsil\Cms\Http\Resources\Frontend\HeaderResource;
+use Narsil\Cms\Http\Resources\Frontend\NavigationResource;
+use Narsil\Cms\Http\Resources\Frontend\SitePageResource;
 use Narsil\Cms\Models\Sites\Site;
 use Narsil\Cms\Models\Sites\SitePage;
 use Narsil\Cms\Services\PageService;

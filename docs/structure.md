@@ -6,8 +6,7 @@ The Laravel host app composes Narsil CMS content and app-specific Blade componen
 .  # Narsil app root
 ├── app/  # Host-specific Laravel code
 │   ├── Http/  # HTTP request handling
-│   │   ├── Controllers/  # HTTP controllers
-│   │   └── Resources/  # HTTP response resources
+│   │   └── Controllers/  # HTTP controllers
 │   ├── Models/  # Eloquent models
 │   │   └── Contents/  # Contents models
 │   ├── Providers/  # Laravel service providers
