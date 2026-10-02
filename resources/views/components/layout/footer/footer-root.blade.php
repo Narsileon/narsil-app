@@ -1,7 +1,9 @@
 <footer
-	{{ $attributes->twMerge('bg-layout text-layout-foreground mx-auto flex w-full flex-col gap-6 p-4 md:gap-8 md:px-4 md:pt-6 lg:gap-10 lg:px-14 lg:pt-6 xl:px-20 xl:pt-8')->merge([
-	    'data-slot' => 'footer-root',
-	]) }}
+	{{ $attributes->twMerge(
+	        'bg-layout text-layout-foreground mx-auto flex w-full flex-col gap-6 p-4 md:gap-8 md:px-4 lg:gap-10 lg:px-14 xl:px-20',
+	    )->merge([
+	        'data-slot' => 'footer-root',
+	    ]) }}
 >
 	<div
 		class="flex flex-col justify-between gap-6 sm:flex-row"
@@ -14,7 +16,7 @@
 				class="flex flex-row gap-10"
 			>
 				<div
-					class="flex flex-col gap-0.5 lg:gap-2"
+					class="flex flex-col"
 				>
 					<p
 						class="font-bold"

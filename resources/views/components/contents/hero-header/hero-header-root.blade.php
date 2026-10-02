@@ -10,9 +10,11 @@
 @endphp
 
 <x-narsil::ui.container.container-root
-	{{ $attributes->twMerge($containerPadding . ' flex min-h-[calc(100vh-64px)] flex-col items-center justify-center gap-4 text-center')->merge([
-	    'data-slot' => 'hero-header-root',
-	]) }}
+	{{ $attributes->twMerge(
+	        $containerPadding . ' flex min-h-[calc(100vh-64px)] flex-col items-center justify-center gap-4 text-center',
+	    )->merge([
+	        'data-slot' => 'hero-header-root',
+	    ]) }}
 	data-narsil-node="{{ $nodeId }}"
 >
 	<x-narsil::ui.heading.heading-root

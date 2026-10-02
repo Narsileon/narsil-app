@@ -1,7 +1,7 @@
 <x-narsil::ui.navigation-menu.navigation-menu-root
 	{{ $attributes->twMerge('bg-layout absolute left-0 right-0 top-full p-4 md:static md:block md:bg-transparent md:p-0')->merge([
-	    'data-slot' => 'navigation-root',
-	]) }}
+	        'data-slot' => 'navigation-root',
+	    ]) }}
 	x-bind:class="navigationOpen ? 'block' : 'hidden md:block'"
 >
 	<x-narsil::ui.navigation-menu.navigation-menu-list

@@ -38,11 +38,11 @@
 	<x-layout.header.header-root>
 		<x-ui.brand.brand-root />
 		<button
+			@click="navigationOpen = !navigationOpen"
 			aria-label="Toggle navigation"
 			class="md:hidden"
 			data-slot="header-navigation-toggle"
 			type="button"
-			@click="navigationOpen = !navigationOpen"
 		>
 			<x-narsil::ui.icon.icon-root
 				name="fa-regular-bars"

@@ -4,9 +4,17 @@
 @endphp
 
 <label
-	{{ $attributes->twMerge('md:col-span-' . max(1, min(12, (int) (($fieldData['width'] ?? 100) / 8.333))) . ' ' . $fieldClasses . ' ' . ($fieldData['className'] ?? '') . ' col-span-full flex')->merge([
-	    'data-slot' => 'form-field',
-	]) }}
+	{{ $attributes->twMerge(
+	        'md:col-span-' .
+	            max(1, min(12, (int) (($fieldData['width'] ?? 100) / 8.333))) .
+	            ' ' .
+	            $fieldClasses .
+	            ' ' .
+	            ($fieldData['className'] ?? '') .
+	            ' col-span-full flex',
+	    )->merge([
+	        'data-slot' => 'form-field',
+	    ]) }}
 >
 	<x-narsil::blocks.label.label-root
 		:required="$fieldData['required'] ?? false"
